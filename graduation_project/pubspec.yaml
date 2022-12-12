@@ -39,6 +39,7 @@ dependencies:
   introduction_screen: ^3.1.1
   shared_preferences: ^2.0.15
   flutter_svg: ^1.1.6
+  adobe_xd: ^2.0.1
 
 dev_dependencies:
   flutter_test:
