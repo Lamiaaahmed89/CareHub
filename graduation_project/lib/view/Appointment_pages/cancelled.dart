@@ -1,10 +1,9 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
+import 'package:graduation_project/reusable/Appbar.dart';
+import 'package:graduation_project/reusable/AppointmentListView.dart';
+import 'package:graduation_project/reusable/HomeBar.dart';
 
-import '../models/CardAppoDetails.dart';
-import '../reusable/AppBar.dart';
-import '../reusable/AppointmentListView.dart';
-import '../reusable/HomeBar.dart';
 
 class Cancelled extends StatelessWidget {
   Cancelled({super.key});

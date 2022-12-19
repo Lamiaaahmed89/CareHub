@@ -1,10 +1,10 @@
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:graduation_project/Appointment_pages/cancelled.dart';
-import 'package:graduation_project/Appointment_pages/completed.dart';
-import 'package:graduation_project/Appointment_pages/upcomming.dart';
 import 'package:graduation_project/Controllers/AppointmentController.dart';
+import 'package:graduation_project/view/Appointment_pages/cancelled.dart';
+import 'package:graduation_project/view/Appointment_pages/completed.dart';
+import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Widget HomeBar(Widtth, Hightt) {
