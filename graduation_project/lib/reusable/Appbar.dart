@@ -10,7 +10,7 @@ PreferredSizeWidget Appbar() {
       color: HexColor("#252632"),
     ),
     title: Text(
-      "My appointment",
+      "My Appointment",
       style: TextStyle(color: HexColor("#252632"),fontWeight: FontWeight.w500,fontSize: 16),
     ),
     centerTitle: true,
