@@ -83,7 +83,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.1.6"
-<<<<<<< HEAD
   flutter_svg_provider:
     dependency: "direct main"
     description:
@@ -91,8 +90,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.3"
-=======
->>>>>>> main
   flutter_test:
     dependency: "direct dev"
     description: flutter
