@@ -3,6 +3,7 @@ import 'package:graduation_project/view/screens/onboardin.dart';
 import 'package:graduation_project/view/screens/splachscreen.dart';
 import 'package:responsive_framework/responsive_framework.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -21,4 +22,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
