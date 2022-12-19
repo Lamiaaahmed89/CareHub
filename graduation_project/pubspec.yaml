@@ -41,7 +41,6 @@ dependencies:
   flutter_svg_provider: ^1.0.3
   responsive_framework: ^0.2.0
   iconsax: ^0.0.8
-  flutter_svg: ^1.1.6
 
 dev_dependencies:
   flutter_test:
