@@ -114,13 +114,6 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.2"
-  js:
-    dependency: transitive
-    description:
-      name: js
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.6.4"
   iconsax:
     dependency: "direct main"
     description:
@@ -128,6 +121,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "0.0.8"
+  js:
+    dependency: transitive
+    description:
+      name: js
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.6.4"
   lints:
     dependency: transitive
     description:
@@ -374,4 +374,3 @@ packages:
 sdks:
   dart: ">=2.18.0 <3.0.0"
   flutter: ">=3.0.0"
-  flutter: ">=2.11.0-0.1.pre"
