@@ -102,7 +102,7 @@ Widget Carrd() {
                         Text(
                           "Dr. Abdo Mohamed",
                           style: TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.w500),
+                              fontSize: 16, fontWeight: FontWeight.w500,color: HexColor("#252632")),
                         ),
                         SizedBox(
                           height: 3,

@@ -1,8 +1,11 @@
+import 'dart:ui';
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/HomeBar.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class NOAppointment extends StatelessWidget {
   NOAppointment({super.key});
@@ -33,8 +36,9 @@ class NOAppointment extends StatelessWidget {
                   Container(
                     width: (width * 80.467) / 100,
                     child: Text(
-                      "You don't have docotors appointment scheduled at the moment",
+                      "You don't have docotors appointment scheduled at the moment",style: TextStyle(color: HexColor("#252632"),),
                       textAlign: TextAlign.center,
+                      
                     ),
                   ),
                   // Container(
