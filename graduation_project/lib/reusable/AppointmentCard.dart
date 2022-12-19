@@ -43,7 +43,7 @@ Icon IconName(String status) {
     );
   }
   return Icon(
-    Iconsax.map,
+    Iconsax.map_1,
     color: HexColor("#285FFA"),
     size: 17,
   );

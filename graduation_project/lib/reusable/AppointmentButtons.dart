@@ -9,7 +9,7 @@ Widget Buttons(String Btn1, String Btn2) {
       children: [
         SizedBox(
           width: 143,
-          height: 30,
+          height: 28,
           child: ElevatedButton(
               onPressed: () {},
               child: Text(
@@ -30,7 +30,7 @@ Widget Buttons(String Btn1, String Btn2) {
         ),
         SizedBox(
           width: 143,
-          height: 30,
+          height: 28,
           child: ElevatedButton(
               onPressed: () {},
               child: Text(
