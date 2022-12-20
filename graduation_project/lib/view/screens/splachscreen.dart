@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
+import 'package:graduation_project/view/screens/onboardin.dart';
 import 'package:graduation_project/view/screens/login_page.dart';
 import 'package:graduation_project/view/screens/reset_password.dart';
 
@@ -16,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => LoginPage()));
+          context, MaterialPageRoute(builder: (context) => OnBoarding()));
     });
   }
 
