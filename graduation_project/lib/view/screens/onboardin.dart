@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
+import 'package:graduation_project/view/screens/login_page.dart';
 import '../../constants/colors.dart';
 
 
@@ -152,7 +153,12 @@ Widget cus_onbording(context,index) {
                             ),
                           ))),
               TextButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context,
+                          MaterialPageRoute(builder: (BuildContext context) {
+                        return LoginPage();
+                      }));
+                },
                 child: Text(
                   currentindex==content.length-1?'Start':'Skip',
                   style: TextStyle(
