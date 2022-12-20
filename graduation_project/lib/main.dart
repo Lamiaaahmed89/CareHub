@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/view/screens/splachscreen.dart';
 
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,4 +17,3 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-

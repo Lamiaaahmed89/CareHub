@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/screens/login.dart';
+import 'package:graduation_project/view/screens/login_page.dart';
+import 'package:graduation_project/view/screens/reset_password.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -34,6 +35,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
         ],
       ),
-    ));
+    ),
+    );
   }
 }
