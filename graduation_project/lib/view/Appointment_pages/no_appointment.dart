@@ -29,7 +29,7 @@ class NOAppointment extends StatelessWidget {
               child: Column(
                 children: [
                   SvgPicture.asset(
-                    "assets/Schedule.svg",
+                    "assets/images/Schedule.svg",
                     // width: 300,
                     height: (height * 50.714) / 100,
                   ),
