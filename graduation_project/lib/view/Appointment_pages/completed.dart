@@ -17,7 +17,7 @@ class Completed extends StatelessWidget {
       appBar: Appbar(),
       body: Column(
         children: [
-          HomeBar(width, height),
+          HomeBar(width, height,context),
           AppListView(TryNuum),
         ],
       ),

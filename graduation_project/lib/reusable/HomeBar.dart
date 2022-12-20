@@ -7,13 +7,14 @@ import 'package:graduation_project/view/Appointment_pages/completed.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-Widget HomeBar(Widtth, Hightt) {
+Widget HomeBar(Widtth, Hightt,context) {
+  double wid=MediaQuery.of(context).size.width;
+  double heigh=MediaQuery.of(context).size.height/10;
   return Padding(
-    padding: EdgeInsets.symmetric(
-        horizontal: (Widtth * 4.267) / 100, vertical: (Hightt * 2) / 100),
+    padding: EdgeInsets.all(wid/30),
     child: Container(
-        width: (Widtth * 91.467) / 100,
-        height: (Hightt * 8) / 100,
+        width: wid,
+        height: heigh,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(7)),
           color: HexColor("#f0f0f0"),

@@ -19,7 +19,7 @@ class Cancelled extends StatelessWidget {
       appBar: Appbar(),
       body: Column(
         children: [
-          HomeBar(width, height),
+          HomeBar(width, height,context),
           AppListView(TryNumm),
         ],
       ),
