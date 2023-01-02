@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
-import 'package:get/get_navigation/src/root/get_material_app.dart';
-import 'package:graduation_project/view/screens/onboardin.dart';
-import 'package:graduation_project/view/screens/splachscreen.dart';
+import 'package:graduation_project/view/registaration_pages/login_page.dart';
 
 
 void main() {
@@ -17,7 +15,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily:'Poppins'),
-      home:UpComming(),
+      home:LoginPage(),
     );
   }
 }

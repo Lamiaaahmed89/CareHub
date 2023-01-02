@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/screens/onboardin.dart';
-import 'package:graduation_project/view/screens/login_page.dart';
-import 'package:graduation_project/view/screens/reset_password.dart';
+import 'package:graduation_project/view/registaration_pages/onboardin.dart';
+
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});

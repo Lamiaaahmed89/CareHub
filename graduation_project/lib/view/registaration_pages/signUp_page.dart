@@ -7,8 +7,8 @@ import 'package:graduation_project/component/register_divider.dart';
 import 'package:graduation_project/component/register_text.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/screens/home_page.dart';
-import 'package:graduation_project/view/screens/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/home_page.dart';
+import 'package:graduation_project/view/registaration_pages/login_page.dart';
 import 'package:iconsax/iconsax.dart';
 
 class SignupPage extends StatelessWidget {

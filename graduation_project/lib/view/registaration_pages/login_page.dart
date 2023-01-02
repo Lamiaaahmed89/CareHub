@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:graduation_project/Controllers/login.dart';
 import 'package:graduation_project/component/account_text.dart';
 import 'package:graduation_project/component/google_button.dart';
 import 'package:graduation_project/component/msg_text.dart';
@@ -7,14 +9,12 @@ import 'package:graduation_project/component/register_divider.dart';
 import 'package:graduation_project/component/register_text.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/screens/home_page.dart';
-import 'package:graduation_project/view/screens/reset_password.dart';
-import 'package:graduation_project/view/screens/signUp_page.dart';
-import 'package:graduation_project/view/screens/verification_page.dart';
+import 'package:graduation_project/view/registaration_pages/signUp_page.dart';
+import 'package:graduation_project/view/registaration_pages/verification_page.dart';
 import 'package:iconsax/iconsax.dart';
 
 class LoginPage extends StatelessWidget {
-  const LoginPage({super.key});
+  LoginController loginController = Get.put(LoginController());
 
   @override
   Widget build(BuildContext context) {
@@ -46,27 +46,59 @@ class LoginPage extends StatelessWidget {
                 SizedBox(
                   height: 38,
                 ),
-                InputField(
-                  hint_text: 'Enter Your Email',
-                  prefix: Icon(
-                    Iconsax.sms,
-                    color: Main_color,
-                  ),
+                Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(16, 0, 0, 0),
+                      offset: Offset(0, 3),
+                      blurRadius: 6.0,
+                    ),
+                  ], borderRadius: BorderRadius.circular(50)),
+                  child: TextFormField(
+                    controller:loginController.emailcontroller,
+                      decoration: InputDecoration(
+                          fillColor: white_color,
+                          filled: true,
+                          hintText: 'Enter Your Email',
+                          prefixIcon: Icon(
+                            Iconsax.sms,
+                            color: Main_color,
+                          ),
+                          enabledBorder: OutlineInputBorder(
+                              borderRadius: BorderRadius.circular(50),
+                              borderSide: BorderSide(color: white_color)))),
                 ),
                 SizedBox(
                   height: 29,
                 ),
-                InputField(
-                  hint_text: 'Enter Your Password',
-                  prefix: Icon(
-                    Iconsax.key,
-                    color: Main_color,
-                  ),
-                  suffix: Icon(
-                    Iconsax.eye,
-                    color: Main_color,
-                  ),
+                Container(
+                  decoration: BoxDecoration(boxShadow: [
+                    BoxShadow(
+                      color: Color.fromARGB(16, 0, 0, 0),
+                      offset: Offset(0, 3),
+                      blurRadius: 6.0,
+                    ),
+                  ], borderRadius: BorderRadius.circular(50)),
+                  child: TextFormField(
+                    controller:loginController.Passwordcontroller,
+                      decoration: InputDecoration(
+                    fillColor: white_color,
+                    filled: true,
+                    hintText: 'Enter Your Password',
+                    suffixIcon: Icon(
+                      Iconsax.eye,
+                      color: Main_color,
+                    ),
+                    prefixIcon: Icon(
+                      Iconsax.key,
+                      color: Main_color,
+                    ),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: white_color)),
+                  )),
                 ),
+
                 SizedBox(
                   height: 16.0,
                 ),
@@ -91,11 +123,11 @@ class LoginPage extends StatelessWidget {
                 ),
                 // SizedBox(height: 29,),
                 RegisterButton(
-                  navigate: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return HomePage();
-                    }));
+                  navigate: () {loginController.isloding?CircularProgressIndicator():loginController.loginwithemail();
+                    // Navigator.push(context,
+                    //     MaterialPageRoute(builder: (BuildContext context) {
+                    //   return HomePage();
+                    // }));
                   },
                   register_txt: 'Log In',
                 ),

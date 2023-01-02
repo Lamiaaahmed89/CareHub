@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/screens/reset_password.dart';
+import 'package:graduation_project/view/registaration_pages/reset_password.dart';
 import 'package:iconsax/iconsax.dart';
 
 class NumPad extends StatefulWidget {

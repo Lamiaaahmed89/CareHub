@@ -3,8 +3,8 @@ import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:graduation_project/view/screens/numpad_page.dart';
-import 'package:graduation_project/view/screens/reset_password.dart';
+import 'package:graduation_project/view/registaration_pages/numpad_page.dart';
+
 import 'package:iconsax/iconsax.dart';
 
 class VerificationPage extends StatelessWidget {
