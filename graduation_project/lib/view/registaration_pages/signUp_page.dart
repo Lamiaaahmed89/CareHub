@@ -18,82 +18,79 @@ class SignupPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 103.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                RegisterText(register_txt: "Sign Up",),
-                SizedBox(
-                  height: 35,
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 30.0),
+        child: Form(
+          child: ListView(
+            children: [
+              RegisterText(register_txt: "Sign Up",),
+              SizedBox(
+                height: 35,
+              ),
+              MsgText(
+                msg_txt: "Let\'s Get Started\nCreate an account to get all features",
+              ),
+               SizedBox(
+                height: 38,
+              ),
+              InputField(
+                hint_text: 'Enter Your Email',
+                prefix: Icon(
+                  Iconsax.sms,
+                  color: Main_color,
                 ),
-                MsgText(
-                  msg_txt: "Let\'s Get Started\nCreate an account to get all features",
+              ),
+              SizedBox(
+                height: 29,
+              ),
+              InputField(
+                hint_text: 'Enter Your Password',
+                prefix: Icon(
+                  Iconsax.key,
+                  color: Main_color,
                 ),
-                 SizedBox(
-                  height: 38,
+                suffix: Icon(
+                  Iconsax.eye,
+                  color: Main_color,
                 ),
-                InputField(
-                  hint_text: 'Enter Your Email',
-                  prefix: Icon(
-                    Iconsax.sms,
-                    color: Main_color,
-                  ),
-                ),
-                SizedBox(
-                  height: 29,
-                ),
-                InputField(
-                  hint_text: 'Enter Your Password',
-                  prefix: Icon(
-                    Iconsax.key,
-                    color: Main_color,
-                  ),
-                  suffix: Icon(
-                    Iconsax.eye,
-                    color: Main_color,
-                  ),
-                ),
-                SizedBox(
-                  height: 40.0,
-                ),
-                 RegisterButton(
-                  navigate: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return HomePage();
-                    }));
-                  },
-                  register_txt: 'Sign Up',
-                ),
-                SizedBox(
-                  height: 32,
-                ),
-                RegisterDivider(),
-                SizedBox(
-                  height: 33,
-                ),
-                GoogleButton(),
-                SizedBox(
-                  height: 20,
-                ),
-                HaveAccount(
-                  txt1: "Already have account?",
-                  txt2: "Log In",
-                  register: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return LoginPage();
-                    }));
-                  },
-                ),
-        
-              ],
-            ),
+              ),
+              SizedBox(
+                height: 40.0,
+              ),
+               RegisterButton(
+                navigate: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return HomePage();
+                  }));
+                },
+                register_txt: 'Sign Up',
+              ),
+              SizedBox(
+                height: 32,
+              ),
+              RegisterDivider(),
+              SizedBox(
+                height: 33,
+              ),
+              GoogleButton(),
+              SizedBox(
+                height: 20,
+              ),
+              HaveAccount(
+                txt1: "Already have account?",
+                txt2: "Log In",
+                register: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return LoginPage();
+                  }));
+                },
+              ),
+            ],
           ),
-        ),),
+        ),
+      ),
     );
   }
 }
