@@ -25,139 +25,137 @@ class LoginPage extends StatelessWidget {
       //   title: Text('Login Page'),
       //   elevation: 0.0,
       // ),
-      body: SafeArea(
-        child: SingleChildScrollView(
-          child: Padding(
-            padding:
-                const EdgeInsets.symmetric(horizontal: 16.0, vertical: 103.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                RegisterText(
-                  register_txt: "Log In",
-                ),
-                SizedBox(
-                  height: 35,
-                ),
-                MsgText(
-                  msg_txt:
-                      "Welcome Back!\n let\'s login for explore continuous",
-                ),
-                SizedBox(
-                  height: 38,
-                ),
-                Container(
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                      color: Color.fromARGB(16, 0, 0, 0),
-                      offset: Offset(0, 3),
-                      blurRadius: 6.0,
-                    ),
-                  ], borderRadius: BorderRadius.circular(50)),
-                  child: TextFormField(
-                    controller:loginController.emailcontroller,
-                      decoration: InputDecoration(
-                          fillColor: white_color,
-                          filled: true,
-                          hintText: 'Enter Your Email',
-                          prefixIcon: Icon(
-                            Iconsax.sms,
-                            color: Main_color,
-                          ),
-                          enabledBorder: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(50),
-                              borderSide: BorderSide(color: white_color)))),
-                ),
-                SizedBox(
-                  height: 29,
-                ),
-                Container(
-                  decoration: BoxDecoration(boxShadow: [
-                    BoxShadow(
-                      color: Color.fromARGB(16, 0, 0, 0),
-                      offset: Offset(0, 3),
-                      blurRadius: 6.0,
-                    ),
-                  ], borderRadius: BorderRadius.circular(50)),
-                  child: TextFormField(
-                    controller:loginController.Passwordcontroller,
-                      decoration: InputDecoration(
-                    fillColor: white_color,
-                    filled: true,
-                    hintText: 'Enter Your Password',
-                    suffixIcon: Icon(
-                      Iconsax.eye,
-                      color: Main_color,
-                    ),
-                    prefixIcon: Icon(
-                      Iconsax.key,
-                      color: Main_color,
-                    ),
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(50),
-                        borderSide: BorderSide(color: white_color)),
-                  )),
-                ),
+      body: Padding(
+        padding: const EdgeInsetsDirectional.only(start: 16.0,end: 16.0,top: 30.0),
+        child: Form(
+          child: ListView(
+            children: 
+            [
 
-                SizedBox(
-                  height: 16.0,
-                ),
-
-                Padding(
-                  padding: const EdgeInsetsDirectional.only(start: 180),
-                  child: TextButton(
-                    onPressed: () {
-                      Navigator.push(context,
-                          MaterialPageRoute(builder: (BuildContext context) {
-                        return VerificationPage();
-                      }));
-                    },
-                    child: Text(
-                      'Forgot Password?',
-                      style: TextStyle(
-                        fontSize: 14.0,
-                        fontFamily: 'Poppins',
-                      ),
+              RegisterText(
+                register_txt: "Log In",
+              ),
+              SizedBox(
+                height: 35,
+              ),
+              MsgText(
+                msg_txt:
+                    "Welcome Back!\n let\'s login for explore continuous",
+              ),
+              SizedBox(
+                height: 38,
+              ),
+              Container(
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(16, 0, 0, 0),
+                    offset: Offset(0, 3),
+                    blurRadius: 6.0,
+                  ),
+                ], borderRadius: BorderRadius.circular(50)),
+                child: TextFormField(
+                  controller:loginController.emailcontroller,
+                    decoration: InputDecoration(
+                        fillColor: white_color,
+                        filled: true,
+                        hintText: 'Enter Your Email',
+                        prefixIcon: Icon(
+                          Iconsax.sms,
+                          color: Main_color,
+                        ),
+                        enabledBorder: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(50),
+                            borderSide: BorderSide(color: white_color)))),
+              ),
+              SizedBox(
+                height: 29,
+              ),
+              Container(
+                decoration: BoxDecoration(boxShadow: [
+                  BoxShadow(
+                    color: Color.fromARGB(16, 0, 0, 0),
+                    offset: Offset(0, 3),
+                    blurRadius: 6.0,
+                  ),
+                ], borderRadius: BorderRadius.circular(50)),
+                child: TextFormField(
+                  controller:loginController.Passwordcontroller,
+                    decoration: InputDecoration(
+                  fillColor: white_color,
+                  filled: true,
+                  hintText: 'Enter Your Password',
+                  suffixIcon: Icon(
+                    Iconsax.eye,
+                    color: Main_color,
+                  ),
+                  prefixIcon: Icon(
+                    Iconsax.key,
+                    color: Main_color,
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(50),
+                      borderSide: BorderSide(color: white_color)),
+                )),
+              ),
+        
+              SizedBox(
+                height: 16.0,
+              ),
+        
+              Padding(
+                padding: const EdgeInsetsDirectional.only(start: 180),
+                child: TextButton(
+                  onPressed: () {
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (BuildContext context) {
+                      return VerificationPage();
+                    }));
+                  },
+                  child: Text(
+                    'Forgot Password?',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      fontFamily: 'Poppins',
                     ),
                   ),
                 ),
-                // SizedBox(height: 29,),
-                RegisterButton(
-                  navigate: () {loginController.isloding?CircularProgressIndicator():loginController.loginwithemail();
-                    // Navigator.push(context,
-                    //     MaterialPageRoute(builder: (BuildContext context) {
-                    //   return HomePage();
-                    // }));
-                  },
-                  register_txt: 'Log In',
-                ),
-                SizedBox(
-                  height: 32,
-                ),
-                RegisterDivider(),
-                SizedBox(
-                  height: 33,
-                ),
-                GoogleButton(),
-                SizedBox(
-                  height: 20,
-                ),
-                HaveAccount(
-                  txt1: "Don\'t have an account?",
-                  txt2: "Sign Up here",
-                  register: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) {
-                          return SignupPage();
-                        },
-                      ),
-                    );
-                  },
-                ),
-              ],
-            ),
+              ),
+              // SizedBox(height: 29,),
+              RegisterButton(
+                navigate: () {loginController.isloding?CircularProgressIndicator():loginController.loginwithemail();
+                  // Navigator.push(context,
+                  //     MaterialPageRoute(builder: (BuildContext context) {
+                  //   return HomePage();
+                  // }));
+                },
+                register_txt: 'Log In',
+              ),
+              SizedBox(
+                height: 32,
+              ),
+              RegisterDivider(),
+              SizedBox(
+                height: 33,
+              ),
+              GoogleButton(),
+              SizedBox(
+                height: 20,
+              ),
+              HaveAccount(
+                txt1: "Don\'t have an account?",
+                txt2: "Sign Up here",
+                register: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (BuildContext context) {
+                        return SignupPage();
+                      },
+                    ),
+                  );
+                },
+              ),
+            ],
           ),
         ),
       ),
