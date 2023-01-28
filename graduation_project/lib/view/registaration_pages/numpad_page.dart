@@ -123,9 +123,8 @@ class _OtpScreenState extends State<OtpScreen> {
         padding: EdgeInsets.only(
           bottom: 20.0,
         ),
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child:
+          ListView(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -202,35 +201,13 @@ class _OtpScreenState extends State<OtpScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-
-                  // remove this container 
                   Container(
                     width: 60.0,
-                    child:IconButton(
-                      onPressed: (){
-                         Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (BuildContext context) {
-                          return ResetPassword();
-                        },
-                      ),
-                    );
-                      }, 
-                      icon: Icon(
-                        Iconsax.direct_left,
-                        color: Main_color,
-                        size: 40,)),
+                    child: MaterialButton(
+                      onPressed: null,
+                      child: SizedBox(),
+                    ),
                   ),
-
-                  //// unhash this code and remove the above icon
-                  // Container(
-                  //   width: 60.0,
-                  //   child: MaterialButton(
-                  //     onPressed: null,
-                  //     child: SizedBox(),
-                  //   ),
-                  // ),
 
                   KeyboardNumber(
                     n: 0,
@@ -257,12 +234,11 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 151,),
             ],
           ),
         ),
       ),
-    ));
+    );
   }
 
   clearPin() {
