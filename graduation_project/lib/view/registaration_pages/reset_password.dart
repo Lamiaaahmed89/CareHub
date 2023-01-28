@@ -32,17 +32,17 @@ class ResetPassword extends StatelessWidget {
           ),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Column(
-            children: [
-              SvgPicture.asset(
-                'assets/images/image_login/Login-bro.svg',
-                width: 343,
-                // height: 262.25
-              ),
-              Text(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: ListView(
+          children: [
+            SvgPicture.asset(
+              'assets/images/image_login/Login-bro.svg',
+              width: 343,
+              // height: 262.25
+            ),
+            Center(
+              child: Text(
                 'Create new password',
                 style: TextStyle(
                   fontSize: 16,
@@ -51,12 +51,16 @@ class ResetPassword extends StatelessWidget {
                   color: Main_color,
                 ),
               ),
-              Text(
+            ),
+            Center(
+              child: Text(
                 'Your new password must be different',
                 style: TextStyle(
                     fontSize: 14.0, fontFamily: 'Poppins', color: Second_color),
               ),
-              Text(
+            ),
+            Center(
+              child: Text(
                 'from previous used passwords',
                 style: TextStyle(
                   fontSize: 14.0,
@@ -64,36 +68,33 @@ class ResetPassword extends StatelessWidget {
                   color: Second_color,
                 ),
               ),
-              SizedBox(
-                height: 17.0,
+            ),
+            SizedBox(
+              height: 17.0,
+            ),
+            InputField(
+              hint_text: 'Enter Your Password,',
+              prefix: Icon(
+                Iconsax.key,
+                color: Main_color,
               ),
-              InputField(
-                hint_text: 'Enter Your Password,',
-                prefix: Icon(
-                  Iconsax.key,
-                  color: Main_color,
-                ),
-                suffix: Icon(
-                  Iconsax.eye,
-                  color: Main_color,
-                ),
+              suffix: Icon(
+                Iconsax.eye,
+                color: Main_color,
               ),
-              SizedBox(
-                height: 32,
-              ),
-              RegisterButton(
-                navigate: () {
-                  Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                  return PasswordUpdated();
-              }));
-                }, 
-                register_txt: 'Create'),
-              SizedBox(
-                height: 176,
-              ),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 32,
+            ),
+            RegisterButton(
+              navigate: () {
+                Navigator.push(context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                return PasswordUpdated();
+            }));
+              }, 
+              register_txt: 'Create'),
+          ],
         ),
       ),
     );
