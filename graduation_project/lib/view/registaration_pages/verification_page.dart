@@ -31,53 +31,55 @@ class VerificationPage extends StatelessWidget {
               fontSize: 16, fontWeight: FontWeight.w500, color: Second_color),
         ),
       ),
-      body: SingleChildScrollView(
-        child: Padding(
-          padding:
-              const EdgeInsetsDirectional.only(start: 16.0, end: 16.0, top: 24),
-          child: Column(
-            children: [
-              SvgPicture.asset(
-                'assets/images/image_login/Forgot password-bro.svg',
-                width: 342,
-              ),
-              Text(
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 16.0),
+        child: ListView(
+          children: [
+            SvgPicture.asset(
+              'assets/images/image_login/Forgot password-bro.svg',
+              width: 342,
+            ),
+            Center(
+              child: Text(
                 'Don\'t worry',
                 style: TextStyle(fontSize: 14, color: Second_color),
               ),
-              Text(
+            ),
+            Center(
+              child: Text(
                 'Enter your email and we\'ll send you',
                 style: TextStyle(fontSize: 14, color: Second_color),
               ),
-              Text(
+            ),
+            Center(
+              child: Text(
                 'a verification code to reset your password',
                 style: TextStyle(fontSize: 14, color: Second_color),
               ),
-              SizedBox(
-                height: 32,
+            ),
+            SizedBox(
+              height: 32,
+            ),
+            InputField(
+              hint_text: 'Enter Your Email',
+              prefix: Icon(
+                Iconsax.sms,
+                color: Main_color,
               ),
-              InputField(
-                hint_text: 'Enter Your Email',
-                prefix: Icon(
-                  Iconsax.sms,
-                  color: Main_color,
-                ),
-              ),
-              SizedBox(
-                height: 32,
-              ),
-              RegisterButton(
-                navigate: (){
-                  Navigator.push(context,
-                  MaterialPageRoute(builder: (BuildContext context) {
-                  return NumPad();
-              }));
-                },
-                register_txt: 'Send'),
-              
-              SizedBox(height: 142.5,),
-            ],
-          ),
+            ),
+            SizedBox(
+              height: 32,
+            ),
+            RegisterButton(
+              navigate: (){
+                Navigator.push(context,
+                MaterialPageRoute(builder: (BuildContext context) {
+                return NumPad();
+            }));
+              },
+              register_txt: 'Send'),
+              Spacer(),
+          ],
         ),
       ),
     );
