@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
-import 'package:graduation_project/view/registaration_pages/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
+
 import '../../constants/colors.dart';
 
 

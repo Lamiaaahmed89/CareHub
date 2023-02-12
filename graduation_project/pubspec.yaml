@@ -44,6 +44,7 @@ dependencies:
   responsive_framework: ^0.2.0
   iconsax: ^0.0.8
   http: ^0.13.5
+  animated_text_kit: ^4.2.2
 
 dev_dependencies:
   flutter_test:
@@ -72,7 +73,6 @@ flutter:
     - assets/images/image_login/
     - assets/images/
     - assets/icons/
-    - assets/images/
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

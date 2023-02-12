@@ -7,30 +7,36 @@ import 'package:graduation_project/component/register_divider.dart';
 import 'package:graduation_project/component/register_text.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/registaration_pages/home_page.dart';
-import 'package:graduation_project/view/registaration_pages/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/signUp_pages/user_information.dart';
+
 import 'package:iconsax/iconsax.dart';
 
 class SignupPage extends StatelessWidget {
   const SignupPage({super.key});
+
+  static String id = 'SignupPage';
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 16.0,vertical: 30.0),
+        padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 30.0),
         child: Form(
           child: ListView(
             children: [
-              RegisterText(register_txt: "Sign Up",),
+              RegisterText(
+                register_txt: "Sign Up",
+              ),
               SizedBox(
                 height: 35,
               ),
               MsgText(
-                msg_txt: "Let\'s Get Started\nCreate an account to get all features",
+                msg_txt:
+                    "Let\'s Get Started\nCreate an account to get all features",
               ),
-               SizedBox(
+              SizedBox(
                 height: 38,
               ),
               InputField(
@@ -57,12 +63,9 @@ class SignupPage extends StatelessWidget {
               SizedBox(
                 height: 40.0,
               ),
-               RegisterButton(
+              RegisterButton(
                 navigate: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                    return HomePage();
-                  }));
+                  Navigator.pushNamed(context, UserInformation.id);
                 },
                 register_txt: 'Sign Up',
               ),
@@ -81,10 +84,7 @@ class SignupPage extends StatelessWidget {
                 txt1: "Already have account?",
                 txt2: "Log In",
                 register: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                    return LoginPage();
-                  }));
+                  Navigator.pushNamed(context, LoginPage.id);
                 },
               ),
             ],

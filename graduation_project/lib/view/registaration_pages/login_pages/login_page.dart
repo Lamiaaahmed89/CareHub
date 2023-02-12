@@ -9,12 +9,16 @@ import 'package:graduation_project/component/register_divider.dart';
 import 'package:graduation_project/component/register_text.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/registaration_pages/signUp_page.dart';
-import 'package:graduation_project/view/registaration_pages/verification_page.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/verification_page.dart';
+import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_page.dart';
+
+
 import 'package:iconsax/iconsax.dart';
 
 class LoginPage extends StatelessWidget {
   LoginController loginController = Get.put(LoginController());
+
+  static String id = 'LoginPage';
 
   @override
   Widget build(BuildContext context) {
@@ -26,12 +30,11 @@ class LoginPage extends StatelessWidget {
       //   elevation: 0.0,
       // ),
       body: Padding(
-        padding: const EdgeInsetsDirectional.only(start: 16.0,end: 16.0,top: 30.0),
+        padding:
+            const EdgeInsetsDirectional.only(start: 16.0, end: 16.0, top: 30.0),
         child: Form(
           child: ListView(
-            children: 
-            [
-
+            children: [
               RegisterText(
                 register_txt: "Log In",
               ),
@@ -39,8 +42,7 @@ class LoginPage extends StatelessWidget {
                 height: 35,
               ),
               MsgText(
-                msg_txt:
-                    "Welcome Back!\n let\'s login for explore continuous",
+                msg_txt: "Welcome Back!\n let\'s login for explore continuous",
               ),
               SizedBox(
                 height: 38,
@@ -54,7 +56,7 @@ class LoginPage extends StatelessWidget {
                   ),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
-                  controller:loginController.emailcontroller,
+                    controller: loginController.emailcontroller,
                     decoration: InputDecoration(
                         fillColor: white_color,
                         filled: true,
@@ -79,37 +81,34 @@ class LoginPage extends StatelessWidget {
                   ),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
-                  controller:loginController.Passwordcontroller,
+                    controller: loginController.Passwordcontroller,
                     decoration: InputDecoration(
-                  fillColor: white_color,
-                  filled: true,
-                  hintText: 'Enter Your Password',
-                  suffixIcon: Icon(
-                    Iconsax.eye,
-                    color: Main_color,
-                  ),
-                  prefixIcon: Icon(
-                    Iconsax.key,
-                    color: Main_color,
-                  ),
-                  enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(50),
-                      borderSide: BorderSide(color: white_color)),
-                )),
+                      fillColor: white_color,
+                      filled: true,
+                      hintText: 'Enter Your Password',
+                      suffixIcon: Icon(
+                        Iconsax.eye,
+                        color: Main_color,
+                      ),
+                      prefixIcon: Icon(
+                        Iconsax.key,
+                        color: Main_color,
+                      ),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide: BorderSide(color: white_color)),
+                    )),
               ),
-        
+
               SizedBox(
                 height: 16.0,
               ),
-        
+
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 180),
                 child: TextButton(
                   onPressed: () {
-                    Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return VerificationPage();
-                    }));
+                    Navigator.pushNamed(context, VerificationPage.id);
                   },
                   child: Text(
                     'Forgot Password?',
@@ -122,7 +121,10 @@ class LoginPage extends StatelessWidget {
               ),
               // SizedBox(height: 29,),
               RegisterButton(
-                navigate: () {loginController.isloding?CircularProgressIndicator():loginController.loginwithemail();
+                navigate: () {
+                  loginController.isloding
+                      ? CircularProgressIndicator()
+                      : loginController.loginwithemail();
                   // Navigator.push(context,
                   //     MaterialPageRoute(builder: (BuildContext context) {
                   //   return HomePage();
@@ -145,14 +147,7 @@ class LoginPage extends StatelessWidget {
                 txt1: "Don\'t have an account?",
                 txt2: "Sign Up here",
                 register: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (BuildContext context) {
-                        return SignupPage();
-                      },
-                    ),
-                  );
+                  Navigator.pushNamed(context, SignupPage.id);
                 },
               ),
             ],
