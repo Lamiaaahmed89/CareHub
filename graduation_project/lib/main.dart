@@ -4,11 +4,11 @@ import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:graduation_project/view/communication_pages/audio_call.dart';
 import 'package:graduation_project/view/communication_pages/audio_call_answer.dart';
 import 'package:graduation_project/view/no_connection.dart';
-import 'package:graduation_project/view/registaration_pages/birthdate.dart';
 import 'package:graduation_project/view/registaration_pages/home_page.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/numpad_page.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/verification_page.dart';
+import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_page.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/user_information.dart';
 
@@ -37,7 +37,7 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily:'Poppins'),
-      initialRoute: AudioCallAnswer.id,
+      initialRoute: SignupPage.id,
     );
   }
 }
