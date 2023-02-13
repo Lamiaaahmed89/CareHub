@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:graduation_project/view/registaration_pages/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/numpad_page.dart';
+import 'package:graduation_project/view/registaration_pages/onboardin.dart';
+import 'package:graduation_project/view/registaration_pages/password_updated.dart';
+import 'package:graduation_project/view/registaration_pages/reset_password.dart';
+import 'package:graduation_project/view/registaration_pages/signUp_page.dart';
+import 'package:graduation_project/view/registaration_pages/verification_page.dart';
 
 
 void main() {
@@ -15,7 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily:'Poppins'),
-      home:LoginPage(),
+      home:ResetPassword(),
     );
   }
 }
