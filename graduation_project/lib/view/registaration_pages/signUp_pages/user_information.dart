@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
+import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_page.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -26,6 +27,7 @@ class UserInformation extends StatelessWidget {
         actions: [
           TextButton(
             onPressed: () {
+              Navigator.pushNamed(context, BirthDatePage.id);
             },
             child: Text(
               'Next',
