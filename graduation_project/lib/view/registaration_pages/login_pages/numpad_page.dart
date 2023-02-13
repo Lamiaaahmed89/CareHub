@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/registaration_pages/reset_password.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/reset_password.dart';
 import 'package:iconsax/iconsax.dart';
 
 class NumPad extends StatefulWidget {
   const NumPad({super.key});
+
+  static String id = 'NumPad';
 
   @override
   State<NumPad> createState() => _NumPadState();
@@ -54,14 +56,13 @@ class OtpScreen extends StatefulWidget {
 }
 
 class _OtpScreenState extends State<OtpScreen> {
-  List<String> CurrentPin = ["", "", "", "","",""];
+  List<String> CurrentPin = ["", "", "", "", "", ""];
   TextEditingController pinOneController = TextEditingController();
   TextEditingController pinTwoController = TextEditingController();
   TextEditingController pinThreeController = TextEditingController();
   TextEditingController pinFourController = TextEditingController();
   TextEditingController pinFiveController = TextEditingController();
   TextEditingController pinSixController = TextEditingController();
-
 
   var Outline = OutlineInputBorder(
       borderRadius: BorderRadius.circular(60.0),
@@ -88,23 +89,31 @@ class _OtpScreenState extends State<OtpScreen> {
                   SizedBox(
                     height: 10.0,
                   ),
-                  Text('Check your email. We\'ve sent\n you the code at your email',
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Second_color
-                  ),),
-                  SizedBox(height: 27.0,),
+                  Text(
+                    'Check your email. We\'ve sent\n you the code at your email',
+                    style: TextStyle(fontSize: 14.0, color: Second_color),
+                  ),
+                  SizedBox(
+                    height: 27.0,
+                  ),
                   buildPinRow(),
-                  SizedBox(height: 24.0,),
+                  SizedBox(
+                    height: 24.0,
+                  ),
                   TextButton(
-                    onPressed: (){}, 
-                    child: Text('Send me a new code',
-                    style: TextStyle(
-                      fontSize: 12,
-                      fontWeight: FontWeight.w500,
-                      color: Main_color,
-                    ),),),
-                  SizedBox(height: 65,),
+                    onPressed: () {},
+                    child: Text(
+                      'Send me a new code',
+                      style: TextStyle(
+                        fontSize: 12,
+                        fontWeight: FontWeight.w500,
+                        color: Main_color,
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 65,
+                  ),
                   buildNumberPad(),
                 ],
               ),
@@ -117,14 +126,13 @@ class _OtpScreenState extends State<OtpScreen> {
 
   buildNumberPad() {
     return Expanded(
-        child: Container(
-      alignment: Alignment.bottomCenter,
-      child: Padding(
-        padding: EdgeInsets.only(
-          bottom: 20.0,
-        ),
-        child:
-          ListView(
+      child: Container(
+        alignment: Alignment.bottomCenter,
+        child: Padding(
+          padding: EdgeInsets.only(
+            bottom: 20.0,
+          ),
+          child: ListView(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -149,7 +157,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 32,),
+              SizedBox(
+                height: 32,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -173,7 +183,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 32,),
+              SizedBox(
+                height: 32,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -197,7 +209,9 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              SizedBox(height: 32,),
+              SizedBox(
+                height: 32,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -208,7 +222,6 @@ class _OtpScreenState extends State<OtpScreen> {
                       child: SizedBox(),
                     ),
                   ),
-
                   KeyboardNumber(
                     n: 0,
                     onPressed: () {
@@ -303,32 +316,41 @@ class _OtpScreenState extends State<OtpScreen> {
           outlineInputBorder: Outline,
           textEditingController: pinOneController,
         ),
-        SizedBox(width: 5.0,),
+        SizedBox(
+          width: 5.0,
+        ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinTwoController,
         ),
-        SizedBox(width: 5.0,),
+        SizedBox(
+          width: 5.0,
+        ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinThreeController,
         ),
-        SizedBox(width: 5.0,),
+        SizedBox(
+          width: 5.0,
+        ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinFourController,
         ),
-        SizedBox(width: 5.0,),
+        SizedBox(
+          width: 5.0,
+        ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinFiveController,
         ),
-        SizedBox(width: 5.0,),
+        SizedBox(
+          width: 5.0,
+        ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinSixController,
         ),
-        
       ],
     );
   }
