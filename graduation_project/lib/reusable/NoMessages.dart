@@ -10,7 +10,7 @@ Widget NoMessages(wiidth, heiight) {
       child: Column(
         children: [
           SvgPicture.asset(
-            "assets/Mobile inbox.svg",
+            "assets/images/Mobile inbox.svg",
             // width: 300,
             height: (heiight * 50.714) / 100,
           ),

@@ -65,12 +65,12 @@ class Review extends StatelessWidget {
                                   width: 30,
                                   height: 30,
                                   child:
-                                      SvgPicture.asset("assets/star fill.svg"))
+                                      SvgPicture.asset("assets/images/star fill.svg"))
                               : Container(
                                   width: 30,
                                   height: 30,
                                   child: SvgPicture.asset(
-                                      "assets/star stroke.svg"))),
+                                      "assets/images/star stroke.svg"))),
                       GestureDetector(
                           onTap: (() {
                             controller.Rating(2);
@@ -83,12 +83,12 @@ class Review extends StatelessWidget {
                                   width: 30,
                                   height: 30,
                                   child:
-                                      SvgPicture.asset("assets/star fill.svg"))
+                                      SvgPicture.asset("assets/images/star fill.svg"))
                               : Container(
                                   width: 30,
                                   height: 30,
                                   child: SvgPicture.asset(
-                                      "assets/star stroke.svg"))),
+                                      "assets/images/star stroke.svg"))),
                       GestureDetector(
                           onTap: (() {
                             controller.Rating(3);
@@ -101,12 +101,12 @@ class Review extends StatelessWidget {
                                   width: 30,
                                   height: 30,
                                   child:
-                                      SvgPicture.asset("assets/star fill.svg"))
+                                      SvgPicture.asset("assets/images/star fill.svg"))
                               : Container(
                                   width: 30,
                                   height: 30,
                                   child: SvgPicture.asset(
-                                      "assets/star stroke.svg"))),
+                                      "assets/images/star stroke.svg"))),
                       GestureDetector(
                           onTap: (() {
                             controller.Rating(4);
@@ -119,12 +119,12 @@ class Review extends StatelessWidget {
                                   width: 30,
                                   height: 30,
                                   child:
-                                      SvgPicture.asset("assets/star fill.svg"))
+                                      SvgPicture.asset("assets/images/star fill.svg"))
                               : Container(
                                   width: 30,
                                   height: 30,
                                   child: SvgPicture.asset(
-                                      "assets/star stroke.svg"))),
+                                      "assets/images/star stroke.svg"))),
                       GestureDetector(
                           onTap: (() {
                             controller.Rating(5);
@@ -137,12 +137,12 @@ class Review extends StatelessWidget {
                                   width: 30,
                                   height: 30,
                                   child:
-                                      SvgPicture.asset("assets/star fill.svg"))
+                                      SvgPicture.asset("assets/images/star fill.svg"))
                               : Container(
                                   width: 30,
                                   height: 30,
                                   child: SvgPicture.asset(
-                                      "assets/star stroke.svg"))),
+                                      "assets/images/star stroke.svg"))),
                     ],
                   ),
                 )),

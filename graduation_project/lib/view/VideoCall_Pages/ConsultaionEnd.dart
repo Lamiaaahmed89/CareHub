@@ -50,7 +50,7 @@ class ConsultaionEnd extends StatelessWidget {
                   width: widtth * .64,
                   height: heightt * .25,
                   child: SvgPicture.asset(
-                    "assets/time out.svg",
+                    "assets/images/time out.svg",
                   ),
                 ),
                 Container(
