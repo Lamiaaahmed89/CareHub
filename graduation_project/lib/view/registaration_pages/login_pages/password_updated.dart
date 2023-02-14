@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:graduation_project/view/screens/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
+
 import 'package:iconsax/iconsax.dart';
 
 class PasswordUpdated extends StatelessWidget {
@@ -10,6 +11,8 @@ class PasswordUpdated extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white_color,
       appBar: AppBar(
@@ -33,10 +36,11 @@ class PasswordUpdated extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: Column(children: [
+        child: ListView(
+        children: [
           SvgPicture.asset(
             'assets/images/image_login/done.svg',
-            width: 343,
+            width:h*0.45 ,
           ),
           Text(
             'Password Update',
@@ -61,10 +65,7 @@ class PasswordUpdated extends StatelessWidget {
           ),
           RegisterButton(
               navigate: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (BuildContext context) {
-                  return LoginPage();
-                }));
+                Navigator.pushNamed(context, LoginPage.id);
               },
               register_txt: 'Log In'),
         ]),

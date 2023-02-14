@@ -19,7 +19,7 @@ class UpComming extends StatelessWidget {
       appBar: appBar("My Appointment"),
       body: Column(
         children: [
-          HomeBar(width, height),
+          HomeBar(width, height,context),
           // ListView.builder(itemBuilder: ),
           AppListView(TryNum),
         ],

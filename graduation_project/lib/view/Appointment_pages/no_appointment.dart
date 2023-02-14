@@ -20,7 +20,7 @@ class NOAppointment extends StatelessWidget {
       appBar: appBar("My Appointment"),
       body: Column(
         children: [
-          HomeBar(width, height),
+          HomeBar(width, height,context),
           Container(
             // color: Colors.amber,
             width: (width * 90.467) / 100,
