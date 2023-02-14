@@ -32,7 +32,7 @@ class ChooseBlood extends StatelessWidget {
                           height: heightt * .1,
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            "assets/blood.svg",
+                            "assets/images/blood.svg",
                           ),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,

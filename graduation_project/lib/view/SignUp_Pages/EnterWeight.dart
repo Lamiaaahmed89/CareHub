@@ -74,8 +74,8 @@ class EnterWeight extends StatelessWidget {
               GetBuilder<SignUpController>(
                 builder: (controller) => SvgPicture.asset(
                   controller.Gender == "male"
-                      ? "assets/man.svg"
-                      : "assets/woman.svg",
+                      ? "assets/images/man.svg"
+                      : "assets/images/woman.svg",
                   color: Color(0x80AEB2BB),
                 ),
               ),
@@ -83,7 +83,7 @@ class EnterWeight extends StatelessWidget {
                 padding:
                     EdgeInsets.only(top: heightt * .02, bottom: heightt * .01),
                 child: SvgPicture.asset(
-                  "assets/ruler-weight.svg",
+                  "assets/images/ruler-weight.svg",
                 ),
               ),
             ],

@@ -12,7 +12,7 @@ Widget Blood1(String group1, Color TextColor1, SvgColor1) {
     children: [
       SimpleShadow(
         child: SvgPicture.asset(
-          "assets/bloodimg.svg",
+          "assets/images/bloodimg.svg",
           color: SvgColor1,
         ),
         opacity: 0.2, // Default: 0.5

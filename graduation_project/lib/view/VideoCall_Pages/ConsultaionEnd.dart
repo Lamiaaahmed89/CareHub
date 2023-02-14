@@ -1,11 +1,17 @@
+
+import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import 'package:graduation_project/view/VideoCall_Pages/WriteReview.dart';
+import 'package:hexcolor/hexcolor.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
-class AllowLocation extends StatelessWidget {
-  const AllowLocation({super.key});
+class ConsultaionEnd extends StatelessWidget {
+  const ConsultaionEnd({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -18,8 +24,8 @@ class AllowLocation extends StatelessWidget {
           padding: EdgeInsets.symmetric(
               vertical: heightt * .15, horizontal: widtth * .07),
           child: Container(
-            width: widtth * .85,
-            height: heightt * .57,
+            width: widtth * .75,
+            height: heightt * .50,
             padding: EdgeInsets.only(
                 left: widtth * .016,
                 right: widtth * .016,
@@ -40,17 +46,13 @@ class AllowLocation extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  width: widtth * .7,
-                  height: heightt * .3,
+                  // color: Colors.amber,
+                  width: widtth * .64,
+                  height: heightt * .25,
                   child: SvgPicture.asset(
-                    "assets/images/Current location.svg",
+                    "assets/time out.svg",
                   ),
                 ),
-                Text(
-                  "Allow Loctaion?",
-                  style: TextStyle(fontWeight: FontWeight.w500),
-                ),
-                Spacer(),
                 Container(
                   // color: Colors.amber,
 
@@ -64,15 +66,18 @@ class AllowLocation extends StatelessWidget {
                             color: HexColor("#AEB2BB"),
                             fontWeight: FontWeight.w400),
                         textAlign: TextAlign.center,
-                        "We need your permission to access to your location"),
+                        "The consultation session has ended"),
                   ),
                 ),
-                Spacer(),
-                Spacer(),
+                SizedBox(
+                  height: heightt * .035,
+                ),
                 ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(Review());
+                    },
                     child: Text(
-                      "Allow location",
+                      "Leave a Review",
                       style:
                           TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
                     ),
@@ -84,17 +89,19 @@ class AllowLocation extends StatelessWidget {
                           HexColor("#285FFA"),
                         ),
                         padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                            vertical: heightt * .02, horizontal: widtth * .25)),
+                            vertical: heightt * .02, horizontal: widtth * .20)),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         )))),
-                Spacer(),
+                SizedBox(
+                  height: heightt * .030,
+                ),
                 TextButton(
                     onPressed: (() {}),
                     child: Text(
-                      "Do not Allow",
+                      "Back to Home",
                       style:
                           TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
                     ))

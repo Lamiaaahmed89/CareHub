@@ -28,7 +28,7 @@ class ChooseGender extends StatelessWidget {
               height: heightt * .1,
               alignment: Alignment.center,
               child: SvgPicture.asset(
-                "assets/gender.svg",
+                "assets/images/gender.svg",
               ),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -51,7 +51,7 @@ class ChooseGender extends StatelessWidget {
                               child: Gender(
                                   widtth,
                                   heightt,
-                                  "assets/man.svg",
+                                  "assets/images/man.svg",
                                   Text(
                                     "Male",
                                     style: TextStyle(
@@ -74,7 +74,7 @@ class ChooseGender extends StatelessWidget {
                               child: Gender(
                                   widtth,
                                   heightt,
-                                  "assets/woman.svg",
+                                  "assets/images/woman.svg",
                                   Text(
                                     "Female",
                                     style: TextStyle(
