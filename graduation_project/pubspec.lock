@@ -240,6 +240,15 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "5.1.0"
+<<<<<<< HEAD
+  simple_shadow:
+    dependency: "direct main"
+    description:
+      name: simple_shadow
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "0.3.1"
+=======
   platform:
     dependency: transitive
     description:
@@ -317,6 +326,7 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.3"
+>>>>>>> baad4c6fc60b3173811ed5942642392db87ba488
   sky_engine:
     dependency: transitive
     description: flutter
