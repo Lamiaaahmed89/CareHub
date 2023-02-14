@@ -43,13 +43,9 @@ dependencies:
   flutter_svg_provider: ^1.0.3
   responsive_framework: ^0.2.0
   iconsax: ^0.0.8
-<<<<<<< HEAD
-  simple_shadow: ^0.3.1
-=======
   http: ^0.13.5
   animated_text_kit: ^4.2.2
   flutter_holo_date_picker: ^1.1.0
->>>>>>> baad4c6fc60b3173811ed5942642392db87ba488
 
 dev_dependencies:
   flutter_test:
