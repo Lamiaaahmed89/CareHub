@@ -7,9 +7,8 @@ Widget Buttons(String Btn1, String Btn2) {
     child: Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
-        SizedBox(
-          width: 143,
-          height: 28,
+        Expanded(
+          flex: 12,
           child: ElevatedButton(
               onPressed: () {},
               child: Text(
@@ -28,9 +27,9 @@ Widget Buttons(String Btn1, String Btn2) {
                     borderRadius: BorderRadius.circular(18.0),
                   )))),
         ),
-        SizedBox(
-          width: 143,
-          height: 28,
+        Expanded(flex: 1, child: SizedBox()),
+        Expanded(
+          flex: 11,
           child: ElevatedButton(
               onPressed: () {},
               child: Text(

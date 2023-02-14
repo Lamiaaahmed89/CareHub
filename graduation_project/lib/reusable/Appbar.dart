@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
-PreferredSizeWidget Appbar() {
+
+PreferredSizeWidget appBar(String Title) {
   return AppBar(
     backgroundColor: Colors.white,
     elevation: 0,
@@ -10,8 +11,11 @@ PreferredSizeWidget Appbar() {
       color: HexColor("#252632"),
     ),
     title: Text(
-      "My Appointment",
-      style: TextStyle(color: HexColor("#252632"),fontWeight: FontWeight.w500,fontSize: 16),
+      "$Title",
+      style: TextStyle(
+          color: HexColor("#252632"),
+          fontSize: 16,
+          fontWeight: FontWeight.w500),
     ),
     centerTitle: true,
   );
