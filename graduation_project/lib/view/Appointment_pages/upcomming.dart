@@ -16,7 +16,7 @@ class UpComming extends StatelessWidget {
     width = size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: Appbar(),
+      appBar: appBar("My Appointment"),
       body: Column(
         children: [
           HomeBar(width, height,context),
