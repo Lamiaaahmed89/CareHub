@@ -15,6 +15,8 @@ class VerificationPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white_color,
       appBar: AppBar(
@@ -35,11 +37,12 @@ class VerificationPage extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: ListView(
+        child: Column(
           children: [
             SvgPicture.asset(
               'assets/images/image_login/Forgot password-bro.svg',
-              width: 342,
+              width: w,
+            height:h*0.45 ,
             ),
             Center(
               child: Text(
@@ -60,7 +63,7 @@ class VerificationPage extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 32,
+              height: 17,
             ),
             InputField(
               hint_text: 'Enter Your Email',

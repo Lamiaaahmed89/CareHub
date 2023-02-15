@@ -6,6 +6,8 @@ import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
+import '../constants/url.dart';
+
 class LoginController extends GetxController{
   TextEditingController emailcontroller=TextEditingController();
   TextEditingController Passwordcontroller=TextEditingController();
@@ -14,7 +16,7 @@ class LoginController extends GetxController{
   Future<void> loginwithemail()async{
       var header={'Content-Type':'application/json'};
       try{
-        var url=Uri.parse("http://carehubv1.somee.com/api/User/login");
+        var url=Uri.parse("$URL/login");
         Map body={
           "email":emailcontroller.text.trim(),
           "password":Passwordcontroller.text

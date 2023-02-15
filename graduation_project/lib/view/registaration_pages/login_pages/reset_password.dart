@@ -8,10 +8,10 @@ import 'package:graduation_project/view/registaration_pages/login_pages/password
 import 'package:iconsax/iconsax.dart';
 
 class ResetPassword extends StatelessWidget {
-  const ResetPassword({super.key});
-
   @override
   Widget build(BuildContext context) {
+    double h = MediaQuery.of(context).size.height;
+    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white_color,
       appBar: AppBar(
@@ -35,12 +35,12 @@ class ResetPassword extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: ListView(
+        child: Column(
           children: [
             SvgPicture.asset(
               'assets/images/image_login/Login-bro.svg',
-              width: 343,
-              // height: 262.25
+              width: w,
+            height:h*0.45 ,
             ),
             Center(
               child: Text(
@@ -57,7 +57,9 @@ class ResetPassword extends StatelessWidget {
               child: Text(
                 'Your new password must be different',
                 style: TextStyle(
-                    fontSize: 14.0, fontFamily: 'Poppins', color: Second_color),
+                    fontSize: 14.0,
+                    fontFamily: 'Poppins',
+                    color: Second_color),
               ),
             ),
             Center(
@@ -88,13 +90,13 @@ class ResetPassword extends StatelessWidget {
               height: 32,
             ),
             RegisterButton(
-              navigate: () {
-                Navigator.push(context,
-                MaterialPageRoute(builder: (BuildContext context) {
-                return PasswordUpdated();
-            }));
-              }, 
-              register_txt: 'Create'),
+                navigate: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (BuildContext context) {
+                    return PasswordUpdated();
+                  }));
+                },
+                register_txt: 'Create'),
           ],
         ),
       ),
