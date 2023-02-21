@@ -4,8 +4,8 @@ import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/AppointmentListView.dart';
 import 'package:graduation_project/reusable/HomeBar.dart';
 
-
 class UpComming extends StatelessWidget {
+  static String id = 'UpComming';
   UpComming({super.key});
   List TryNum = [1, 2, 3];
   var size, height, width;
@@ -19,7 +19,7 @@ class UpComming extends StatelessWidget {
       appBar: appBar("My Appointment"),
       body: Column(
         children: [
-          HomeBar(width, height,context),
+          HomeBar(width, height, context),
           // ListView.builder(itemBuilder: ),
           AppListView(TryNum),
         ],
