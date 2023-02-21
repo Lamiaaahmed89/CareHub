@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
+import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/user_information.dart';
 import 'package:flutter_holo_date_picker/flutter_holo_date_picker.dart';
 import 'package:iconsax/iconsax.dart';
@@ -19,33 +20,7 @@ class _BirthDatePageState extends State<BirthDatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
-      appBar: AppBar(
-        backgroundColor: white_color,
-        elevation: 0.0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, UserInformation.id);
-          },
-          icon: Icon(
-            Iconsax.arrow_left_2,
-            color: Second_color,
-          ),
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              
-            },
-            child: Text(
-              'Next',
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Main_color,
-              ),
-            ),
-          )
-        ],
-      ),
+      appBar: SignUpBar('Next', 'ToGender'),
       body:  ListView(
         children: [
           SizedBox(height: 25,),
