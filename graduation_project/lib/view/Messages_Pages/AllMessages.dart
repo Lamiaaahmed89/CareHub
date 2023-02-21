@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
@@ -9,6 +8,7 @@ import 'package:graduation_project/reusable/SearchBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class Messages extends StatelessWidget {
+  static String id = 'Messages';
   Messages({super.key});
   List v = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   @override
