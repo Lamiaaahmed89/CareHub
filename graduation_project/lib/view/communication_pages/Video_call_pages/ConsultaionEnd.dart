@@ -1,7 +1,6 @@
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/view/VideoCall_Pages/WriteReview.dart';
+import 'package:graduation_project/view/communication_pages/Video_call_pages/WriteReview.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'package:flutter/material.dart';
@@ -13,6 +12,7 @@ import 'package:iconsax/iconsax.dart';
 class ConsultaionEnd extends StatelessWidget {
   const ConsultaionEnd({super.key});
 
+  static String id = 'ConsultaionEnd';
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;

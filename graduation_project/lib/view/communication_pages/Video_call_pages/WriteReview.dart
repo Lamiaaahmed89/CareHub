@@ -30,7 +30,7 @@ class Review extends StatelessWidget {
               decoration: BoxDecoration(
                   shape: BoxShape.circle,
                   image: DecorationImage(
-                      image: AssetImage("assets/abdo.jpg"), fit: BoxFit.cover),
+                      image: AssetImage("assets/images/abdo.jpg"), fit: BoxFit.cover),
                   border: Border.all(color: HexColor("#285FFA"), width: 2)),
             ),
             SizedBox(

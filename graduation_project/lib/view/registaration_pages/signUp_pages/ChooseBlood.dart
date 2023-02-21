@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -7,9 +6,9 @@ import 'package:graduation_project/reusable/BloodGroups.dart';
 import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-
 class ChooseBlood extends StatelessWidget {
   const ChooseBlood({super.key});
+  static String id = 'ChooseBlood';
 
   @override
   Widget build(BuildContext context) {

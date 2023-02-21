@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -9,6 +8,7 @@ import 'package:hexcolor/hexcolor.dart';
 
 class ChooseGender extends StatelessWidget {
   ChooseGender({super.key});
+  static String id = 'ChooseGender';
 
   @override
   Widget build(BuildContext context) {

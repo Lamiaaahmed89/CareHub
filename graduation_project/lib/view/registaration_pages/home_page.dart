@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/component/home_container.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
+import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
@@ -57,6 +58,7 @@ class HomePage extends StatelessWidget {
           } else if (index == 1) {
           } else if (index == 2) {
           } else if (index == 3) {
+            Navigator.pushNamed(context, Messages.id);
           } else if (index == 4) {
             Navigator.pushNamed(context, LoginPage.id);
           }

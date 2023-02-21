@@ -6,6 +6,7 @@ import 'package:iconsax/iconsax.dart';
 
 class AllowLocation extends StatelessWidget {
   const AllowLocation({super.key});
+  static String id = 'AllowLocation';
 
   @override
   Widget build(BuildContext context) {
