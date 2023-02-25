@@ -1,44 +1,41 @@
-import 'dart:ui';
 
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/reusable/HomeBar.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:iconsax/iconsax.dart';
 
-class NOAppointment extends StatelessWidget {
-  NOAppointment({super.key});
-  var size, height, width;
+class NoNotifications extends StatelessWidget {
+  const NoNotifications({super.key});
+
   @override
   Widget build(BuildContext context) {
-    size = MediaQuery.of(context).size;
-    height = size.height;
-    width = size.width;
+    double widtth = MediaQuery.of(context).size.width;
+    double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appBar("My Appointment"),
-      body: Column(
-        children: [
-          HomeBar(width, height),
-          Container(
+      appBar: appBar("Notifications"),
+      body: Center(
+        child: Padding(
+          padding: EdgeInsets.only(top: heightt * .1),
+          child: Container(
             // color: Colors.amber,
-            width: (width * 90.467) / 100,
+            width: widtth * 0.85,
             child: Padding(
-              padding: EdgeInsets.only(top: height / 300),
+              padding: EdgeInsets.only(top: heightt / 300),
               child: Column(
                 children: [
                   SvgPicture.asset(
-                    "assets/images/Schedule.svg",
+                    "assets/notifications.svg",
                     // width: 300,
-                    height: (height * 50.714) / 100,
+                    height: (heightt * 50.714) / 100,
                   ),
                   Container(
-                    width: (width * 80.467) / 100,
+                    width: (widtth * .55),
                     child: Text(
-                      "You don't have docotors appointment scheduled at the moment",style: TextStyle(color: HexColor("#252632"),),
+                      "Opps, no notification yet!",
                       textAlign: TextAlign.center,
-                      
                     ),
                   ),
                   // Container(
@@ -51,8 +48,8 @@ class NOAppointment extends StatelessWidget {
                 ],
               ),
             ),
-          )
-        ],
+          ),
+        ),
       ),
     );
   }

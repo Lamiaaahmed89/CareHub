@@ -77,7 +77,7 @@ class HomePage extends StatelessWidget {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, UpComming.id);
+                      // Navigator.pushNamed(context, UpComming.id);
                     },
                     child: Text(
                       'see all',

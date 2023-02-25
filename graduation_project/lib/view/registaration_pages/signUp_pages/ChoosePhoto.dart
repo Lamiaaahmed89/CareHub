@@ -42,33 +42,26 @@ class ChoosePhoto extends StatelessWidget {
                             color: HexColor("#285FFA"),
                           ),
                         ),
-                        Padding(
-                            padding: EdgeInsets.only(
-                              top: 5,
-                            ),
-                            child: Text(
-                              "Upload profile picture",
-                              style: TextStyle(
-                                  fontSize: widtth * .038,
-                                  fontWeight: FontWeight.w400),
-                            )),
-                        Padding(
-                          padding: const EdgeInsets.all(0),
-                          child: Container(
-                            width: widtth * .30,
-                            height: heightt * .30,
-                            alignment: Alignment.center,
-                            child: IconButton(
-                                onPressed: () {},
-                                icon: Icon(
-                                  Iconsax.gallery_add,
-                                  size: widtth * .065,
-                                  color: HexColor("#252632"),
-                                )),
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              color: Color(0x33AEB2BB),
-                            ),
+                        Text(
+                          "Upload profile picture",
+                          style: TextStyle(
+                              fontSize: widtth * .038,
+                              fontWeight: FontWeight.w400),
+                        ),
+                        Container(
+                          width: widtth * .30,
+                          height: heightt * .30,
+                          alignment: Alignment.center,
+                          child: IconButton(
+                              onPressed: () {},
+                              icon: Icon(
+                                Iconsax.gallery_add,
+                                size: widtth * .065,
+                                color: HexColor("#252632"),
+                              )),
+                          decoration: BoxDecoration(
+                            shape: BoxShape.circle,
+                            color: Color(0x33AEB2BB),
                           ),
                         ),
                         Row(
@@ -116,12 +109,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "male") {
                                   if (controller.IMG1 == true) {
                                     return SvgPicture.asset(
-                                      "assets/images/man1-after.svg",
+                                      "assets/man1-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/images/man1-before.svg",
+                                      "assets/man1-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -129,12 +122,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "female") {
                                   if (controller.IMG1 == true) {
                                     return SvgPicture.asset(
-                                      "assets/images/woman1-after.svg",
+                                      "assets/woman1-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/images/woman1-before.svg",
+                                      "assets/woman1-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -149,12 +142,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "male") {
                                   if (controller.IMG2 == true) {
                                     return SvgPicture.asset(
-                                      "assets/images/man2-after.svg",
+                                      "assets/man2-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/images/man2-before.svg",
+                                      "assets/man2-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -162,12 +155,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "female") {
                                   if (controller.IMG2 == true) {
                                     return SvgPicture.asset(
-                                      "assets/images/woman2-after.svg",
+                                      "assets/woman2-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/images/woman2-before.svg",
+                                      "assets/woman2-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -185,12 +178,12 @@ class ChoosePhoto extends StatelessWidget {
                             if (controller.Gender == "male") {
                               if (controller.IMG3 == true) {
                                 return SvgPicture.asset(
-                                  "assets/images/man3-after.svg",
+                                  "assets/man3-after.svg",
                                   // color: Colors.amber,
                                 );
                               } else {
                                 return SvgPicture.asset(
-                                  "assets/images/man3-before.svg",
+                                  "assets/man3-before.svg",
                                   // color: Colors.amber,
                                 );
                               }
@@ -198,12 +191,12 @@ class ChoosePhoto extends StatelessWidget {
                             if (controller.Gender == "female") {
                               if (controller.IMG3 == true) {
                                 return SvgPicture.asset(
-                                  "assets/images/woman3-after.svg",
+                                  "assets/woman3-after.svg",
                                   // color: Colors.amber,
                                 );
                               } else {
                                 return SvgPicture.asset(
-                                  "assets/images/woman3-before.svg",
+                                  "assets/woman3-before.svg",
                                   // color: Colors.amber,
                                 );
                               }

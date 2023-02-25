@@ -1,0 +1,109 @@
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
+import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
+import 'package:iconsax/iconsax.dart';
+import 'package:lottie/lottie.dart';
+
+Widget Loading(widtth, heightt) {
+  return Padding(
+    padding: EdgeInsets.symmetric(vertical: heightt * .01),
+    child: Container(
+        width: widtth * .90,
+        height: 90,
+        padding: EdgeInsets.symmetric(horizontal: widtth * .03),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.all(Radius.circular(7)),
+          boxShadow: [
+            BoxShadow(
+              color: HexColor("#000000").withAlpha(35),
+              // spreadRadius: 5,
+              blurRadius: 6,
+              offset: Offset(0, 3), // changes position of shadow
+            ),
+          ],
+        ),
+        child: Row(
+          children: [
+            Container(
+              width: widtth * .12,
+              height: heightt * .08,
+              child: SvgPicture.asset("assets/Medical Tests.svg"),
+            ),
+
+            Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      top: heightt * .03,
+                      bottom: heightt * .02,
+                      left: widtth * .05),
+                  child: Text(
+                    "Uploading...",
+                    textAlign: TextAlign.start,
+                    style: TextStyle(color: HexColor("#285FFA"), fontSize: 12),
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: widtth * .05),
+                  child: Container(
+                    width: widtth * .47,
+                    decoration: BoxDecoration(
+                      color: HexColor("#f0f0f0"),
+                      borderRadius: BorderRadius.all(Radius.circular(7)),
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     color: HexColor("#000000").withAlpha(35),
+                      //     // spreadRadius: 5,
+                      //     blurRadius: 6,
+                      //     offset: Offset(0, 3), // changes position of shadow
+                      //   ),
+                      // ],
+                    ),
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: heightt * .002),
+                      child: Lottie.asset('assets/line loading.json',
+                          width: widtth * .07,
+                          height: heightt * .005,
+                          fit: BoxFit.fill),
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            // Stack(
+            //   children: [
+            //     Container(
+            //       // color: Colors.amber,
+            //       width: widtth * .4,
+            //       // height: 50,
+            //       child: Lottie.asset('assets/line loading.json'),
+            //     ),
+            //     Positioned(
+            //       top: heightt * .03,
+            //       left: widtth * .097,
+            // child: Text(
+            //   "Uploading...",
+            //   style: TextStyle(color: HexColor("#285FFA"), fontSize: 12),
+            // ),
+            //     ),
+            //   ],
+            // ),
+            Padding(
+                padding:
+                    EdgeInsets.only(left: widtth * .12, bottom: heightt * .05),
+                child: Container(
+                  // color: Colors.amber,
+                  width: widtth * .08,
+                  child: IconButton(
+                      onPressed: () {
+                        print("hi");
+                      },
+                      icon: Icon(Iconsax.close_circle)),
+                ))
+          ],
+        )),
+  );
+}
