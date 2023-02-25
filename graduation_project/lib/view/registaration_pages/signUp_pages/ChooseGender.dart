@@ -8,7 +8,6 @@ import 'package:hexcolor/hexcolor.dart';
 
 class ChooseGender extends StatelessWidget {
   ChooseGender({super.key});
-  static String id = 'ChooseGender';
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +27,7 @@ class ChooseGender extends StatelessWidget {
               height: heightt * .1,
               alignment: Alignment.center,
               child: SvgPicture.asset(
-                "assets/images/gender.svg",
+                "assets/gender.svg",
               ),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -36,65 +35,66 @@ class ChooseGender extends StatelessWidget {
               ),
             ),
             Padding(
-                padding: EdgeInsets.only(top: 5, bottom: heightt * .04),
-                child: Text(
-                  "What's your gender?",
-                  style: TextStyle(
-                      fontSize: widtth * .040, fontWeight: FontWeight.w400),
-                )),
-            Container(
-                child: GetBuilder<SignUpController>(
-                    builder: (controller) => Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              child: Gender(
-                                  widtth,
-                                  heightt,
-                                  "assets/images/man.svg",
-                                  Text(
-                                    "Male",
-                                    style: TextStyle(
-                                        color: controller.Mclic == true
-                                            ? Colors.white
-                                            : HexColor("#AEB2BB"),
-                                        fontSize: widtth * .035),
-                                  ),
-                                  controller.Mclic == true
-                                      ? HexColor("#285FFA")
-                                      : Colors.white,
-                                  controller.Mclic == true
-                                      ? Colors.white
-                                      : Color(0x80AEB2BB)),
-                              onTap: () {
-                                controller.MM();
-                              },
-                            ),
-                            GestureDetector(
-                              child: Gender(
-                                  widtth,
-                                  heightt,
-                                  "assets/images/woman.svg",
-                                  Text(
-                                    "Female",
-                                    style: TextStyle(
-                                        color: controller.Wclic == true
-                                            ? Colors.white
-                                            : HexColor("#AEB2BB"),
-                                        fontSize: widtth * .035),
-                                  ),
-                                  controller.Wclic == true
-                                      ? HexColor("#285FFA")
-                                      : Colors.white,
-                                  controller.Wclic == true
-                                      ? Colors.white
-                                      : Color(0x80AEB2BB)),
-                              onTap: () {
-                                controller.WW();
-                              },
-                            ),
-                          ],
-                        )))
+              padding: EdgeInsets.only(top: 5, bottom: heightt * .04),
+              child: Text(
+                "What's your gender?",
+                style: TextStyle(
+                    fontSize: widtth * .040, fontWeight: FontWeight.w400),
+              ),
+            ),
+            GetBuilder<SignUpController>(
+                builder: (controller) => Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        GestureDetector(
+                          child: Gender(
+                              widtth,
+                              heightt,
+                              "assets/man.svg",
+                              Text(
+                                "Male",
+                                style: TextStyle(
+                                    color: controller.Mclic == true
+                                        ? Colors.white
+                                        : HexColor("#AEB2BB"),
+                                    fontSize: widtth * .035),
+                              ),
+                              controller.Mclic == true
+                                  ? HexColor("#285FFA")
+                                  : Colors.white,
+                              controller.Mclic == true
+                                  ? Colors.white
+                                  : Color(0x80AEB2BB)),
+                          onTap: () {
+                            controller.MM();
+                          },
+                        ),
+                        Spacer(),
+                        GestureDetector(
+                          child: Gender(
+                              widtth,
+                              heightt,
+                              "assets/woman.svg",
+                              Text(
+                                "Female",
+                                style: TextStyle(
+                                    color: controller.Wclic == true
+                                        ? Colors.white
+                                        : HexColor("#AEB2BB"),
+                                    fontSize: widtth * .035),
+                              ),
+                              controller.Wclic == true
+                                  ? HexColor("#285FFA")
+                                  : Colors.white,
+                              controller.Wclic == true
+                                  ? Colors.white
+                                  : Color(0x80AEB2BB)),
+                          onTap: () {
+                            controller.WW();
+                          },
+                        ),
+                      ],
+                    )),
           ],
         ),
       ),
