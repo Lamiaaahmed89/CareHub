@@ -50,13 +50,13 @@ class HomePage extends StatelessWidget {
           Icon(Iconsax.search_normal),
           Icon(Iconsax.calendar_1),
           Icon(Iconsax.message),
-          Icon(Iconsax.logout),
-        ],
+          SvgPicture.asset( 'assets/images/home images/logout.svg'),        ],
         onTap: (index) {
           if (index == 0) {
             Navigator.pushNamed(context, HomePage.id);
           } else if (index == 1) {
           } else if (index == 2) {
+            Navigator.pushNamed(context, UpComming.id);
           } else if (index == 3) {
             Navigator.pushNamed(context, Messages.id);
           } else if (index == 4) {
