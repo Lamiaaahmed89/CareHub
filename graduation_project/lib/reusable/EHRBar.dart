@@ -5,7 +5,8 @@ import 'package:graduation_project/Controllers/EHRfilesController.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Widget MediacalBar(double Widtth, double heightt) {
-  EHRfilesController controller = Get.put(EHRfilesController());
+  EHRfilesController controller =
+      Get.put(EHRfilesController(), permanent: true);
   return Padding(
     padding: EdgeInsets.only(
         top: Widtth * .02,

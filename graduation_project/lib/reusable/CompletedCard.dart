@@ -1,10 +1,12 @@
 import 'package:get/get.dart';
+import 'package:graduation_project/view/communication_pages/Video_call_pages/WriteReview.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 
 import '../Controllers/AppointmentController.dart';
 import 'AppointmentButtons.dart';
+
 
 // Iconsax.video,
 // Iconsax.call,
@@ -14,6 +16,7 @@ Widget CompletedCarrd(widtth, heightt) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: widtth * .038, vertical: 10),
     child: Container(
+      height: 190,
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -45,8 +48,11 @@ Widget CompletedCarrd(widtth, heightt) {
                       color: HexColor("#f0f0f0"),
                     ),
                   ),
+                  // SizedBox(
+                  //   height: 15,
+                  // ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10, top: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -143,7 +149,9 @@ Widget CompletedCarrd(widtth, heightt) {
               ),
               Expanded(
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => Review());
+                    },
                     child: Text(
                       "Leave a Review",
                       style:

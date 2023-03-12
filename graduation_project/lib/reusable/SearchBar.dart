@@ -12,6 +12,7 @@ Widget SearchBar(double Widtth, double heightt, String textt) {
         right: Widtth * .005),
     // padding: EdgeInsets.symmetric(vertical: heightt * .03, horizontal: 5),
     child: Container(
+      height: heightt * .065,
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 3),
       decoration: BoxDecoration(
         color: Colors.white,
