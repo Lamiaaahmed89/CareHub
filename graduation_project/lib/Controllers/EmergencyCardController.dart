@@ -9,14 +9,15 @@ class EmergencyCardController extends GetxController {
   void IsCard_Data(String option) {
     if (option == "data") {
       Card_data = true;
-      Get.back();
-      Get.to(Enter_Card_Info());
+      // Get.back();
+      Get.off(() => Enter_Card_Info());
     }
     if (option == "qr") {
       Card_data = false;
-      Get.back();
-      Get.to(EmergencyCardQR());
+      // Get.back();
+      Get.off(() => EmergencyCardQR());
     }
     update();
   }
 }
+

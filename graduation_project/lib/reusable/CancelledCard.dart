@@ -14,6 +14,7 @@ Widget CancelledCard(widtth, heightt) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: widtth * .038, vertical: 10),
     child: Container(
+      height: 138,
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -50,6 +51,9 @@ Widget CancelledCard(widtth, heightt) {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
+                        SizedBox(
+                          height: 12,
+                        ),
                         Text(
                           "Dr. Abdo Mohamed",
                           style: TextStyle(

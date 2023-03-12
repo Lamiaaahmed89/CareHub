@@ -50,6 +50,8 @@ dependencies:
   simple_shadow: ^0.3.1
   lottie: ^2.2.0
   dotted_border: ^2.0.0+3
+  syncfusion_flutter_sliders: ^20.4.53
+  readmore: ^2.2.0
 
 dev_dependencies:
   flutter_test:

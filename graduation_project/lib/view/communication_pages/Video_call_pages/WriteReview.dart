@@ -15,7 +15,8 @@ class Review extends StatelessWidget {
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
-    VideoCallController controller = Get.put(VideoCallController());
+    VideoCallController controller =
+        Get.put(VideoCallController(), permanent: true);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -32,16 +33,22 @@ class Review extends StatelessWidget {
                     image: AssetImage("assets/abdo.jpg"), fit: BoxFit.cover),
                 border: Border.all(color: HexColor("#285FFA"), width: 2)),
           ),
-
+          // SizedBox(
+          //   height: heightt * .01,
+          // ),
           Spacer(),
           Text("How was your experience with"),
-
+          // SizedBox(
+          //   height: heightt * .02,
+          // ),
           Spacer(),
           Text(
             "Dr. Abdo Mohamed",
             style: TextStyle(color: HexColor("#285FFA")),
           ),
-
+          // SizedBox(
+          //   height: heightt * .025,
+          // ),
           Spacer(),
           Container(
               padding: EdgeInsets.symmetric(horizontal: widtth * .17),
@@ -137,7 +144,9 @@ class Review extends StatelessWidget {
                   ],
                 ),
               )),
- 
+          // SizedBox(
+          //   height: heightt * .035,
+          // ),
           Spacer(),
           Container(
             padding: EdgeInsets.symmetric(
@@ -157,7 +166,9 @@ class Review extends StatelessWidget {
                   fillColor: HexColor("#FFFFFF")),
             ),
           ),
-
+          // SizedBox(
+          //   height: heightt * .02,
+          // ),
           Spacer(),
           ElevatedButton(
               onPressed: () {},
@@ -178,7 +189,9 @@ class Review extends StatelessWidget {
                       RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
                   )))),
-
+          // SizedBox(
+          //   height: 20,
+          // ),
           Spacer(),
           ElevatedButton(
               onPressed: () {},

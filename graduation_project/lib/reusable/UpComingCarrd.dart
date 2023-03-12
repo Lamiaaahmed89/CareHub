@@ -14,6 +14,7 @@ Widget UpComingCarrd(widtth, heightt) {
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: widtth * .038, vertical: 10),
     child: Container(
+      height: 190,
       padding: EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -46,7 +47,7 @@ Widget UpComingCarrd(widtth, heightt) {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                    padding: const EdgeInsets.only(left: 10, top: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -155,7 +156,7 @@ Widget UpComingCarrd(widtth, heightt) {
                         HexColor("#285FFA"),
                       ),
                       padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                        vertical: heightt * .01,
+                        // vertical: heightt * .01,
                         horizontal: widtth * .09,
                       )),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(

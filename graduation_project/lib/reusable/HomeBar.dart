@@ -37,24 +37,24 @@ Widget HomeBar(Widtth, Hightt) {
                   onTap: () {
                     controller.selectedItem.value =
                         controller.options.indexOf("Upcoming");
-                    Get.back();
-                    Get.to(() => UpComming());
+                    // Get.back();
+                    Get.off(() => UpComming());
                   },
                   child: controller.Options("Upcoming")),
               GestureDetector(
                   onTap: () {
                     controller.selectedItem.value =
                         controller.options.indexOf("Completed");
-                    Get.back();
-                    Get.to(() => Completed());
+                    // Get.back();
+                    Get.off(() => Completed());
                   },
                   child: controller.Options("Completed")),
               GestureDetector(
                   onTap: () {
                     controller.selectedItem.value =
                         controller.options.indexOf("Cancelled");
-                    Get.back();
-                    Get.to(() => Cancelled());
+                    // Get.back();
+                    Get.off(() => Cancelled());
                   },
                   child: controller.Options("Cancelled")),
             ],
