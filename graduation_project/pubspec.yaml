@@ -49,6 +49,10 @@ dependencies:
   flutter_holo_date_picker: ^1.1.0
   simple_shadow: ^0.3.1
   table_calendar: ^3.0.9
+  lottie: ^2.2.0
+  dotted_border: ^2.0.0+3
+  syncfusion_flutter_sliders: ^20.4.53
+  readmore: ^2.2.0
 
 dev_dependencies:
   flutter_test:
