@@ -40,11 +40,8 @@ dependencies:
   curved_navigation_bar: ^1.0.3
   get: ^4.6.5
   hexcolor: ^3.0.1
-  shared_preferences: ^2.0.15
   flutter_svg: ^1.1.6
   flutter_svg_provider: ^1.0.3
-  get: ^4.6.5
-  hexcolor: ^3.0.1
   responsive_framework: ^0.2.0
   iconsax: ^0.0.8
   http: ^0.13.5
@@ -55,8 +52,6 @@ dependencies:
   shared_preferences: ^2.0.17
   fluttertoast: ^8.2.1
   unique_list: ^1.0.1
-  
-  
   table_calendar: ^3.0.9
   lottie: ^2.2.0
   dotted_border: ^2.0.0+3
