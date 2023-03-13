@@ -260,35 +260,69 @@ class AboutDoctor extends StatelessWidget {
               SizedBox(
                 height: heightt * .03,
               ),
-              Container(
-                width: double.infinity,
-                // height: heightt * .25,
-                padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                child: Row(
-                  children: [
-                    Icon(
-                      Iconsax.location,
-                      color: HexColor("#285FFA"),
+              Column(
+                children: [
+                  Container(
+                    width: double.infinity,
+                    // height: heightt * .25,
+                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                    child: Row(
+                      children: [
+                        Icon(
+                          Iconsax.location,
+                          color: HexColor("#285FFA"),
+                        ),
+                        SizedBox(
+                          width: widtth * .03,
+                        ),
+                        Text("Damietta Road, New Damietta City")
+                      ],
                     ),
-                    SizedBox(
-                      width: widtth * .03,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: HexColor("#000000").withAlpha(35),
+                          // spreadRadius: 5,
+                          blurRadius: 6,
+                          offset: Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
                     ),
-                    Text("Damietta Road, New Damietta City")
-                  ],
-                ),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(15)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: HexColor("#000000").withAlpha(35),
-                      // spreadRadius: 5,
-                      blurRadius: 6,
-                      offset: Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
-              )
+                  ),
+                  SizedBox(
+                    height: heightt * .03,
+                  ),
+                  Center(
+                    child: ElevatedButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Book an Appointement",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 12),
+                        ),
+                        style: ButtonStyle(
+                            elevation: MaterialStateProperty.all<double>(0),
+                            foregroundColor:
+                                MaterialStateProperty.all(Colors.white),
+                            backgroundColor: MaterialStateProperty.all(
+                              HexColor("#285FFA"),
+                            ),
+                            padding: MaterialStateProperty.all(
+                                EdgeInsets.symmetric(
+                                    vertical: heightt * .02,
+                                    horizontal: widtth * .20)),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(30.0),
+                            )))),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: heightt * .03,
+              ),
             ],
           ),
         ),
