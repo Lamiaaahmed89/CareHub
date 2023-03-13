@@ -26,6 +26,8 @@ List<OnboardingContent> content = [
 ];
 
 class OnBoarding extends StatefulWidget {
+    static String id = 'OnBoarding';
+
   const OnBoarding({super.key});
 
   @override
