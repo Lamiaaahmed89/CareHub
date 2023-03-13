@@ -6,6 +6,7 @@ import 'package:graduation_project/reusable/HomeBar.dart';
 import 'package:graduation_project/reusable/UpComingCarrd.dart';
 
 class UpComming extends StatelessWidget {
+  static String id = 'UpComming';
   UpComming({super.key});
   List TryNum = [1, 2, 3];
   @override
