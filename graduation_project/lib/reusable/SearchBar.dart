@@ -3,11 +3,16 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
-Widget SearchBar(double Widtth, double heightt) {
+Widget SearchBar(double Widtth, double heightt, String textt) {
   return Padding(
-    padding: EdgeInsets.only(top: 15, bottom: 10, left: 4, right: 4),
+    padding: EdgeInsets.only(
+        top: Widtth * .02,
+        bottom: 10,
+        left: Widtth * .005,
+        right: Widtth * .005),
     // padding: EdgeInsets.symmetric(vertical: heightt * .03, horizontal: 5),
     child: Container(
+      height: heightt * .065,
       padding: EdgeInsets.symmetric(horizontal: 16, vertical: 3),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -23,7 +28,7 @@ Widget SearchBar(double Widtth, double heightt) {
       ),
       child: TextFormField(
         decoration: InputDecoration(
-            hintText: "Search Message...",
+            hintText: "$textt",
             hintStyle: TextStyle(fontSize: 12),
             suffixIcon: Icon(
               Iconsax.search_normal,

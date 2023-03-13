@@ -10,6 +10,8 @@ SignUpController controller = Get.put(SignUpController());
 Widget Gender(
     double W, double H, String path, Widget gender, Color C1, Color C2) {
   return Container(
+    width: W * .42,
+    height: H * .6,
     padding: EdgeInsets.symmetric(horizontal: W * .065, vertical: H * 0.03),
     decoration: BoxDecoration(
       color: C1,
@@ -26,13 +28,14 @@ Widget Gender(
     child: Column(
       children: [
         Padding(
-            padding: EdgeInsets.only(bottom: H * .02),
-            child: gender,
-                    ),
-        SvgPicture.asset(
-          "$path",
-          color: C2,
-          
+          padding: EdgeInsets.only(bottom: H * .02),
+          child: gender,
+        ),
+        Expanded(
+          child: SvgPicture.asset(
+            "$path",
+            color: C2,
+          ),
         ),
       ],
     ),

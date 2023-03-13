@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
+import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_page.dart';
 import 'package:iconsax/iconsax.dart';
@@ -14,34 +15,10 @@ class UserInformation extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
-      appBar: AppBar(
-        backgroundColor: white_color,
-        elevation: 0.0,
-        leading: IconButton(
-          onPressed: () {
-            Navigator.pushNamed(context, SignupPage.id);
-          },
-          icon: Icon(Iconsax.arrow_left_2),
-          color: Second_color,
-        ),
-        actions: [
-          TextButton(
-            onPressed: () {
-              Navigator.pushNamed(context, BirthDatePage.id);
-            },
-            child: Text(
-              'Next',
-              style: TextStyle(
-                fontSize: 16.0,
-                color: Main_color,
-              ),
-            ),
-          )
-        ],
-      ),
+      appBar: SignUpBar('Next', "Tobirthdate"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-        child: Column(
+        child: ListView(
           children: [
             Container(
               width: 40.0,
@@ -58,25 +35,40 @@ class UserInformation extends StatelessWidget {
             SizedBox(
               height: 32,
             ),
-            Text(
-              'Tell us about yourself',
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'Tell us about yourself',
+                ),
+              ],
             ),
             SizedBox(
               height: 9.0,
             ),
-            Text(
-              'To give you a better experience',
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Text2_color,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'To give you a better experience',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Text2_color,
+                  ),
+                ),
+              ],
             ),
-            Text(
-              'we need to know some information about you',
-              style: TextStyle(
-                fontSize: 14.0,
-                color: Text2_color,
-              ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(
+                  'we need to know some information about you',
+                  style: TextStyle(
+                    fontSize: 14.0,
+                    color: Text2_color,
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 67.0,

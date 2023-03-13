@@ -3,6 +3,7 @@ import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/numpad_page.dart';
 
 
@@ -19,22 +20,7 @@ class VerificationPage extends StatelessWidget {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white_color,
-      appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: white_color,
-        elevation: 0.0,
-        leading: IconButton(
-          icon: Icon(Iconsax.arrow_left_2, color: Second_color),
-          onPressed: () {
-            Navigator.pop(context);
-          },
-        ),
-        title: Text(
-          'Verification',
-          style: TextStyle(
-              fontSize: 16, fontWeight: FontWeight.w500, color: Second_color),
-        ),
-      ),
+      appBar: appBar('Verification'),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: Column(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
+import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/reset_password.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -17,27 +18,7 @@ class _NumPadState extends State<NumPad> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
-      appBar: AppBar(
-        backgroundColor: white_color,
-        elevation: 0.0,
-        centerTitle: true,
-        leading: IconButton(
-            onPressed: () {
-              Navigator.pop(context);
-            },
-            icon: Icon(
-              Iconsax.arrow_left_2,
-              color: Second_color,
-            )),
-        title: Text(
-          'Verification',
-          style: TextStyle(
-            fontSize: 16.0,
-            fontWeight: FontWeight.w500,
-            color: Second_color,
-          ),
-        ),
-      ),
+      appBar: appBar('Verification'),
       body: Container(
         decoration: BoxDecoration(
           color: white_color,

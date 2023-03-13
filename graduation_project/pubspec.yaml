@@ -37,6 +37,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.2
   introduction_screen: ^3.1.1
+  curved_navigation_bar: ^1.0.3
+  get: ^4.6.5
+  hexcolor: ^3.0.1
+  shared_preferences: ^2.0.15
   flutter_svg: ^1.1.6
   flutter_svg_provider: ^1.0.3
   get: ^4.6.5
@@ -53,6 +57,12 @@ dependencies:
   unique_list: ^1.0.1
   
   
+  table_calendar: ^3.0.9
+  lottie: ^2.2.0
+  dotted_border: ^2.0.0+3
+  syncfusion_flutter_sliders: ^20.4.53
+  readmore: ^2.2.0
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
@@ -82,6 +92,9 @@ flutter:
     - assets/images/
     - assets/icons/
     - assets/images/medical_icons/
+    - assets/images/home images/
+    - assets/images/personal_info/
+   
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
