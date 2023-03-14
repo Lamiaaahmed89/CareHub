@@ -8,7 +8,6 @@ import 'package:hexcolor/hexcolor.dart';
 
 class ChooseBlood extends StatelessWidget {
   const ChooseBlood({super.key});
-  static String id = 'ChooseBlood';
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +30,7 @@ class ChooseBlood extends StatelessWidget {
                           height: heightt * .1,
                           alignment: Alignment.center,
                           child: SvgPicture.asset(
-                            "assets/images/blood.svg",
+                            "assets/blood.svg",
                           ),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
@@ -61,7 +60,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "A+"
                                         ? HexColor("#285FFA")
-                                        : Colors.white)),
+                                        : Colors.white,widtth,heightt)),
                             GestureDetector(
                                 onTap: () {
                                   controller.ChooseBlood("A-");
@@ -73,7 +72,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "A-"
                                         ? HexColor("#285FFA")
-                                        : Colors.white))
+                                        : Colors.white,widtth,heightt))
                           ],
                         ),
                         Spacer(),
@@ -91,7 +90,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "B+"
                                         ? HexColor("#285FFA")
-                                        : Colors.white)),
+                                        : Colors.white,widtth,heightt)),
                             GestureDetector(
                                 onTap: () {
                                   controller.ChooseBlood("B-");
@@ -103,7 +102,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "B-"
                                         ? HexColor("#285FFA")
-                                        : Colors.white))
+                                        : Colors.white,widtth,heightt))
                           ],
                         ),
                         Spacer(),
@@ -121,7 +120,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "O+"
                                         ? HexColor("#285FFA")
-                                        : Colors.white)),
+                                        : Colors.white,widtth,heightt)),
                             GestureDetector(
                                 onTap: () {
                                   controller.ChooseBlood("O-");
@@ -133,7 +132,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "O-"
                                         ? HexColor("#285FFA")
-                                        : Colors.white))
+                                        : Colors.white,widtth,heightt))
                           ],
                         ),
                         Spacer(),
@@ -151,7 +150,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "AB+"
                                         ? HexColor("#285FFA")
-                                        : Colors.white)),
+                                        : Colors.white,widtth,heightt)),
                             GestureDetector(
                                 onTap: () {
                                   controller.ChooseBlood("AB-");
@@ -163,7 +162,7 @@ class ChooseBlood extends StatelessWidget {
                                         : HexColor("#285FFA"),
                                     controller.BloodGroup == "AB-"
                                         ? HexColor("#285FFA")
-                                        : Colors.white))
+                                        : Colors.white,widtth,heightt))
                           ],
                         )
                       ],

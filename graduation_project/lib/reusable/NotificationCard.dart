@@ -57,11 +57,14 @@ Widget NotificationCard(Widtth, heightt, data, idx, status) {
             SizedBox(
               width: Widtth * .04,
             ),
-            Container(
-              width: Widtth * .63,
-              child: Text(
-                "$data",
-                style: TextStyle(fontSize: 12),
+            Expanded(
+              child: Container(
+                // width: Widtth * .63,
+                child: Text(
+                  "$data",
+                  style: TextStyle(fontSize: 12),
+                  overflow: TextOverflow.clip,
+                ),
               ),
             )
           ],
