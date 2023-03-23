@@ -2,9 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
 
 class RegisterButton extends StatelessWidget {
-  const RegisterButton({super.key, required this.register_txt,required this.navigate});
+  RegisterButton(
+      {super.key,
+      this.text_color,
+      required this.register_txt,
+      required this.navigate,
+      this.color_button});
   final String register_txt;
   final Function() navigate;
+  Color? color_button;
+  Color? text_color;
 
   @override
   Widget build(BuildContext context) {
@@ -12,7 +19,7 @@ class RegisterButton extends StatelessWidget {
       width: 343,
       height: 55,
       decoration: BoxDecoration(
-        color: Main_color,
+        color: color_button,
         border: Border.all(
           color: white_color,
         ),
@@ -32,7 +39,7 @@ class RegisterButton extends StatelessWidget {
           style: TextStyle(
             fontFamily: 'Poppins',
             fontSize: 16.0,
-            color: white_color,
+            color: text_color,
             fontWeight: FontWeight.w500,
           ),
         ),
