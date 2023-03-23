@@ -16,78 +16,79 @@ class EnterWeight extends StatelessWidget {
     double heightt = MediaQuery.of(context).size.height;
     SignUpController controller = Get.put(SignUpController());
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       appBar: SignUpBar("Next", "Toheight"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 30),
-        child: SingleChildScrollView(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            children: [
-              Container(
-                width: widtth * .1,
-                height: heightt * .1,
-                alignment: Alignment.center,
-                child: Icon(
-                  Iconsax.weight,
-                  color: Colors.white,
-                ),
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: HexColor("#285FFA"),
-                ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Container(
+              width: widtth * .1,
+              height: heightt * .1,
+              alignment: Alignment.center,
+              child: Icon(
+                Iconsax.weight,
+                color: Colors.white,
               ),
-              Padding(
-                  padding: EdgeInsets.only(bottom: heightt * .03),
-                  child: Text(
-                    "What is your Weight?",
-                    style: TextStyle(
-                        fontSize: widtth * .040, fontWeight: FontWeight.w400),
-                  )),
-              Stack(
-                children: [
-                  Padding(
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: HexColor("#285FFA"),
+              ),
+            ),
+            Text(
+              "What is your Weight?",
+              style: TextStyle(
+                  fontSize: widtth * .040, fontWeight: FontWeight.w400),
+            ),
+            Stack(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(
+                      right: widtth * .50, left: widtth * .10, bottom: 5),
+                  child: TextFormField(
+                    keyboardType: TextInputType.number,
+                    decoration: InputDecoration(
+                        hintText: "70",
+                        hintStyle: TextStyle(fontSize: 12),
+                        border: InputBorder.none,
+                        fillColor: HexColor("#FFFFFF")),
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: Padding(
                     padding: EdgeInsets.only(
-                        right: widtth * .50, left: widtth * .10, bottom: 5),
-                    child: TextFormField(
-                      keyboardType: TextInputType.number,
-                      decoration: InputDecoration(
-                          hintText: "70",
-                          hintStyle: TextStyle(fontSize: 12),
-                          border: InputBorder.none,
-                          fillColor: HexColor("#FFFFFF")),
+                        right: widtth * .65, left: widtth * .17),
+                    child: Text(
+                      "kg",
+                      style: TextStyle(color: HexColor("#AEB2BB")),
                     ),
                   ),
-                  Positioned(
-                    bottom: 0,
-                    child: Padding(
-                      padding: EdgeInsets.only(
-                          right: widtth * .65, left: widtth * .17),
-                      child: Text(
-                        "kg",
-                        style: TextStyle(color: HexColor("#AEB2BB")),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              GetBuilder<SignUpController>(
-                builder: (controller) => SvgPicture.asset(
+                ),
+              ],
+            ),
+            GetBuilder<SignUpController>(
+              builder: (controller) => Container(
+                width: widtth * .5,
+                height: heightt * .5,
+                child: SvgPicture.asset(
                   controller.Gender == "male"
-                      ? "assets/images/man.svg"
-                      : "assets/images/woman.svg",
+                      ? "assets/man.svg"
+                      : "assets/woman.svg",
                   color: Color(0x80AEB2BB),
                 ),
               ),
-              Padding(
-                padding:
-                    EdgeInsets.only(top: heightt * .02, bottom: heightt * .01),
-                child: SvgPicture.asset(
-                  "assets/images/ruler-weight.svg",
-                ),
+            ),
+            Container(
+              width: widtth * .7,
+              height: heightt * .15,
+              child: SvgPicture.asset(
+                "assets/ruler-weight.svg",
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

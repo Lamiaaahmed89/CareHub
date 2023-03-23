@@ -7,14 +7,13 @@ import 'package:graduation_project/view/Appointment_pages/completed.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-Widget HomeBar(Widtth, Hightt,context) {
-  double wid=MediaQuery.of(context).size.width;
-  double heigh=MediaQuery.of(context).size.height/10;
+Widget HomeBar(Widtth, Hightt) {
   return Padding(
-    padding: EdgeInsets.all(wid/30),
+    padding:
+        EdgeInsets.symmetric(horizontal: Widtth / 30, vertical: Widtth / 30),
     child: Container(
-        width: wid,
-        height: heigh,
+        width: Widtth,
+        height: Hightt / 10,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.all(Radius.circular(7)),
           color: HexColor("#f0f0f0"),
@@ -38,21 +37,24 @@ Widget HomeBar(Widtth, Hightt,context) {
                   onTap: () {
                     controller.selectedItem.value =
                         controller.options.indexOf("Upcoming");
-                    Get.to(() => UpComming());
+                    // Get.back();
+                    Get.off(() => UpComming());
                   },
                   child: controller.Options("Upcoming")),
               GestureDetector(
                   onTap: () {
                     controller.selectedItem.value =
                         controller.options.indexOf("Completed");
-                    Get.to(() => Completed());
+                    // Get.back();
+                    Get.off(() => Completed());
                   },
                   child: controller.Options("Completed")),
               GestureDetector(
                   onTap: () {
                     controller.selectedItem.value =
                         controller.options.indexOf("Cancelled");
-                    Get.to(() => Cancelled());
+                    // Get.back();
+                    Get.off(() => Cancelled());
                   },
                   child: controller.Options("Cancelled")),
             ],

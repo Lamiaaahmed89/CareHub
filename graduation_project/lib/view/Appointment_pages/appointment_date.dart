@@ -215,9 +215,10 @@ class _AppointmentDateState extends State<AppointmentDate> {
                                       text_color: white_color,
                                       register_txt: 'Confirm',
                                       navigate: () {
-                                        Navigator.pushNamed(
-                                            context, UpComming.id);
-                                      }),
+                                      //   Navigator.pushNamed(
+                                      //       context, UpComming.id);
+                                      }
+                                      ),
                                   SizedBox(
                                     height: 16,
                                   ),

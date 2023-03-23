@@ -9,10 +9,10 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
+
 class ConsultaionEnd extends StatelessWidget {
   const ConsultaionEnd({super.key});
 
-  static String id = 'ConsultaionEnd';
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
@@ -50,7 +50,7 @@ class ConsultaionEnd extends StatelessWidget {
                   width: widtth * .64,
                   height: heightt * .25,
                   child: SvgPicture.asset(
-                    "assets/images/time out.svg",
+                    "assets/time out.svg",
                   ),
                 ),
                 Container(
@@ -69,9 +69,8 @@ class ConsultaionEnd extends StatelessWidget {
                         "The consultation session has ended"),
                   ),
                 ),
-                SizedBox(
-                  height: heightt * .035,
-                ),
+                Spacer(),
+                Spacer(),
                 ElevatedButton(
                     onPressed: () {
                       Get.to(Review());
@@ -95,16 +94,16 @@ class ConsultaionEnd extends StatelessWidget {
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
                         )))),
-                SizedBox(
-                  height: heightt * .030,
-                ),
+                Spacer(),
                 TextButton(
                     onPressed: (() {}),
                     child: Text(
                       "Back to Home",
                       style:
                           TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-                    ))
+                    )),
+                Spacer(),
+                Spacer(),
               ],
             ),
           ),

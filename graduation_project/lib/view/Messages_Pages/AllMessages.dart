@@ -22,9 +22,9 @@ class Messages extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: widtth * .04),
         child: Column(
           children: [
-            SearchBar(widtth, heightt),
-            // MessageList(MessCard(widtth, heightt)),
-            NoMessages(widtth, heightt),
+            SearchBar(widtth, heightt, "Search Message..."),
+            MessageList(MessCard(widtth, heightt)),
+            // NoMessages(widtth, heightt),
           ],
         ),
       ),

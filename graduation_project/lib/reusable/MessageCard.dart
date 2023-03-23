@@ -14,10 +14,13 @@ Widget MessCard(double Widtth, double heightt) {
       child: Row(
         children: [
           Padding(
-            padding: EdgeInsets.only(left: 4, top: 10),
+            padding: EdgeInsets.only(
+              left: Widtth * .009,
+            ),
             child: Container(
               width: Widtth * .90,
-              padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
+              height: 92,
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.all(Radius.circular(7)),
@@ -102,10 +105,11 @@ Widget MessCard(double Widtth, double heightt) {
             width: Widtth * .04,
           ),
           Padding(
-            padding: EdgeInsets.only(top: 10, right: 5),
+            padding: EdgeInsets.only(right: Widtth * .01),
             child: Container(
               alignment: Alignment.center,
-              width: 60,
+              width: Widtth * .15,
+              height: 95,
               // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 12),
               decoration: BoxDecoration(
                 color: HexColor("#fecfda"),
