@@ -24,11 +24,6 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
-      // appBar: AppBar(
-      //   backgroundColor: white_color,
-      //   title: Text('Login Page'),
-      //   elevation: 0.0,
-      // ),
       body: Padding(
         padding:
             const EdgeInsetsDirectional.only(start: 16.0, end: 16.0, top: 30.0),
@@ -121,6 +116,8 @@ class LoginPage extends StatelessWidget {
               ),
               // SizedBox(height: 29,),
               RegisterButton(
+                color_button: Main_color,
+                text_color: white_color,
                 navigate: () {
                   loginController.isloding
                       ? CircularProgressIndicator()

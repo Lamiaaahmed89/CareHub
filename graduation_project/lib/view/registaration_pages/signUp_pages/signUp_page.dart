@@ -64,6 +64,8 @@ class SignupPage extends StatelessWidget {
                 height: 40.0,
               ),
               RegisterButton(
+                color_button: Main_color,
+                text_color: white_color,
                 navigate: () {
                   Navigator.pushNamed(context, UserInformation.id);
                 },
