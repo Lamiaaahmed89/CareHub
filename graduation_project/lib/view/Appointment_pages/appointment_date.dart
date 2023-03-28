@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:graduation_project/component/date_container.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/view/Appointment_pages/confirmation_appointment.dart';
+import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/AllowLocation.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:iconsax/iconsax.dart';
 import 'package:table_calendar/table_calendar.dart';
+import 'package:intl/intl.dart';
 
 class AppointmentDate extends StatefulWidget {
-  const AppointmentDate({super.key});
+  AppointmentDate({super.key});
   static String id = 'AppointmentDate';
 
   @override
@@ -22,6 +25,23 @@ class _AppointmentDateState extends State<AppointmentDate> {
     setState(() {
       today = day;
     });
+  }
+
+  List<String> txts = [
+    '9:00 AM - 10:00 AM',
+    '10:00 AM - 10:15 AM',
+    '10:15 AM - 10:45 AM',
+    '10:45 AM - 11:45 AM',
+    '11:45 AM - 12:00 AM',
+    '12:00 AM - 1:00 AM'
+  ];
+  int selectedIndex = -1;
+
+  void onContainerClicked(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
+    print(selectedIndex);
   }
 
   @override
@@ -71,46 +91,150 @@ class _AppointmentDateState extends State<AppointmentDate> {
               padding: const EdgeInsets.only(left: 8.0),
               child: Text('Time'),
             ),
-            Row(
-              children: [
-                Column(
-                  children: [
-                    DateContainer(text: '9:00 AM - 10:00 AM'),
-                    SizedBox(
-                      height: 16.0,
+            GridView.builder(
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                    crossAxisCount: 2,
+                    crossAxisSpacing: 10.0,
+                    mainAxisSpacing: 10,
+                    mainAxisExtent: 48),
+                itemCount: 6,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
+                    onTap: () {
+                      onContainerClicked(index);
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: (selectedIndex == index)
+                              ? Main_color
+                              : white_color,
+                          borderRadius: BorderRadius.circular(10.0),
+                          boxShadow: [
+                            BoxShadow(
+                              color: HexColor("#000000").withAlpha(16),
+                              blurRadius: 6,
+                              offset: Offset(0, 3),
+                            ),
+                          ]),
+                      child: Center(
+                        child: Text(
+                          '${txts.elementAt(index)}',
+                          style: TextStyle(
+                              color: (selectedIndex == index)
+                                  ? white_color
+                                  : Second_color),
+                        ),
+                      ),
                     ),
-                    DateContainer(text: '10:15 AM - 10:45 AM'),
-                    SizedBox(
-                      height: 16.0,
-                    ),
-                    DateContainer(text: '11:45 AM - 12:00 AM'),
-                  ],
-                ),
-                SizedBox(
-                  width: 10.0,
-                ),
-                Column(
-                  children: [
-                    DateContainer(text: '10:00 AM - 10:15 AM'),
-                    SizedBox(
-                      height: 16.0,
-                    ),
-                    DateContainer(text: '10:45 AM - 11:45 AM'),
-                    SizedBox(
-                      height: 16.0,
-                    ),
-                    DateContainer(text: '12:00 AM - 1:00 AM'),
-                  ],
-                ),
-              ],
-            ),
+                  );
+                }),
             SizedBox(
               height: 22,
             ),
             RegisterButton(
+                color_button: Main_color,
+                text_color: white_color,
                 register_txt: 'Done',
                 navigate: () {
-                  Navigator.pushNamed(context, ConfirmationPage.id,arguments: today);
+                  showDialog(
+                      context: context,
+                      builder: (context) {
+                        return Dialog(
+                          elevation: 8.0,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(10.0),
+                          ),
+                          child: Padding(
+                            padding: const EdgeInsetsDirectional.symmetric(
+                                horizontal: 16.0, vertical: 16.0),
+                            child: Container(
+                              height: 500,
+                              width: 400,
+                              child: Column(
+                                children: [
+                                  SvgPicture.asset(
+                                    "assets/images/book an appointment/time.svg",
+                                    width: 279,
+                                    height: 176,
+                                  ),
+                                  SizedBox(
+                                    height: 16.0,
+                                  ),
+                                  Text(
+                                    "Confirmation",
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.w500),
+                                  ),
+                                  SizedBox(
+                                    height: 9,
+                                  ),
+                                  Text(
+                                      style: TextStyle(
+                                          fontSize: 11,
+                                          color: HexColor("#AEB2BB"),
+                                          fontWeight: FontWeight.w400),
+                                      textAlign: TextAlign.center,
+                                      "Hello Ali, you are about to make an\n appointment with Dr.Abdo Mohamed"),
+                                  SizedBox(
+                                    height: 21,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Iconsax.calendar_1,
+                                        color: Main_color,
+                                      ),
+                                      Text(
+                                        '${DateFormat(' MMMM dd, yyyy').format(today)}',
+                                        style: TextStyle(color: Text2_color),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 17,
+                                  ),
+                                  Row(
+                                    children: [
+                                      Icon(
+                                        Iconsax.clock,
+                                        color: Main_color,
+                                      ),
+                                      Text(
+                                        ' ${txts.elementAt(selectedIndex)}',
+                                        style: TextStyle(color: Text2_color),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 27,
+                                  ),
+                                  RegisterButton(
+                                      color_button: Main_color,
+                                      text_color: white_color,
+                                      register_txt: 'Confirm',
+                                      navigate: () {
+                                      //   Navigator.pushNamed(
+                                      //       context, UpComming.id);
+                                      }
+                                      ),
+                                  SizedBox(
+                                    height: 16,
+                                  ),
+                                  RegisterButton(
+                                      color_button: white_color,
+                                      text_color: Main_color,
+                                      register_txt: 'Cancel',
+                                      navigate: () {
+                                        navigator!.pop();
+                                      }),
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      });
                 })
           ],
         ),

@@ -62,6 +62,8 @@ class VerificationPage extends StatelessWidget {
               height: 32,
             ),
             RegisterButton(
+              color_button: Main_color,
+              text_color: white_color,
                 navigate: () {
                   Navigator.pushNamed(context, NumPad.id);
                 },
