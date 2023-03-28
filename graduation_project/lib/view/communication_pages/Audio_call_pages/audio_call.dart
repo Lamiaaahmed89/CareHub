@@ -5,7 +5,6 @@ import 'package:iconsax/iconsax.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
 class AudioCallPage extends StatefulWidget {
-  const AudioCallPage({super.key});
   static String id = 'AudioCallPage';
 
   @override

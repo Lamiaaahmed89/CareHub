@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
 import 'package:graduation_project/view/Appointment_pages/appointment_date.dart';
 import 'package:graduation_project/view/Appointment_pages/appointment_no_dates.dart';
 import 'package:graduation_project/view/Appointment_pages/choose_appointment.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
+
+
 import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call_answer.dart';
-import 'package:graduation_project/view/communication_pages/Video_call_pages/ConsultaionEnd.dart';
 import 'package:graduation_project/view/communication_pages/Video_call_pages/video_call.dart';
 import 'package:graduation_project/view/communication_pages/Video_call_pages/video_call_end.dart';
 import 'package:graduation_project/view/communication_pages/Video_call_pages/video_call_no_image.dart';
@@ -15,7 +17,6 @@ import 'package:graduation_project/view/communication_pages/Video_call_pages/vid
 import 'package:graduation_project/view/no_connection.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/AllowLocation.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/ChooseBlood.dart';
-import 'package:graduation_project/view/registaration_pages/SignUp_Pages/ChooseGender.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/signUp_page.dart';
 import 'package:graduation_project/view/registaration_pages/home_page.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
@@ -26,6 +27,9 @@ import 'package:graduation_project/view/registaration_pages/login_pages/verifica
 import 'package:graduation_project/view/registaration_pages/personal_info.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/user_information.dart';
+
+
+
 
 
 
