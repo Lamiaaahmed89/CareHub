@@ -5,7 +5,7 @@ import 'package:hexcolor/hexcolor.dart';
 class SignUpController extends GetxController {
   bool Mclic = false;
   bool Wclic = false;
-  String Gender = " ";
+  String Gender = "female";
   String BloodGroup = " ";
   bool IMG1 = false;
   bool IMG2 = false;

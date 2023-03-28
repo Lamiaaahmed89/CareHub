@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/view/body_model/bottomsheet.dart';
-import 'package:graduation_project/view/body_model/click_man.dart';
 import 'package:touchable/touchable.dart';
+import 'click_body.dart';
 
 class FrontMan extends CustomPainter {
   final BuildContext context;
@@ -3886,6 +3886,7 @@ class FrontMan extends CustomPainter {
     paint18Fill.color = controller.backgroundColorHands;
     myCanvas.drawPath(path_18, paint18Fill, onTapDown: (_) {
       controller.toggleBackGroundColorHands();
+      OriginBottomsheet(context, 5);
     });
 
     Path path_19 = Path();

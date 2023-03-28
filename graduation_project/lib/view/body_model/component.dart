@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/body_model/click_man.dart';
+import 'package:graduation_project/view/body_model/click_body.dart';
 import 'package:graduation_project/view/body_model/findservices.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
