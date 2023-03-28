@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
+import 'package:graduation_project/view/body_model/resultservices.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call_answer.dart';
 import 'package:graduation_project/view/communication_pages/Video_call_pages/video_call.dart';
@@ -18,6 +19,8 @@ import 'package:graduation_project/view/registaration_pages/login_pages/verifica
 import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 
 import 'package:graduation_project/view/registaration_pages/signUp_pages/user_information.dart';
+
+import 'view/body_model/click_body.dart';
 
 
 void main() {
@@ -44,17 +47,17 @@ class MyApp extends StatelessWidget {
         VideoCallStart.id : (context) => VideoCallStart(),
         VideoCallPage2.id : (context) => VideoCallPage2(),
         VideoCallNoImage.id : (context) => VideoCallNoImage(),
-        // UpComming.id : (context) => UpComming(),
+        suggestionServices.id : (context) => suggestionServices(),
         Messages.id : (context) => Messages(),
         AllowLocation.id : (context) => AllowLocation(),
         ChooseBlood.id : (context) => ChooseBlood(),
         // ChooseGender.id : (context) => ChooseGender(),
         // ConsultaionEnd.id : (context) => ConsultaionEnd(),
-        
+        ClickBody.id:(context) =>  ClickBody(),
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      initialRoute: SignupPage.id,
+      initialRoute: ClickBody.id
     );
   }
 }

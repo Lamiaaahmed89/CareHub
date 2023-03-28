@@ -1,5 +1,7 @@
 import 'package:get/get.dart';
+import 'package:graduation_project/Controllers/SignUpController.dart';
 import 'package:graduation_project/constants/colors.dart';
+import 'package:graduation_project/reusable/BloodGroups.dart';
 import 'package:graduation_project/view/body_model/component.dart';
 import 'package:graduation_project/view/body_model/man_front.dart';
 import 'package:iconsax/iconsax.dart';
@@ -7,16 +9,22 @@ import 'package:touchable/touchable.dart';
 import 'package:flutter/material.dart';
 import 'package:unique_list/unique_list.dart';
 
+import 'man_back.dart';
+import 'woman_back.dart';
+import 'woman_front.dart';
+
 class ClickBody extends StatelessWidget {
+  final controller = Get.put(PaintingController());
+  final signupcontroller = Get.put(SignUpController());
+
   static String id = 'ClickBody';
-  const ClickBody({super.key});
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
     return SafeArea(
       child: Scaffold(
-        resizeToAvoidBottomInset:false,
+          resizeToAvoidBottomInset: false,
           backgroundColor: white_color,
           appBar: reAppBar("Add symptoms"),
           body: Column(
@@ -39,12 +47,26 @@ class ClickBody extends StatelessWidget {
                                         GestureType.onTapDown,
                                       ],
                                       builder: (context) => CustomPaint(
-                                        size: Size(
-                                            width / 3.5,
-                                            (width / 3.5 * 3.8185660738495892)
-                                                .toDouble()),
-                                        painter: FrontMan(context),
-                                      ),
+                                          size: Size(
+                                              width / 3.5,
+                                              (width / 3.5 * 3.8185660738495892)
+                                                  .toDouble()),
+                                          painter: controller.rotated ==
+                                                      false &&
+                                                  signupcontroller.Gender ==
+                                                      'male'
+                                              ? FrontMan(context)
+                                              : controller.rotated == true &&
+                                                      signupcontroller.Gender ==
+                                                          'male'
+                                                  ? BackMan(context)
+                                                  : controller.rotated ==
+                                                              false &&
+                                                          signupcontroller
+                                                                  .Gender ==
+                                                              'female'
+                                                      ? FrontWomen(context)
+                                                      : BackWomen()),
                                     ))),
                           ],
                         ),
@@ -62,7 +84,9 @@ class ClickBody extends StatelessWidget {
                             width: 3,
                           ),
                           TextButton(
-                            onPressed: () {},
+                            onPressed: () {
+                              controller.bodyrotated();
+                            },
                             child: Text(
                               'Rotate',
                               style: TextStyle(
@@ -84,6 +108,8 @@ class ClickBody extends StatelessWidget {
 }
 
 class PaintingController extends GetxController {
+  bool rotated = false;
+  bool malegender = true;
   final symotoms = UniqueList<String>();
   Color backgroundColor = const Color.fromRGBO(144, 167, 230, 1);
   String? selectedSymptoms;
@@ -135,10 +161,8 @@ class PaintingController extends GetxController {
     update();
   }
 
-  void returntoorigin() {
-    backgroundColor == const Color.fromRGBO(144, 167, 230, 1)
-        ? backgroundColor = const Color(0xff90a7e6).withOpacity(0)
-        : backgroundColor = const Color(0xff90a7e6).withOpacity(0);
+  void bodyrotated() {
+    rotated = !rotated;
     update();
   }
 }
