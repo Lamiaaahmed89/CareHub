@@ -18,89 +18,91 @@ class UserInformation extends StatelessWidget {
       appBar: SignUpBar('Next', "Tobirthdate"),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0, vertical: 24.0),
-        child: ListView(
-          children: [
-            Container(
-              width: 40.0,
-              height: 40.0,
-              decoration: BoxDecoration(
-                color: Main_color,
-                shape: BoxShape.circle,
-              ),
-              child: Icon(
-                Iconsax.user,
-                color: white_color,
-              ),
-            ),
-            SizedBox(
-              height: 32,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'Tell us about yourself',
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              Container(
+                width: 40.0,
+                height: 40.0,
+                decoration: BoxDecoration(
+                  color: Main_color,
+                  shape: BoxShape.circle,
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 9.0,
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'To give you a better experience',
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Text2_color,
+                child: Icon(
+                  Iconsax.user,
+                  color: white_color,
+                ),
+              ),
+              SizedBox(
+                height: 32,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Tell us about yourself',
                   ),
-                ),
-              ],
-            ),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  'we need to know some information about you',
-                  style: TextStyle(
-                    fontSize: 14.0,
-                    color: Text2_color,
+                ],
+              ),
+              SizedBox(
+                height: 9.0,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'To give you a better experience',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Text2_color,
+                    ),
                   ),
+                ],
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'we need to know some information about you',
+                    style: TextStyle(
+                      fontSize: 14.0,
+                      color: Text2_color,
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 67.0,
+              ),
+              InputField(
+                hint_text: 'Enter Your First Name ',
+                prefix: Icon(
+                  Iconsax.user,
+                  color: Main_color,
                 ),
-              ],
-            ),
-            SizedBox(
-              height: 67.0,
-            ),
-            InputField(
-              hint_text: 'Enter Your First Name ',
-              prefix: Icon(
-                Iconsax.user,
-                color: Main_color,
               ),
-            ),
-            SizedBox(
-              height: 32.0,
-            ),
-            InputField(
-              hint_text: 'Enter Your Last Name ',
-              prefix: Icon(
-                Iconsax.user,
-                color: Main_color,
+              SizedBox(
+                height: 32.0,
               ),
-            ),
-            SizedBox(
-              height: 32.0,
-            ),
-            InputField(
-              hint_text: 'Enter Your Phone ',
-              prefix: Icon(
-                Iconsax.call,
-                color: Main_color,
+              InputField(
+                hint_text: 'Enter Your Last Name ',
+                prefix: Icon(
+                  Iconsax.user,
+                  color: Main_color,
+                ),
               ),
-            ),
-          ],
+              SizedBox(
+                height: 32.0,
+              ),
+              InputField(
+                hint_text: 'Enter Your Phone ',
+                prefix: Icon(
+                  Iconsax.call,
+                  color: Main_color,
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

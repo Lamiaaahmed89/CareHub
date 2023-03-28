@@ -21,7 +21,7 @@ class _BirthDatePageState extends State<BirthDatePage> {
     return Scaffold(
       backgroundColor: white_color,
       appBar: SignUpBar('Next', 'ToGender'),
-      body:  ListView(
+      body:  Column(
         children: [
           SizedBox(height: 25,),
           Container(

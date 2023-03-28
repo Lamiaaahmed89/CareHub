@@ -9,6 +9,7 @@ import 'package:graduation_project/view/registaration_pages/login_pages/password
 import 'package:iconsax/iconsax.dart';
 
 class ResetPassword extends StatelessWidget {
+  static String id = 'ResetPassword';
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -18,12 +19,12 @@ class ResetPassword extends StatelessWidget {
       appBar: appBar('Reset Password'),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
-        child: Column(
+        child: ListView(
           children: [
             SvgPicture.asset(
               'assets/images/image_login/Login-bro.svg',
               width: w,
-            height:h*0.45 ,
+              height: h * 0.45,
             ),
             Center(
               child: Text(
@@ -40,9 +41,7 @@ class ResetPassword extends StatelessWidget {
               child: Text(
                 'Your new password must be different',
                 style: TextStyle(
-                    fontSize: 14.0,
-                    fontFamily: 'Poppins',
-                    color: Second_color),
+                    fontSize: 14.0, fontFamily: 'Poppins', color: Second_color),
               ),
             ),
             Center(
@@ -73,6 +72,8 @@ class ResetPassword extends StatelessWidget {
               height: 32,
             ),
             RegisterButton(
+              color_button: Main_color,
+              text_color: white_color,
                 navigate: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) {

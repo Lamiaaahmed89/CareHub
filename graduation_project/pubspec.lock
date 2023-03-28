@@ -233,7 +233,7 @@ packages:
     source: hosted
     version: "0.0.8"
   intl:
-    dependency: transitive
+    dependency: "direct main"
     description:
       name: intl
       sha256: a3715e3bc90294e971cb7dc063fbf3cd9ee0ebf8604ffeafabd9e6f16abbdbe6
@@ -557,6 +557,8 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.4.16"
+
+
   touchable:
     dependency: "direct main"
     description:
@@ -565,6 +567,7 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.2"
+
   typed_data:
     dependency: transitive
     description:
@@ -609,7 +612,11 @@ packages:
     dependency: transitive
     description:
       name: xml
+
+      sha256: ac0e3f4bf00ba2708c33fbabbbe766300e509f8c82dbd4ab6525039813f7e2fb
+
       sha256: "979ee37d622dec6365e2efa4d906c37470995871fe9ae080d967e192d88286b5"
+
       url: "https://pub.dev"
     source: hosted
     version: "6.2.2"

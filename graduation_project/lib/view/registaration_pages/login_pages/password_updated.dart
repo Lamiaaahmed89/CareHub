@@ -9,6 +9,7 @@ import 'package:iconsax/iconsax.dart';
 
 class PasswordUpdated extends StatelessWidget {
   const PasswordUpdated({super.key});
+  static String id = 'PasswordUpdated';
 
   @override
   Widget build(BuildContext context) {
@@ -19,34 +20,39 @@ class PasswordUpdated extends StatelessWidget {
       appBar: appBar('Reset Password'),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16),
-        child: ListView(
-        children: [
+        child: ListView(children: [
           SvgPicture.asset(
             'assets/images/image_login/done.svg',
-            width:h*0.45 ,
+            width: h * 0.45,
           ),
-          Text(
-            'Password Update',
-            style: TextStyle(
-              color: Main_color,
-              fontSize: 16,
-              fontWeight: FontWeight.w500,
+          Center(
+            child: Text(
+              'Password Update',
+              style: TextStyle(
+                color: Main_color,
+                fontSize: 16,
+                fontWeight: FontWeight.w500,
+              ),
             ),
           ),
           SizedBox(
             height: 10,
           ),
-          Text(
-            'Your password has been updated',
-            style: TextStyle(
-              fontSize: 14,
-              color: Second_color,
+          Center(
+            child: Text(
+              'Your password has been updated',
+              style: TextStyle(
+                fontSize: 14,
+                color: Second_color,
+              ),
             ),
           ),
           SizedBox(
             height: 25,
           ),
           RegisterButton(
+            color_button: Main_color,
+            text_color: white_color,
               navigate: () {
                 Navigator.pushNamed(context, LoginPage.id);
               },
