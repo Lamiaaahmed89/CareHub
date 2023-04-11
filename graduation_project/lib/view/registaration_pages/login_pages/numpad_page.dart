@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/view/registaration_pages/login_pages/reset_password.dart';
 import 'package:iconsax/iconsax.dart';
 
 class NumPad extends StatefulWidget {
@@ -23,7 +22,7 @@ class _NumPadState extends State<NumPad> {
         decoration: BoxDecoration(
           color: white_color,
         ),
-        child: OtpScreen(),
+        child: const OtpScreen(),
       ),
     );
   }
@@ -47,7 +46,7 @@ class _OtpScreenState extends State<OtpScreen> {
 
   var Outline = OutlineInputBorder(
       borderRadius: BorderRadius.circular(60.0),
-      borderSide: BorderSide(color: Colors.transparent));
+      borderSide: const BorderSide(color: Colors.transparent));
 
   int pinIndex = 0;
 
@@ -62,23 +61,23 @@ class _OtpScreenState extends State<OtpScreen> {
           Expanded(
             child: Container(
               // alignment: Alignment(0, 0.5),
-              padding: EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Column(
                 mainAxisSize: MainAxisSize.min,
                 children: [
                   buildSecurityText(),
-                  SizedBox(
+                  const SizedBox(
                     height: 10.0,
                   ),
                   Text(
                     'Check your email. We\'ve sent\n you the code at your email',
                     style: TextStyle(fontSize: 14.0, color: Second_color),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 27.0,
                   ),
                   buildPinRow(),
-                  SizedBox(
+                  const SizedBox(
                     height: 24.0,
                   ),
                   TextButton(
@@ -92,7 +91,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 65,
                   ),
                   buildNumberPad(),
@@ -110,7 +109,7 @@ class _OtpScreenState extends State<OtpScreen> {
       child: Container(
         alignment: Alignment.bottomCenter,
         child: Padding(
-          padding: EdgeInsets.only(
+          padding: const EdgeInsets.only(
             bottom: 20.0,
           ),
           child: ListView(
@@ -138,7 +137,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               Row(
@@ -164,7 +163,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               Row(
@@ -190,7 +189,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              SizedBox(
+              const SizedBox(
                 height: 32,
               ),
               Row(
@@ -198,7 +197,7 @@ class _OtpScreenState extends State<OtpScreen> {
                 children: [
                   Container(
                     width: 60.0,
-                    child: MaterialButton(
+                    child: const MaterialButton(
                       onPressed: null,
                       child: SizedBox(),
                     ),
@@ -297,35 +296,35 @@ class _OtpScreenState extends State<OtpScreen> {
           outlineInputBorder: Outline,
           textEditingController: pinOneController,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5.0,
         ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinTwoController,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5.0,
         ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinThreeController,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5.0,
         ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinFourController,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5.0,
         ),
         PINNumber(
           outlineInputBorder: Outline,
           textEditingController: pinFiveController,
         ),
-        SizedBox(
+        const SizedBox(
           width: 5.0,
         ),
         PINNumber(
@@ -390,7 +389,7 @@ class KeyboardNumber extends StatelessWidget {
       width: 60.0,
       height: 60.0,
       decoration: BoxDecoration(boxShadow: [
-        BoxShadow(
+        const BoxShadow(
           color: Color.fromARGB(16, 0, 0, 0),
           offset: Offset(0, 3),
           blurRadius: 6.0,
@@ -398,7 +397,7 @@ class KeyboardNumber extends StatelessWidget {
       ], shape: BoxShape.circle, color: white_color),
       alignment: Alignment.center,
       child: MaterialButton(
-        padding: EdgeInsets.all(8.0),
+        padding: const EdgeInsets.all(8.0),
         onPressed: onPressed,
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.circular(60.0),

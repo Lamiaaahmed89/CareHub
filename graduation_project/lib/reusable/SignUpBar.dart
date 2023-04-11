@@ -5,6 +5,7 @@ import 'package:graduation_project/view/registaration_pages/SignUp_Pages/ChooseG
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/ChoosePhoto.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/EnterHeight.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/EnterWeight.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 
 import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -28,27 +29,27 @@ PreferredSizeWidget SignUpBar(String action, GoWhere) {
       TextButton(
           onPressed: () {
             if (GoWhere == "Toblood") {
-              Get.to(ChooseBlood());
+              Get.to(() => ChooseBlood());
             }
 
             if (GoWhere == "Toweight") {
-              Get.to(EnterWeight());
+              Get.to(() => EnterWeight());
             }
 
             if (GoWhere == "Toheight") {
-              Get.to(EnterHeight());
+              Get.to(() => EnterHeight());
             }
             if (GoWhere == "Tophoto") {
-              Get.to(ChoosePhoto());
+              Get.to(() => ChoosePhoto());
             }
-            if (GoWhere == "Tolocation") {
-              Get.to(AllowLocation());
+            if (GoWhere == "Tologin") {
+              Get.to(() => LoginPage());
             }
             if (GoWhere == "Tobirthdate") {
-              Get.to(BirthDatePage());
+              Get.to(() => BirthDatePage());
             }
             if (GoWhere == "ToGender") {
-              Get.to(ChooseGender());
+              Get.to(() => ChooseGender());
             }
           },
           child: Text(

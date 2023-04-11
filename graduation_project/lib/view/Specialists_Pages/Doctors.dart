@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
@@ -127,7 +126,8 @@ Widget DoctorCard(widtth, heightt) {
                 height: 90,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      fit: BoxFit.cover, image: AssetImage("assets/abdo.jpg")),
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/images/abdo.jpg")),
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   color: HexColor("#f0f0f0"),
                 ),
@@ -157,17 +157,16 @@ Widget DoctorCard(widtth, heightt) {
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: 50,
-                  left: 40,
-                ),
-                child: Text(
-                  "150\$",
-                  style: TextStyle(
-                      color: HexColor("#285FFA"),
-                      fontSize: 14,
-                      fontWeight: FontWeight.w400),
+              Expanded(
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Text(
+                    "150\$",
+                    style: TextStyle(
+                        color: HexColor("#285FFA"),
+                        fontSize: 14,
+                        fontWeight: FontWeight.w400),
+                  ),
                 ),
               )
             ],

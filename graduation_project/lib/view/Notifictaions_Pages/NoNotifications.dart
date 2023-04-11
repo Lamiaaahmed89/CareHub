@@ -1,10 +1,7 @@
 
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:iconsax/iconsax.dart';
 
 class NoNotifications extends StatelessWidget {
   const NoNotifications({super.key});
@@ -19,7 +16,7 @@ class NoNotifications extends StatelessWidget {
       body: Center(
         child: Padding(
           padding: EdgeInsets.only(top: heightt * .1),
-          child: Container(
+          child: SizedBox(
             // color: Colors.amber,
             width: widtth * 0.85,
             child: Padding(
@@ -31,9 +28,9 @@ class NoNotifications extends StatelessWidget {
                     // width: 300,
                     height: (heightt * 50.714) / 100,
                   ),
-                  Container(
+                  SizedBox(
                     width: (widtth * .55),
-                    child: Text(
+                    child: const Text(
                       "Opps, no notification yet!",
                       textAlign: TextAlign.center,
                     ),

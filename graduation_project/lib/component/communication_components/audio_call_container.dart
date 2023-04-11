@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:iconsax/iconsax.dart';
 
-import '../../constants/colors.dart';
 
 class AudioCallContainer extends StatelessWidget {
   AudioCallContainer(

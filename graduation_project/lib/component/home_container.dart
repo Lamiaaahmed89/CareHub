@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class HomeContainer extends StatelessWidget {
   HomeContainer(
       {this.width,
-      this.navigate,
+      required this.navigate,
       this.height,
       this.imageHeight,
       this.imageWidth,
@@ -22,25 +21,27 @@ class HomeContainer extends StatelessWidget {
   double? height;
   double? imageWidth;
   double? imageHeight;
-  Function()? navigate;
+  String navigate;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
         GestureDetector(
-          onTap: navigate,
+          onTap: () {
+            Get.toNamed(navigate);
+          },
           child: Container(
             width: width,
             height: height,
             decoration: BoxDecoration(
                 color: white_color,
-                borderRadius: BorderRadius.all(Radius.circular(10.0)),
+                borderRadius: const BorderRadius.all(Radius.circular(10.0)),
                 boxShadow: [
                   BoxShadow(
                     color: HexColor("#000000").withAlpha(16),
                     blurRadius: 6,
-                    offset: Offset(0, 3),
+                    offset: const Offset(0, 3),
                   ),
                 ]),
             child: Column(
@@ -53,7 +54,7 @@ class HomeContainer extends StatelessWidget {
                 ),
                 Text(
                   text!,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
                   ),

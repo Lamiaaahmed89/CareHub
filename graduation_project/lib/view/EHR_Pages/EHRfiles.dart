@@ -1,4 +1,3 @@
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +8,7 @@ import 'package:iconsax/iconsax.dart';
 
 class EHRfiles extends StatelessWidget {
   const EHRfiles({super.key});
+  static String id = 'EHRfiles';
 
   @override
   Widget build(BuildContext context) {
@@ -61,7 +61,7 @@ class EHRfiles extends StatelessWidget {
                     width: widtth * .5,
                     height: heightt * .5,
                     child: SvgPicture.asset(
-                      "assets/Folder.svg",
+                      "assets/images/Folder.svg",
                     ),
                   ),
                   Padding(
@@ -89,9 +89,9 @@ class EHRfiles extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 EHRCard(widtth, heightt, "Prescriptions",
-                    "assets/Medical prescription.svg", 1),
+                    "assets/images/Medical prescription.svg", 1),
                 EHRCard(widtth, heightt, "Medical Diagnosis",
-                    "assets/Medical Diagnosis.svg", 2),
+                    "assets/images/Medical Diagnosis.svg", 2),
               ],
             ),
             SizedBox(
@@ -100,7 +100,7 @@ class EHRfiles extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(right: (widtth * .48)),
               child: EHRCard(widtth, heightt, "Medical Tests",
-                  "assets/Medical Tests.svg", 3),
+                  "assets/images/Medical Tests.svg", 3),
             ),
           ],
         ),

@@ -7,7 +7,6 @@ import 'package:graduation_project/view/body_model/click_body.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../component/register_button.dart';
-import 'resultservices.dart';
 
 class findServices extends StatefulWidget {
   @override
@@ -75,6 +74,8 @@ class _findServicesState extends State<findServices> {
               child: Padding(
                 padding: const EdgeInsets.only(bottom: 32),
                 child: RegisterButton(
+                  text_color: white_color,
+                  color_button: Main_color,
                   navigate: () {
                     bodycontroller.bodySymptoms();
                     controller.symotoms;

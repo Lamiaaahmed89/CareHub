@@ -1,4 +1,3 @@
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -21,8 +20,14 @@ class EachDoctorDiagnosis extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: widtth * .04),
         child: Column(
           children: [
-            EHRfilesList(ListtTile("assets/Medical Diagnosis.svg",
-                "Medical Diagnosis", "march 13 2023", widtth, heightt, "",false)),
+            EHRfilesList(ListtTile(
+                "assets/images/Medical Diagnosis.svg",
+                "Medical Diagnosis",
+                "march 13 2023",
+                widtth,
+                heightt,
+                "",
+                false)),
           ],
         ),
       ),

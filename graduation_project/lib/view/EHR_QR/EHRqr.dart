@@ -1,4 +1,3 @@
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 
 class EHR_QR extends StatelessWidget {
   const EHR_QR({super.key});
+  static String id = 'EHR_QR';
 
   @override
   Widget build(BuildContext context) {
@@ -35,10 +35,11 @@ class EHR_QR extends StatelessWidget {
                   EdgeInsets.only(top: heightt * .15, bottom: heightt * .02),
               child: Container(
                 width: widtth * .6,
-                height: heightt * .3,
+                height: heightt * .4,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      fit: BoxFit.cover, image: AssetImage("assets/QR.png")),
+                      fit: BoxFit.cover,
+                      image: AssetImage("assets/images/QR.png")),
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   color: Colors.white,
                   boxShadow: [

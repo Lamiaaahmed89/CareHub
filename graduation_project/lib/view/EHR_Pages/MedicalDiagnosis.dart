@@ -23,7 +23,7 @@ class MedicalDiagnosis extends StatelessWidget {
         child: Column(
           children: [
             SearchBar(widtth, heightt, "Search by the name of Dr"),
-            EHRfilesList(ListtTile("assets/Medical Diagnosis.svg",
+            EHRfilesList(ListtTile("assets/images/Medical Diagnosis.svg",
                 "Medical Diagnosis", "Dr.Mohammed", widtth, heightt,"EachDoctorDiagnosis",false)),
           ],
         ),

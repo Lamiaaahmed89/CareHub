@@ -62,7 +62,7 @@ class EachDoctorResults extends StatelessWidget {
               ),
             ),
             Loading(widtth,heightt),
-            EHRfilesList(ListtTile("assets/Medical Tests.svg",
+            EHRfilesList(ListtTile("assets/images/Medical Tests.svg",
                 "Medical Results", "march 13 2023", widtth, heightt, "", true)),
           ],
         ),

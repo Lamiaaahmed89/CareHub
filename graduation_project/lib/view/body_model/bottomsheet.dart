@@ -135,7 +135,7 @@ Future OriginBottomsheet(context, int origin) {
       builder: (context) {
         return Container(
             decoration: BoxDecoration(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Color.fromARGB(16, 0, 0, 0),
                   offset: Offset(0, 3),
@@ -208,7 +208,7 @@ Future symptomsBottomsheet(context, symptomsposition, originnum) {
       builder: (context) {
         return Container(
             decoration: BoxDecoration(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
                   color: Color.fromARGB(16, 0, 0, 0),
                   offset: Offset(0, 3),
@@ -259,7 +259,7 @@ Future symptomsBottomsheet(context, symptomsposition, originnum) {
                 child: Container(
                     decoration: BoxDecoration(
                       border: Border.all(color: Main_color),
-                      boxShadow: [
+                      boxShadow: const [
                         BoxShadow(
                           color: Color.fromARGB(16, 0, 0, 0),
                           offset: Offset(0, 3),

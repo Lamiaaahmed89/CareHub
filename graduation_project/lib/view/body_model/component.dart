@@ -191,7 +191,7 @@ Widget autosearch() {
             color: white_color,
           ),
           child: ListView.builder(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             itemCount: options.length,
             itemBuilder: (context, index) {
               final option = options.elementAt(index);
@@ -199,7 +199,7 @@ Widget autosearch() {
               return ListTile(
                 trailing: IconButton(
                   color: Main_color,
-                  icon: Icon(Iconsax.add_circle),
+                  icon: const Icon(Iconsax.add_circle),
                   onPressed: () {
                     controller.symotoms.add(option);
                     print(controller.symotoms
@@ -223,7 +223,7 @@ Widget autosearch() {
       return Padding(
         padding: const EdgeInsets.all(16),
         child: Container(
-          decoration: BoxDecoration(boxShadow: [
+          decoration: BoxDecoration(boxShadow: const [
             BoxShadow(
               color: Color.fromARGB(16, 0, 0, 0),
               offset: Offset(0, 3),

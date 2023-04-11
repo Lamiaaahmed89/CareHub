@@ -35,7 +35,7 @@ class PasswordUpdated extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Center(
@@ -47,7 +47,7 @@ class PasswordUpdated extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
+          const SizedBox(
             height: 25,
           ),
           RegisterButton(

@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -6,7 +5,6 @@ import 'package:graduation_project/Controllers/SignUpController.dart';
 import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
-
 
 class ChoosePhoto extends StatelessWidget {
   const ChoosePhoto({super.key});
@@ -17,8 +15,8 @@ class ChoosePhoto extends StatelessWidget {
     double heightt = MediaQuery.of(context).size.height;
     SignUpController controller = Get.put(SignUpController());
     return Scaffold(
-      backgroundColor: Colors.white,
-      appBar: SignUpBar("Done", "Tolocation"),
+      backgroundColor: Color(0xFFFFFFFF),
+      appBar: SignUpBar("Done", "Tologin"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: widtth * .10),
         child: Padding(
@@ -98,110 +96,117 @@ class ChoosePhoto extends StatelessWidget {
                         ),
                         Spacer(),
                         Spacer(),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                          children: [
-                            GestureDetector(
-                              onTap: () {
-                                controller.ChoosePhoto("1");
-                              },
-                              child: (() {
-                                if (controller.Gender == "male") {
-                                  if (controller.IMG1 == true) {
-                                    return SvgPicture.asset(
-                                      "assets/man1-after.svg",
-                                      // color: Colors.amber,
-                                    );
-                                  } else {
-                                    return SvgPicture.asset(
-                                      "assets/man1-before.svg",
-                                      // color: Colors.amber,
-                                    );
+                        Container(
+                          height: heightt * 0.25,
+                          child: SingleChildScrollView(
+                            child: Column(children: [
+                              Row(
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceBetween,
+                                children: [
+                                  GestureDetector(
+                                    onTap: () {
+                                      controller.ChoosePhoto("1");
+                                    },
+                                    child: (() {
+                                      if (controller.Gender == "male") {
+                                        if (controller.IMG1 == true) {
+                                          return SvgPicture.asset(
+                                            "assets/images/man1-after.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        } else {
+                                          return SvgPicture.asset(
+                                            "assets/images/man1-before.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        }
+                                      }
+                                      if (controller.Gender == "female") {
+                                        if (controller.IMG1 == true) {
+                                          return SvgPicture.asset(
+                                            "assets/images/woman1-after.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        } else {
+                                          return SvgPicture.asset(
+                                            "assets/images/woman1-before.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        }
+                                      }
+                                    }()),
+                                  ),
+                                  GestureDetector(
+                                    onTap: () {
+                                      controller.ChoosePhoto("2");
+                                    },
+                                    child: (() {
+                                      if (controller.Gender == "male") {
+                                        if (controller.IMG2 == true) {
+                                          return SvgPicture.asset(
+                                            "assets/images/man2-after.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        } else {
+                                          return SvgPicture.asset(
+                                            "assets/images/man2-before.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        }
+                                      }
+                                      if (controller.Gender == "female") {
+                                        if (controller.IMG2 == true) {
+                                          return SvgPicture.asset(
+                                            "assets/images/woman2-after.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        } else {
+                                          return SvgPicture.asset(
+                                            "assets/images/woman2-before.svg",
+                                            // color: Colors.amber,
+                                          );
+                                        }
+                                      }
+                                    }()),
+                                  )
+                                ],
+                              ),
+                              GestureDetector(
+                                onTap: () {
+                                  controller.ChoosePhoto("3");
+                                },
+                                child: (() {
+                                  if (controller.Gender == "male") {
+                                    if (controller.IMG3 == true) {
+                                      return SvgPicture.asset(
+                                        "assets/images/man3-after.svg",
+                                        // color: Colors.amber,
+                                      );
+                                    } else {
+                                      return SvgPicture.asset(
+                                        "assets/images/man3-before.svg",
+                                        // color: Colors.amber,
+                                      );
+                                    }
                                   }
-                                }
-                                if (controller.Gender == "female") {
-                                  if (controller.IMG1 == true) {
-                                    return SvgPicture.asset(
-                                      "assets/woman1-after.svg",
-                                      // color: Colors.amber,
-                                    );
-                                  } else {
-                                    return SvgPicture.asset(
-                                      "assets/woman1-before.svg",
-                                      // color: Colors.amber,
-                                    );
+                                  if (controller.Gender == "female") {
+                                    if (controller.IMG3 == true) {
+                                      return SvgPicture.asset(
+                                        "assets/images/woman3-after.svg",
+                                        // color: Colors.amber,
+                                      );
+                                    } else {
+                                      return SvgPicture.asset(
+                                        "assets/images/woman3-before.svg",
+                                        // color: Colors.amber,
+                                      );
+                                    }
                                   }
-                                }
-                              }()),
-                            ),
-                            GestureDetector(
-                              onTap: () {
-                                controller.ChoosePhoto("2");
-                              },
-                              child: (() {
-                                if (controller.Gender == "male") {
-                                  if (controller.IMG2 == true) {
-                                    return SvgPicture.asset(
-                                      "assets/man2-after.svg",
-                                      // color: Colors.amber,
-                                    );
-                                  } else {
-                                    return SvgPicture.asset(
-                                      "assets/man2-before.svg",
-                                      // color: Colors.amber,
-                                    );
-                                  }
-                                }
-                                if (controller.Gender == "female") {
-                                  if (controller.IMG2 == true) {
-                                    return SvgPicture.asset(
-                                      "assets/woman2-after.svg",
-                                      // color: Colors.amber,
-                                    );
-                                  } else {
-                                    return SvgPicture.asset(
-                                      "assets/woman2-before.svg",
-                                      // color: Colors.amber,
-                                    );
-                                  }
-                                }
-                              }()),
-                            )
-                          ],
-                        ),
-                        Spacer(),
-                        GestureDetector(
-                          onTap: () {
-                            controller.ChoosePhoto("3");
-                          },
-                          child: (() {
-                            if (controller.Gender == "male") {
-                              if (controller.IMG3 == true) {
-                                return SvgPicture.asset(
-                                  "assets/man3-after.svg",
-                                  // color: Colors.amber,
-                                );
-                              } else {
-                                return SvgPicture.asset(
-                                  "assets/man3-before.svg",
-                                  // color: Colors.amber,
-                                );
-                              }
-                            }
-                            if (controller.Gender == "female") {
-                              if (controller.IMG3 == true) {
-                                return SvgPicture.asset(
-                                  "assets/woman3-after.svg",
-                                  // color: Colors.amber,
-                                );
-                              } else {
-                                return SvgPicture.asset(
-                                  "assets/woman3-before.svg",
-                                  // color: Colors.amber,
-                                );
-                              }
-                            }
-                          }()),
+                                }()),
+                              )
+                            ]),
+                          ),
                         )
                       ],
                     )))),

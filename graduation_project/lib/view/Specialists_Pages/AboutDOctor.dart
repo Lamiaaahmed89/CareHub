@@ -7,6 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
+import '../Appointment_pages/choose_appointment.dart';
+
 class AboutDoctor extends StatelessWidget {
   const AboutDoctor({super.key});
 
@@ -32,7 +34,7 @@ class AboutDoctor extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/abdo.jpg")),
+                          image: AssetImage("assets/images/abdo.jpg")),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       color: HexColor("#f0f0f0"),
                       boxShadow: [
@@ -296,7 +298,9 @@ class AboutDoctor extends StatelessWidget {
                   ),
                   Center(
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(() => ChooseAppointment());
+                        },
                         child: Text(
                           "Book an Appointement",
                           style: TextStyle(

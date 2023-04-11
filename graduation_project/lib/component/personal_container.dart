@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:iconsax/iconsax.dart';
 
 class PersonalContainer extends StatelessWidget {
   PersonalContainer(
@@ -26,7 +25,7 @@ class PersonalContainer extends StatelessWidget {
               BoxShadow(
                 color: HexColor("#000000").withAlpha(16),
                 blurRadius: 6,
-                offset: Offset(0, 3),
+                offset: const Offset(0, 3),
               ),
             ]),
         child: Column(
@@ -41,7 +40,7 @@ class PersonalContainer extends StatelessWidget {
                 ),
                 Text(
                   containerText,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                   ),
                 ),
@@ -49,7 +48,7 @@ class PersonalContainer extends StatelessWidget {
             ),
             Text(
               text,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 12,
               ),
             ),
@@ -82,7 +81,7 @@ class PersonalContainerWithImage extends StatelessWidget {
             BoxShadow(
               color: HexColor("#000000").withAlpha(16),
               blurRadius: 6,
-              offset: Offset(0, 3),
+              offset: const Offset(0, 3),
             ),
           ]
           ),
@@ -96,7 +95,7 @@ class PersonalContainerWithImage extends StatelessWidget {
              color: Main_color,),
               Text(
                 containerText,
-                style: TextStyle(
+                style: const TextStyle(
                   fontSize: 12,
                 ),
               ),
@@ -109,7 +108,7 @@ class PersonalContainerWithImage extends StatelessWidget {
               children: [
                 Text(
                   text,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 12,
                   ),
                 ),

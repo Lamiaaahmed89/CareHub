@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
-
 Widget MessCard(double Widtth, double heightt) {
   return Padding(
     padding: EdgeInsets.only(bottom: 10),
@@ -41,7 +40,7 @@ Widget MessCard(double Widtth, double heightt) {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/abdo.jpg")),
+                          image: AssetImage("assets/images/abdo.jpg")),
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),

@@ -67,7 +67,7 @@ class ChooseAppointment extends StatelessWidget {
               height: 64,
             ),
             GestureDetector(
-              onTap: (){
+              onTap: () {
                 Navigator.pushNamed(context, AppointmentDate.id);
               },
               child: Container(

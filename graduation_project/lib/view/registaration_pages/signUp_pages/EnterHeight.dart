@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -6,7 +5,6 @@ import 'package:graduation_project/Controllers/SignUpController.dart';
 import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
-
 
 class EnterHeight extends StatelessWidget {
   const EnterHeight({super.key});
@@ -32,7 +30,7 @@ class EnterHeight extends StatelessWidget {
                 height: heightt * .1,
                 alignment: Alignment.center,
                 child: SvgPicture.asset(
-                  "assets/ruler.svg",
+                  "assets/images/ruler.svg",
                 ),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -84,17 +82,19 @@ class EnterHeight extends StatelessWidget {
                         width: widtth * .3,
                         child: SvgPicture.asset(
                           controller.Gender == "male"
-                              ? "assets/man.svg"
-                              : "assets/woman.svg",
+                              ? "assets/images/man.svg"
+                              : "assets/images/woman.svg",
                           color: Color(0x80AEB2BB),
                         ),
                       ),
                     ),
-                    Container(
-                      height: heightt * .5,
-                      width: widtth * .3,
-                      child: SvgPicture.asset(
-                        "assets/ruler-height.svg",
+                    Expanded(
+                      child: Container(
+                        height: heightt * .5,
+                        width: widtth * .3,
+                        child: SvgPicture.asset(
+                          "assets/images/ruler-height.svg",
+                        ),
                       ),
                     ),
                   ],

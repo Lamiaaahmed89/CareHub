@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Controllers/SpecialistsController.dart';
@@ -12,6 +11,7 @@ import 'package:iconsax/iconsax.dart';
 
 class SpecialistsListView extends StatelessWidget {
   const SpecialistsListView({super.key});
+  static String id = 'SpecialistsListView';
 
   @override
   Widget build(BuildContext context) {

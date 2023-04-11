@@ -14,15 +14,14 @@ class bodyController extends GetxController {
   Future<void> bodySymptoms() async {
     var header = {
       'Content-Type': 'application/json',
-      
     };
     try {
       var url = Uri.parse("$baseURL/ai/score");
       var Body = {"dieseases": paintingcontroller.symotoms};
       http.Response response =
-          await http.post(url, body: json.encode(Body),headers: header);
+          await http.post(url, body: json.encode(Body), headers: header);
       if (response.statusCode == 200) {
-        result = response.body;
+        result = response.body[0];
         print(result);
       } else {
         print(jsonDecode(response.body));

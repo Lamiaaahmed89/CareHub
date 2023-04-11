@@ -10,6 +10,8 @@ import 'package:iconsax/iconsax.dart';
 
 class ResetPassword extends StatelessWidget {
   static String id = 'ResetPassword';
+
+  const ResetPassword({super.key});
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -54,7 +56,7 @@ class ResetPassword extends StatelessWidget {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 17.0,
             ),
             InputField(
@@ -68,7 +70,7 @@ class ResetPassword extends StatelessWidget {
                 color: Main_color,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             RegisterButton(
@@ -77,7 +79,7 @@ class ResetPassword extends StatelessWidget {
                 navigate: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) {
-                    return PasswordUpdated();
+                    return const PasswordUpdated();
                   }));
                 },
                 register_txt: 'Create'),

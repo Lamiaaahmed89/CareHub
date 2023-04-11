@@ -1,3 +1,4 @@
+import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -63,7 +64,9 @@ class EnterWeight extends StatelessWidget {
                         right: widtth * .65, left: widtth * .17),
                     child: Text(
                       "kg",
-                      style: TextStyle(color: HexColor("#AEB2BB")),
+                      style: TextStyle(
+                        color: HexColor("#AEB2BB"),
+                      ),
                     ),
                   ),
                 ),
@@ -75,17 +78,19 @@ class EnterWeight extends StatelessWidget {
                 height: heightt * .5,
                 child: SvgPicture.asset(
                   controller.Gender == "male"
-                      ? "assets/man.svg"
-                      : "assets/woman.svg",
+                      ? "assets/images/man.svg"
+                      : "assets/images/woman.svg",
                   color: Color(0x80AEB2BB),
                 ),
               ),
             ),
-            Container(
-              width: widtth * .7,
-              height: heightt * .15,
-              child: SvgPicture.asset(
-                "assets/ruler-weight.svg",
+            Expanded(
+              child: Container(
+                width: widtth * .7,
+                height: heightt * .15,
+                child: SvgPicture.asset(
+                  "assets/images/ruler-weight.svg",
+                ),
               ),
             ),
           ],

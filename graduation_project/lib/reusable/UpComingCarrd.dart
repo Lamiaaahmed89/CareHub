@@ -41,7 +41,7 @@ Widget UpComingCarrd(widtth, heightt) {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/abdo.jpg")),
+                          image: AssetImage("assets/images/abdo.jpg")),
                       borderRadius: BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),

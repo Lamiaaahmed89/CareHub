@@ -7,6 +7,7 @@ import 'package:iconsax/iconsax.dart';
 
 class EmergencyCardQR extends StatelessWidget {
   const EmergencyCardQR({super.key});
+  static String id = 'EmergencyCardQR';
 
   @override
   Widget build(BuildContext context) {
@@ -24,10 +25,10 @@ class EmergencyCardQR extends StatelessWidget {
                   EdgeInsets.only(top: heightt * .15, bottom: heightt * .02),
               child: Container(
                 width: widtth * .6,
-                height: heightt * .3,
+                height: heightt * .4,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      fit: BoxFit.cover, image: AssetImage("assets/QR.png")),
+                      fit: BoxFit.cover, image: AssetImage("assets/images/QR.png")),
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   color: Colors.white,
                   boxShadow: [

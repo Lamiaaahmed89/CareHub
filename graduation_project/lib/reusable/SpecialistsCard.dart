@@ -1,11 +1,11 @@
-
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:iconsax/iconsax.dart';
+
+import '../view/Specialists_Pages/Doctors.dart';
 
 Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
   return Padding(
@@ -16,7 +16,9 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
         bottom: heightt * .01,
         right: widtth * .009),
     child: GestureDetector(
-      onTap: (() {}),
+      onTap: (() {
+        Get.to(() => Doctors());
+      }),
       child: Stack(children: [
         Container(
           // width: 90,
