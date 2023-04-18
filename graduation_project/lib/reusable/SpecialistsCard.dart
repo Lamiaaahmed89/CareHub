@@ -52,7 +52,7 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
                 ),
               ),
               SizedBox(
-                width: 20,
+                width: widtth * .045,
               ),
               Padding(
                 padding: EdgeInsets.only(
@@ -79,7 +79,7 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
           ),
         ),
         Positioned(
-          right: 20,
+          right: widtth * .035,
           top: 20,
           child: Container(
             width: widtth * .07,

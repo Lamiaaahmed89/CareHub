@@ -36,8 +36,8 @@ Widget CancelledCard(widtth, heightt) {
               Row(
                 children: [
                   Container(
-                    width: 70.0,
-                    height: 70.0,
+                    width: widtth * .17,
+                    height: heightt * .085,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
@@ -47,7 +47,7 @@ Widget CancelledCard(widtth, heightt) {
                     ),
                   ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10),
+                    padding: EdgeInsets.only(left: widtth * .025),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

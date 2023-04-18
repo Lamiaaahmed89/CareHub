@@ -51,7 +51,7 @@ Widget EHRCard(
           ),
           Text(
             "$descroiption",
-            style: TextStyle(fontSize: 12),
+            style: TextStyle(fontSize: 12, overflow: TextOverflow.ellipsis),
           )
         ],
       ),
