@@ -4,7 +4,10 @@ import 'package:graduation_project/view/Appointment_pages/appointment_date.dart'
 import 'package:graduation_project/view/Appointment_pages/appointment_no_dates.dart';
 import 'package:graduation_project/view/Appointment_pages/choose_appointment.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
+import 'package:graduation_project/view/EHR_Pages/EHRfiles.dart';
 import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
+import 'package:graduation_project/view/Specialists_Pages/AboutDOctor.dart';
+import 'package:graduation_project/view/Specialists_Pages/Doctors.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call_answer.dart';
 import 'package:graduation_project/view/communication_pages/Video_call_pages/ConsultaionEnd.dart';
@@ -55,7 +58,7 @@ class MyApp extends StatelessWidget {
         VideoCallStart.id : (context) => VideoCallStart(),
         VideoCallPage2.id : (context) => VideoCallPage2(),
         VideoCallNoImage.id : (context) => VideoCallNoImage(),
-        // UpComming.id : (context) => UpComming(),
+        UpComming.id : (context) => UpComming(),
         Messages.id : (context) => Messages(),
         AllowLocation.id : (context) => AllowLocation(),
         ChooseBlood.id : (context) => ChooseBlood(),
@@ -67,11 +70,14 @@ class MyApp extends StatelessWidget {
         NoDatesAppointment.id : (context) => NoDatesAppointment(),
         // ChooseGender.id : (context) => ChooseGender(),
         // ConsultaionEnd.id : (context) => ConsultaionEnd(),
+        AboutDoctor.id : (context) => AboutDoctor(),
+        Doctors.id : (context) => Doctors(),
+        EHRfiles.id : (context) => EHRfiles(),
         
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      initialRoute: ChooseAppointment.id,
+      initialRoute: PesronalInformation.id,
     );
   }
 }
