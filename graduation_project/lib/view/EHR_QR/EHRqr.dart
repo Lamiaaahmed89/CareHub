@@ -38,7 +38,7 @@ class EHR_QR extends StatelessWidget {
                 height: heightt * .3,
                 decoration: BoxDecoration(
                   image: DecorationImage(
-                      fit: BoxFit.cover, image: AssetImage("assets/QR.png")),
+                      fit: BoxFit.cover, image: AssetImage("assets/images/QR.png")),
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   color: Colors.white,
                   boxShadow: [
