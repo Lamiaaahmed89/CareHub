@@ -5,8 +5,8 @@ import 'package:graduation_project/reusable/AppointmentListView.dart';
 import 'package:graduation_project/reusable/CancelledCard.dart';
 import 'package:graduation_project/reusable/HomeBar.dart';
 
-
 class Cancelled extends StatelessWidget {
+  static String id = 'Cancelled';
   Cancelled({super.key});
   List TryNumm = [1, 2, 3, 4, 1, 1, 1, 1];
   @override

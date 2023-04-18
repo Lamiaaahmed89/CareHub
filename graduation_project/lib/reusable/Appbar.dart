@@ -20,6 +20,7 @@ PreferredSizeWidget appBar(String Title) {
           color: HexColor("#252632"),
           fontSize: 16,
           fontWeight: FontWeight.w500),
+  
     ),
     centerTitle: true,
   );
