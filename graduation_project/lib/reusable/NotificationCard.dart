@@ -12,19 +12,16 @@ Widget NotificationCard(Widtth, heightt, data, idx, status) {
     children: [
       if (status == "accepted") ...[
         SvgPicture.asset(
-          "assets/corner green.svg",
+          "assets/images/corner green.svg",
         ),
       ],
       if (status == "canceled") ...[
         SvgPicture.asset(
-          "assets/corner red.svg",
+          "assets/images/corner red.svg",
         ),
       ],
-      if (status == "reschedule") ...[
-        SvgPicture.asset(
-          "assets/corner blue.svg",
-        ),
-      ],
+    
+      
       Container(
         width: Widtth * .91,
         height: 92,
@@ -49,7 +46,7 @@ Widget NotificationCard(Widtth, heightt, data, idx, status) {
               height: 60,
               decoration: BoxDecoration(
                 image: DecorationImage(
-                    fit: BoxFit.cover, image: AssetImage("assets/abdo.jpg")),
+                    fit: BoxFit.cover, image: AssetImage("assets/images/abdo.jpg")),
                 borderRadius: BorderRadius.all(Radius.circular(8.0)),
                 color: HexColor("#f0f0f0"),
               ),

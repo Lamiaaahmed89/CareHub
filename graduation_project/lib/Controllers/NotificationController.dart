@@ -13,10 +13,7 @@ class NotificationController extends GetxController {
       "status": "canceled",
       "content": "Dr. Abdo Mohamed have canceled  your appointment.",
     },
-    {
-      "status": "reschedule",
-      "content": "Dr. Abdo Mohamed asks you to reschedule your appointment.",
-    },
+    
     {
       "status": "canceled",
       "content": "Dr. Abdo Mohamed have canceled  your appointment.",
@@ -26,10 +23,7 @@ class NotificationController extends GetxController {
       "content":
           "Dr. Abdo Mohamed have accepted your appointment, Please check your appointments.",
     },
-    {
-      "status": "reschedule",
-      "content": "Dr. Abdo Mohamed asks you to reschedule your appointment.",
-    },
+    
     {
       "status": "accepted",
       "content":
@@ -39,10 +33,7 @@ class NotificationController extends GetxController {
       "status": "canceled",
       "content": "Dr. Abdo Mohamed have canceled  your appointment.",
     },
-    {
-      "status": "reschedule",
-      "content": "Dr. Abdo Mohamed asks you to reschedule your appointment.",
-    },
+    
   ];
 
   void remove(int index) {

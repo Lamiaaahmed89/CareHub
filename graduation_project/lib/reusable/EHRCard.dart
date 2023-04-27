@@ -1,4 +1,3 @@
-
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +25,7 @@ Widget EHRCard(
           vertical: heightt * .02, horizontal: widtth * 0.04),
       alignment: Alignment.center,
       width: widtth * 0.42,
-      height: heightt * 0.23,
+      height: heightt * 0.24,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.all(Radius.circular(7)),

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/component/home_container.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
@@ -9,8 +10,11 @@ import 'package:graduation_project/view/Specialists_Pages/SpecialistsListView.da
 import 'package:graduation_project/view/body_model/click_body.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 import 'package:iconsax/iconsax.dart';
+import '../../reusable/BottomNavigationBar.dart';
 import '../EHR_Pages/EHRfiles.dart';
 import '../EmergencyCard_Pages/EmergencyCardQR.dart';
+import '../EmergencyCard_Pages/EnterCardData.dart';
+import '../Notifictaions_Pages/AllNotifications.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -43,38 +47,43 @@ class _HomePageState extends State<HomePage> {
           elevation: 0.0,
           actions: [
             IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => AllNotifications());
+                },
                 icon: Icon(
                   Iconsax.notification,
                   color: Second_color,
                 ))
           ]),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Main_color,
-        color: white_color,
-        height: 60,
-        items: <Widget>[
-          const Icon(Iconsax.home_2),
-          const Icon(Iconsax.search_normal),
-          const Icon(Iconsax.calendar_1),
-          const Icon(Iconsax.message),
-          SvgPicture.asset('assets/images/home images/logout.svg'),
-        ],
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.pushNamed(context, HomePage.id);
-          } else if (index == 1) {
-            Navigator.pushNamed(context, SpecialistsListView.id);
-          } else if (index == 2) {
-            Navigator.pushNamed(context, UpComming.id);
-          } else if (index == 3) {
-            Navigator.pushNamed(context, Messages.id);
-          } else if (index == 4) {
-            Navigator.pushNamed(context, LoginPage.id);
-          }
-          // print(index);
-        },
-      ),
+      
+      // CurvedNavigationBar(
+      //   animationCurve: Curves.easeInOut,
+      //   animationDuration: Duration(milliseconds: 600),
+      //   backgroundColor: Main_color,
+      //   color: white_color,
+      //   height: 60,
+      //   items: <Widget>[
+      //     const Icon(Iconsax.home_2),
+      //     const Icon(Iconsax.search_normal),
+      //     const Icon(Iconsax.calendar_1),
+      //     const Icon(Iconsax.message),
+      //     SvgPicture.asset('assets/images/home images/logout.svg'),
+      //   ],
+      //   onTap: (index) {
+      //     if (index == 0) {
+      //       Navigator.pushNamed(context, HomePage.id);
+      //     } else if (index == 1) {
+      //       Navigator.pushNamed(context, SpecialistsListView.id);
+      //     } else if (index == 2) {
+      //       Navigator.pushNamed(context, UpComming.id);
+      //     } else if (index == 3) {
+      //       Navigator.pushNamed(context, Messages.id);
+      //     } else if (index == 4) {
+      //       Navigator.pushNamed(context, LoginPage.id);
+      //     }
+      //     // print(index);
+      //   },
+      // ),
       body: Padding(
         padding: const EdgeInsetsDirectional.only(top: 32, start: 16, end: 16),
         child: ListView(
@@ -87,7 +96,7 @@ class _HomePageState extends State<HomePage> {
                 ),
                 TextButton(
                     onPressed: () {
-                      // Navigator.pushNamed(context, UpComming.id);
+                      Navigator.pushNamed(context, UpComming.id);
                     },
                     child: Text(
                       'see all',
@@ -210,9 +219,7 @@ class _HomePageState extends State<HomePage> {
                   Column(
                     children: [
                       HomeContainer(
-                        navigate: 
-                          EHRfiles.id,
-                        
+                        navigate: EHRfiles.id,
                         width: 162,
                         height: 168,
                         text: 'EHR',
@@ -224,7 +231,7 @@ class _HomePageState extends State<HomePage> {
                         height: 16,
                       ),
                       HomeContainer(
-                        navigate: EmergencyCardQR.id,
+                        navigate: Enter_Card_Info.id,
                         width: 162,
                         height: 168,
                         text: 'Emergency Card',
@@ -240,7 +247,7 @@ class _HomePageState extends State<HomePage> {
                   Column(
                     children: [
                       HomeContainer(
-                          navigate:ClickBody.id,
+                          navigate: ClickBody.id,
                           width: 162,
                           height: 352,
                           imageWidth: 75.76,

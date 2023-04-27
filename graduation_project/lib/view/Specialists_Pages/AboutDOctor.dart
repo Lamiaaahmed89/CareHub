@@ -7,6 +7,8 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../component/register_button.dart';
+import '../../constants/colors.dart';
 import '../Appointment_pages/choose_appointment.dart';
 
 class AboutDoctor extends StatelessWidget {
@@ -297,30 +299,13 @@ class AboutDoctor extends StatelessWidget {
                     height: heightt * .03,
                   ),
                   Center(
-                    child: ElevatedButton(
-                        onPressed: () {
-                          Get.to(() => ChooseAppointment());
-                        },
-                        child: Text(
-                          "Book an Appointement",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 12),
-                        ),
-                        style: ButtonStyle(
-                            elevation: MaterialStateProperty.all<double>(0),
-                            foregroundColor:
-                                MaterialStateProperty.all(Colors.white),
-                            backgroundColor: MaterialStateProperty.all(
-                              HexColor("#285FFA"),
-                            ),
-                            padding: MaterialStateProperty.all(
-                                EdgeInsets.symmetric(
-                                    vertical: heightt * .02,
-                                    horizontal: widtth * .20)),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(30.0),
-                            )))),
+                    child: RegisterButton(
+                        color_button: Main_color,
+                        text_color: white_color,
+                        register_txt: 'Book an Appointment',
+                        navigate: () {
+                          Navigator.pushNamed(context, ChooseAppointment.id);
+                        }),
                   ),
                 ],
               ),

@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/body_controller.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/body_model/click_body.dart';
+import 'package:graduation_project/view/body_model/resultservices.dart';
+import 'package:graduation_project/view/registaration_pages/home_page.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../component/register_button.dart';
+import '../Appointment_pages/upcomming.dart';
 
 class findServices extends StatefulWidget {
   @override
@@ -16,6 +21,7 @@ class findServices extends StatefulWidget {
 class _findServicesState extends State<findServices> {
   final controller = Get.put(PaintingController());
   final bodycontroller = Get.put(bodyController());
+  bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +83,11 @@ class _findServicesState extends State<findServices> {
                   text_color: white_color,
                   color_button: Main_color,
                   navigate: () {
-                    bodycontroller.bodySymptoms();
+                    setState(() {
+                      _isLoading = true;
+                      CircularProgressIndicator();
+                    });
+
                     controller.symotoms;
                   },
                   register_txt: 'Find Service',
@@ -90,3 +100,8 @@ class _findServicesState extends State<findServices> {
     );
   }
 }
+// bodycontroller.bodySymptoms(),
+//  Navigator.pushNamed(
+//                         context,
+//                         suggestionServices
+//                             .id); //

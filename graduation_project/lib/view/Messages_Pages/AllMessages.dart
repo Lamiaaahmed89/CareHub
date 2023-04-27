@@ -7,6 +7,8 @@ import 'package:graduation_project/reusable/NoMessages.dart';
 import 'package:graduation_project/reusable/SearchBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import '../../reusable/BottomNavigationBar.dart';
+
 class Messages extends StatelessWidget {
   static String id = 'Messages';
   Messages({super.key});

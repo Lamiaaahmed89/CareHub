@@ -7,6 +7,7 @@ import 'package:graduation_project/reusable/NotificationsList.dart';
 
 class AllNotifications extends StatelessWidget {
   const AllNotifications({super.key});
+  static String id = 'AllNotifications';
 
   @override
   Widget build(BuildContext context) {

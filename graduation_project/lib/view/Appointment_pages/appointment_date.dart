@@ -208,26 +208,30 @@ class _AppointmentDateState extends State<AppointmentDate> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 27,
+                                    height: 22,
                                   ),
-                                  RegisterButton(
-                                      color_button: Main_color,
-                                      text_color: white_color,
-                                      register_txt: 'Confirm',
-                                      navigate: () {
-                                        //   Navigator.pushNamed(
-                                        //       context, UpComming.id);
-                                      }),
-                                  SizedBox(
-                                    height: 16,
-                                  ),
-                                  RegisterButton(
-                                      color_button: white_color,
-                                      text_color: Main_color,
-                                      register_txt: 'Cancel',
-                                      navigate: () {
-                                        navigator!.pop();
-                                      }),
+                                  Expanded(
+                                    child: Column(children: [
+                                      RegisterButton(
+                                          color_button: Main_color,
+                                          text_color: white_color,
+                                          register_txt: 'Confirm',
+                                          navigate: () {
+                                            Navigator.pushNamed(
+                                                context, UpComming.id);
+                                          }),
+                                      SizedBox(
+                                        height: 16,
+                                      ),
+                                      RegisterButton(
+                                          color_button: white_color,
+                                          text_color: Main_color,
+                                          register_txt: 'Cancel',
+                                          navigate: () {
+                                            navigator!.pop();
+                                          }),
+                                    ]),
+                                  )
                                 ],
                               ),
                             ),

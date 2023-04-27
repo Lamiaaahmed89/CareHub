@@ -22,7 +22,7 @@ class bodyController extends GetxController {
           await http.post(url, body: json.encode(Body), headers: header);
       if (response.statusCode == 200) {
         result = response.body[0];
-        print(result);
+        print(response.body);
       } else {
         print(jsonDecode(response.body));
       }

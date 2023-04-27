@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
 import 'package:graduation_project/view/Appointment_pages/appointment_date.dart';
@@ -29,14 +30,19 @@ import 'package:graduation_project/view/registaration_pages/personal_info.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/user_information.dart';
 
+import 'reusable/BottomNavigationBar.dart';
 import 'view/EHR_Pages/EHRfiles.dart';
 import 'view/EHR_QR/EHRqr.dart';
 import 'view/EmergencyCard_Pages/EmergencyCardQR.dart';
+import 'view/EmergencyCard_Pages/EnterCardData.dart';
+import 'view/Notifictaions_Pages/AllNotifications.dart';
 import 'view/Specialists_Pages/SpecialistsListView.dart';
 import 'view/body_model/click_body.dart';
 
 void main() {
   runApp(const MyApp());
+  SystemChrome.setSystemUIOverlayStyle(
+      SystemUiOverlayStyle(statusBarColor: Colors.white));
 }
 
 class MyApp extends StatelessWidget {
@@ -45,18 +51,23 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        theme: ThemeData(fontFamily: 'Poppins'),
-        initialRoute: HomePage.id,
+        theme: ThemeData(
+          fontFamily: 'Poppins',
+        ),
+        initialRoute: BottomNavBar.id,
         routes: {
           VerificationPage.id: (context) => const VerificationPage(),
+          suggestionServices.id:(context) =>  suggestionServices(),
+          BottomNavBar.id: (context) => BottomNavBar(),
           HomePage.id: (context) => const HomePage(),
           NumPad.id: (context) => const NumPad(),
           SignupPage.id: (context) => const SignupPage(),
           UpComming.id: (context) => UpComming(),
-          SpecialistsListView.id: (context) => const SpecialistsListView(),
-          EHRfiles.id:(context) => const EHRfiles(),
-          EHR_QR.id:(context) => const EHR_QR(),
-          EmergencyCardQR.id:(context) => const EmergencyCardQR(),
+          SpecialistsListView.id: (context) => SpecialistsListView(),
+          EHRfiles.id: (context) => const EHRfiles(),
+          EHR_QR.id: (context) => const EHR_QR(),
+          EmergencyCardQR.id: (context) => const EmergencyCardQR(),
+          Enter_Card_Info.id: (context) => const Enter_Card_Info(),
           LoginPage.id: (context) => LoginPage(),
           ResetPassword.id: (context) => ResetPassword(),
           PasswordUpdated.id: (context) => const PasswordUpdated(),
@@ -82,6 +93,8 @@ class MyApp extends StatelessWidget {
           ChooseAppointment.id: (context) => const ChooseAppointment(),
           AppointmentDate.id: (context) => AppointmentDate(),
           NoDatesAppointment.id: (context) => const NoDatesAppointment(),
+          AllNotifications.id: (context) => const AllNotifications(),
+
           // ChooseGender.id : (context) => ChooseGender(),
           // ConsultaionEnd.id : (context) => ConsultaionEnd(),
         });

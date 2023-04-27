@@ -9,6 +9,9 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:iconsax/iconsax.dart';
 
+import '../../constants/colors.dart';
+import '../../reusable/BottomNavigationBar.dart';
+
 class SpecialistsListView extends StatelessWidget {
   const SpecialistsListView({super.key});
   static String id = 'SpecialistsListView';
@@ -29,40 +32,39 @@ class SpecialistsListView extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(
-                  top: widtth * .02,
-                  bottom: 10,
-                  left: widtth * .005,
-                  right: widtth * .005),
-              // padding: EdgeInsets.symmetric(vertical: heightt * .03, horizontal: 5),
+                  left: widtth * .009,
+                  top: heightt * .01,
+                  bottom: heightt * .03,
+                  right: widtth * .009),
               child: Container(
-                height: heightt * .065,
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 3),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.all(Radius.circular(9)),
-                  boxShadow: [
-                    BoxShadow(
-                      color: HexColor("#000000").withAlpha(35),
-                      // spreadRadius: 5,
-                      blurRadius: 6,
-                      offset: Offset(0, 3), // changes position of shadow
-                    ),
-                  ],
-                ),
+                decoration: BoxDecoration(boxShadow: const [
+                  BoxShadow(
+                    color: Color.fromARGB(16, 0, 0, 0),
+                    offset: Offset(0, 3),
+                    blurRadius: 6.0,
+                  ),
+                ], borderRadius: BorderRadius.circular(15)),
                 child: TextFormField(
-                  controller: SpecialistController,
-                  onChanged: searchSpecialist,
-                  decoration: InputDecoration(
-                      hintText: "Search a specialists...",
-                      hintStyle: TextStyle(fontSize: 12),
+                    controller: SpecialistController,
+                    onChanged: searchSpecialist,
+                    decoration: InputDecoration(
+                      fillColor: white_color,
+                      filled: true,
+                      hintText: 'Search a Specialists...',
                       suffixIcon: Icon(
                         Iconsax.search_normal,
-                        color: HexColor("#285FFA"),
-                        size: widtth * .07,
+                        color: Main_color,
                       ),
-                      border: InputBorder.none,
-                      fillColor: HexColor("#FFFFFF")),
-                ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(color: white_color)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(color: white_color)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15),
+                          borderSide: BorderSide(color: white_color)),
+                    )),
               ),
             ),
             // SearchBar(widtth, heightt, "Search a specialists..."),
