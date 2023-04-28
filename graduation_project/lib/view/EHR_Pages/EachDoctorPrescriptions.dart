@@ -20,7 +20,7 @@ class EachDoctorPrescriptions extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: widtth * .04),
         child: Column(
           children: [
-            EHRfilesList(ListtTile("assets/Medical prescription.svg",
+            EHRfilesList(ListtTile("assets/images/Medical prescription.svg",
                 "Prescriptions", "march 13 2023", widtth, heightt, "", false)),
           ],
         ),

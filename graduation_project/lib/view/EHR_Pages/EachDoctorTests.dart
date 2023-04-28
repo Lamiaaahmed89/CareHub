@@ -23,7 +23,7 @@ class EachDoctorTests extends StatelessWidget {
         child: Column(
           children: [
             MediacalBar(widtth,heightt),
-            EHRfilesList(ListtTile("assets/Medical Tests.svg", "Medical Tests",
+            EHRfilesList(ListtTile("assets/images/Medical Tests.svg", "Medical Tests",
                 "march 13 2023", widtth, heightt, "",false)),
           ],
         ),

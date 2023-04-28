@@ -32,7 +32,7 @@ class EnterHeight extends StatelessWidget {
                 height: heightt * .1,
                 alignment: Alignment.center,
                 child: SvgPicture.asset(
-                  "assets/ruler.svg",
+                  "assets/images/ruler.svg",
                 ),
                 decoration: BoxDecoration(
                   shape: BoxShape.circle,
@@ -84,8 +84,8 @@ class EnterHeight extends StatelessWidget {
                         width: widtth * .3,
                         child: SvgPicture.asset(
                           controller.Gender == "male"
-                              ? "assets/man.svg"
-                              : "assets/woman.svg",
+                              ? "assets/images/man.svg"
+                              : "assets/images/woman.svg",
                           color: Color(0x80AEB2BB),
                         ),
                       ),
@@ -94,7 +94,7 @@ class EnterHeight extends StatelessWidget {
                       height: heightt * .5,
                       width: widtth * .3,
                       child: SvgPicture.asset(
-                        "assets/ruler-height.svg",
+                        "assets/images/ruler-height.svg",
                       ),
                     ),
                   ],
