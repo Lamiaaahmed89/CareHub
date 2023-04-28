@@ -17,6 +17,7 @@ class Doctors extends StatelessWidget {
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: appBar("Doctors"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: widtth * .04),
@@ -130,10 +131,21 @@ Widget DoctorCard(widtth, heightt) {
                       fit: BoxFit.cover, image: AssetImage("assets/images/abdo.jpg")),
                   borderRadius: BorderRadius.all(Radius.circular(8.0)),
                   color: HexColor("#f0f0f0"),
+              Expanded(
+                child: Container(
+                  // width: widtth * .25,
+                  // height: heightt * .05,
+                  decoration: BoxDecoration(
+                    image: DecorationImage(
+                        fit: BoxFit.cover,
+                        image: AssetImage("assets/abdo.jpg")),
+                    borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                    color: HexColor("#f0f0f0"),
+                  ),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 15, left: 20),
+                padding: EdgeInsets.only(top: 15, left: widtth * .035),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -160,7 +172,7 @@ Widget DoctorCard(widtth, heightt) {
               Padding(
                 padding: EdgeInsets.only(
                   top: 50,
-                  left: 40,
+                  left: widtth * .1,
                 ),
                 child: Text(
                   "150\$",

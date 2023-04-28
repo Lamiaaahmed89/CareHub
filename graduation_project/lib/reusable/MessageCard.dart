@@ -36,8 +36,8 @@ Widget MessCard(double Widtth, double heightt) {
               child: Row(
                 children: [
                   Container(
-                    width: 60,
-                    height: 60,
+                    width: Widtth * .17,
+                    height: heightt * .08,
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
@@ -50,7 +50,7 @@ Widget MessCard(double Widtth, double heightt) {
                     width: Widtth * .04,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: heightt * .01),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
@@ -58,7 +58,11 @@ Widget MessCard(double Widtth, double heightt) {
                         SizedBox(
                           height: 5,
                         ),
-                        Text("hi what is your name")
+                        Text(
+                          "hi what is your name",
+                          overflow: TextOverflow.clip,
+                          style: TextStyle(fontSize: 12),
+                        )
                       ],
                     ),
                   ),
@@ -67,7 +71,7 @@ Widget MessCard(double Widtth, double heightt) {
                   //   width: Widtth * .06,
                   // ),
                   Padding(
-                    padding: EdgeInsets.only(top: 7),
+                    padding: EdgeInsets.only(top: heightt * .01),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [

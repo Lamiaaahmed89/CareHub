@@ -7,13 +7,17 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:simple_shadow/simple_shadow.dart';
 
 SignUpController controller = Get.put(SignUpController());
-Widget Blood1(String group1, Color TextColor1, SvgColor1) {
+Widget Blood1(String group1, Color TextColor1, SvgColor1, w, h) {
   return Stack(
     children: [
       SimpleShadow(
-        child: SvgPicture.asset(
-          "assets/images/bloodimg.svg",
-          color: SvgColor1,
+        child: Container(
+          width: w * .19,
+          height: h * .12,
+          child: SvgPicture.asset(
+            "assets/bloodimg.svg",
+            color: SvgColor1,
+          ),
         ),
         opacity: 0.2, // Default: 0.5
         sigma: 7, // Default: 2
@@ -26,20 +30,24 @@ Widget Blood1(String group1, Color TextColor1, SvgColor1) {
             color: TextColor1,
           ),
         ),
-        bottom: 35,
-        left: 22,
+        bottom: h * .04,
+        left: w * 0.05,
       )
     ],
   );
 }
 
-Widget Blood2(String group2, Color TextColor, SvgColor) {
+Widget Blood2(String group2, Color TextColor, SvgColor, w, h) {
   return Stack(
     children: [
       SimpleShadow(
-        child: SvgPicture.asset(
-          "assets/images/bloodimg.svg",
-          color: SvgColor,
+        child: Container(
+          width: w * .19,
+          height: h * .12,
+          child: SvgPicture.asset(
+            "assets/bloodimg.svg",
+            color: SvgColor,
+          ),
         ),
         opacity: 0.2, // Default: 0.5
         sigma: 7, // Default: 2
@@ -53,8 +61,8 @@ Widget Blood2(String group2, Color TextColor, SvgColor) {
                     color: TextColor,
                   ),
                 ))),
-        bottom: 35,
-        left: 26,
+        bottom: h * .04,
+        left: w * 0.06,
       )
     ],
   );

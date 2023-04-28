@@ -277,7 +277,16 @@ class AboutDoctor extends StatelessWidget {
                         SizedBox(
                           width: widtth * .03,
                         ),
-                        Text("Damietta Road, New Damietta City")
+                        Expanded(
+                          child: Container(
+                            // width: widtth * .7,
+                            child: Text(
+                              "Damietta Road, New Damietta City",
+                              overflow: TextOverflow.visible,
+                              style: TextStyle(fontSize: 14),
+                            ),
+                          ),
+                        )
                       ],
                     ),
                     decoration: BoxDecoration(

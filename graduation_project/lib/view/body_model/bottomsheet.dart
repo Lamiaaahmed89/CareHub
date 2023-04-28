@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/body_model/click_man.dart';
+import 'package:graduation_project/view/body_model/click_body.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -127,6 +127,7 @@ Map<dynamic, dynamic> symptoms = {
 final controller = Get.put(PaintingController());
 Future OriginBottomsheet(context, int origin) {
   return showModalBottomSheet(
+    isDismissible:false,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
       barrierColor: Color.fromARGB(255, 247, 210, 210).withOpacity(0),
       // backgroundColor: Colors.white.withOpacity(0),

@@ -67,6 +67,7 @@ class ChooseGender extends StatelessWidget {
                                   : Color(0x80AEB2BB)),
                           onTap: () {
                             controller.MM();
+                            print(controller.Gender);
                           },
                         ),
                         Spacer(),
@@ -91,6 +92,7 @@ class ChooseGender extends StatelessWidget {
                                   : Color(0x80AEB2BB)),
                           onTap: () {
                             controller.WW();
+                            print(controller.Gender);
                           },
                         ),
                       ],

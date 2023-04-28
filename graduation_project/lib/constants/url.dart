@@ -1,1 +1,1 @@
-const String URL="http://carehubv1.somee.com/api/User/";
+const String baseURL="http://carehubv1.somee.com/api";

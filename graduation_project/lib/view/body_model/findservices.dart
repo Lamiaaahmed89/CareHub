@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:graduation_project/Controllers/body_controller.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/view/body_model/click_man.dart';
-import 'package:graduation_project/view/body_model/services.dart';
+import 'package:graduation_project/view/body_model/click_body.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../component/register_button.dart';
+import 'resultservices.dart';
 
 class findServices extends StatefulWidget {
   @override
@@ -15,11 +16,11 @@ class findServices extends StatefulWidget {
 
 class _findServicesState extends State<findServices> {
   final controller = Get.put(PaintingController());
+  final bodycontroller = Get.put(bodyController());
 
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
-
     List<String> items = controller.symotoms;
     print(items);
 
@@ -75,7 +76,8 @@ class _findServicesState extends State<findServices> {
                 padding: const EdgeInsets.only(bottom: 32),
                 child: RegisterButton(
                   navigate: () {
-                    Get.to(suggestionServices());
+                    bodycontroller.bodySymptoms();
+                    controller.symotoms;
                   },
                   register_txt: 'Find Service',
                 ),

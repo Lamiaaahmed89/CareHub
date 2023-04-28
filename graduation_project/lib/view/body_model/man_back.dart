@@ -1,13 +1,5 @@
-
 import 'package:flutter/material.dart';
 
-//Add this CustomPaint widget to the Widget Tree
-// CustomPaint(
-//     size: Size(WIDTH, (WIDTH*3.8185660738495892).toDouble()), //You can Replace [WIDTH] with your desired width for Custom Paint and height will be calculated automatically
-//     painter: RPSCustomPainter(),
-// )
-
-//Copy this CustomPainter code to the Bottom of the File
 class BackMan extends CustomPainter {
   final BuildContext context;
   BackMan(this.context);
