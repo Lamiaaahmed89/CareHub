@@ -12,14 +12,18 @@ import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/verification_page.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_page.dart';
 
-
 import 'package:iconsax/iconsax.dart';
 
-class LoginPage extends StatelessWidget {
-  LoginController loginController = Get.put(LoginController());
-
+class LoginPage extends StatefulWidget {
   static String id = 'LoginPage';
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  LoginController loginController = Get.put(LoginController());
+  bool passwordObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -76,15 +80,22 @@ class LoginPage extends StatelessWidget {
                   ),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
+                    obscureText: passwordObscure,
                     controller: loginController.Passwordcontroller,
                     decoration: InputDecoration(
                       fillColor: white_color,
                       filled: true,
                       hintText: 'Enter Your Password',
-                      suffixIcon: Icon(
-                        Iconsax.eye,
-                        color: Main_color,
-                      ),
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              passwordObscure = !passwordObscure;
+                            });
+                          },
+                          icon: Icon(passwordObscure
+                              ? Iconsax.eye_slash
+                              : Iconsax.eye),
+                              color: Main_color,),
                       prefixIcon: Icon(
                         Iconsax.key,
                         color: Main_color,

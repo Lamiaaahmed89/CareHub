@@ -1,6 +1,7 @@
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
+import 'package:graduation_project/view/Appointment_pages/choose_appointment.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
@@ -9,6 +10,7 @@ import 'package:readmore/readmore.dart';
 
 class AboutDoctor extends StatelessWidget {
   const AboutDoctor({super.key});
+  static String id = 'AboutDoctor';
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +34,7 @@ class AboutDoctor extends StatelessWidget {
                     decoration: BoxDecoration(
                       image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/abdo.jpg")),
+                          image: AssetImage("assets/images/abdo.jpg")),
                       borderRadius: BorderRadius.all(Radius.circular(15)),
                       color: HexColor("#f0f0f0"),
                       boxShadow: [
@@ -305,7 +307,9 @@ class AboutDoctor extends StatelessWidget {
                   ),
                   Center(
                     child: ElevatedButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.pushNamed(context, ChooseAppointment.id);
+                        },
                         child: Text(
                           "Book an Appointement",
                           style: TextStyle(

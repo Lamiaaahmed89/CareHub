@@ -24,7 +24,7 @@ class Prescriptions extends StatelessWidget {
           children: [
             SearchBar(widtth, heightt, "Search by the name of Dr"),
             EHRfilesList(ListtTile(
-                "assets/Medical prescription.svg",
+                "assets/images/Medical prescription.svg",
                 "Prescriptions",
                 "Dr.Mohammed",
                 widtth,

@@ -52,6 +52,7 @@ class VerificationPage extends StatelessWidget {
               height: 17,
             ),
             InputField(
+              passwordObscure: false,
               hint_text: 'Enter Your Email',
               prefix: Icon(
                 Iconsax.sms,

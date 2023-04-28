@@ -1,4 +1,3 @@
-
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
@@ -11,6 +10,7 @@ import 'package:iconsax/iconsax.dart';
 
 class Doctors extends StatelessWidget {
   const Doctors({super.key});
+  static String id = 'Doctors';
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +123,14 @@ Widget DoctorCard(widtth, heightt) {
           height: 120,
           child: Row(
             children: [
+              Container(
+                width: 85,
+                height: 90,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: AssetImage("assets/images/abdo.jpg")),
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  color: HexColor("#f0f0f0"),
               Expanded(
                 child: Container(
                   // width: widtth * .25,

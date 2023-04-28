@@ -23,7 +23,7 @@ class MedicalTests extends StatelessWidget {
         child: Column(
           children: [
             SearchBar(widtth, heightt, "Search by the name of Dr"),
-            EHRfilesList(ListtTile("assets/Medical Tests.svg", "Medical Tests",
+            EHRfilesList(ListtTile("assets/images/Medical Tests.svg", "Medical Tests",
                 "Dr.Mohammed", widtth, heightt, "EachDoctorTests", false)),
           ],
         ),

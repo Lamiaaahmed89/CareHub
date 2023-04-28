@@ -109,12 +109,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "male") {
                                   if (controller.IMG1 == true) {
                                     return SvgPicture.asset(
-                                      "assets/man1-after.svg",
+                                      "assets/images/man1-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/man1-before.svg",
+                                      "assets/images/man1-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -122,12 +122,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "female") {
                                   if (controller.IMG1 == true) {
                                     return SvgPicture.asset(
-                                      "assets/woman1-after.svg",
+                                      "assets/images/woman1-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/woman1-before.svg",
+                                      "assets/images/woman1-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -142,12 +142,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "male") {
                                   if (controller.IMG2 == true) {
                                     return SvgPicture.asset(
-                                      "assets/man2-after.svg",
+                                      "assets/images/man2-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/man2-before.svg",
+                                      "assets/images/man2-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -155,12 +155,12 @@ class ChoosePhoto extends StatelessWidget {
                                 if (controller.Gender == "female") {
                                   if (controller.IMG2 == true) {
                                     return SvgPicture.asset(
-                                      "assets/woman2-after.svg",
+                                      "assets/images/woman2-after.svg",
                                       // color: Colors.amber,
                                     );
                                   } else {
                                     return SvgPicture.asset(
-                                      "assets/woman2-before.svg",
+                                      "assets/images/woman2-before.svg",
                                       // color: Colors.amber,
                                     );
                                   }
@@ -178,12 +178,12 @@ class ChoosePhoto extends StatelessWidget {
                             if (controller.Gender == "male") {
                               if (controller.IMG3 == true) {
                                 return SvgPicture.asset(
-                                  "assets/man3-after.svg",
+                                  "assets/images/man3-after.svg",
                                   // color: Colors.amber,
                                 );
                               } else {
                                 return SvgPicture.asset(
-                                  "assets/man3-before.svg",
+                                  "assets/images/man3-before.svg",
                                   // color: Colors.amber,
                                 );
                               }
@@ -191,12 +191,12 @@ class ChoosePhoto extends StatelessWidget {
                             if (controller.Gender == "female") {
                               if (controller.IMG3 == true) {
                                 return SvgPicture.asset(
-                                  "assets/woman3-after.svg",
+                                  "assets/images/woman3-after.svg",
                                   // color: Colors.amber,
                                 );
                               } else {
                                 return SvgPicture.asset(
-                                  "assets/woman3-before.svg",
+                                  "assets/images/woman3-before.svg",
                                   // color: Colors.amber,
                                 );
                               }

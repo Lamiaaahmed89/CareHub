@@ -75,8 +75,8 @@ class EnterWeight extends StatelessWidget {
                 height: heightt * .5,
                 child: SvgPicture.asset(
                   controller.Gender == "male"
-                      ? "assets/man.svg"
-                      : "assets/woman.svg",
+                      ? "assets/images/man.svg"
+                      : "assets/images/woman.svg",
                   color: Color(0x80AEB2BB),
                 ),
               ),
@@ -85,7 +85,7 @@ class EnterWeight extends StatelessWidget {
               width: widtth * .7,
               height: heightt * .15,
               child: SvgPicture.asset(
-                "assets/ruler-weight.svg",
+                "assets/images/ruler-weight.svg",
               ),
             ),
           ],

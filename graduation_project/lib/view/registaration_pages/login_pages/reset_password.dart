@@ -8,8 +8,15 @@ import 'package:graduation_project/view/registaration_pages/login_pages/password
 
 import 'package:iconsax/iconsax.dart';
 
-class ResetPassword extends StatelessWidget {
+class ResetPassword extends StatefulWidget {
   static String id = 'ResetPassword';
+
+  @override
+  State<ResetPassword> createState() => _ResetPasswordState();
+}
+
+class _ResetPasswordState extends State<ResetPassword> {
+  bool passwordObscure = true;
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -58,22 +65,30 @@ class ResetPassword extends StatelessWidget {
               height: 17.0,
             ),
             InputField(
+              passwordObscure: passwordObscure,
               hint_text: 'Enter Your Password,',
               prefix: Icon(
                 Iconsax.key,
                 color: Main_color,
               ),
-              suffix: Icon(
-                Iconsax.eye,
-                color: Main_color,
-              ),
+              suffix: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      passwordObscure = !passwordObscure;
+                    });
+                  },
+                  icon: passwordObscure? Icon(
+                    Iconsax.eye_slash,
+                    color: Main_color,
+                  ) : Icon(Iconsax.eye,color: Main_color,)
+                  ),
             ),
             SizedBox(
               height: 32,
             ),
             RegisterButton(
-              color_button: Main_color,
-              text_color: white_color,
+                color_button: Main_color,
+                text_color: white_color,
                 navigate: () {
                   Navigator.push(context,
                       MaterialPageRoute(builder: (BuildContext context) {

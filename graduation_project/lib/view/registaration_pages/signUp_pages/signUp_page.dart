@@ -12,11 +12,17 @@ import 'package:graduation_project/view/registaration_pages/signUp_pages/user_in
 
 import 'package:iconsax/iconsax.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
   const SignupPage({super.key});
 
   static String id = 'SignupPage';
 
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
+
+class _SignupPageState extends State<SignupPage> {
+  bool passwardObsecure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,6 +46,7 @@ class SignupPage extends StatelessWidget {
                 height: 38,
               ),
               InputField(
+                passwordObscure: false,
                 hint_text: 'Enter Your Email',
                 prefix: Icon(
                   Iconsax.sms,
@@ -50,14 +57,27 @@ class SignupPage extends StatelessWidget {
                 height: 29,
               ),
               InputField(
+                passwordObscure: passwardObsecure,
                 hint_text: 'Enter Your Password',
                 prefix: Icon(
                   Iconsax.key,
                   color: Main_color,
                 ),
-                suffix: Icon(
-                  Iconsax.eye,
-                  color: Main_color,
+                suffix: IconButton(
+                  onPressed: () {
+                    setState(() {
+                      passwardObsecure = !passwardObsecure;
+                    });
+                  },
+                  icon: passwardObsecure
+                      ? Icon(
+                          Iconsax.eye_slash,
+                          color: Main_color,
+                        )
+                      : Icon(
+                          Iconsax.eye,
+                          color: Main_color,
+                        ),
                 ),
               ),
               SizedBox(

@@ -4,8 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/component/home_container.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
+import 'package:graduation_project/view/EHR_Pages/EHRfiles.dart';
 import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/personal_info.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
@@ -20,9 +22,14 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
           leading: Padding(
             padding: const EdgeInsetsDirectional.only(start: 8.0, top: 8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage(
-                'assets/images/patient.jpg',
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, PesronalInformation.id);
+              },
+              child: CircleAvatar(
+                backgroundImage: AssetImage(
+                  'assets/images/patient.jpg',
+                ),
               ),
             ),
           ),
@@ -50,7 +57,8 @@ class HomePage extends StatelessWidget {
           Icon(Iconsax.search_normal),
           Icon(Iconsax.calendar_1),
           Icon(Iconsax.message),
-          SvgPicture.asset( 'assets/images/home images/logout.svg'),        ],
+          SvgPicture.asset('assets/images/home images/logout.svg'),
+        ],
         onTap: (index) {
           if (index == 0) {
             Navigator.pushNamed(context, HomePage.id);
@@ -200,7 +208,9 @@ class HomePage extends StatelessWidget {
                   Column(
                     children: [
                       HomeContainer(
-                        navigate: () {},
+                        navigate: () {
+                          Navigator.pushNamed(context, EHRfiles.id);
+                        },
                         width: 162,
                         height: 168,
                         text: 'EHR',

@@ -29,7 +29,7 @@ Widget Loading(widtth, heightt) {
             Container(
               width: widtth * .12,
               height: heightt * .08,
-              child: SvgPicture.asset("assets/Medical Tests.svg"),
+              child: SvgPicture.asset("assets/images/Medical Tests.svg"),
             ),
 
             Column(
@@ -64,7 +64,7 @@ Widget Loading(widtth, heightt) {
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(bottom: heightt * .002),
-                      child: Lottie.asset('assets/line loading.json',
+                      child: Lottie.asset('assets/images/line loading.json',
                           width: widtth * .07,
                           height: heightt * .005,
                           fit: BoxFit.fill),
