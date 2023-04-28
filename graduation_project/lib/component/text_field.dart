@@ -3,11 +3,13 @@ import 'package:graduation_project/constants/colors.dart';
 import 'package:iconsax/iconsax.dart';
 
 class InputField extends StatelessWidget {
-  const InputField({super.key, required this.hint_text, this.prefix,this.suffix});
+  InputField(
+      {super.key, required this.hint_text, this.prefix, this.suffix,required this.passwordObscure});
 
   final String hint_text;
   final Icon? prefix;
-  final Icon? suffix;
+  final IconButton? suffix;
+  bool passwordObscure;
 
   @override
   Widget build(BuildContext context) {
@@ -24,24 +26,21 @@ class InputField extends StatelessWidget {
         ],
       ),
       child: TextFormField(
+        obscureText: passwordObscure,
         decoration: InputDecoration(
-            fillColor: Color(0xffFFFFFF),
-            filled: true,
-            enabledBorder: OutlineInputBorder(
-              borderRadius: BorderRadius.circular(50.0),
-              borderSide: BorderSide(color: Color(0xffFFFFFF)),
-            ),
-            hintText: '$hint_text',
-            hintStyle: TextStyle(
-              color: Color.fromRGBO(174,178,187,0.5),
-            ),
-            prefixIcon: prefix,
-            // Icon(
-            //   Iconsax.sms,
-            //   color: Color(0xff285FFA),
-            // ),
-            suffixIcon: suffix,
-            ),
+          fillColor: Color(0xffFFFFFF),
+          filled: true,
+          enabledBorder: OutlineInputBorder(
+            borderRadius: BorderRadius.circular(50.0),
+            borderSide: BorderSide(color: Color(0xffFFFFFF)),
+          ),
+          hintText: '$hint_text',
+          hintStyle: TextStyle(
+            color: Color.fromRGBO(174, 178, 187, 0.5),
+          ),
+          prefixIcon: prefix,
+          suffixIcon: suffix,
+        ),
       ),
     );
   }

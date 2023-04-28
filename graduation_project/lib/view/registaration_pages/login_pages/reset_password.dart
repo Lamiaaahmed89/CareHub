@@ -58,14 +58,16 @@ class ResetPassword extends StatelessWidget {
               height: 17.0,
             ),
             InputField(
+              passwordObscure: false,
               hint_text: 'Enter Your Password,',
               prefix: Icon(
                 Iconsax.key,
                 color: Main_color,
               ),
-              suffix: Icon(
-                Iconsax.eye,
-                color: Main_color,
+              suffix: IconButton(
+                onPressed: (){},
+                icon: Icon(Iconsax.eye,
+                color: Main_color,)
               ),
             ),
             SizedBox(

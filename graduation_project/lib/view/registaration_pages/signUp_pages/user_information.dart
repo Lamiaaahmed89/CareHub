@@ -75,6 +75,7 @@ class UserInformation extends StatelessWidget {
                 height: 67.0,
               ),
               InputField(
+                passwordObscure: false,
                 hint_text: 'Enter Your First Name ',
                 prefix: Icon(
                   Iconsax.user,
@@ -85,6 +86,7 @@ class UserInformation extends StatelessWidget {
                 height: 32.0,
               ),
               InputField(
+                passwordObscure: false,
                 hint_text: 'Enter Your Last Name ',
                 prefix: Icon(
                   Iconsax.user,
@@ -95,6 +97,7 @@ class UserInformation extends StatelessWidget {
                 height: 32.0,
               ),
               InputField(
+                passwordObscure: false,
                 hint_text: 'Enter Your Phone ',
                 prefix: Icon(
                   Iconsax.call,
