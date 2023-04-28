@@ -93,7 +93,7 @@ class _PesronalInformationState extends State<PesronalInformation> {
                         height: 16.0,
                       ),
                       PersonalContainer(
-                        text: 'March 18,200',
+                        text: 'March 18,2001',
                         containerText: 'Birthday',
                         icon: Iconsax.calendar_1,
                       ),

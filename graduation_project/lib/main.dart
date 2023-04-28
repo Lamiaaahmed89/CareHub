@@ -81,7 +81,7 @@ class MyApp extends StatelessWidget {
       },
       debugShowCheckedModeBanner: false,
       theme: ThemeData(fontFamily: 'Poppins'),
-      initialRoute: PesronalInformation.id,
+      initialRoute: HomePage.id,
     );
   }
 }
