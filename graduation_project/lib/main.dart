@@ -1,3 +1,5 @@
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
@@ -8,6 +10,7 @@ import 'package:graduation_project/view/Appointment_pages/choose_appointment.dar
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 
 import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
+import 'package:graduation_project/view/Specialists_Pages/Doctors.dart';
 import 'package:graduation_project/view/body_model/resultservices.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call.dart';
 import 'package:graduation_project/view/communication_pages/Audio_call_pages/audio_call_answer.dart';
@@ -30,19 +33,22 @@ import 'package:graduation_project/view/registaration_pages/personal_info.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/birthdate.dart';
 import 'package:graduation_project/view/registaration_pages/signUp_pages/user_information.dart';
 
+import 'models/chatmodel.dart';
 import 'reusable/BottomNavigationBar.dart';
 import 'view/EHR_Pages/EHRfiles.dart';
 import 'view/EHR_QR/EHRqr.dart';
 import 'view/EmergencyCard_Pages/EmergencyCardQR.dart';
 import 'view/EmergencyCard_Pages/EnterCardData.dart';
+import 'view/Messages_Pages/chat.dart';
 import 'view/Notifictaions_Pages/AllNotifications.dart';
 import 'view/Specialists_Pages/SpecialistsListView.dart';
 import 'view/body_model/click_body.dart';
+import 'view/registaration_pages/SignUp_Pages/ChoosePhoto.dart';
 
 void main() {
   runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(
-      SystemUiOverlayStyle(statusBarColor: Colors.white));
+      const SystemUiOverlayStyle(statusBarColor: Colors.white));
 }
 
 class MyApp extends StatelessWidget {
@@ -56,14 +62,16 @@ class MyApp extends StatelessWidget {
         ),
         initialRoute: BottomNavBar.id,
         routes: {
-          VerificationPage.id: (context) => const VerificationPage(),
-          suggestionServices.id:(context) =>  suggestionServices(),
+          VerificationPage.id: (context) => VerificationPage(),
+          Doctors.id: (context) => const Doctors(),
+          IndividualPage.id: (context) => IndividualPage(),
+          suggestionServices.id: (context) => const suggestionServices(),
           BottomNavBar.id: (context) => BottomNavBar(),
           HomePage.id: (context) => const HomePage(),
           NumPad.id: (context) => const NumPad(),
-          SignupPage.id: (context) => const SignupPage(),
+          SignupPage.id: (context) => SignupPage(),
           UpComming.id: (context) => UpComming(),
-          SpecialistsListView.id: (context) => SpecialistsListView(),
+          SpecialistsListView.id: (context) => const SpecialistsListView(),
           EHRfiles.id: (context) => const EHRfiles(),
           EHR_QR.id: (context) => const EHR_QR(),
           EmergencyCardQR.id: (context) => const EmergencyCardQR(),
@@ -73,14 +81,14 @@ class MyApp extends StatelessWidget {
           PasswordUpdated.id: (context) => const PasswordUpdated(),
           NoConnectionPage.id: (context) => const NoConnectionPage(),
           AudioCallPage.id: (context) => AudioCallPage(),
-          UserInformation.id: (context) => const UserInformation(),
+          UserInformation.id: (context) => UserInformation(),
           BirthDatePage.id: (context) => BirthDatePage(),
           AudioCallAnswer.id: (context) => const AudioCallAnswer(),
           VideoCallEnd.id: (context) => const VideoCallEnd(),
           VideoCallStart.id: (context) => const VideoCallStart(),
           VideoCallPage2.id: (context) => const VideoCallPage2(),
           VideoCallNoImage.id: (context) => const VideoCallNoImage(),
-          suggestionServices.id: (context) => suggestionServices(),
+          suggestionServices.id: (context) => const suggestionServices(),
           Messages.id: (context) => Messages(),
           AllowLocation.id: (context) => const AllowLocation(),
           ChooseBlood.id: (context) => const ChooseBlood(),

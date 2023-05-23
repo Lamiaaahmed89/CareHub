@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+// ignore: must_be_immutable
 class HomeContainer extends StatelessWidget {
   HomeContainer(
       {this.width,

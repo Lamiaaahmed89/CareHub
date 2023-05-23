@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
@@ -11,10 +13,6 @@ Widget Buttons(String Btn1, String Btn2) {
           flex: 12,
           child: ElevatedButton(
               onPressed: () {},
-              child: Text(
-                Btn1,
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-              ),
               style: ButtonStyle(
                   elevation: MaterialStateProperty.all<double>(0),
                   foregroundColor:
@@ -25,17 +23,17 @@ Widget Buttons(String Btn1, String Btn2) {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
-                  )))),
+                  ))),
+              child: Text(
+                Btn1,
+                style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+              )),
         ),
-        Expanded(flex: 1, child: SizedBox()),
+        const Expanded(flex: 1, child: SizedBox()),
         Expanded(
           flex: 11,
           child: ElevatedButton(
               onPressed: () {},
-              child: Text(
-                Btn2,
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-              ),
               style: ButtonStyle(
                   elevation: MaterialStateProperty.all<double>(0),
                   foregroundColor:
@@ -46,7 +44,11 @@ Widget Buttons(String Btn1, String Btn2) {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(18.0),
-                  )))),
+                  ))),
+              child: Text(
+                Btn2,
+                style: const TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+              )),
         )
       ],
     ),

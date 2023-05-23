@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
@@ -15,7 +17,7 @@ PreferredSizeWidget appBar(String Title) {
           color: HexColor("#252632"),
         )),
     title: Text(
-      "$Title",
+      Title,
       style: TextStyle(
           color: HexColor("#252632"),
           fontSize: 16,

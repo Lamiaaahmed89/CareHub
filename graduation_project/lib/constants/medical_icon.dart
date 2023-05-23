@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 
 String path = "assets/images/medical_icons/";
 

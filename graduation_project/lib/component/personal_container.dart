@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+// ignore: must_be_immutable
 class PersonalContainer extends StatelessWidget {
   PersonalContainer(
       {required this.text, required this.containerText, this.icon, super.key});
@@ -60,6 +61,7 @@ class PersonalContainer extends StatelessWidget {
 }
 
 
+// ignore: must_be_immutable
 class PersonalContainerWithImage extends StatelessWidget {
   PersonalContainerWithImage(
       {required this.text, required this.containerText,this.img, super.key});

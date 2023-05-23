@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -11,13 +13,13 @@ Widget EHRCard(
   return GestureDetector(
     onTap: (() {
       if (GoWhere == 1) {
-        Get.to(Prescriptions());
+        Get.to(const Prescriptions());
       }
       if (GoWhere == 2) {
-        Get.to(MedicalDiagnosis());
+        Get.to(const MedicalDiagnosis());
       }
       if (GoWhere == 3) {
-        Get.to(MedicalTests());
+        Get.to(const MedicalTests());
       }
     }),
     child: Container(
@@ -28,29 +30,29 @@ Widget EHRCard(
       height: heightt * 0.24,
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(7)),
+        borderRadius: const BorderRadius.all(Radius.circular(7)),
         boxShadow: [
           BoxShadow(
             color: HexColor("#000000").withAlpha(35),
             // spreadRadius: 5,
             blurRadius: 6,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
       child: Column(
         children: [
-          Container(
+          SizedBox(
               width: widtth * .4,
               height: heightt * .15,
               // color: Colors.amber,
-              child: SvgPicture.asset("$imgPath")),
+              child: SvgPicture.asset(imgPath)),
           SizedBox(
             height: heightt * .015,
           ),
           Text(
-            "$descroiption",
-            style: TextStyle(fontSize: 12),
+            descroiption,
+            style: const TextStyle(fontSize: 12),
           )
         ],
       ),

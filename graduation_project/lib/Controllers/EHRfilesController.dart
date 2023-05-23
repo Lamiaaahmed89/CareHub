@@ -1,4 +1,6 @@
 
+// ignore_for_file: file_names, unused_import, non_constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/view/EHR_Pages/EachDoctorResult.dart';
@@ -10,12 +12,12 @@ class EHRfilesController extends GetxController {
     if (option == "tests") {
       Medical_Tests = true;
       Get.back();
-      Get.to(EachDoctorTests());
+      Get.to(const EachDoctorTests());
     }
     if (option == "results") {
       Medical_Tests = false;
       Get.back();
-      Get.to(EachDoctorResults());
+      Get.to(const EachDoctorResults());
     }
     update();
   }

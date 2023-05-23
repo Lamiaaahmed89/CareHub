@@ -16,7 +16,7 @@ class ChooseGender extends StatelessWidget {
     SignUpController controller = Get.put(SignUpController());
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: SignUpBar("Next", "Toblood"),
+      appBar: SignUpBar("Next", "Toblood",context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 16),
         child: Column(

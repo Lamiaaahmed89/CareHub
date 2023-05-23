@@ -1,9 +1,11 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import '../../constants/medical_icon.dart';
 
 class Specialists {
-  late final String specialist;
-  late final String SpecialistsSVG;
-  late final int DoctorsNum;
+  late String specialist;
+  late String SpecialistsSVG;
+  late int DoctorsNum;
   Specialists(
       {required this.specialist,
       required this.SpecialistsSVG,
@@ -12,55 +14,55 @@ class Specialists {
 
 List<Specialists> allSpecialists = [
   Specialists(
-      specialist: "Allergists",
+      specialist: "Allergist",
       SpecialistsSVG: "${path}Allergology.svg",
       DoctorsNum: 2),
   Specialists(
-      specialist: "Cardiologists",
+      specialist: "Cardiologist",
       SpecialistsSVG: "${path}Cardiology.svg",
       DoctorsNum: 9),
   Specialists(
-      specialist: "Dermatologists",
+      specialist: "Dermatologist",
       SpecialistsSVG: "${path}Dermatology.svg",
       DoctorsNum: 8),
   Specialists(
-      specialist: "Endocrinologists",
+      specialist: "Endocrinologist",
       SpecialistsSVG: "${path}Endocrinology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Neurologists",
+      specialist: "Neurologist",
       SpecialistsSVG: "${path}Neurology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Gynecologists",
+      specialist: "Gynecologist",
       SpecialistsSVG: "${path}Gynaecology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Otolaryngologists",
+      specialist: "Otolaryngologist",
       SpecialistsSVG: "${path}Otolaryngology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Pediatricians",
+      specialist: "Pediatrician",
       SpecialistsSVG: "${path}Paediatrics.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Rheumatologists",
+      specialist: "Rheumatologist",
       SpecialistsSVG: "${path}Rheumatology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Phlebologists",
+      specialist: "Phlebologist",
       SpecialistsSVG: "${path}Phlebology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Gastroenterologists",
+      specialist: "Gastroenterologist",
       SpecialistsSVG: "${path}Gastroenterology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Hepatologists",
+      specialist: "Hepatologist",
       SpecialistsSVG: "${path}Hepatology.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Pulmonologists",
+      specialist: "Pulmonologist",
       SpecialistsSVG: "${path}Pulmonology.svg",
       DoctorsNum: 4),
   Specialists(
@@ -76,5 +78,3 @@ List<Specialists> allSpecialists = [
       SpecialistsSVG: "${path}Tuberculosis.svg",
       DoctorsNum: 4),
 ];
-
-

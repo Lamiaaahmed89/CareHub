@@ -35,7 +35,7 @@ class ClickBody extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    SizedBox(width: 100),
+                    const SizedBox(width: 100),
                     Expanded(
                       child: Center(
                         child: Column(
@@ -80,7 +80,7 @@ class ClickBody extends StatelessWidget {
                             Iconsax.rotate_left,
                             color: Main_color,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 3,
                           ),
                           TextButton(

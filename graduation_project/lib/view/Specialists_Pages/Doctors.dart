@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, unused_import, non_constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
@@ -10,6 +12,7 @@ import 'package:iconsax/iconsax.dart';
 
 class Doctors extends StatelessWidget {
   const Doctors({super.key});
+  static String id = 'Doctors';
 
   @override
   Widget build(BuildContext context) {
@@ -33,23 +36,23 @@ class Doctors extends StatelessWidget {
                   child: Container(
                     width: widtth * .73,
                     height: heightt * .065,
-                    padding: EdgeInsets.symmetric(horizontal: 16, vertical: 3),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 3),
                     decoration: BoxDecoration(
                       color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(9)),
+                      borderRadius: const BorderRadius.all(Radius.circular(9)),
                       boxShadow: [
                         BoxShadow(
                           color: HexColor("#000000").withAlpha(35),
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
                     child: TextFormField(
                       decoration: InputDecoration(
                           hintText: "Search a doctor...",
-                          hintStyle: TextStyle(fontSize: 12),
+                          hintStyle: const TextStyle(fontSize: 12),
                           suffixIcon: Icon(
                             Iconsax.search_normal,
                             color: HexColor("#285FFA"),
@@ -66,24 +69,24 @@ class Doctors extends StatelessWidget {
                 Container(
                     height: heightt * .065,
                     width: widtth * .15,
-                    padding: EdgeInsets.symmetric(horizontal: 0, vertical: 3),
+                    padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 3),
                     decoration: BoxDecoration(
                       color: HexColor("#285FFA"),
-                      borderRadius: BorderRadius.all(Radius.circular(9)),
+                      borderRadius: const BorderRadius.all(Radius.circular(9)),
                       boxShadow: [
                         BoxShadow(
                           color: HexColor("#000000").withAlpha(35),
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
                     child: IconButton(
                         onPressed: (() {
-                          Get.to(FilerDoctors());
+                          Get.to(const FilerDoctors());
                         }),
-                        icon: Icon(
+                        icon: const Icon(
                           Iconsax.setting_5,
                           color: Colors.white,
                         )))
@@ -115,30 +118,44 @@ Widget DoctorCard(widtth, heightt) {
         right: widtth * .009),
     child: GestureDetector(
         onTap: () {
-          Get.to(AboutDoctor());
+          Get.to(const AboutDoctor());
         },
         child: Container(
           height: 120,
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+          decoration: BoxDecoration(
+            color: Colors.white,
+            borderRadius: const BorderRadius.all(Radius.circular(7)),
+            boxShadow: [
+              BoxShadow(
+                color: HexColor("#000000").withAlpha(35),
+                // spreadRadius: 5,
+                blurRadius: 6,
+                offset: const Offset(0, 3),
+                // changes position of shadow
+              ),
+            ],
+          ),
           child: Row(
             children: [
               Container(
                 width: 85,
                 height: 90,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage("assets/images/abdo.jpg")),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   color: HexColor("#f0f0f0"),
                 ),
               ),
               Padding(
-                padding: EdgeInsets.only(top: 15, left: 20),
+                padding: const EdgeInsets.only(top: 15, left: 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("Dr. Abdo Mohamed"),
-                    SizedBox(
+                    const Text("Dr. Abdo Mohamed"),
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
@@ -146,7 +163,7 @@ Widget DoctorCard(widtth, heightt) {
                       style:
                           TextStyle(color: HexColor("#AEB2BB"), fontSize: 12),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 5,
                     ),
                     Text(
@@ -169,20 +186,6 @@ Widget DoctorCard(widtth, heightt) {
                   ),
                 ),
               )
-            ],
-          ),
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
-          decoration: BoxDecoration(
-            color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(7)),
-            boxShadow: [
-              BoxShadow(
-                color: HexColor("#000000").withAlpha(35),
-                // spreadRadius: 5,
-                blurRadius: 6,
-                offset: Offset(0, 3),
-                // changes position of shadow
-              ),
             ],
           ),
         )),

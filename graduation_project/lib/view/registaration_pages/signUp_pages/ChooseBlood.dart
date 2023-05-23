@@ -17,7 +17,7 @@ class ChooseBlood extends StatelessWidget {
     SignUpController controller = Get.put(SignUpController());
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: SignUpBar("Next", "Toweight"),
+      appBar: SignUpBar("Next", "Toweight",context),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 77),
         child: GetBuilder<SignUpController>(

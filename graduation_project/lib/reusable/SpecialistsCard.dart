@@ -86,7 +86,9 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
           child: Container(
             width: widtth * .07,
             child: IconButton(
-                onPressed: () {},
+                onPressed: () {
+                  Get.to(() => Doctors());
+                },
                 icon: Icon(
                   Iconsax.arrow_right_3,
                   color: HexColor("#252632"),

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
@@ -63,16 +65,16 @@ Widget Carrd() {
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
     child: Container(
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(7)),
+        borderRadius: const BorderRadius.all(Radius.circular(7)),
         boxShadow: [
           BoxShadow(
             color: HexColor("#000000").withAlpha(35),
             // spreadRadius: 5,
             blurRadius: 6,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -87,10 +89,10 @@ Widget Carrd() {
                     width: 70.0,
                     height: 70.0,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),
                   ),
@@ -104,7 +106,7 @@ Widget Carrd() {
                           style: TextStyle(
                               fontSize: 16, fontWeight: FontWeight.w500,color: HexColor("#252632")),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         GetX<AppointmentController>(
@@ -122,11 +124,11 @@ Widget Carrd() {
                                       style: TextStyle(
                                           fontSize: 12,
                                           color: HexColor(
-                                              "${textColor(controller.selectedItem.value)}")),
+                                              textColor(controller.selectedItem.value))),
                                     )
                                   ],
                                 ))),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         Text(
@@ -134,7 +136,7 @@ Widget Carrd() {
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 2,
                         ),
                         Text(
@@ -150,14 +152,14 @@ Widget Carrd() {
               Container(
                   width: 30,
                   height: 30,
-                  decoration: new BoxDecoration(
+                  decoration: BoxDecoration(
                     color: HexColor("#f0f0f0"),
                     shape: BoxShape.circle,
                   ),
                   child: IconName("Video call")),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           GetX<AppointmentController>(

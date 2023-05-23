@@ -1,9 +1,6 @@
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:hexcolor/hexcolor.dart';
-import 'package:iconsax/iconsax.dart';
 
-import '../reusable/AppointmentButtons.dart';
+
+// ignore_for_file: file_names, non_constant_identifier_names
 
 class AppointmentCard {
   AppointmentCard();

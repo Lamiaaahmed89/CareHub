@@ -1,11 +1,12 @@
 
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/view/EHR_Pages/EachDoctorPrescriptions.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
-import 'package:lottie/lottie.dart';
 
 import '../view/EHR_Pages/EachDoctorDiagnosis.dart';
 import '../view/EHR_Pages/EachDoctorTests.dart';
@@ -13,17 +14,17 @@ import '../view/EHR_Pages/EachDoctorTests.dart';
 Widget ListtTile(String imgPath, Titlle, subTitlle, Widtth, heightt, GoWhere,
     bool isLabResulit) {
   return Padding(
-    padding: EdgeInsets.only(bottom: 10),
+    padding: const EdgeInsets.only(bottom: 10),
     child: GestureDetector(
       onTap: () {
         if (GoWhere == "EachDoctorPrescriptions") {
-          Get.to(EachDoctorPrescriptions());
+          Get.to(const EachDoctorPrescriptions());
         }
         if (GoWhere == "EachDoctorDiagnosis") {
-          Get.to(EachDoctorDiagnosis());
+          Get.to(const EachDoctorDiagnosis());
         }
         if (GoWhere == "EachDoctorTests") {
-          Get.to(EachDoctorTests());
+          Get.to(const EachDoctorTests());
         }
       },
       child: Row(
@@ -35,40 +36,40 @@ Widget ListtTile(String imgPath, Titlle, subTitlle, Widtth, heightt, GoWhere,
               // padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(7)),
+                borderRadius: const BorderRadius.all(Radius.circular(7)),
                 boxShadow: [
                   BoxShadow(
                     color: HexColor("#000000").withAlpha(35),
                     // spreadRadius: 5,
                     blurRadius: 6,
-                    offset: Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
               ),
               child: Padding(
                 padding: EdgeInsets.only(top: heightt * .01),
-                child: Container(
+                child: SizedBox(
                   height: 80,
                   child: ListTile(
-                    leading: Container(
+                    leading: SizedBox(
                         // color: Colors.amber,
                         width: Widtth * .12,
                         height: heightt * .2,
-                        child: SvgPicture.asset("$imgPath")),
+                        child: SvgPicture.asset(imgPath)),
                     title: Padding(
                       padding: EdgeInsets.only(bottom: heightt * .01),
                       child: Text(
                         "$Titlle",
-                        style: TextStyle(fontSize: 13),
+                        style: const TextStyle(fontSize: 13),
                       ),
                     ),
                     subtitle: Text(
                       "$subTitlle",
-                      style: TextStyle(fontSize: 13),
+                      style: const TextStyle(fontSize: 13),
                     ),
                     trailing: Padding(
                       padding: EdgeInsets.only(left: Widtth * .2),
-                      child: Container(
+                      child: SizedBox(
                         width: Widtth * .07,
                         // color: Colors.amber,
                         child: IconButton(
@@ -108,13 +109,13 @@ Widget horizontalListView(Widtth, heightt) {
           decoration: BoxDecoration(
             color: HexColor("#fecfda"),
             // fc9eb3
-            borderRadius: BorderRadius.all(Radius.circular(10)),
+            borderRadius: const BorderRadius.all(Radius.circular(10)),
             boxShadow: [
               BoxShadow(
                 color: HexColor("#000000").withAlpha(40),
                 // spreadRadius: 5,
                 blurRadius: 6,
-                offset: Offset(0, 3), // changes position of shadow
+                offset: const Offset(0, 3), // changes position of shadow
               ),
             ],
           ),

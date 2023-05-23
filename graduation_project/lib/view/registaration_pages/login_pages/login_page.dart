@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:graduation_project/Controllers/login.dart';
+import 'package:graduation_project/Controllers/logincontroller.dart';
 import 'package:graduation_project/component/account_text.dart';
 import 'package:graduation_project/component/google_button.dart';
 import 'package:graduation_project/component/msg_text.dart';
@@ -28,7 +28,7 @@ class LoginPage extends StatelessWidget {
       backgroundColor: white_color,
       body: Padding(
         padding:
-            const EdgeInsetsDirectional.only(start: 16.0, end: 16.0, top: 30.0),
+            const EdgeInsetsDirectional.only(start: 16.0, end: 17.0, top: 30.0),
         child: Form(
           child: ListView(
             children: [
@@ -47,24 +47,31 @@ class LoginPage extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(boxShadow: const [
                   BoxShadow(
-                    color: Color.fromARGB(16, 0, 0, 0),
-                    offset: Offset(0, 3),
-                    blurRadius: 6.0,
-                  ),
+                      color: Color.fromARGB(16, 0, 0, 0),
+                      offset: Offset(0, 3),
+                      blurRadius: 6.0,
+                      spreadRadius: BorderSide.strokeAlignOutside),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
                     controller: loginController.emailcontroller,
                     decoration: InputDecoration(
-                        fillColor: white_color,
-                        filled: true,
-                        hintText: 'Enter Your Email',
-                        prefixIcon: Icon(
-                          Iconsax.sms,
-                          color: Main_color,
-                        ),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(50),
-                            borderSide: BorderSide(color: white_color)))),
+                      fillColor: white_color,
+                      filled: true,
+                      hintText: 'Enter Your E-mail',
+                      prefixIcon: Icon(
+                        Iconsax.sms,
+                        color: Main_color,
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide: BorderSide(color: white_color)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide: BorderSide(color: white_color)),
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide: BorderSide(color: white_color)),
+                    )),
               ),
               const SizedBox(
                 height: 29,
@@ -72,25 +79,31 @@ class LoginPage extends StatelessWidget {
               Container(
                 decoration: BoxDecoration(boxShadow: const [
                   BoxShadow(
-                    color: Color.fromARGB(16, 0, 0, 0),
-                    offset: Offset(0, 3),
-                    blurRadius: 6.0,
-                  ),
+                      color: Color.fromARGB(16, 0, 0, 0),
+                      offset: Offset(0, 3),
+                      blurRadius: 6.0,
+                      spreadRadius: BorderSide.strokeAlignOutside),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
                     controller: loginController.Passwordcontroller,
                     decoration: InputDecoration(
                       fillColor: white_color,
                       filled: true,
-                      hintText: 'Enter Your Password',
-                      suffixIcon: Icon(
-                        Iconsax.eye,
-                        color: Main_color,
-                      ),
+                      hintText: 'Enter your password',
                       prefixIcon: Icon(
                         Iconsax.key,
                         color: Main_color,
                       ),
+                      suffixIcon: Icon(
+                        Iconsax.eye,
+                        color: Main_color,
+                      ),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide: BorderSide(color: white_color)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(50),
+                          borderSide: BorderSide(color: white_color)),
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
                           borderSide: BorderSide(color: white_color)),
@@ -107,27 +120,23 @@ class LoginPage extends StatelessWidget {
                   onPressed: () {
                     Navigator.pushNamed(context, VerificationPage.id);
                   },
-                  child: const Text(
-                    'Forgot Password?',
-                    style: TextStyle(
-                      fontSize: 14.0,
-                      fontFamily: 'Poppins',
-                    ),
-                  ),
+                  child: const Text('Forgot Password?',
+                      style: TextStyle(
+                        color: Color.fromRGBO(40, 95, 250, 1),
+                        fontSize: 14.0,
+                        fontFamily: 'Poppins',
+                      )),
                 ),
               ),
               // SizedBox(height: 29,),
+
               RegisterButton(
                 color_button: Main_color,
                 text_color: white_color,
                 navigate: () {
-                  // loginController.isloding
-                  //     ? CircularProgressIndicator()
-                  //     : loginController.loginwithemail();
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                    return const HomePage();
-                  }));
+                  loginController.loginwithemail(context);
+                  // Navigator.pushNamedAndRemoveUntil(
+                  //     context, 'BottomNavBar', (route) => false);
                 },
                 register_txt: 'Log In',
               ),

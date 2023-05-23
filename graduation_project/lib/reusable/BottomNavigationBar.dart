@@ -1,8 +1,12 @@
+// ignore_for_file: file_names, must_be_immutable, library_private_types_in_public_api
+
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../Controllers/logincontroller.dart';
 import '../constants/colors.dart';
 import '../view/Appointment_pages/upcomming.dart';
 import '../view/Messages_Pages/AllMessages.dart';
@@ -10,25 +14,26 @@ import '../view/Specialists_Pages/SpecialistsListView.dart';
 import '../view/registaration_pages/home_page.dart';
 import '../view/registaration_pages/login_pages/login_page.dart';
 
-
-
 class BottomNavBar extends StatefulWidget {
   static String id = 'BottomNavBar';
+  LoginController loginController = Get.put(LoginController());
+
+  BottomNavBar({super.key});
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
   int selectedIndex = 0;
-  List<Widget> _pages = [
-    HomePage(),
-    SpecialistsListView(),
+  final List<Widget> _pages = [
+    const HomePage(),
+    const SpecialistsListView(),
     UpComming(),
     Messages(),
     LoginPage(),
   ];
 
-  GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+  final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
 
   @override
   Widget build(BuildContext context) {
@@ -55,11 +60,16 @@ class _BottomNavBarState extends State<BottomNavBar> {
         buttonBackgroundColor: Main_color,
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
-        animationDuration: Duration(milliseconds: 600),
+        animationDuration: const Duration(milliseconds: 600),
         onTap: (index) {
-          setState(() {
-            selectedIndex = index;
-          });
+          if (index == 4) {
+            Navigator.pushNamedAndRemoveUntil(
+                context, 'LoginPage', (route) => false);
+          } else {
+            setState(() {
+              selectedIndex = index;
+            });
+          }
         },
         letIndexChange: (index) => true,
       ),

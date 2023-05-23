@@ -1,4 +1,5 @@
-import 'dart:ui';
+
+// ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,20 +9,22 @@ import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../../../Controllers/Addpatientinfo.dart';
+
 class EnterWeight extends StatelessWidget {
   const EnterWeight({super.key});
 
   @override
   Widget build(BuildContext context) {
+    Addpatientinfo addpatientinfo=Get.put(Addpatientinfo());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
-    SignUpController controller = Get.put(SignUpController());
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
-      appBar: SignUpBar("Next", "Toheight"),
+      appBar: SignUpBar("Next", "Toheight",context),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 30),
+        padding: const EdgeInsets.symmetric(horizontal: 30),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -29,13 +32,13 @@ class EnterWeight extends StatelessWidget {
               width: widtth * .1,
               height: heightt * .1,
               alignment: Alignment.center,
-              child: Icon(
-                Iconsax.weight,
-                color: Colors.white,
-              ),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: HexColor("#285FFA"),
+              ),
+              child: const Icon(
+                Iconsax.weight,
+                color: Colors.white,
               ),
             ),
             Text(
@@ -49,10 +52,11 @@ class EnterWeight extends StatelessWidget {
                   padding: EdgeInsets.only(
                       right: widtth * .50, left: widtth * .10, bottom: 5),
                   child: TextFormField(
+                    controller:addpatientinfo.weight,
                     keyboardType: TextInputType.number,
                     decoration: InputDecoration(
                         hintText: "70",
-                        hintStyle: TextStyle(fontSize: 12),
+                        hintStyle: const TextStyle(fontSize: 12),
                         border: InputBorder.none,
                         fillColor: HexColor("#FFFFFF")),
                   ),
@@ -73,19 +77,19 @@ class EnterWeight extends StatelessWidget {
               ],
             ),
             GetBuilder<SignUpController>(
-              builder: (controller) => Container(
+              builder: (controller) => SizedBox(
                 width: widtth * .5,
                 height: heightt * .5,
                 child: SvgPicture.asset(
                   controller.Gender == "male"
                       ? "assets/images/man.svg"
                       : "assets/images/woman.svg",
-                  color: Color(0x80AEB2BB),
+                  color: const Color(0x80AEB2BB),
                 ),
               ),
             ),
             Expanded(
-              child: Container(
+              child: SizedBox(
                 width: widtth * .7,
                 height: heightt * .15,
                 child: SvgPicture.asset(

@@ -30,14 +30,15 @@ class _findServicesState extends State<findServices> {
     print(items);
 
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: white_color,
       appBar: appBar(
         "Add Symptoms",
       ),
       body: Column(
         children: [
-          Center(
-            child: const Text(
+          const Center(
+            child: Text(
               'Symptoms you have entered \nPlease check the symptoms and \nyou can remove anything entered by mistake',
               style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
               textAlign: TextAlign.center,
@@ -52,7 +53,7 @@ class _findServicesState extends State<findServices> {
                   Padding(
                     padding: const EdgeInsets.all(14),
                     child: Chip(
-                        deleteIcon: Icon(
+                        deleteIcon: const Icon(
                           Iconsax.close_circle,
                           color: Color.fromRGBO(37, 38, 50, 0.8),
                         ),
@@ -62,12 +63,13 @@ class _findServicesState extends State<findServices> {
                         },
                         label: Text(
                           '$item',
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.w400, fontSize: 16),
                         ),
-                        backgroundColor: Color.fromRGBO(174, 178, 187, 0.2),
-                        labelPadding: EdgeInsets.all(14),
-                        shape: RoundedRectangleBorder(
+                        backgroundColor:
+                            const Color.fromRGBO(174, 178, 187, 0.2),
+                        labelPadding: const EdgeInsets.all(14),
+                        shape: const RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10)))),
                   )
@@ -83,12 +85,7 @@ class _findServicesState extends State<findServices> {
                   text_color: white_color,
                   color_button: Main_color,
                   navigate: () {
-                    setState(() {
-                      _isLoading = true;
-                      CircularProgressIndicator();
-                    });
-
-                    controller.symotoms;
+                    bodycontroller.bodySymptoms(context);
                   },
                   register_txt: 'Find Service',
                 ),

@@ -1,6 +1,9 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
 
+// ignore: must_be_immutable
 class RegisterButton extends StatelessWidget {
   RegisterButton(
       {super.key,
@@ -24,18 +27,18 @@ class RegisterButton extends StatelessWidget {
           color: white_color,
         ),
         borderRadius: BorderRadius.circular(50.0),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Color.fromARGB(16, 0, 0, 0),
-            offset: Offset(0, 3),
-            blurRadius: 6.0,
-          )
+              color: Color.fromARGB(16, 0, 0, 0),
+              offset: Offset(0, 3),
+              blurRadius: 6.0,
+              spreadRadius: BorderSide.strokeAlignOutside)
         ],
       ),
       child: MaterialButton(
         onPressed: navigate,
         child: Text(
-          '$register_txt',
+          register_txt,
           style: TextStyle(
             fontFamily: 'Poppins',
             fontSize: 16.0,

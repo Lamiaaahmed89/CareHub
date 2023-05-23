@@ -15,15 +15,14 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => OnBoarding()));
+          context, MaterialPageRoute(builder: (context) => const OnBoarding()));
       context;
-      MaterialPageRoute(builder: (context) => OnBoarding());
+      MaterialPageRoute(builder: (context) => const OnBoarding());
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     throw UnimplementedError();
   }
 }
@@ -35,11 +34,9 @@ Widget build(BuildContext context) {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Container(
-            child: Text(
-              "LOGO",
-              style: TextStyle(color: Main_color, fontSize: 30),
-            ),
+          Text(
+            "LOGO",
+            style: TextStyle(color: Main_color, fontSize: 30),
           ),
         ],
       ),

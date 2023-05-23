@@ -1,20 +1,25 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:graduation_project/constants/medical_icon.dart';
+import 'package:get/get.dart';
+import 'package:graduation_project/reusable/BottomNavigationBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
-
 import '../../constants/colors.dart';
 import '../../reusable/Appbar.dart';
 import '../Specialists_Pages/SpecialistsClass.dart';
+import '../Specialists_Pages/SpecialistsListView.dart';
 
 class suggestionServices extends StatelessWidget {
   static String id = 'suggestionServices';
-  int index =
-      allSpecialists.indexWhere((spe) => spe.specialist == 'Internal Medicine');
+  static String res = 'Allergists';
+
+  const suggestionServices({super.key});
 
   @override
   Widget build(BuildContext context) {
+    int index = allSpecialists.indexWhere((spe) => spe.specialist == res);
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
         backgroundColor: white_color,
@@ -34,7 +39,7 @@ class suggestionServices extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.all(16),
             child: Container(
-                decoration: BoxDecoration(boxShadow: [
+                decoration: BoxDecoration(boxShadow: const [
                   BoxShadow(
                     color: Color.fromARGB(16, 0, 0, 0),
                     offset: Offset(0, 3),
@@ -42,7 +47,9 @@ class suggestionServices extends StatelessWidget {
                   ),
                 ], borderRadius: BorderRadius.circular(10)),
                 child: InkWell(
-                  onTap: () {},
+                  onTap: () {
+                    Get.off(() => const SpecialistsListView());
+                  },
                   child: Card(
                     child: Container(
                       width: w,
@@ -58,31 +65,31 @@ class suggestionServices extends StatelessWidget {
                                   color: HexColor("#DCE5FE"),
                                   borderRadius: BorderRadius.circular(10)),
                               child: SvgPicture.asset(
-                                "${allSpecialists[index].SpecialistsSVG}",
+                                allSpecialists[index].SpecialistsSVG,
                                 height: 20,
                                 fit: BoxFit.scaleDown,
                                 color: Main_color,
                               ),
                             ),
                           ),
-                          SizedBox(
+                          const SizedBox(
                             width: 14,
                           ),
                           Padding(
-                            padding: EdgeInsets.only(
+                            padding: const EdgeInsets.only(
                               top: 16,
                             ),
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
                                 Text(
-                                  "${allSpecialists[index].specialist}",
+                                  allSpecialists[index].specialist,
                                   style: TextStyle(
                                       color: HexColor("#252632"),
                                       fontSize: 16,
                                       fontWeight: FontWeight.w500),
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   height: 10,
                                 ),
                                 Text(
@@ -95,9 +102,11 @@ class suggestionServices extends StatelessWidget {
                           ),
                           Expanded(
                             child: Align(
-                              alignment:AlignmentDirectional.centerEnd,
+                              alignment: AlignmentDirectional.centerEnd,
                               child: IconButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Get.off(() => const SpecialistsListView());
+                                  },
                                   icon: Icon(
                                     Iconsax.arrow_right_3,
                                     color: HexColor("#252632"),

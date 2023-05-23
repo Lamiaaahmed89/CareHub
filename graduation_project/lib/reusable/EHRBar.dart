@@ -1,12 +1,12 @@
 
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Controllers/EHRfilesController.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 Widget MediacalBar(double Widtth, double heightt) {
-  EHRfilesController controller =
-      Get.put(EHRfilesController(), permanent: true);
   return Padding(
     padding: EdgeInsets.only(
         top: Widtth * .02,
@@ -19,13 +19,13 @@ Widget MediacalBar(double Widtth, double heightt) {
         height: heightt * .08,
         decoration: BoxDecoration(
           color: HexColor("#f0f0f0"),
-          borderRadius: BorderRadius.all(Radius.circular(9)),
+          borderRadius: const BorderRadius.all(Radius.circular(9)),
           boxShadow: [
             BoxShadow(
               color: HexColor("#000000").withAlpha(35),
               // spreadRadius: 5,
               blurRadius: 6,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
@@ -42,7 +42,7 @@ Widget MediacalBar(double Widtth, double heightt) {
                         height: heightt * .06,
                         padding: EdgeInsets.symmetric(vertical: heightt * .015),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                          borderRadius: const BorderRadius.all(Radius.circular(8)),
                           color: controller.Medical_Tests
                               ? HexColor("#285FFA")
                               : Colors.transparent,
@@ -54,7 +54,7 @@ Widget MediacalBar(double Widtth, double heightt) {
                               // spreadRadius: 5,
                               blurRadius: 6,
                               offset:
-                                  Offset(0, 3), // changes position of shadow
+                                  const Offset(0, 3), // changes position of shadow
                             ),
                           ],
                         ),
@@ -77,7 +77,7 @@ Widget MediacalBar(double Widtth, double heightt) {
                         height: heightt * .06,
                         padding: EdgeInsets.symmetric(vertical: heightt * .015),
                         decoration: BoxDecoration(
-                          borderRadius: BorderRadius.all(Radius.circular(8)),
+                          borderRadius: const BorderRadius.all(Radius.circular(8)),
                           color: controller.Medical_Tests == false
                               ? HexColor("#285FFA")
                               : Colors.transparent,
@@ -89,7 +89,7 @@ Widget MediacalBar(double Widtth, double heightt) {
                               // spreadRadius: 5,
                               blurRadius: 6,
                               offset:
-                                  Offset(0, 3), // changes position of shadow
+                                  const Offset(0, 3), // changes position of shadow
                             ),
                           ],
                         ),

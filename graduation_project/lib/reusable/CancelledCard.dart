@@ -1,10 +1,9 @@
-import 'package:get/get.dart';
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 
-import '../Controllers/AppointmentController.dart';
-import 'AppointmentButtons.dart';
 
 // Iconsax.video,
 // Iconsax.call,
@@ -15,16 +14,16 @@ Widget CancelledCard(widtth, heightt) {
     padding: EdgeInsets.symmetric(horizontal: widtth * .038, vertical: 10),
     child: Container(
       height: 138,
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(7)),
+        borderRadius: const BorderRadius.all(Radius.circular(7)),
         boxShadow: [
           BoxShadow(
             color: HexColor("#000000").withAlpha(35),
             spreadRadius: 2,
             blurRadius: 6,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -39,10 +38,10 @@ Widget CancelledCard(widtth, heightt) {
                     width: 70.0,
                     height: 70.0,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),
                   ),
@@ -51,7 +50,7 @@ Widget CancelledCard(widtth, heightt) {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(
+                        const SizedBox(
                           height: 12,
                         ),
                         Text(
@@ -61,7 +60,7 @@ Widget CancelledCard(widtth, heightt) {
                               fontWeight: FontWeight.w500,
                               color: HexColor("#252632")),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         Row(
@@ -78,7 +77,7 @@ Widget CancelledCard(widtth, heightt) {
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         Text(
@@ -86,7 +85,7 @@ Widget CancelledCard(widtth, heightt) {
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 2,
                         ),
                         Text(
@@ -102,7 +101,7 @@ Widget CancelledCard(widtth, heightt) {
               Container(
                   width: widtth * .1,
                   height: heightt * .05,
-                  decoration: new BoxDecoration(
+                  decoration: BoxDecoration(
                     color: HexColor("#f0f0f0"),
                     shape: BoxShape.circle,
                   ),
@@ -113,7 +112,7 @@ Widget CancelledCard(widtth, heightt) {
                   )),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
         ],

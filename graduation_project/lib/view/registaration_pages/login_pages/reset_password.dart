@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
@@ -8,10 +9,13 @@ import 'package:graduation_project/view/registaration_pages/login_pages/password
 
 import 'package:iconsax/iconsax.dart';
 
+import '../../../Controllers/forgetpassword.dart';
+
 class ResetPassword extends StatelessWidget {
   static String id = 'ResetPassword';
+  ForgetPassword forgetpassword = Get.put(ForgetPassword());
+  static String token = "";
 
-  const ResetPassword({super.key});
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
@@ -59,28 +63,47 @@ class ResetPassword extends StatelessWidget {
             const SizedBox(
               height: 17.0,
             ),
-            InputField(
-              hint_text: 'Enter Your Password,',
-              prefix: Icon(
-                Iconsax.key,
-                color: Main_color,
-              ),
-              suffix: Icon(
-                Iconsax.eye,
-                color: Main_color,
-              ),
+            Container(
+              decoration: BoxDecoration(boxShadow: const [
+                BoxShadow(
+                    color: Color.fromARGB(16, 0, 0, 0),
+                    offset: Offset(0, 3),
+                    blurRadius: 6.0,
+                    spreadRadius: BorderSide.strokeAlignOutside),
+              ], borderRadius: BorderRadius.circular(50)),
+              child: TextFormField(
+                  controller: forgetpassword.Newpassword,
+                  decoration: InputDecoration(
+                    fillColor: white_color,
+                    filled: true,
+                    hintText: 'Enter Your Password',
+                    prefixIcon: Icon(
+                      Iconsax.sms,
+                      color: Main_color,
+                    ),
+                    suffixIcon: Icon(
+                      Iconsax.eye,
+                      color: Main_color,
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: white_color)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: white_color)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: white_color)),
+                  )),
             ),
             const SizedBox(
               height: 32,
             ),
             RegisterButton(
-              color_button: Main_color,
-              text_color: white_color,
+                color_button: Main_color,
+                text_color: white_color,
                 navigate: () {
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (BuildContext context) {
-                    return const PasswordUpdated();
-                  }));
+                  forgetpassword.FResetPassword(token,context);
                 },
                 register_txt: 'Create'),
           ],

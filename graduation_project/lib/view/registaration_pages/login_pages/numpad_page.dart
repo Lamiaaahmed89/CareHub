@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../../Controllers/forgetpassword.dart';
 
 class NumPad extends StatefulWidget {
   const NumPad({super.key});
@@ -13,7 +16,6 @@ class NumPad extends StatefulWidget {
 }
 
 class _NumPadState extends State<NumPad> {
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
@@ -36,6 +38,8 @@ class OtpScreen extends StatefulWidget {
 }
 
 class _OtpScreenState extends State<OtpScreen> {
+  ForgetPassword forgetpassword = Get.put(ForgetPassword());
+  @override
   List<String> CurrentPin = ["", "", "", "", "", ""];
   TextEditingController pinOneController = TextEditingController();
   TextEditingController pinTwoController = TextEditingController();
@@ -248,7 +252,7 @@ class _OtpScreenState extends State<OtpScreen> {
     }
   }
 
-  pinIndexSetup(String text) {
+  pinIndexSetup(String text) async {
     if (pinIndex == 0) {
       pinIndex = 1;
     } else if (pinIndex < 6) {
@@ -261,6 +265,7 @@ class _OtpScreenState extends State<OtpScreen> {
       strPin += e;
     });
     if (pinIndex == 6) {
+      await forgetpassword.ResetCode(strPin,context);
       print(strPin);
     }
   }

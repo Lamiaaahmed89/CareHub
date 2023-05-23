@@ -1,10 +1,9 @@
-import 'package:get/get.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
-import 'package:iconsax/iconsax.dart';
 import 'package:syncfusion_flutter_sliders/sliders.dart';
 
 class FilerDoctors extends StatelessWidget {
@@ -14,8 +13,8 @@ class FilerDoctors extends StatelessWidget {
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
-    SfRangeValues _values = SfRangeValues(3, 5);
-    SfRangeValues _values1 = SfRangeValues(10, 20);
+    SfRangeValues values = const SfRangeValues(3, 5);
+    SfRangeValues values1 = const SfRangeValues(10, 20);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: appBar("Filters"),
@@ -26,22 +25,22 @@ class FilerDoctors extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.only(left: widtth * .05),
-              child: Text(
+              child: const Text(
                 "Ratings",
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
             ),
             SfRangeSlider(
-                values: _values,
+                values: values,
                 min: 1,
                 max: 5,
                 showLabels: true,
                 interval: 1,
                 onChanged: (dynamic newValues) {}),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: EdgeInsets.only(left: widtth * .05),
-              child: Text(
+              child: const Text(
                 "Price",
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
@@ -53,7 +52,7 @@ class FilerDoctors extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: widtth * .05),
               child: Row(
                 children: [
-                  Text("From",
+                  const Text("From",
                       style:
                           TextStyle(fontWeight: FontWeight.w500, fontSize: 12)),
                   SizedBox(
@@ -63,13 +62,8 @@ class FilerDoctors extends StatelessWidget {
                     width: widtth * .30,
                     height: heightt * .06,
                     alignment: Alignment.center,
-                    child: Text("80\$",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12,
-                            color: Colors.white)),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
                       color: HexColor("#285FFA"),
                       boxShadow: [
                         BoxShadow(
@@ -77,15 +71,20 @@ class FilerDoctors extends StatelessWidget {
 
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
+                    child: const Text("80\$",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            color: Colors.white)),
                   ),
                   SizedBox(
                     width: widtth * .03,
                   ),
-                  Text("To",
+                  const Text("To",
                       style:
                           TextStyle(fontWeight: FontWeight.w500, fontSize: 12)),
                   SizedBox(
@@ -95,13 +94,8 @@ class FilerDoctors extends StatelessWidget {
                     width: widtth * .30,
                     height: heightt * .06,
                     alignment: Alignment.center,
-                    child: Text("80\$",
-                        style: TextStyle(
-                            fontWeight: FontWeight.w500,
-                            fontSize: 12,
-                            color: Colors.white)),
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.all(Radius.circular(8)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8)),
                       color: HexColor("#285FFA"),
                       boxShadow: [
                         BoxShadow(
@@ -109,45 +103,43 @@ class FilerDoctors extends StatelessWidget {
 
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
+                    child: const Text("80\$",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w500,
+                            fontSize: 12,
+                            color: Colors.white)),
                   )
                 ],
               ),
             ),
-            Spacer(),
+            const Spacer(),
             Padding(
               padding: EdgeInsets.only(left: widtth * .05),
-              child: Text(
+              child: const Text(
                 "Years of experience",
                 style: TextStyle(fontWeight: FontWeight.w500),
               ),
             ),
             SfRangeSlider(
-                values: _values1,
+                values: values1,
                 min: 5,
                 max: 20,
                 showLabels: true,
                 interval: 5,
                 onChanged: (dynamic newValues) {}),
-            Spacer(),
+            const Spacer(),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 ElevatedButton(
                     onPressed: () {},
-                    child: Text(
-                      "Reset",
-                      style: TextStyle(
-                          fontWeight: FontWeight.w500,
-                          fontSize: 12,
-                          color: HexColor("#285FFA")),
-                    ),
                     style: ButtonStyle(
                         shadowColor:
-                            MaterialStateProperty.all(Color(0x40000000)),
+                            MaterialStateProperty.all(const Color(0x40000000)),
                         elevation: MaterialStateProperty.all<double>(5),
                         foregroundColor:
                             MaterialStateProperty.all(Colors.white),
@@ -160,14 +152,16 @@ class FilerDoctors extends StatelessWidget {
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
-                        )))),
+                        ))),
+                    child: Text(
+                      "Reset",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          fontSize: 12,
+                          color: HexColor("#285FFA")),
+                    )),
                 ElevatedButton(
                     onPressed: () {},
-                    child: Text(
-                      "Apply",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
-                    ),
                     style: ButtonStyle(
                         shadowColor:
                             MaterialStateProperty.all(HexColor("#285FFA")),
@@ -183,11 +177,16 @@ class FilerDoctors extends StatelessWidget {
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(30.0),
-                        )))),
+                        ))),
+                    child: const Text(
+                      "Apply",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w500, fontSize: 12),
+                    )),
               ],
             ),
-            Spacer(),
-            Spacer(),
+            const Spacer(),
+            const Spacer(),
           ],
         ),
       ),

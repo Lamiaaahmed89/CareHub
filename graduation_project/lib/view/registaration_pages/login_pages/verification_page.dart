@@ -1,24 +1,26 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/component/register_button.dart';
-import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/registaration_pages/login_pages/numpad_page.dart';
 
-
 import 'package:iconsax/iconsax.dart';
 
+import '../../../Controllers/forgetpassword.dart';
+
 class VerificationPage extends StatelessWidget {
-  const VerificationPage({super.key});
+  VerificationPage({super.key});
 
   static String id = 'VerificationPage';
-
+  ForgetPassword forgetpassword = Get.put(ForgetPassword());
   @override
   Widget build(BuildContext context) {
-     double h = MediaQuery.of(context).size.height;
+    double h = MediaQuery.of(context).size.height;
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: white_color,
       appBar: appBar('Verification'),
       body: Padding(
@@ -28,7 +30,7 @@ class VerificationPage extends StatelessWidget {
             SvgPicture.asset(
               'assets/images/image_login/Forgot password-bro.svg',
               width: w,
-            height:h*0.45 ,
+              height: h * 0.45,
             ),
             Center(
               child: Text(
@@ -51,21 +53,47 @@ class VerificationPage extends StatelessWidget {
             SizedBox(
               height: 17,
             ),
-            InputField(
-              hint_text: 'Enter Your Email',
-              prefix: Icon(
-                Iconsax.sms,
-                color: Main_color,
-              ),
+            Container(
+              decoration: BoxDecoration(boxShadow: const [
+                BoxShadow(
+                    color: Color.fromARGB(16, 0, 0, 0),
+                    offset: Offset(0, 3),
+                    blurRadius: 6.0,
+                    spreadRadius: BorderSide.strokeAlignOutside),
+              ], borderRadius: BorderRadius.circular(50)),
+              child: TextFormField(
+                  controller: forgetpassword.emailcontroller,
+                  decoration: InputDecoration(
+                    fillColor: white_color,
+                    filled: true,
+                    hintText: 'Enter Your Email',
+                    prefixIcon: Icon(
+                      Iconsax.sms,
+                      color: Main_color,
+                    ),
+                    suffixIcon: Icon(
+                      Iconsax.eye,
+                      color: Main_color,
+                    ),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: white_color)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: white_color)),
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(50),
+                        borderSide: BorderSide(color: white_color)),
+                  )),
             ),
             SizedBox(
               height: 32,
             ),
             RegisterButton(
-              color_button: Main_color,
-              text_color: white_color,
+                color_button: Main_color,
+                text_color: white_color,
                 navigate: () {
-                  Navigator.pushNamed(context, NumPad.id);
+                  forgetpassword.Forgetpassword(context);
                 },
                 register_txt: 'Send'),
             Spacer(),

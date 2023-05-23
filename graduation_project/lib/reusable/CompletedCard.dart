@@ -1,11 +1,11 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:get/get.dart';
 import 'package:graduation_project/view/communication_pages/Video_call_pages/WriteReview.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 
-import '../Controllers/AppointmentController.dart';
-import 'AppointmentButtons.dart';
 
 
 // Iconsax.video,
@@ -17,16 +17,16 @@ Widget CompletedCarrd(widtth, heightt) {
     padding: EdgeInsets.symmetric(horizontal: widtth * .038, vertical: 10),
     child: Container(
       height: 190,
-      padding: EdgeInsets.all(15),
+      padding: const EdgeInsets.all(15),
       decoration: BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.all(Radius.circular(7)),
+        borderRadius: const BorderRadius.all(Radius.circular(7)),
         boxShadow: [
           BoxShadow(
             color: HexColor("#000000").withAlpha(35),
             spreadRadius: 2,
             blurRadius: 6,
-            offset: Offset(0, 3), // changes position of shadow
+            offset: const Offset(0, 3), // changes position of shadow
           ),
         ],
       ),
@@ -41,10 +41,10 @@ Widget CompletedCarrd(widtth, heightt) {
                     width: 70.0,
                     height: 70.0,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),
                   ),
@@ -63,7 +63,7 @@ Widget CompletedCarrd(widtth, heightt) {
                               fontWeight: FontWeight.w500,
                               color: HexColor("#252632")),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         Row(
@@ -80,7 +80,7 @@ Widget CompletedCarrd(widtth, heightt) {
                             )
                           ],
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 3,
                         ),
                         Text(
@@ -88,7 +88,7 @@ Widget CompletedCarrd(widtth, heightt) {
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 2,
                         ),
                         Text(
@@ -104,7 +104,7 @@ Widget CompletedCarrd(widtth, heightt) {
               Container(
                   width: widtth * .1,
                   height: heightt * .05,
-                  decoration: new BoxDecoration(
+                  decoration: BoxDecoration(
                     color: HexColor("#f0f0f0"),
                     shape: BoxShape.circle,
                   ),
@@ -115,7 +115,7 @@ Widget CompletedCarrd(widtth, heightt) {
                   )),
             ],
           ),
-          SizedBox(
+          const SizedBox(
             height: 10,
           ),
           Row(
@@ -124,11 +124,6 @@ Widget CompletedCarrd(widtth, heightt) {
               Expanded(
                 child: ElevatedButton(
                     onPressed: () {},
-                    child: Text(
-                      "Book Again",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-                    ),
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all<double>(0),
                         foregroundColor:
@@ -142,7 +137,12 @@ Widget CompletedCarrd(widtth, heightt) {
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                        )))),
+                        ))),
+                    child: const Text(
+                      "Book Again",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+                    )),
               ),
               SizedBox(
                 width: widtth * .03,
@@ -150,13 +150,8 @@ Widget CompletedCarrd(widtth, heightt) {
               Expanded(
                 child: ElevatedButton(
                     onPressed: () {
-                      Get.to(() => Review());
+                      Get.to(() => const Review());
                     },
-                    child: Text(
-                      "Leave a Review",
-                      style:
-                          TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-                    ),
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all<double>(0),
                         foregroundColor:
@@ -172,7 +167,12 @@ Widget CompletedCarrd(widtth, heightt) {
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(18.0),
-                        )))),
+                        ))),
+                    child: const Text(
+                      "Leave a Review",
+                      style:
+                          TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+                    )),
               )
             ],
           ),

@@ -1,8 +1,8 @@
-import 'package:get/get.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
@@ -34,17 +34,17 @@ class AboutDoctor extends StatelessWidget {
                     width: widtth * .39,
                     height: heightt * .28,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
                       color: HexColor("#f0f0f0"),
                       boxShadow: [
                         BoxShadow(
                           color: HexColor("#000000").withAlpha(35),
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: Offset(0, 3), // changes position of shadow
+                          offset: const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -55,7 +55,7 @@ class AboutDoctor extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("Dr. Abdo Mohamed"),
+                      const Text("Dr. Abdo Mohamed"),
                       SizedBox(
                         height: heightt * .003,
                       ),
@@ -74,14 +74,14 @@ class AboutDoctor extends StatelessWidget {
                             height: heightt * .055,
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
+                                  const BorderRadius.all(Radius.circular(15)),
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
                                   color: HexColor("#000000").withAlpha(35),
                                   // spreadRadius: 5,
                                   blurRadius: 6,
-                                  offset: Offset(
+                                  offset: const Offset(
                                       0, 3), // changes position of shadow
                                 ),
                               ],
@@ -106,7 +106,7 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                              Text(
+                              const Text(
                                 "5",
                                 style: TextStyle(
                                   fontSize: 12,
@@ -126,14 +126,14 @@ class AboutDoctor extends StatelessWidget {
                             height: heightt * .055,
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
+                                  const BorderRadius.all(Radius.circular(15)),
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
                                   color: HexColor("#000000").withAlpha(35),
                                   // spreadRadius: 5,
                                   blurRadius: 6,
-                                  offset: Offset(
+                                  offset: const Offset(
                                       0, 3), // changes position of shadow
                                 ),
                               ],
@@ -158,7 +158,7 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                              Text(
+                              const Text(
                                 "1000+",
                                 style: TextStyle(
                                   fontSize: 12,
@@ -178,14 +178,14 @@ class AboutDoctor extends StatelessWidget {
                             height: heightt * .055,
                             decoration: BoxDecoration(
                               borderRadius:
-                                  BorderRadius.all(Radius.circular(15)),
+                                  const BorderRadius.all(Radius.circular(15)),
                               color: Colors.white,
                               boxShadow: [
                                 BoxShadow(
                                   color: HexColor("#000000").withAlpha(35),
                                   // spreadRadius: 5,
                                   blurRadius: 6,
-                                  offset: Offset(
+                                  offset: const Offset(
                                       0, 3), // changes position of shadow
                                 ),
                               ],
@@ -210,7 +210,7 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                              Text(
+                              const Text(
                                 "10 Years",
                                 style: TextStyle(
                                   fontSize: 12,
@@ -228,39 +228,39 @@ class AboutDoctor extends StatelessWidget {
                 height: heightt * .03,
               ),
               // heightt * .05
-              Text("About"),
+              const Text("About"),
               Padding(
                 padding:
                     EdgeInsets.only(bottom: heightt * .05, top: heightt * .03),
                 child: Container(
                   width: double.infinity,
                   // height: heightt * .25,
-                  padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-                  child: ReadMoreText(
-                    "Dr. Abdo Mohamed his MD from the University of Cairo, where he also completeda PhD in cardiac physiology and a General Surgery residency.PhD in cardiac physiology and a General Surgery residency.Dr. Abdo Mohamed his MD from the University of Cairo, where he also completedaDr. Abdo Mohamed his MD from the University of Cairo, where he also completeda",
-                    trimLines: 5,
-                    preDataTextStyle: TextStyle(fontWeight: FontWeight.w500),
-                    style: TextStyle(color: Colors.black),
-                    colorClickableText: HexColor("#285FFA"),
-                    trimMode: TrimMode.Line,
-                    trimCollapsedText: '...Read more',
-                    trimExpandedText: ' Read less',
-                  ),
+                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: BorderRadius.all(Radius.circular(15)),
+                    borderRadius: const BorderRadius.all(Radius.circular(15)),
                     boxShadow: [
                       BoxShadow(
                         color: HexColor("#000000").withAlpha(35),
                         // spreadRadius: 5,
                         blurRadius: 6,
-                        offset: Offset(0, 3), // changes position of shadow
+                        offset: const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
+                  child: ReadMoreText(
+                    "Dr. Abdo Mohamed his MD from the University of Cairo, where he also completeda PhD in cardiac physiology and a General Surgery residency.PhD in cardiac physiology and a General Surgery residency.Dr. Abdo Mohamed his MD from the University of Cairo, where he also completedaDr. Abdo Mohamed his MD from the University of Cairo, where he also completeda",
+                    trimLines: 5,
+                    preDataTextStyle: const TextStyle(fontWeight: FontWeight.w500),
+                    style: const TextStyle(color: Colors.black),
+                    colorClickableText: HexColor("#285FFA"),
+                    trimMode: TrimMode.Line,
+                    trimCollapsedText: '...Read more',
+                    trimExpandedText: ' Read less',
+                  ),
                 ),
               ),
-              Text("Location"),
+              const Text("Location"),
               SizedBox(
                 height: heightt * .03,
               ),
@@ -269,7 +269,19 @@ class AboutDoctor extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     // height: heightt * .25,
-                    padding: EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      borderRadius: const BorderRadius.all(Radius.circular(15)),
+                      boxShadow: [
+                        BoxShadow(
+                          color: HexColor("#000000").withAlpha(35),
+                          // spreadRadius: 5,
+                          blurRadius: 6,
+                          offset: const Offset(0, 3), // changes position of shadow
+                        ),
+                      ],
+                    ),
                     child: Row(
                       children: [
                         Icon(
@@ -279,19 +291,7 @@ class AboutDoctor extends StatelessWidget {
                         SizedBox(
                           width: widtth * .03,
                         ),
-                        Text("Damietta Road, New Damietta City")
-                      ],
-                    ),
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.all(Radius.circular(15)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: HexColor("#000000").withAlpha(35),
-                          // spreadRadius: 5,
-                          blurRadius: 6,
-                          offset: Offset(0, 3), // changes position of shadow
-                        ),
+                        const Text("Damietta Road, New Damietta City")
                       ],
                     ),
                   ),

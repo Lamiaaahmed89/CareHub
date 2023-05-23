@@ -1,8 +1,9 @@
+// ignore_for_file: file_names, non_constant_identifier_names, unrelated_type_equality_checks
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-import '../models/CardAppoDetails.dart';
 
 class AppointmentController extends GetxController {
   List options = ["Upcoming", "Completed", "Cancelled"];
@@ -11,7 +12,7 @@ class AppointmentController extends GetxController {
   Widget Options(String option) {
     return Container(
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(8)),
+          borderRadius: const BorderRadius.all(Radius.circular(8)),
           color: selectedItem == options.indexOf(option)
               ? HexColor("#285FFA")
               : Colors.transparent,
@@ -22,14 +23,14 @@ class AppointmentController extends GetxController {
                   : Colors.transparent,
               // spreadRadius: 5,
               blurRadius: 6,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 15, horizontal: 17),
           child: Text(
-            "$option",
+            option,
             style: TextStyle(
               color: selectedItem == options.indexOf(option)
                   ? Colors.white
