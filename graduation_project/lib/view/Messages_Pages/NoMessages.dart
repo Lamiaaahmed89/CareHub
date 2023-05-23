@@ -4,15 +4,15 @@
 // import 'package:appointment/reusable/MsgListView.dart';
 // import 'package:appointment/reusable/NoMessages.dart';
 // import 'package:appointment/reusable/SearchBar.dart';
-import 'package:get/get.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/NoMessages.dart';
 import 'package:graduation_project/reusable/SearchBar.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class NoMessage extends StatelessWidget {
-  NoMessage({super.key});
+  const NoMessage({super.key});
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;

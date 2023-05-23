@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
@@ -38,9 +40,9 @@ class EHRfiles extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: (() {
-                Get.to(EHR_QR());
+                Get.to(const EHR_QR());
               }),
-              icon: Icon(
+              icon: const Icon(
                 Iconsax.scan_barcode,
                 color: Colors.black,
               ))
@@ -54,9 +56,13 @@ class EHRfiles extends StatelessWidget {
             Container(
               height: heightt * .25,
               padding: EdgeInsets.symmetric(vertical: heightt * .02),
+              decoration: BoxDecoration(
+                color: HexColor("#285FFA"),
+                borderRadius: const BorderRadius.all(Radius.circular(9)),
+              ),
               child: Row(
                 children: [
-                  Container(
+                  SizedBox(
                     // color: Colors.amber,
                     width: widtth * .5,
                     height: heightt * .5,
@@ -66,10 +72,10 @@ class EHRfiles extends StatelessWidget {
                   ),
                   Padding(
                     padding: EdgeInsets.only(top: heightt * .03),
-                    child: Container(
+                    child: SizedBox(
                       width: widtth * .27,
                       height: heightt * .15,
-                      child: Text(
+                      child: const Text(
                         "Keep all your health documents organized and in one place",
                         style: TextStyle(color: Colors.white, fontSize: 12),
                       ),
@@ -77,12 +83,8 @@ class EHRfiles extends StatelessWidget {
                   )
                 ],
               ),
-              decoration: BoxDecoration(
-                color: HexColor("#285FFA"),
-                borderRadius: BorderRadius.all(Radius.circular(9)),
-              ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Row(

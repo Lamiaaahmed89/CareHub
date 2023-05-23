@@ -13,7 +13,6 @@ class PasswordUpdated extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     double h = MediaQuery.of(context).size.height;
-    double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white_color,
       appBar: appBar('Reset Password'),

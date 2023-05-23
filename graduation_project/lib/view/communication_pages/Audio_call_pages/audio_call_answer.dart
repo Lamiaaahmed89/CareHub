@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/component/communication_components/audio_call_container.dart';
 import 'package:graduation_project/constants/colors.dart';
@@ -37,7 +39,7 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                 child: CircleAvatar(
                   backgroundColor: Colors.grey.shade200.withOpacity(0.1),
                   radius: 80,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 60,
                     backgroundImage: AssetImage(
                       'assets/images/abdo.jpg',
@@ -46,7 +48,7 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 31,
             ),
             Text(
@@ -56,7 +58,7 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                 fontSize: 20.0,
               ),
             ),
-            SizedBox(height: 6.0),
+            const SizedBox(height: 6.0),
             Text(
               'Heart Surgeon',
               style: TextStyle(
@@ -64,7 +66,7 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                 color: white_color,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 49,
             ),
             Container(
@@ -81,11 +83,11 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                     width: 14,
                     height: 14,
                     decoration: BoxDecoration(
-                      color: Color(0xff28CD97),
+                      color: const Color(0xff28CD97),
                       borderRadius: BorderRadius.circular(50),
                     ),
                   ),
-                  SizedBox(width: 14.0,),
+                  const SizedBox(width: 14.0,),
                   Text('02:20',
                   style: TextStyle(
                     color: white_color,
@@ -94,7 +96,7 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                 ],
               ) ,
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
            Padding(
@@ -115,7 +117,7 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                     },
                     iconColor: (volume_icon) ? white_color : Main_color,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 48,
                   ),
                   AudioCallContainer(
@@ -130,7 +132,7 @@ class _AudioCallAnswerState extends State<AudioCallAnswer> {
                     },
                     iconColor: (microphone_icon) ? white_color : Main_color,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 48,
                   ),
                   AudioCallContainer(

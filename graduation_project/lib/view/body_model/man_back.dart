@@ -3551,9 +3551,9 @@ class BackMan extends CustomPainter {
         size.height * 0.5304818);
     path_0.close();
 
-    Paint paint_0_fill = Paint()..style = PaintingStyle.fill;
-    paint_0_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_0, paint_0_fill);
+    Paint paint0Fill = Paint()..style = PaintingStyle.fill;
+    paint0Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_0, paint0Fill);
 
     Path path_1 = Path();
     path_1.moveTo(size.width * 0.3612728, size.height * 0.07391241);
@@ -3605,9 +3605,9 @@ class BackMan extends CustomPainter {
         size.height * 0.07391241);
     path_1.close();
 
-    Paint paint_1_fill = Paint()..style = PaintingStyle.fill;
-    paint_1_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_1, paint_1_fill);
+    Paint paint1Fill = Paint()..style = PaintingStyle.fill;
+    paint1Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_1, paint1Fill);
 
     Path path_2 = Path();
     path_2.moveTo(size.width * 0.6722227, size.height * 0.06031620);
@@ -3665,9 +3665,9 @@ class BackMan extends CustomPainter {
         clockwise: true);
     path_2.close();
 
-    Paint paint_2_fill = Paint()..style = PaintingStyle.fill;
-    paint_2_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_2, paint_2_fill);
+    Paint paint2Fill = Paint()..style = PaintingStyle.fill;
+    paint2Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_2, paint2Fill);
 
     Path path_3 = Path();
     path_3.moveTo(size.width * 0.5336151, size.height * 0.4640045);
@@ -3713,9 +3713,9 @@ class BackMan extends CustomPainter {
         size.height * 0.4640045);
     path_3.close();
 
-    Paint paint_3_fill = Paint()..style = PaintingStyle.fill;
-    paint_3_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_3, paint_3_fill);
+    Paint paint3Fill = Paint()..style = PaintingStyle.fill;
+    paint3Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_3, paint3Fill);
 
     Path path_4 = Path();
     path_4.moveTo(size.width * 0.1740968, size.height * 0.5540193);
@@ -3767,9 +3767,9 @@ class BackMan extends CustomPainter {
         size.height * 0.5540193);
     path_4.close();
 
-    Paint paint_4_fill = Paint()..style = PaintingStyle.fill;
-    paint_4_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_4, paint_4_fill);
+    Paint paint4Fill = Paint()..style = PaintingStyle.fill;
+    paint4Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_4, paint4Fill);
 
     Path path_5 = Path();
     path_5.moveTo(size.width * 0.1809554, size.height * 0.5489860);
@@ -3827,9 +3827,9 @@ class BackMan extends CustomPainter {
         clockwise: true);
     path_5.close();
 
-    Paint paint_5_fill = Paint()..style = PaintingStyle.fill;
-    paint_5_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_5, paint_5_fill);
+    Paint paint5Fill = Paint()..style = PaintingStyle.fill;
+    paint5Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_5, paint5Fill);
 
     Path path_6 = Path();
     path_6.moveTo(size.width * 0.9171385, size.height * 0.5398383);
@@ -3881,9 +3881,9 @@ class BackMan extends CustomPainter {
         clockwise: true);
     path_6.close();
 
-    Paint paint_6_fill = Paint()..style = PaintingStyle.fill;
-    paint_6_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_6, paint_6_fill);
+    Paint paint6Fill = Paint()..style = PaintingStyle.fill;
+    paint6Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_6, paint6Fill);
 
     Path path_7 = Path();
     path_7.moveTo(size.width * 0.9353218, size.height * 0.5312963);
@@ -3934,9 +3934,9 @@ class BackMan extends CustomPainter {
         clockwise: true);
     path_7.close();
 
-    Paint paint_7_fill = Paint()..style = PaintingStyle.fill;
-    paint_7_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_7, paint_7_fill);
+    Paint paint7Fill = Paint()..style = PaintingStyle.fill;
+    paint7Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_7, paint7Fill);
 
     Path path_8 = Path();
     path_8.moveTo(size.width * 0.6384879, size.height * 0.07806854);
@@ -4025,9 +4025,9 @@ class BackMan extends CustomPainter {
         size.height * 0.07806854);
     path_8.close();
 
-    Paint paint_8_fill = Paint()..style = PaintingStyle.fill;
-    paint_8_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_8, paint_8_fill);
+    Paint paint8Fill = Paint()..style = PaintingStyle.fill;
+    paint8Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_8, paint8Fill);
 
     Path path_9 = Path();
     path_9.moveTo(size.width * 0.9866018, size.height * 0.4269752);
@@ -6220,9 +6220,9 @@ class BackMan extends CustomPainter {
         size.height * 0.3540026);
     path_9.close();
 
-    Paint paint_9_fill = Paint()..style = PaintingStyle.fill;
-    paint_9_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_9, paint_9_fill);
+    Paint paint9Fill = Paint()..style = PaintingStyle.fill;
+    paint9Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_9, paint9Fill);
 
     Path path_10 = Path();
     path_10.moveTo(size.width * 0.6955898, size.height * 0.2655542);
@@ -6316,9 +6316,9 @@ class BackMan extends CustomPainter {
         size.height * 0.2655542);
     path_10.close();
 
-    Paint paint_10_fill = Paint()..style = PaintingStyle.fill;
-    paint_10_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_10, paint_10_fill);
+    Paint paint10Fill = Paint()..style = PaintingStyle.fill;
+    paint10Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_10, paint10Fill);
 
     Path path_11 = Path();
     path_11.moveTo(size.width * 0.4684584, size.height * 0.2433742);
@@ -6411,9 +6411,9 @@ class BackMan extends CustomPainter {
         size.height * 0.2433742);
     path_11.close();
 
-    Paint paint_11_fill = Paint()..style = PaintingStyle.fill;
-    paint_11_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_11, paint_11_fill);
+    Paint paint11Fill = Paint()..style = PaintingStyle.fill;
+    paint11Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_11, paint11Fill);
 
     Path path_12 = Path();
     path_12.moveTo(size.width * 0.7034851, size.height * 0.9470771);
@@ -6491,9 +6491,9 @@ class BackMan extends CustomPainter {
         size.height * 0.9470771);
     path_12.close();
 
-    Paint paint_12_fill = Paint()..style = PaintingStyle.fill;
-    paint_12_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_12, paint_12_fill);
+    Paint paint12Fill = Paint()..style = PaintingStyle.fill;
+    paint12Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_12, paint12Fill);
 
     Path path_13 = Path();
     path_13.moveTo(size.width * 0.3920568, size.height * 0.9500428);
@@ -6563,9 +6563,9 @@ class BackMan extends CustomPainter {
         size.height * 0.9500428);
     path_13.close();
 
-    Paint paint_13_fill = Paint()..style = PaintingStyle.fill;
-    paint_13_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_13, paint_13_fill);
+    Paint paint13Fill = Paint()..style = PaintingStyle.fill;
+    paint13Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_13, paint13Fill);
 
     Path path_14 = Path();
     path_14.moveTo(size.width * 0.9461680, size.height * 0.3540026);
@@ -6625,9 +6625,9 @@ class BackMan extends CustomPainter {
         size.height * 0.3540026);
     path_14.close();
 
-    Paint paint_14_fill = Paint()..style = PaintingStyle.fill;
-    paint_14_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_14, paint_14_fill);
+    Paint paint14Fill = Paint()..style = PaintingStyle.fill;
+    paint14Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_14, paint14Fill);
 
     Path path_15 = Path();
     path_15.moveTo(size.width * 0.1196268, size.height * 0.3578664);
@@ -6686,9 +6686,9 @@ class BackMan extends CustomPainter {
         size.height * 0.3578664);
     path_15.close();
 
-    Paint paint_15_fill = Paint()..style = PaintingStyle.fill;
-    paint_15_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_15, paint_15_fill);
+    Paint paint15Fill = Paint()..style = PaintingStyle.fill;
+    paint15Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_15, paint15Fill);
 
     Path path_16 = Path();
     path_16.moveTo(size.width * 0.3894250, size.height * 0.6753201);
@@ -6740,9 +6740,9 @@ class BackMan extends CustomPainter {
         size.height * 0.6753201);
     path_16.close();
 
-    Paint paint_16_fill = Paint()..style = PaintingStyle.fill;
-    paint_16_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_16, paint_16_fill);
+    Paint paint16Fill = Paint()..style = PaintingStyle.fill;
+    paint16Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_16, paint16Fill);
 
     Path path_17 = Path();
     path_17.moveTo(size.width * 0.6888109, size.height * 0.6745891);
@@ -6801,9 +6801,9 @@ class BackMan extends CustomPainter {
         size.height * 0.6745891);
     path_17.close();
 
-    Paint paint_17_fill = Paint()..style = PaintingStyle.fill;
-    paint_17_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_17, paint_17_fill);
+    Paint paint17Fill = Paint()..style = PaintingStyle.fill;
+    paint17Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_17, paint17Fill);
   }
 
   @override

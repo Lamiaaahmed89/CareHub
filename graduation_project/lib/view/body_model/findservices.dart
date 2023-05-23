@@ -1,19 +1,18 @@
+// ignore_for_file: camel_case_types, avoid_print
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/body_controller.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/body_model/click_body.dart';
-import 'package:graduation_project/view/body_model/resultservices.dart';
-import 'package:graduation_project/view/registaration_pages/home_page.dart';
-import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../component/register_button.dart';
-import '../Appointment_pages/upcomming.dart';
 
 class findServices extends StatefulWidget {
+  const findServices({super.key});
+
   @override
   State<findServices> createState() => _findServicesState();
 }
@@ -21,7 +20,6 @@ class findServices extends StatefulWidget {
 class _findServicesState extends State<findServices> {
   final controller = Get.put(PaintingController());
   final bodycontroller = Get.put(bodyController());
-  bool _isLoading = false;
 
   @override
   Widget build(BuildContext context) {
@@ -44,7 +42,7 @@ class _findServicesState extends State<findServices> {
               textAlign: TextAlign.center,
             ),
           ),
-          Container(
+          SizedBox(
             height: h / 1.7,
             child: SingleChildScrollView(
               scrollDirection: Axis.vertical,
@@ -62,7 +60,7 @@ class _findServicesState extends State<findServices> {
                           setState(() {});
                         },
                         label: Text(
-                          '$item',
+                          item,
                           style: const TextStyle(
                               fontWeight: FontWeight.w400, fontSize: 16),
                         ),

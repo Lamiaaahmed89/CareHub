@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, non_constant_identifier_names, non_constant_identifier_names, duplicate_ignore
+
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -17,22 +19,22 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
         right: widtth * .009),
     child: GestureDetector(
       onTap: (() {
-        Get.to(() => Doctors());
+        Get.to(() => const Doctors());
       }),
       child: Stack(children: [
         Container(
           // width: 90,
           height: 92,
-          padding: EdgeInsets.symmetric(vertical: 12, horizontal: 12),
+          padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
           decoration: BoxDecoration(
             color: Colors.white,
-            borderRadius: BorderRadius.all(Radius.circular(7)),
+            borderRadius: const BorderRadius.all(Radius.circular(7)),
             boxShadow: [
               BoxShadow(
                 color: HexColor("#000000").withAlpha(35),
                 // spreadRadius: 5,
                 blurRadius: 6,
-                offset: Offset(0, 3), // changes position of shadow
+                offset: const Offset(0, 3), // changes position of shadow
               ),
             ],
           ),
@@ -41,6 +43,10 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
               Container(
                 width: 65,
                 height: 65,
+                decoration: const BoxDecoration(
+                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  color: Color(0x26285FFA),
+                ),
                 child: SvgPicture.asset(
                   "$svgPath",
                   width: 10,
@@ -48,16 +54,12 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
                   fit: BoxFit.scaleDown,
                   color: HexColor("#285FFA"),
                 ),
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
-                  color: Color(0x26285FFA),
-                ),
               ),
-              SizedBox(
+              const SizedBox(
                 width: 20,
               ),
               Padding(
-                padding: EdgeInsets.only(
+                padding: const EdgeInsets.only(
                   top: 10,
                 ),
                 child: Column(
@@ -66,7 +68,7 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
                     Text(
                       "$specialist",
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 10,
                     ),
                     Text(
@@ -83,11 +85,11 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
         Positioned(
           right: 20,
           top: 20,
-          child: Container(
+          child: SizedBox(
             width: widtth * .07,
             child: IconButton(
                 onPressed: () {
-                  Get.to(() => Doctors());
+                  Get.to(() => const Doctors());
                 },
                 icon: Icon(
                   Iconsax.arrow_right_3,

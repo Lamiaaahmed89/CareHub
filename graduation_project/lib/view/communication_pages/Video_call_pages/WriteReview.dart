@@ -1,11 +1,12 @@
 
+// ignore_for_file: file_names
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Controllers/VideoCallController.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:iconsax/iconsax.dart';
 
 
 class Review extends StatelessWidget {
@@ -15,8 +16,6 @@ class Review extends StatelessWidget {
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
-    VideoCallController controller =
-        Get.put(VideoCallController(), permanent: true);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
@@ -29,19 +28,19 @@ class Review extends StatelessWidget {
             height: heightt * .2,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                image: DecorationImage(
+                image: const DecorationImage(
                     image: AssetImage("assets/abdo.jpg"), fit: BoxFit.cover),
                 border: Border.all(color: HexColor("#285FFA"), width: 2)),
           ),
           // SizedBox(
           //   height: heightt * .01,
           // ),
-          Spacer(),
-          Text("How was your experience with"),
+          const Spacer(),
+          const Text("How was your experience with"),
           // SizedBox(
           //   height: heightt * .02,
           // ),
-          Spacer(),
+          const Spacer(),
           Text(
             "Dr. Abdo Mohamed",
             style: TextStyle(color: HexColor("#285FFA")),
@@ -49,7 +48,7 @@ class Review extends StatelessWidget {
           // SizedBox(
           //   height: heightt * .025,
           // ),
-          Spacer(),
+          const Spacer(),
           Container(
               padding: EdgeInsets.symmetric(horizontal: widtth * .17),
               child: GetBuilder<VideoCallController>(
@@ -64,11 +63,11 @@ class Review extends StatelessWidget {
                           controller.ChangeRating();
                         },
                         child: 1 <= controller.StarNum
-                            ? Container(
+                            ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset("assets/star fill.svg"))
-                            : Container(
+                            : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
@@ -81,11 +80,11 @@ class Review extends StatelessWidget {
                           controller.ChangeRating();
                         },
                         child: 2 <= controller.StarNum
-                            ? Container(
+                            ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset("assets/star fill.svg"))
-                            : Container(
+                            : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
@@ -98,11 +97,11 @@ class Review extends StatelessWidget {
                           controller.ChangeRating();
                         },
                         child: 3 <= controller.StarNum
-                            ? Container(
+                            ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset("assets/star fill.svg"))
-                            : Container(
+                            : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
@@ -115,11 +114,11 @@ class Review extends StatelessWidget {
                           controller.ChangeRating();
                         },
                         child: 4 <= controller.StarNum
-                            ? Container(
+                            ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset("assets/star fill.svg"))
-                            : Container(
+                            : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
@@ -132,11 +131,11 @@ class Review extends StatelessWidget {
                           controller.ChangeRating();
                         },
                         child: 5 <= controller.StarNum
-                            ? Container(
+                            ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset("assets/star fill.svg"))
-                            : Container(
+                            : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
@@ -147,13 +146,13 @@ class Review extends StatelessWidget {
           // SizedBox(
           //   height: heightt * .035,
           // ),
-          Spacer(),
+          const Spacer(),
           Container(
             padding: EdgeInsets.symmetric(
                 horizontal: widtth * .07, vertical: heightt * .005),
             decoration: BoxDecoration(
               color: HexColor("f0f0f0"),
-              borderRadius: BorderRadius.all(Radius.circular(9)),
+              borderRadius: const BorderRadius.all(Radius.circular(9)),
             ),
             child: TextFormField(
               minLines: null,
@@ -161,7 +160,7 @@ class Review extends StatelessWidget {
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                   hintText: "Your review here...",
-                  hintStyle: TextStyle(fontSize: 12, color: Color(0x80252630)),
+                  hintStyle: const TextStyle(fontSize: 12, color: Color(0x80252630)),
                   border: InputBorder.none,
                   fillColor: HexColor("#FFFFFF")),
             ),
@@ -169,13 +168,9 @@ class Review extends StatelessWidget {
           // SizedBox(
           //   height: heightt * .02,
           // ),
-          Spacer(),
+          const Spacer(),
           ElevatedButton(
               onPressed: () {},
-              child: Text(
-                "Send  ",
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-              ),
               style: ButtonStyle(
                   elevation: MaterialStateProperty.all<double>(0),
                   foregroundColor:
@@ -188,17 +183,17 @@ class Review extends StatelessWidget {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  )))),
+                  ))),
+              child: const Text(
+                "Send  ",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+              )),
           // SizedBox(
           //   height: 20,
           // ),
-          Spacer(),
+          const Spacer(),
           ElevatedButton(
               onPressed: () {},
-              child: Text(
-                "Cancel",
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
-              ),
               style: ButtonStyle(
                   elevation: MaterialStateProperty.all<double>(0),
                   foregroundColor:
@@ -211,9 +206,13 @@ class Review extends StatelessWidget {
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),
-                  )))),
-          Spacer(),
-          Spacer(),
+                  ))),
+              child: const Text(
+                "Cancel",
+                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 12),
+              )),
+          const Spacer(),
+          const Spacer(),
         ]),
       ),
     );

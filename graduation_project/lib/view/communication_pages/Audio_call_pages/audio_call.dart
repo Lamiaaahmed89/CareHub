@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/component/communication_components/audio_call_container.dart';
 import 'package:graduation_project/constants/colors.dart';
@@ -6,6 +8,8 @@ import 'package:animated_text_kit/animated_text_kit.dart';
 
 class AudioCallPage extends StatefulWidget {
   static String id = 'AudioCallPage';
+
+  const AudioCallPage({super.key});
 
   @override
   State<AudioCallPage> createState() => _AudioCallPageState();
@@ -36,7 +40,7 @@ class _AudioCallPageState extends State<AudioCallPage> {
                 child: CircleAvatar(
                   backgroundColor: Colors.grey.shade200.withOpacity(0.1),
                   radius: 80,
-                  child: CircleAvatar(
+                  child: const CircleAvatar(
                     radius: 60,
                     backgroundImage: AssetImage(
                       'assets/images/abdo.jpg',
@@ -45,7 +49,7 @@ class _AudioCallPageState extends State<AudioCallPage> {
                 ),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 31,
             ),
             Text(
@@ -55,7 +59,7 @@ class _AudioCallPageState extends State<AudioCallPage> {
                 fontSize: 20.0,
               ),
             ),
-            SizedBox(height: 6.0),
+            const SizedBox(height: 6.0),
             Text(
               'Heart Surgeon',
               style: TextStyle(
@@ -63,7 +67,7 @@ class _AudioCallPageState extends State<AudioCallPage> {
                 color: white_color,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 49,
             ),
             DefaultTextStyle(
@@ -81,7 +85,7 @@ class _AudioCallPageState extends State<AudioCallPage> {
                 totalRepeatCount: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 50,
             ),
             Padding(
@@ -102,7 +106,7 @@ class _AudioCallPageState extends State<AudioCallPage> {
                     },
                     iconColor: (volume_icon) ? white_color : Main_color,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 48,
                   ),
                   AudioCallContainer(
@@ -117,7 +121,7 @@ class _AudioCallPageState extends State<AudioCallPage> {
                     },
                     iconColor: (microphone_icon) ? white_color : Main_color,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 48,
                   ),
                   AudioCallContainer(

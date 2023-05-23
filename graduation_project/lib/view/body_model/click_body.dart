@@ -1,7 +1,6 @@
 import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/SignUpController.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/reusable/BloodGroups.dart';
 import 'package:graduation_project/view/body_model/component.dart';
 import 'package:graduation_project/view/body_model/man_front.dart';
 import 'package:iconsax/iconsax.dart';
@@ -18,6 +17,10 @@ class ClickBody extends StatelessWidget {
   final signupcontroller = Get.put(SignUpController());
 
   static String id = 'ClickBody';
+
+   ClickBody({super.key});
+
+  
 
   @override
   Widget build(BuildContext context) {

@@ -1,10 +1,10 @@
 
-import 'package:get/get.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/EHRListView.dart';
 import 'package:graduation_project/reusable/EHRfilesListTile.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class EachDoctorPrescriptions extends StatelessWidget {
   const EachDoctorPrescriptions({super.key});

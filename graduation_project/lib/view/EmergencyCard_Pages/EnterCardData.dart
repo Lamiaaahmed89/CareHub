@@ -1,5 +1,5 @@
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/EmergencyCardBar.dart';
@@ -24,7 +24,7 @@ class Enter_Card_Info extends StatelessWidget {
         child: Column(
           children: [
             EmergencyCardBar(widtth, heightt),
-            SizedBox(
+            const SizedBox(
               height: 20,
             ),
             Expanded(
@@ -33,28 +33,28 @@ class Enter_Card_Info extends StatelessWidget {
                   child: Column(children: [
                     Container(
                       padding:
-                          EdgeInsets.symmetric(horizontal: 16, vertical: 5),
+                          const EdgeInsets.symmetric(horizontal: 16, vertical: 5),
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(9)),
+                        borderRadius: const BorderRadius.all(Radius.circular(9)),
                         boxShadow: [
                           BoxShadow(
                             color: HexColor("#000000").withAlpha(35),
                             // spreadRadius: 5,
                             blurRadius: 6,
-                            offset: Offset(0, 3), // changes position of shadow
+                            offset: const Offset(0, 3), // changes position of shadow
                           ),
                         ],
                       ),
                       child: TextFormField(
                         decoration: InputDecoration(
                             hintText: "Enter your relative's phone here...",
-                            hintStyle: TextStyle(fontSize: 12),
+                            hintStyle: const TextStyle(fontSize: 12),
                             border: InputBorder.none,
                             fillColor: HexColor("#FFFFFF")),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
@@ -62,13 +62,13 @@ class Enter_Card_Info extends StatelessWidget {
                           horizontal: widtth * .07, vertical: heightt * .005),
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(9)),
+                        borderRadius: const BorderRadius.all(Radius.circular(9)),
                         boxShadow: [
                           BoxShadow(
                             color: HexColor("#000000").withAlpha(35),
                             // spreadRadius: 5,
                             blurRadius: 6,
-                            offset: Offset(0, 3), // changes position of shadow
+                            offset: const Offset(0, 3), // changes position of shadow
                           ),
                         ],
                       ),
@@ -78,13 +78,13 @@ class Enter_Card_Info extends StatelessWidget {
                         keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
                             hintText: "Enter allergens here...",
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 fontSize: 12, color: Color(0x80252630)),
                             border: InputBorder.none,
                             fillColor: HexColor("#FFFFFF")),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     Container(
@@ -92,13 +92,13 @@ class Enter_Card_Info extends StatelessWidget {
                           horizontal: widtth * .07, vertical: heightt * .005),
                       decoration: BoxDecoration(
                         color: Colors.white,
-                        borderRadius: BorderRadius.all(Radius.circular(9)),
+                        borderRadius: const BorderRadius.all(Radius.circular(9)),
                         boxShadow: [
                           BoxShadow(
                             color: HexColor("#000000").withAlpha(35),
                             // spreadRadius: 5,
                             blurRadius: 6,
-                            offset: Offset(0, 3), // changes position of shadow
+                            offset: const Offset(0, 3), // changes position of shadow
                           ),
                         ],
                       ),
@@ -108,24 +108,24 @@ class Enter_Card_Info extends StatelessWidget {
                         keyboardType: TextInputType.multiline,
                         decoration: InputDecoration(
                             hintText: "Enter chronic diseases here...",
-                            hintStyle: TextStyle(
+                            hintStyle: const TextStyle(
                                 fontSize: 12, color: Color(0x80252630)),
                             border: InputBorder.none,
                             fillColor: HexColor("#FFFFFF")),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     DottedBorder(
                       borderType: BorderType.RRect,
-                      dashPattern: [7, 5],
-                      radius: Radius.circular(12),
-                      padding: EdgeInsets.all(6),
+                      dashPattern: const [7, 5],
+                      radius: const Radius.circular(12),
+                      padding: const EdgeInsets.all(6),
                       color: HexColor("#285FFA"),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.all(Radius.circular(12)),
-                        child: Container(
+                        borderRadius: const BorderRadius.all(Radius.circular(12)),
+                        child: SizedBox(
                             width: widtth * .9,
                             height: heightt * .14,
                             // color: Colors.amber,
@@ -154,16 +154,11 @@ class Enter_Card_Info extends StatelessWidget {
                             )),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ElevatedButton(
                         onPressed: () {},
-                        child: Text(
-                          "Save",
-                          style: TextStyle(
-                              fontWeight: FontWeight.w500, fontSize: 12),
-                        ),
                         style: ButtonStyle(
                             elevation: MaterialStateProperty.all<double>(0),
                             foregroundColor:
@@ -179,7 +174,12 @@ class Enter_Card_Info extends StatelessWidget {
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(30.0),
-                            ))))
+                            ))),
+                        child: const Text(
+                          "Save",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w500, fontSize: 12),
+                        ))
                   ])),
             )
           ],

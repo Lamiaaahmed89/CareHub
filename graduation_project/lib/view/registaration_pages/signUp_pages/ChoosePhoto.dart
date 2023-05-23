@@ -30,13 +30,12 @@ class _ChoosePhotoState extends State<ChoosePhoto> {
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
-    double heightt = MediaQuery.of(context).size.height;
 
     return Scaffold(
         backgroundColor: const Color(0xFFFFFFFF),
         appBar: SignUpBar("Done", "Tologin",context),
         body: Padding(
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
             child: Column(
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
@@ -60,7 +59,7 @@ class _ChoosePhotoState extends State<ChoosePhoto> {
                   ),
                   CircleAvatar(
                       radius: 60,
-                      backgroundColor: Color(0x33AEB2BB),
+                      backgroundColor: const Color(0x33AEB2BB),
                       backgroundImage: addpatientinfo.imagefile != null
                           ? FileImage(addpatientinfo.imagefile!)
                           : null,

@@ -1,11 +1,12 @@
-import 'package:get/get.dart';
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
 Widget MessCard(double Widtth, double heightt) {
   return Padding(
-    padding: EdgeInsets.only(bottom: 10),
+    padding: const EdgeInsets.only(bottom: 10),
     child: GestureDetector(
       onTap: () {
         // Get.to(page)
@@ -19,16 +20,16 @@ Widget MessCard(double Widtth, double heightt) {
             child: Container(
               width: Widtth * .90,
               height: 92,
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
               decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.all(Radius.circular(7)),
+                borderRadius: const BorderRadius.all(Radius.circular(7)),
                 boxShadow: [
                   BoxShadow(
                     color: HexColor("#000000").withAlpha(35),
                     // spreadRadius: 5,
                     blurRadius: 6,
-                    offset: Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
               ),
@@ -38,10 +39,10 @@ Widget MessCard(double Widtth, double heightt) {
                     width: 60,
                     height: 60,
                     decoration: BoxDecoration(
-                      image: DecorationImage(
+                      image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),
                   ),
@@ -49,10 +50,10 @@ Widget MessCard(double Widtth, double heightt) {
                     width: Widtth * .04,
                   ),
                   Padding(
-                    padding: EdgeInsets.only(top: 7),
+                    padding: const EdgeInsets.only(top: 7),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
+                      children: const [
                         Text("Dr Mohamed"),
                         SizedBox(
                           height: 5,
@@ -61,12 +62,12 @@ Widget MessCard(double Widtth, double heightt) {
                       ],
                     ),
                   ),
-                  Spacer(),
+                  const Spacer(),
                   // SizedBox(
                   //   width: Widtth * .06,
                   // ),
                   Padding(
-                    padding: EdgeInsets.only(top: 7),
+                    padding: const EdgeInsets.only(top: 7),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
                       children: [
@@ -75,22 +76,22 @@ Widget MessCard(double Widtth, double heightt) {
                           style: TextStyle(
                               color: HexColor("#AEB2BB"), fontSize: 12),
                         ),
-                        SizedBox(
+                        const SizedBox(
                           height: 5,
                         ),
                         Container(
                           width: Widtth * .04,
                           height: heightt * .03,
                           alignment: Alignment.center,
-                          child: Text(
-                            "1",
-                            style: TextStyle(
-                                color: Colors.white, fontSize: Widtth * .023),
-                          ),
                           decoration: BoxDecoration(
                             shape: BoxShape.circle,
                             color: HexColor("#285FFA"),
                             // borderRadius: BorderRadius.all(Radius.circular(9)),
+                          ),
+                          child: Text(
+                            "1",
+                            style: TextStyle(
+                                color: Colors.white, fontSize: Widtth * .023),
                           ),
                         )
                       ],
@@ -113,13 +114,13 @@ Widget MessCard(double Widtth, double heightt) {
               decoration: BoxDecoration(
                 color: HexColor("#fecfda"),
                 // fc9eb3
-                borderRadius: BorderRadius.all(Radius.circular(10)),
+                borderRadius: const BorderRadius.all(Radius.circular(10)),
                 boxShadow: [
                   BoxShadow(
                     color: HexColor("#000000").withAlpha(40),
                     // spreadRadius: 5,
                     blurRadius: 6,
-                    offset: Offset(0, 3), // changes position of shadow
+                    offset: const Offset(0, 3), // changes position of shadow
                   ),
                 ],
               ),

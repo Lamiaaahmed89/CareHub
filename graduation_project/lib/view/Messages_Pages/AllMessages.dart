@@ -1,13 +1,11 @@
-import 'package:get/get.dart';
+// ignore_for_file: file_names, must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/MessageCard.dart';
 import 'package:graduation_project/reusable/MsgListView.dart';
-import 'package:graduation_project/reusable/NoMessages.dart';
 import 'package:graduation_project/reusable/SearchBar.dart';
-import 'package:hexcolor/hexcolor.dart';
 
-import '../../reusable/BottomNavigationBar.dart';
 
 class Messages extends StatelessWidget {
   static String id = 'Messages';

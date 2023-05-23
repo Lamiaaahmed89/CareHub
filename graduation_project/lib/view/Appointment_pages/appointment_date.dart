@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -5,14 +7,13 @@ import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
-import 'package:graduation_project/view/registaration_pages/SignUp_Pages/AllowLocation.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:table_calendar/table_calendar.dart';
 import 'package:intl/intl.dart';
 
 class AppointmentDate extends StatefulWidget {
-  AppointmentDate({super.key});
+  const AppointmentDate({super.key});
   static String id = 'AppointmentDate';
 
   @override
@@ -53,8 +54,8 @@ class _AppointmentDateState extends State<AppointmentDate> {
         padding: const EdgeInsets.symmetric(horizontal: 8.0),
         child: ListView(
           children: [
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
               child: Text(
                 'Date',
               ),
@@ -74,7 +75,7 @@ class _AppointmentDateState extends State<AppointmentDate> {
                       color: Main_color,
                       shape: BoxShape.circle,
                     )),
-                headerStyle: HeaderStyle(
+                headerStyle: const HeaderStyle(
                   formatButtonVisible: false,
                 ),
                 selectedDayPredicate: (day) => isSameDay(day, today),
@@ -84,17 +85,17 @@ class _AppointmentDateState extends State<AppointmentDate> {
                 onDaySelected: _onDaySelected,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 24,
             ),
-            Padding(
-              padding: const EdgeInsets.only(left: 8.0),
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
               child: Text('Time'),
             ),
             GridView.builder(
                 shrinkWrap: true,
-                physics: NeverScrollableScrollPhysics(),
-                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                physics: const NeverScrollableScrollPhysics(),
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 2,
                     crossAxisSpacing: 10.0,
                     mainAxisSpacing: 10,
@@ -115,12 +116,12 @@ class _AppointmentDateState extends State<AppointmentDate> {
                             BoxShadow(
                               color: HexColor("#000000").withAlpha(16),
                               blurRadius: 6,
-                              offset: Offset(0, 3),
+                              offset: const Offset(0, 3),
                             ),
                           ]),
                       child: Center(
                         child: Text(
-                          '${txts.elementAt(index)}',
+                          txts.elementAt(index),
                           style: TextStyle(
                               color: (selectedIndex == index)
                                   ? white_color
@@ -130,7 +131,7 @@ class _AppointmentDateState extends State<AppointmentDate> {
                     ),
                   );
                 }),
-            SizedBox(
+            const SizedBox(
               height: 22,
             ),
             RegisterButton(
@@ -149,7 +150,7 @@ class _AppointmentDateState extends State<AppointmentDate> {
                           child: Padding(
                             padding: const EdgeInsetsDirectional.symmetric(
                                 horizontal: 16.0, vertical: 16.0),
-                            child: Container(
+                            child: SizedBox(
                               height: 500,
                               width: 400,
                               child: Column(
@@ -159,15 +160,15 @@ class _AppointmentDateState extends State<AppointmentDate> {
                                     width: 279,
                                     height: 176,
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 16.0,
                                   ),
-                                  Text(
+                                  const Text(
                                     "Confirmation",
                                     style:
                                         TextStyle(fontWeight: FontWeight.w500),
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 9,
                                   ),
                                   Text(
@@ -177,7 +178,7 @@ class _AppointmentDateState extends State<AppointmentDate> {
                                           fontWeight: FontWeight.w400),
                                       textAlign: TextAlign.center,
                                       "Hello Ali, you are about to make an\n appointment with Dr.Abdo Mohamed"),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 21,
                                   ),
                                   Row(
@@ -187,12 +188,12 @@ class _AppointmentDateState extends State<AppointmentDate> {
                                         color: Main_color,
                                       ),
                                       Text(
-                                        '${DateFormat(' MMMM dd, yyyy').format(today)}',
+                                        DateFormat(' MMMM dd, yyyy').format(today),
                                         style: TextStyle(color: Text2_color),
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 17,
                                   ),
                                   Row(
@@ -207,7 +208,7 @@ class _AppointmentDateState extends State<AppointmentDate> {
                                       ),
                                     ],
                                   ),
-                                  SizedBox(
+                                  const SizedBox(
                                     height: 22,
                                   ),
                                   Expanded(
@@ -220,7 +221,7 @@ class _AppointmentDateState extends State<AppointmentDate> {
                                             Navigator.pushNamed(
                                                 context, UpComming.id);
                                           }),
-                                      SizedBox(
+                                      const SizedBox(
                                         height: 16,
                                       ),
                                       RegisterButton(

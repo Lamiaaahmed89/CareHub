@@ -1,9 +1,8 @@
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:iconsax/iconsax.dart';
 
 class EHR_QR extends StatelessWidget {
   const EHR_QR({super.key});
@@ -22,9 +21,9 @@ class EHR_QR extends StatelessWidget {
           children: [
             Padding(
               padding: EdgeInsets.symmetric(vertical: heightt * .03),
-              child: Container(
+              child: SizedBox(
                 width: widtth * .75,
-                child: Text(
+                child: const Text(
                   "Please do not allow anyone to scan a code unless you trust",
                   textAlign: TextAlign.center,
                 ),
@@ -37,17 +36,17 @@ class EHR_QR extends StatelessWidget {
                 width: widtth * .6,
                 height: heightt * .4,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       fit: BoxFit.cover,
                       image: AssetImage("assets/images/QR.png")),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
                       color: HexColor("#000000").withAlpha(35),
                       // spreadRadius: 5,
                       blurRadius: 6,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
@@ -55,9 +54,9 @@ class EHR_QR extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: heightt * .03),
-              child: Container(
+              child: SizedBox(
                 width: widtth * .7,
-                child: Text(
+                child: const Text(
                   "By scanning a QR code, your electronic health record will appear",
                   textAlign: TextAlign.center,
                 ),

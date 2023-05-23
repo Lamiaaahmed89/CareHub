@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:animated_text_kit/animated_text_kit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart';
@@ -20,7 +22,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
           image: DecorationImage(
         image: Svg(
           'assets/images/gradient.svg',
@@ -28,7 +30,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
         fit: BoxFit.cover,
       )),
       child: Scaffold(
-        backgroundColor: Color.fromRGBO(0, 0, 0, 0),
+        backgroundColor: const Color.fromRGBO(0, 0, 0, 0),
         body: Column(
           children: [
             Padding(
@@ -40,7 +42,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
                 height: 138,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 250,
             ),
             Text(
@@ -51,7 +53,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 6,
             ),
             Text(
@@ -62,7 +64,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
                 fontWeight: FontWeight.w500,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 49,
             ),
             DefaultTextStyle(
@@ -80,7 +82,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
                 totalRepeatCount: 20,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 43,
             ),
             Padding(
@@ -101,7 +103,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
                     },
                     iconColor: (microphone_icon) ? white_color : Main_color,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 48,
                   ),
                   AudioCallContainer(
@@ -116,7 +118,7 @@ class _VideoCallStartState extends State<VideoCallStart> {
                     },
                     iconColor: (video_icon) ? white_color : Main_color,
                   ),
-                  SizedBox(
+                  const SizedBox(
                     width: 48,
                   ),
                   AudioCallContainer(

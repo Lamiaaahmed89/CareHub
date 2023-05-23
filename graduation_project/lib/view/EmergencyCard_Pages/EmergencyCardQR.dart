@@ -1,9 +1,10 @@
 
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/EmergencyCardBar.dart';
 import 'package:hexcolor/hexcolor.dart';
-import 'package:iconsax/iconsax.dart';
 
 class EmergencyCardQR extends StatelessWidget {
   const EmergencyCardQR({super.key});
@@ -27,16 +28,16 @@ class EmergencyCardQR extends StatelessWidget {
                 width: widtth * .6,
                 height: heightt * .4,
                 decoration: BoxDecoration(
-                  image: DecorationImage(
+                  image: const DecorationImage(
                       fit: BoxFit.cover, image: AssetImage("assets/images/QR.png")),
-                  borderRadius: BorderRadius.all(Radius.circular(8.0)),
+                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   color: Colors.white,
                   boxShadow: [
                     BoxShadow(
                       color: HexColor("#000000").withAlpha(35),
                       // spreadRadius: 5,
                       blurRadius: 6,
-                      offset: Offset(0, 3), // changes position of shadow
+                      offset: const Offset(0, 3), // changes position of shadow
                     ),
                   ],
                 ),
@@ -44,9 +45,9 @@ class EmergencyCardQR extends StatelessWidget {
             ),
             Padding(
               padding: EdgeInsets.symmetric(vertical: heightt * .03),
-              child: Container(
+              child: SizedBox(
                 width: widtth * .7,
-                child: Text(
+                child: const Text(
                   "By scanning a QR code, your most important saved data will appear",
                   textAlign: TextAlign.center,
                 ),

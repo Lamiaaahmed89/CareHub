@@ -1,5 +1,6 @@
+// ignore_for_file: file_names, non_constant_identifier_names, avoid_print
+
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
@@ -14,19 +15,19 @@ Widget Loading(widtth, heightt) {
         padding: EdgeInsets.symmetric(horizontal: widtth * .03),
         decoration: BoxDecoration(
           color: Colors.white,
-          borderRadius: BorderRadius.all(Radius.circular(7)),
+          borderRadius: const BorderRadius.all(Radius.circular(7)),
           boxShadow: [
             BoxShadow(
               color: HexColor("#000000").withAlpha(35),
               // spreadRadius: 5,
               blurRadius: 6,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),
         child: Row(
           children: [
-            Container(
+            SizedBox(
               width: widtth * .12,
               height: heightt * .08,
               child: SvgPicture.asset("assets/images/Medical Tests.svg"),
@@ -52,7 +53,7 @@ Widget Loading(widtth, heightt) {
                     width: widtth * .47,
                     decoration: BoxDecoration(
                       color: HexColor("#f0f0f0"),
-                      borderRadius: BorderRadius.all(Radius.circular(7)),
+                      borderRadius: const BorderRadius.all(Radius.circular(7)),
                       // boxShadow: [
                       //   BoxShadow(
                       //     color: HexColor("#000000").withAlpha(35),
@@ -94,14 +95,14 @@ Widget Loading(widtth, heightt) {
             Padding(
                 padding:
                     EdgeInsets.only(left: widtth * .12, bottom: heightt * .05),
-                child: Container(
+                child: SizedBox(
                   // color: Colors.amber,
                   width: widtth * .08,
                   child: IconButton(
                       onPressed: () {
                         print("hi");
                       },
-                      icon: Icon(Iconsax.close_circle)),
+                      icon: const Icon(Iconsax.close_circle)),
                 ))
           ],
         )),

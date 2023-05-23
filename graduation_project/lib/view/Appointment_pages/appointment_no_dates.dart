@@ -33,7 +33,7 @@ class _NoDatesAppointmentState extends State<NoDatesAppointment> {
             Padding(
               padding: const EdgeInsetsDirectional.only(start: 10),
               child: Row(
-                children: [
+                children: const [
                   Text(
                     'Date',
                   ),
@@ -55,7 +55,7 @@ class _NoDatesAppointmentState extends State<NoDatesAppointment> {
                       color: Main_color,
                       shape: BoxShape.circle,
                     )),
-                headerStyle: HeaderStyle(
+                headerStyle: const HeaderStyle(
                   formatButtonVisible: false,
                 ),
                 selectedDayPredicate: (day) => isSameDay(day, today),
@@ -65,7 +65,7 @@ class _NoDatesAppointmentState extends State<NoDatesAppointment> {
                 onDaySelected: _onDaySelected,
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 15,
             ),
             Column(
@@ -73,12 +73,12 @@ class _NoDatesAppointmentState extends State<NoDatesAppointment> {
                 Padding(
                   padding: const EdgeInsetsDirectional.only(start: 10),
                   child: Row(
-                    children: [
+                    children: const [
                       Text('Time'),
                     ],
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 18,
                 ),
                 SvgPicture.asset(
@@ -86,13 +86,13 @@ class _NoDatesAppointmentState extends State<NoDatesAppointment> {
                   width: 110,
                   height: 125,
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 16,
                 ),
-                Text(
+                const Text(
                   'No dates avaiable',
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
                 RegisterButton(

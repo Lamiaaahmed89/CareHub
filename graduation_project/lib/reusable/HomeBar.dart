@@ -1,4 +1,6 @@
 
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/AppointmentController.dart';
@@ -15,14 +17,14 @@ Widget HomeBar(Widtth, Hightt) {
         width: Widtth,
         height: Hightt / 10,
         decoration: BoxDecoration(
-          borderRadius: BorderRadius.all(Radius.circular(7)),
+          borderRadius: const BorderRadius.all(Radius.circular(7)),
           color: HexColor("#f0f0f0"),
           boxShadow: [
             BoxShadow(
               color: HexColor("#000000").withAlpha(10),
               // spreadRadius: 5,
               blurRadius: 6,
-              offset: Offset(0, 3), // changes position of shadow
+              offset: const Offset(0, 3), // changes position of shadow
             ),
           ],
         ),

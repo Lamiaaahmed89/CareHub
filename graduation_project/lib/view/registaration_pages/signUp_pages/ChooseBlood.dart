@@ -1,3 +1,5 @@
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -14,12 +16,11 @@ class ChooseBlood extends StatelessWidget {
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
-    SignUpController controller = Get.put(SignUpController());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: SignUpBar("Next", "Toweight",context),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 77),
+        padding: const EdgeInsets.symmetric(horizontal: 77),
         child: GetBuilder<SignUpController>(
             builder: ((controller) => Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
@@ -28,12 +29,12 @@ class ChooseBlood extends StatelessWidget {
                       width: widtth * .1,
                       height: heightt * .1,
                       alignment: Alignment.center,
-                      child: SvgPicture.asset(
-                        "assets/images/blood.svg",
-                      ),
                       decoration: BoxDecoration(
                         shape: BoxShape.circle,
                         color: HexColor("#285FFA"),
+                      ),
+                      child: SvgPicture.asset(
+                        "assets/images/blood.svg",
                       ),
                     ),
                     Padding(
@@ -74,7 +75,7 @@ class ChooseBlood extends StatelessWidget {
                                     : Colors.white))
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -104,7 +105,7 @@ class ChooseBlood extends StatelessWidget {
                                     : Colors.white))
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
@@ -134,7 +135,7 @@ class ChooseBlood extends StatelessWidget {
                                     : Colors.white))
                       ],
                     ),
-                    Spacer(),
+                    const Spacer(),
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [

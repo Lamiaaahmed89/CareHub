@@ -1,3 +1,5 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/logincontroller.dart';
@@ -13,7 +15,6 @@ import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_
 
 import 'package:iconsax/iconsax.dart';
 
-import '../home_page.dart';
 
 class LoginPage extends StatelessWidget {
   LoginController loginController = Get.put(LoginController());

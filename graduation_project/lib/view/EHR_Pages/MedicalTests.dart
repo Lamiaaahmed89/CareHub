@@ -1,12 +1,11 @@
 
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/EHRListView.dart';
 import 'package:graduation_project/reusable/EHRfilesListTile.dart';
 import 'package:graduation_project/reusable/SearchBar.dart';
-import 'package:hexcolor/hexcolor.dart';
 
 class MedicalTests extends StatelessWidget {
   const MedicalTests({super.key});

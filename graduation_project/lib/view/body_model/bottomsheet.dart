@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
@@ -129,7 +131,7 @@ Future OriginBottomsheet(context, int origin) {
   return showModalBottomSheet(
     isDismissible:false,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-      barrierColor: Color.fromARGB(255, 247, 210, 210).withOpacity(0),
+      barrierColor: const Color.fromARGB(255, 247, 210, 210).withOpacity(0),
       // backgroundColor: Colors.white.withOpacity(0),
       context: context,
       builder: (context) {
@@ -153,12 +155,12 @@ Future OriginBottomsheet(context, int origin) {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text('Select the exact place',
+                      const Text('Select the exact place',
                           style: TextStyle(
                               fontWeight: FontWeight.w500, fontSize: 18)),
                       IconButton(
                         color: Text2_color,
-                        icon: Icon(Iconsax.close_circle),
+                        icon: const Icon(Iconsax.close_circle),
                         onPressed: () {
                           Navigator.pop(context);
                         },
@@ -168,14 +170,14 @@ Future OriginBottomsheet(context, int origin) {
                 ),
                 ListView.builder(
                     shrinkWrap: true,
-                    physics: ScrollPhysics(),
+                    physics: const ScrollPhysics(),
                     itemCount: origins[origin][origin].length,
                     itemBuilder: (context, index) {
                       var symptomsposition = origins[origin][origin][index];
                       return ListTile(
                         trailing: IconButton(
                           color: HexColor('#252632'),
-                          icon: Icon(Iconsax.arrow_right_3),
+                          icon: const Icon(Iconsax.arrow_right_3),
                           onPressed: () {
                             Navigator.pop(context);
 
@@ -185,7 +187,7 @@ Future OriginBottomsheet(context, int origin) {
                         ),
                         title: Text(
                           "${origins[origin][origin][index]}",
-                          style: TextStyle(
+                          style: const TextStyle(
                               fontWeight: FontWeight.w400, fontSize: 16),
                         ),
                         // onTap: () {
@@ -222,14 +224,14 @@ Future symptomsBottomsheet(context, symptomsposition, originnum) {
               Row(children: [
                 IconButton(
                   color: HexColor('#252632'),
-                  icon: Icon(Iconsax.arrow_left),
+                  icon: const Icon(Iconsax.arrow_left),
                   onPressed: () {
                     Navigator.pop(context);
                     OriginBottomsheet(context, originnum);
                   },
                 ),
                 Text('$symptomsposition',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w500,
                       fontSize: 18,
                     )),
@@ -237,13 +239,13 @@ Future symptomsBottomsheet(context, symptomsposition, originnum) {
               ListView.builder(
                   itemCount: symptoms[symptomsposition].length,
                   shrinkWrap: true,
-                  physics: ScrollPhysics(),
+                  physics: const ScrollPhysics(),
                   scrollDirection: Axis.vertical,
                   itemBuilder: (context, index) {
                     return ListTile(
                       trailing: IconButton(
                         color: Main_color,
-                        icon: Icon(Iconsax.add_circle),
+                        icon: const Icon(Iconsax.add_circle),
                         onPressed: () {
                           controller.symotoms
                               .add(symptoms[symptomsposition][index]);
@@ -268,8 +270,8 @@ Future symptomsBottomsheet(context, symptomsposition, originnum) {
                       ],
                       borderRadius: BorderRadius.circular(20),
                     ),
-                    child: Padding(
-                      padding: const EdgeInsets.all(16),
+                    child: const Padding(
+                      padding: EdgeInsets.all(16),
                       child: Text(
                           "Can't Find Symptom? Please Try to Ues the Search Box.",
                           style: TextStyle(

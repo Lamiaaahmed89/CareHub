@@ -17,14 +17,14 @@ class NoConnectionPage extends StatelessWidget {
             SvgPicture.asset('assets/images/No connection.svg',
             height: 278.8,
           ),
-          SizedBox(height: 32.0,),
-           Text('Your internet connection is currently\nnot available please check or try again',
+          const SizedBox(height: 32.0,),
+           const Text('Your internet connection is currently\nnot available please check or try again',
            style: TextStyle(
             fontSize: 16.0,
             color: Color(0xff000000)
            ),
            ),
-           Text('',
+           const Text('',
            style: TextStyle(
             fontSize: 16.0,
             color: Color(0xff000000)

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
@@ -7,18 +9,17 @@ import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ChooseGender extends StatelessWidget {
-  ChooseGender({super.key});
+  const ChooseGender({super.key});
 
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
-    SignUpController controller = Get.put(SignUpController());
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: SignUpBar("Next", "Toblood",context),
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 16),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
@@ -26,12 +27,12 @@ class ChooseGender extends StatelessWidget {
               width: widtth * .1,
               height: heightt * .1,
               alignment: Alignment.center,
-              child: SvgPicture.asset(
-                "assets/images/gender.svg",
-              ),
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 color: HexColor("#285FFA"),
+              ),
+              child: SvgPicture.asset(
+                "assets/images/gender.svg",
               ),
             ),
             Padding(
@@ -64,13 +65,13 @@ class ChooseGender extends StatelessWidget {
                                   : Colors.white,
                               controller.Mclic == true
                                   ? Colors.white
-                                  : Color(0x80AEB2BB)),
+                                  : const Color(0x80AEB2BB)),
                           onTap: () {
                             controller.MM();
                             print(controller.Gender);
                           },
                         ),
-                        Spacer(),
+                        const Spacer(),
                         GestureDetector(
                           child: Gender(
                               widtth,
@@ -89,7 +90,7 @@ class ChooseGender extends StatelessWidget {
                                   : Colors.white,
                               controller.Wclic == true
                                   ? Colors.white
-                                  : Color(0x80AEB2BB)),
+                                  : const Color(0x80AEB2BB)),
                           onTap: () {
                             controller.WW();
                             print(controller.Gender);

@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 Widget MessageList(Widget MessageCard) {
@@ -5,7 +7,7 @@ Widget MessageList(Widget MessageCard) {
     child: ListView.builder(
         itemCount: 7,
         itemBuilder: (BuildContext context, index) {
-          return Container(
+          return SizedBox(
             height: 110,
             // color: Colors.amber,
             child: ListView.builder(

@@ -64,7 +64,7 @@ class MyApp extends StatelessWidget {
         routes: {
           VerificationPage.id: (context) => VerificationPage(),
           Doctors.id: (context) => const Doctors(),
-          IndividualPage.id: (context) => IndividualPage(),
+          IndividualPage.id: (context) => const IndividualPage(),
           suggestionServices.id: (context) => const suggestionServices(),
           BottomNavBar.id: (context) => BottomNavBar(),
           HomePage.id: (context) => const HomePage(),
@@ -80,9 +80,9 @@ class MyApp extends StatelessWidget {
           ResetPassword.id: (context) => ResetPassword(),
           PasswordUpdated.id: (context) => const PasswordUpdated(),
           NoConnectionPage.id: (context) => const NoConnectionPage(),
-          AudioCallPage.id: (context) => AudioCallPage(),
+          AudioCallPage.id: (context) => const AudioCallPage(),
           UserInformation.id: (context) => UserInformation(),
-          BirthDatePage.id: (context) => BirthDatePage(),
+          BirthDatePage.id: (context) => const BirthDatePage(),
           AudioCallAnswer.id: (context) => const AudioCallAnswer(),
           VideoCallEnd.id: (context) => const VideoCallEnd(),
           VideoCallStart.id: (context) => const VideoCallStart(),
@@ -99,7 +99,7 @@ class MyApp extends StatelessWidget {
 
           PesronalInformation.id: (context) => const PesronalInformation(),
           ChooseAppointment.id: (context) => const ChooseAppointment(),
-          AppointmentDate.id: (context) => AppointmentDate(),
+          AppointmentDate.id: (context) => const AppointmentDate(),
           NoDatesAppointment.id: (context) => const NoDatesAppointment(),
           AllNotifications.id: (context) => const AllNotifications(),
 

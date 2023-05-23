@@ -3,7 +3,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:graduation_project/reusable/BottomNavigationBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import '../../constants/colors.dart';
@@ -27,13 +26,11 @@ class suggestionServices extends StatelessWidget {
           "Add Symptoms",
         ),
         body: Column(children: [
-          Center(
-            child: Container(
-              child: const Text(
-                'Select service \n Based on your symptoms, here is our suggest',
-                style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
-                textAlign: TextAlign.center,
-              ),
+          const Center(
+            child: Text(
+              'Select service \n Based on your symptoms, here is our suggest',
+              style: TextStyle(fontWeight: FontWeight.w400, fontSize: 14),
+              textAlign: TextAlign.center,
             ),
           ),
           Padding(
@@ -51,7 +48,7 @@ class suggestionServices extends StatelessWidget {
                     Get.off(() => const SpecialistsListView());
                   },
                   child: Card(
-                    child: Container(
+                    child: SizedBox(
                       width: w,
                       height: 92,
                       child: Row(

@@ -1,6 +1,6 @@
 
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:get/get.dart';
+// ignore_for_file: file_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/EHRBar.dart';
@@ -30,13 +30,13 @@ class EachDoctorResults extends StatelessWidget {
               padding: EdgeInsets.symmetric(vertical: heightt * .01),
               child: DottedBorder(
                 borderType: BorderType.RRect,
-                dashPattern: [7, 5],
-                radius: Radius.circular(12),
-                padding: EdgeInsets.all(6),
+                dashPattern: const [7, 5],
+                radius: const Radius.circular(12),
+                padding: const EdgeInsets.all(6),
                 color: HexColor("#285FFA"),
                 child: ClipRRect(
-                  borderRadius: BorderRadius.all(Radius.circular(12)),
-                  child: Container(
+                  borderRadius: const BorderRadius.all(Radius.circular(12)),
+                  child: SizedBox(
                     width: widtth * .87,
                     height: heightt * .12,
                     // color: Colors.amber,

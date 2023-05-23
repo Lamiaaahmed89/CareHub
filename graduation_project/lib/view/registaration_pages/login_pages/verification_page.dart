@@ -1,10 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/view/registaration_pages/login_pages/numpad_page.dart';
 
 import 'package:iconsax/iconsax.dart';
 
@@ -50,7 +51,7 @@ class VerificationPage extends StatelessWidget {
                 style: TextStyle(fontSize: 14, color: Second_color),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 17,
             ),
             Container(
@@ -86,7 +87,7 @@ class VerificationPage extends StatelessWidget {
                         borderSide: BorderSide(color: white_color)),
                   )),
             ),
-            SizedBox(
+            const SizedBox(
               height: 32,
             ),
             RegisterButton(
@@ -96,7 +97,7 @@ class VerificationPage extends StatelessWidget {
                   forgetpassword.Forgetpassword(context);
                 },
                 register_txt: 'Send'),
-            Spacer(),
+            const Spacer(),
           ],
         ),
       ),

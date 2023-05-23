@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names, avoid_print
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
@@ -16,6 +18,7 @@ class NumPad extends StatefulWidget {
 }
 
 class _NumPadState extends State<NumPad> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
@@ -39,7 +42,6 @@ class OtpScreen extends StatefulWidget {
 
 class _OtpScreenState extends State<OtpScreen> {
   ForgetPassword forgetpassword = Get.put(ForgetPassword());
-  @override
   List<String> CurrentPin = ["", "", "", "", "", ""];
   TextEditingController pinOneController = TextEditingController();
   TextEditingController pinTwoController = TextEditingController();
@@ -199,9 +201,9 @@ class _OtpScreenState extends State<OtpScreen> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  Container(
+                  const SizedBox(
                     width: 60.0,
-                    child: const MaterialButton(
+                    child: MaterialButton(
                       onPressed: null,
                       child: SizedBox(),
                     ),
@@ -212,7 +214,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       pinIndexSetup("0");
                     },
                   ),
-                  Container(
+                  SizedBox(
                     width: 60.0,
                     child: MaterialButton(
                       onPressed: () {
@@ -261,9 +263,9 @@ class _OtpScreenState extends State<OtpScreen> {
     setPin(pinIndex, text);
     CurrentPin[pinIndex - 1] = text;
     String strPin = "";
-    CurrentPin.forEach((e) {
+    for (var e in CurrentPin) {
       strPin += e;
-    });
+    }
     if (pinIndex == 6) {
       await forgetpassword.ResetCode(strPin,context);
       print(strPin);
@@ -360,7 +362,7 @@ class PINNumber extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return SizedBox(
       width: 38.0,
       height: 8.0,
       child: TextField(
@@ -393,8 +395,8 @@ class KeyboardNumber extends StatelessWidget {
     return Container(
       width: 60.0,
       height: 60.0,
-      decoration: BoxDecoration(boxShadow: [
-        const BoxShadow(
+      decoration: BoxDecoration(boxShadow: const [
+        BoxShadow(
           color: Color.fromARGB(16, 0, 0, 0),
           offset: Offset(0, 3),
           blurRadius: 6.0,

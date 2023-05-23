@@ -34,7 +34,7 @@ class ChooseAppointment extends StatelessWidget {
                       BoxShadow(
                         color: HexColor("#000000").withAlpha(16),
                         blurRadius: 6,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ]),
                 child: Row(
@@ -55,7 +55,7 @@ class ChooseAppointment extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text('Online consultation'),
+                      const Text('Online consultation'),
                       Icon(
                         Iconsax.arrow_right_3,
                         color: Second_color,
@@ -63,7 +63,7 @@ class ChooseAppointment extends StatelessWidget {
                     ]),
               ),
             ),
-            SizedBox(
+            const SizedBox(
               height: 64,
             ),
             GestureDetector(
@@ -80,7 +80,7 @@ class ChooseAppointment extends StatelessWidget {
                       BoxShadow(
                         color: HexColor("#000000").withAlpha(16),
                         blurRadius: 6,
-                        offset: Offset(0, 3),
+                        offset: const Offset(0, 3),
                       ),
                     ]),
                 child: Row(
@@ -101,7 +101,7 @@ class ChooseAppointment extends StatelessWidget {
                           ),
                         ),
                       ),
-                      Text('Visit a doctor'),
+                      const Text('Visit a doctor'),
                       Icon(
                         Iconsax.arrow_right_3,
                         color: Second_color,

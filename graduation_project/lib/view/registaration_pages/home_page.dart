@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/component/home_container.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
-import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
-import 'package:graduation_project/view/Specialists_Pages/SpecialistsListView.dart';
 import 'package:graduation_project/view/body_model/click_body.dart';
-import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 import 'package:iconsax/iconsax.dart';
-import '../../reusable/BottomNavigationBar.dart';
 import '../EHR_Pages/EHRfiles.dart';
-import '../EmergencyCard_Pages/EmergencyCardQR.dart';
 import '../EmergencyCard_Pages/EnterCardData.dart';
 import '../Notifictaions_Pages/AllNotifications.dart';
 
@@ -48,7 +41,7 @@ class _HomePageState extends State<HomePage> {
           actions: [
             IconButton(
                 onPressed: () {
-                  Get.to(() => AllNotifications());
+                  Get.to(() => const AllNotifications());
                 },
                 icon: Icon(
                   Iconsax.notification,

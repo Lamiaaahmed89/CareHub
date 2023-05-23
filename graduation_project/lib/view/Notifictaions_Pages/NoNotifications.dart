@@ -1,4 +1,6 @@
 
+// ignore_for_file: file_names
+
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';

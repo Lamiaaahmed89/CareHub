@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:graduation_project/component/communication_components/audio_call_container.dart';
@@ -23,7 +25,7 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
       children: [
        
         Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/images/abdo.jpg',),
               fit: BoxFit.cover,)
@@ -46,7 +48,7 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
                 height: 138,
               ),
             ),
-                SizedBox(height: 270,),
+                const SizedBox(height: 270,),
                 Center(
                   child: Text('Dr.Abdo Mohamed',
                   style: TextStyle(
@@ -56,7 +58,7 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
                   ),
                   ),
                 ),
-                SizedBox(height: 6,),
+                const SizedBox(height: 6,),
                 Center(
                   child: Text('Heart Surgeon',
                   style: TextStyle(
@@ -66,7 +68,7 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
                   ),
                   ),
                 ),
-                SizedBox(height: 44,),
+                const SizedBox(height: 44,),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 137),
                   child: Container(
@@ -83,11 +85,11 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
                             width: 14,
                             height: 14,
                             decoration: BoxDecoration(
-                              color: Color(0xff28CD97),
+                              color: const Color(0xff28CD97),
                               borderRadius: BorderRadius.circular(50),
                             ),
                           ),
-                          SizedBox(width: 14.0,),
+                          const SizedBox(width: 14.0,),
                           Text('02:20',
                           style: TextStyle(
                             color: white_color,
@@ -97,7 +99,7 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
                       ) ,
                     ),
                 ),
-                  SizedBox(height: 43,),
+                  const SizedBox(height: 43,),
                   Padding(
                     padding: const EdgeInsets.symmetric(
                       horizontal: 45.0,
@@ -116,7 +118,7 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
                           },
                           iconColor: (microphone_icon) ? white_color : Main_color,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 48,
                         ),
                         AudioCallContainer(
@@ -131,7 +133,7 @@ class _VideoCallPage2State extends State<VideoCallPage2> {
                           },
                           iconColor: (video_icon) ? white_color : Main_color,
                         ),
-                        SizedBox(
+                        const SizedBox(
                           width: 48,
                         ),
                         AudioCallContainer(

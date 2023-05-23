@@ -1,11 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/component/register_button.dart';
-import 'package:graduation_project/component/text_field.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/view/registaration_pages/login_pages/password_updated.dart';
 
 import 'package:iconsax/iconsax.dart';
 
@@ -15,6 +15,8 @@ class ResetPassword extends StatelessWidget {
   static String id = 'ResetPassword';
   ForgetPassword forgetpassword = Get.put(ForgetPassword());
   static String token = "";
+
+  ResetPassword({super.key});
 
   @override
   Widget build(BuildContext context) {

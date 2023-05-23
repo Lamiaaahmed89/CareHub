@@ -3584,9 +3584,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.07346642);
     path_2.close();
 
-    Paint paint_2_fill = Paint()..style = PaintingStyle.fill;
-    paint_2_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_2, paint_2_fill);
+    Paint paint2Fill = Paint()..style = PaintingStyle.fill;
+    paint2Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_2, paint2Fill);
 
     Path path_3 = Path();
     path_3.moveTo(size.width * 0.1181466, size.height * 0.5475567);
@@ -3632,9 +3632,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.5475567);
     path_3.close();
 
-    Paint paint_3_fill = Paint()..style = PaintingStyle.fill;
-    paint_3_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_3, paint_3_fill);
+    Paint paint3Fill = Paint()..style = PaintingStyle.fill;
+    paint3Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_3, paint3Fill);
 
     Path path_4 = Path();
     path_4.moveTo(size.width * 0.1415495, size.height * 0.5355167);
@@ -3694,9 +3694,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.5355167);
     path_4.close();
 
-    Paint paint_4_fill = Paint()..style = PaintingStyle.fill;
-    paint_4_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_4, paint_4_fill);
+    Paint paint4Fill = Paint()..style = PaintingStyle.fill;
+    paint4Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_4, paint4Fill);
 
     Path path_5 = Path();
     path_5.moveTo(size.width * 0.9454563, size.height * 0.5374506);
@@ -3749,9 +3749,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.5374506);
     path_5.close();
 
-    Paint paint_5_fill = Paint()..style = PaintingStyle.fill;
-    paint_5_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_5, paint_5_fill);
+    Paint paint5Fill = Paint()..style = PaintingStyle.fill;
+    paint5Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_5, paint5Fill);
 
     Path path_6 = Path();
     path_6.moveTo(size.width * 0.9685760, size.height * 0.5257226);
@@ -3802,9 +3802,9 @@ class BackWomen extends CustomPainter {
         clockwise: false);
     path_6.close();
 
-    Paint paint_6_fill = Paint()..style = PaintingStyle.fill;
-    paint_6_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_6, paint_6_fill);
+    Paint paint6Fill = Paint()..style = PaintingStyle.fill;
+    paint6Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_6, paint6Fill);
 
     Path path_7 = Path();
     path_7.moveTo(size.width * 0.5109937, size.height * 0.4441672);
@@ -3837,9 +3837,9 @@ class BackWomen extends CustomPainter {
         clockwise: true);
     path_7.close();
 
-    Paint paint_7_fill = Paint()..style = PaintingStyle.fill;
-    paint_7_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_7, paint_7_fill);
+    Paint paint7Fill = Paint()..style = PaintingStyle.fill;
+    paint7Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_7, paint7Fill);
 
     Path path_8 = Path();
     path_8.moveTo(size.width * 0.9888648, size.height * 0.4144521);
@@ -5987,9 +5987,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.3344354);
     path_8.close();
 
-    Paint paint_8_fill = Paint()..style = PaintingStyle.fill;
-    paint_8_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_8, paint_8_fill);
+    Paint paint8Fill = Paint()..style = PaintingStyle.fill;
+    paint8Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_8, paint8Fill);
 
     Path path_9 = Path();
     path_9.moveTo(size.width * 0.6533925, size.height * 0.04664171);
@@ -6070,9 +6070,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.04664171);
     path_9.close();
 
-    Paint paint_9_fill = Paint()..style = PaintingStyle.fill;
-    paint_9_fill.color = Color(0xffe9efff).withOpacity(1.0);
-    canvas.drawPath(path_9, paint_9_fill);
+    Paint paint9Fill = Paint()..style = PaintingStyle.fill;
+    paint9Fill.color = const Color(0xffe9efff).withOpacity(1.0);
+    canvas.drawPath(path_9, paint9Fill);
 
     Path path_10 = Path();
     path_10.moveTo(size.width * 0.4812683, size.height * 0.2079434);
@@ -6159,9 +6159,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.2079434);
     path_10.close();
 
-    Paint paint_10_fill = Paint()..style = PaintingStyle.fill;
-    paint_10_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_10, paint_10_fill);
+    Paint paint10Fill = Paint()..style = PaintingStyle.fill;
+    paint10Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_10, paint10Fill);
 
     Path path_11 = Path();
     path_11.moveTo(size.width * 0.6339530, size.height * 0.2461426);
@@ -6240,9 +6240,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.2461426);
     path_11.close();
 
-    Paint paint_11_fill = Paint()..style = PaintingStyle.fill;
-    paint_11_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_11, paint_11_fill);
+    Paint paint11Fill = Paint()..style = PaintingStyle.fill;
+    paint11Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_11, paint11Fill);
 
     Path path_12 = Path();
     path_12.moveTo(size.width * 0.4025668, size.height * 0.9371179);
@@ -6308,9 +6308,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.9371179);
     path_12.close();
 
-    Paint paint_12_fill = Paint()..style = PaintingStyle.fill;
-    paint_12_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_12, paint_12_fill);
+    Paint paint12Fill = Paint()..style = PaintingStyle.fill;
+    paint12Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_12, paint12Fill);
 
     Path path_13 = Path();
     path_13.moveTo(size.width * 0.6896291, size.height * 0.9357455);
@@ -6370,9 +6370,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.9357455);
     path_13.close();
 
-    Paint paint_13_fill = Paint()..style = PaintingStyle.fill;
-    paint_13_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_13, paint_13_fill);
+    Paint paint13Fill = Paint()..style = PaintingStyle.fill;
+    paint13Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_13, paint13Fill);
 
     Path path_14 = Path();
     path_14.moveTo(size.width * 0.7084080, size.height * 0.6624870);
@@ -6444,9 +6444,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.6624870);
     path_14.close();
 
-    Paint paint_14_fill = Paint()..style = PaintingStyle.fill;
-    paint_14_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_14, paint_14_fill);
+    Paint paint14Fill = Paint()..style = PaintingStyle.fill;
+    paint14Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_14, paint14Fill);
 
     Path path_15 = Path();
     path_15.moveTo(size.width * 0.3837879, size.height * 0.6598461);
@@ -6500,9 +6500,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.6598461);
     path_15.close();
 
-    Paint paint_15_fill = Paint()..style = PaintingStyle.fill;
-    paint_15_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_15, paint_15_fill);
+    Paint paint15Fill = Paint()..style = PaintingStyle.fill;
+    paint15Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_15, paint15Fill);
 
     Path path_16 = Path();
     path_16.moveTo(size.width * 0.1321129, size.height * 0.3344146);
@@ -6554,9 +6554,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.3344146);
     path_16.close();
 
-    Paint paint_16_fill = Paint()..style = PaintingStyle.fill;
-    paint_16_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_16, paint_16_fill);
+    Paint paint16Fill = Paint()..style = PaintingStyle.fill;
+    paint16Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_16, paint16Fill);
 
     Path path_17 = Path();
     path_17.moveTo(size.width * 0.9200717, size.height * 0.3344354);
@@ -6614,9 +6614,9 @@ class BackWomen extends CustomPainter {
         size.height * 0.3344354);
     path_17.close();
 
-    Paint paint_17_fill = Paint()..style = PaintingStyle.fill;
-    paint_17_fill.color = Color(0xff285ffa).withOpacity(1.0);
-    canvas.drawPath(path_17, paint_17_fill);
+    Paint paint17Fill = Paint()..style = PaintingStyle.fill;
+    paint17Fill.color = const Color(0xff285ffa).withOpacity(1.0);
+    canvas.drawPath(path_17, paint17Fill);
   }
 
   @override

@@ -1,6 +1,7 @@
+// ignore_for_file: file_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:graduation_project/Controllers/logincontroller.dart';
-import 'package:graduation_project/view/registaration_pages/SignUp_Pages/AllowLocation.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/ChooseBlood.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/ChooseGender.dart';
 import 'package:graduation_project/view/registaration_pages/SignUp_Pages/ChoosePhoto.dart';
@@ -33,32 +34,32 @@ PreferredSizeWidget SignUpBar(String action, GoWhere,context) {
       TextButton(
           onPressed: () {
             if (GoWhere == "Toblood") {
-              Get.to(() => ChooseBlood());
+              Get.to(() => const ChooseBlood());
             }
 
             if (GoWhere == "Toweight") {
-              Get.to(() => EnterWeight());
+              Get.to(() => const EnterWeight());
             }
 
             if (GoWhere == "Toheight") {
-              Get.to(() => EnterHeight());
+              Get.to(() => const EnterHeight());
             }
             if (GoWhere == "Tophoto") {
-              Get.to(() => ChoosePhoto());
+              Get.to(() => const ChoosePhoto());
             }
             if (GoWhere == "Tologin") {
               addpatientinfo.addPatientinfo(LoginController.value,context);
               Get.to(() => LoginPage());
             }
             if (GoWhere == "Tobirthdate") {
-              Get.to(() => BirthDatePage());
+              Get.to(() => const BirthDatePage());
             }
             if (GoWhere == "ToGender") {
               Get.to(() => ChooseGender());
             }
           },
           child: Text(
-            "$action",
+            action,
             style: TextStyle(color: HexColor("#285FFA")),
           )),
     ],
