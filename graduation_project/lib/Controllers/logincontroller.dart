@@ -65,6 +65,18 @@ class LoginController extends GetxController {
               );
             });
       }
+      else if (response.statusCode == 401) {
+        showDialog(
+            context: Get.context!,
+            builder: (context) {
+              return const SimpleDialog(
+                title: Text('Error'),
+                contentPadding: EdgeInsets.all(20),
+                children: [Text('The Email or Password is Incorrect!')],
+              );
+            });
+      }
+
     } catch (error) {
       Get.back();
       showDialog(

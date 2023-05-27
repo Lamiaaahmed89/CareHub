@@ -1,99 +1,138 @@
-
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: file_names, non_constant_identifier_names, avoid_print
 
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/view/EHR_Pages/EachDoctorPrescriptions.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../view/EHR_Pages/EachDoctorDiagnosis.dart';
-import '../view/EHR_Pages/EachDoctorTests.dart';
+import '../Controllers/EHRfilesController.dart';
+import '../Controllers/EhrDiagonsis.dart';
+import '../Controllers/EhrPrescription.dart';
+import '../Controllers/EhrTests.dart';
 
 Widget ListtTile(String imgPath, Titlle, subTitlle, Widtth, heightt, GoWhere,
-    bool isLabResulit) {
+    bool isLabResulit, index, context) {
+  EHRfilesController controller = Get.put(EHRfilesController());
+  EhrDiagonsis EhrDiagonsiscontroller = Get.put(EhrDiagonsis());
+  EhrPrescription EhrPrescriptioncontroller = Get.put(EhrPrescription());
+  EhrTests ehrtestscontroller = Get.put(EhrTests());
   return Padding(
     padding: const EdgeInsets.only(bottom: 10),
-    child: GestureDetector(
-      onTap: () {
-        if (GoWhere == "EachDoctorPrescriptions") {
-          Get.to(const EachDoctorPrescriptions());
-        }
-        if (GoWhere == "EachDoctorDiagnosis") {
-          Get.to(const EachDoctorDiagnosis());
-        }
-        if (GoWhere == "EachDoctorTests") {
-          Get.to(const EachDoctorTests());
-        }
-      },
-      child: Row(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: Widtth * .009),
-            child: Container(
-              width: Widtth * .90,
-              // padding: EdgeInsets.symmetric(vertical: 16, horizontal: 16),
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: const BorderRadius.all(Radius.circular(7)),
-                boxShadow: [
-                  BoxShadow(
-                    color: HexColor("#000000").withAlpha(35),
-                    // spreadRadius: 5,
-                    blurRadius: 6,
-                    offset: const Offset(0, 3), // changes position of shadow
-                  ),
-                ],
-              ),
-              child: Padding(
-                padding: EdgeInsets.only(top: heightt * .01),
-                child: SizedBox(
-                  height: 80,
-                  child: ListTile(
-                    leading: SizedBox(
-                        // color: Colors.amber,
-                        width: Widtth * .12,
-                        height: heightt * .2,
-                        child: SvgPicture.asset(imgPath)),
-                    title: Padding(
-                      padding: EdgeInsets.only(bottom: heightt * .01),
-                      child: Text(
-                        "$Titlle",
-                        style: const TextStyle(fontSize: 13),
-                      ),
-                    ),
-                    subtitle: Text(
-                      "$subTitlle",
+    child: Row(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: Widtth * .009),
+          child: Container(
+            width: Widtth * .90,
+            decoration: BoxDecoration(
+              color: Colors.white,
+              borderRadius: const BorderRadius.all(Radius.circular(7)),
+              boxShadow: [
+                BoxShadow(
+                  color: HexColor("#000000").withAlpha(35),
+                  // spreadRadius: 5,
+                  blurRadius: 6,
+                  offset: const Offset(0, 3), // changes position of shadow
+                ),
+              ],
+            ),
+            child: Padding(
+              padding: EdgeInsets.only(top: heightt * .01),
+              child: SizedBox(
+                height: 80,
+                child: ListTile(
+                  onTap: () {
+                    if (GoWhere == "EachDoctorPrescriptions") {
+                      EhrPrescriptioncontroller.Indexdocid = index;
+                      EhrPrescriptioncontroller.GetAllDoctorPrescription(
+                          EhrPrescriptioncontroller.ALLDocPrescription[index]
+                              ['id'],
+                          context);
+                    }
+                    if (GoWhere == "EachDoctorDiagnosis") {
+                      EhrDiagonsiscontroller.Indexdocid = index;
+                      EhrDiagonsiscontroller.GetAllDoctorDiagonsis(
+                          EhrDiagonsiscontroller.ALLDocDiagonsis[index]['id'],
+                          context);
+                    }
+                    if (GoWhere == "EachDoctorTests") {
+                      ehrtestscontroller.Indexdocid = index;
+                      print(ehrtestscontroller.ALLDocTests[index]['id']);
+                      ehrtestscontroller.GetAllDoctorTests(
+                          ehrtestscontroller.ALLDocTests[index]['id'], context);
+                    }
+                    if (GoWhere == "DiagonsisContent") {
+                      EhrDiagonsiscontroller.GetDoctorDiagonsis(
+                          EhrDiagonsiscontroller.EachDocDiagonsis[index]
+                              ['date'],
+                          EhrDiagonsiscontroller.ALLDocDiagonsis[
+                              EhrDiagonsiscontroller.Indexdocid]['id'],
+                          context);
+                    }
+                    if (GoWhere == "PrescriptionContent") {
+                      EhrPrescriptioncontroller.GetDoctorPrescription(
+                          EhrPrescriptioncontroller.EachDocPrescription[index]
+                              ['date'],
+                          EhrPrescriptioncontroller.ALLDocPrescription[
+                              EhrPrescriptioncontroller.Indexdocid]['id'],
+                          context);
+                    }
+                    if (GoWhere == "MedicalResult") {
+                      controller.Medical_Tests = false;
+                      ehrtestscontroller.testid =
+                          ehrtestscontroller.EachDocTests[index]['id'];
+                      ehrtestscontroller.GetDoctorTests(
+                          ehrtestscontroller.EachDocTests[index]['id'],
+                          context);
+                    }
+                    if (GoWhere == "DownloadTest") {
+                      ehrtestscontroller.DownloadDoctorTests(
+                          ehrtestscontroller.DocTests[index]['id'], context);
+                    }
+                  },
+                  leading: SizedBox(
+                      width: Widtth * .12,
+                      height: heightt * .2,
+                      child: SvgPicture.asset(imgPath)),
+                  title: Padding(
+                    padding: EdgeInsets.only(bottom: heightt * .01),
+                    child: Text(
+                      "$Titlle",
                       style: const TextStyle(fontSize: 13),
                     ),
-                    trailing: Padding(
-                      padding: EdgeInsets.only(left: Widtth * .2),
-                      child: SizedBox(
-                        width: Widtth * .07,
-                        // color: Colors.amber,
-                        child: IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Iconsax.arrow_right_3,
-                              color: HexColor("#252632"),
-                              size: 25,
-                            )),
-                      ),
+                  ),
+                  subtitle: Text(
+                    "$subTitlle",
+                    style: const TextStyle(fontSize: 13),
+                  ),
+                  trailing: Padding(
+                    padding: EdgeInsets.only(left: Widtth * .2),
+                    child: SizedBox(
+                      width: Widtth * .07,
+                      // color: Colors.amber,
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: Icon(
+                            Iconsax.arrow_right_3,
+                            color: HexColor("#252632"),
+                            size: 25,
+                          )),
                     ),
                   ),
                 ),
               ),
             ),
           ),
-          if (isLabResulit) ...[horizontalListView(Widtth, heightt)]
-        ],
-      ),
+        ),
+        if (isLabResulit) ...[horizontalListView(Widtth, heightt,context)]
+      ],
     ),
   );
 }
 
-Widget horizontalListView(Widtth, heightt) {
+Widget horizontalListView(Widtth, heightt, context) {
+  EhrTests ehrtestscontroller = Get.put(EhrTests());
   return Row(
     children: [
       SizedBox(
@@ -105,22 +144,22 @@ Widget horizontalListView(Widtth, heightt) {
           alignment: Alignment.center,
           width: 60,
           height: 92,
-          // padding: EdgeInsets.symmetric(vertical: 30, horizontal: 12),
           decoration: BoxDecoration(
             color: HexColor("#fecfda"),
-            // fc9eb3
             borderRadius: const BorderRadius.all(Radius.circular(10)),
             boxShadow: [
               BoxShadow(
                 color: HexColor("#000000").withAlpha(40),
-                // spreadRadius: 5,
                 blurRadius: 6,
-                offset: const Offset(0, 3), // changes position of shadow
+                offset: const Offset(0, 3),
               ),
             ],
           ),
           child: IconButton(
-              onPressed: () {},
+              onPressed: () {
+                ehrtestscontroller.DeleteDoctorTests(
+                    ehrtestscontroller.testid, context);
+              },
               icon: Icon(
                 Iconsax.trash,
                 size: 27,
@@ -131,33 +170,3 @@ Widget horizontalListView(Widtth, heightt) {
     ],
   );
 }
-// leading: Container(
-//                       // color: Colors.amber,
-//                       width: Widtth * .12,
-//                       height: heightt * .2,
-//                       child: SvgPicture.asset("$imgPath")),
-//                   title: Padding(
-//                     padding: EdgeInsets.only(bottom: heightt * .01),
-//                     child: Text(
-//                       "$Titlle",
-//                       style: TextStyle(fontSize: 13),
-//                     ),
-//                   ),
-//                   subtitle: Text(
-//                     "$subTitlle",
-//                     style: TextStyle(fontSize: 13),
-//                   ),
-//                   trailing: Padding(
-//                     padding: EdgeInsets.only(left: Widtth * .2),
-//                     child: Container(
-//                       width: Widtth * .07,
-//                       // color: Colors.amber,
-//                       child: IconButton(
-//                           onPressed: () {},
-//                           icon: Icon(
-//                             Iconsax.arrow_right_3,
-//                             color: HexColor("#252632"),
-//                             size: 25,
-//                           )),
-//                     ),
-//                   ),

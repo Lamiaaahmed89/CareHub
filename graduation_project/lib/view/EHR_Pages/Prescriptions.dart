@@ -1,8 +1,9 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:graduation_project/Controllers/EhrPrescription.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/reusable/EHRListView.dart';
 import 'package:graduation_project/reusable/EHRfilesListTile.dart';
 import 'package:graduation_project/reusable/SearchBar.dart';
 
@@ -11,6 +12,7 @@ class Prescriptions extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+     EhrPrescription EhrPrescriptioncontroller = Get.put(EhrPrescription());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -21,14 +23,21 @@ class Prescriptions extends StatelessWidget {
         child: Column(
           children: [
             SearchBar(widtth, heightt, "Search by the name of Dr"),
-            EHRfilesList(ListtTile(
+            Expanded(
+              child: ListView.builder(
+                  scrollDirection: Axis.vertical,
+                  itemCount: EhrPrescriptioncontroller.ALLDocPrescription.length,
+                  itemBuilder: (BuildContext context, index) => 
+            ListtTile(
                 "assets/images/Medical prescription.svg",
                 "Prescriptions",
-                "Dr.Mohammed",
+                EhrPrescriptioncontroller.ALLDocPrescription[index]['fullName'],
                 widtth,
                 heightt,
                 "EachDoctorPrescriptions",
-                false)),
+                false,index,context),
+              )
+            )
           ],
         ),
       ),

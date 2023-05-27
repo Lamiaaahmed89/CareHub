@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
           ResetPassword.id: (context) => ResetPassword(),
           PasswordUpdated.id: (context) => const PasswordUpdated(),
           NoConnectionPage.id: (context) => const NoConnectionPage(),
-          AudioCallPage.id: (context) => const AudioCallPage(),
+          AudioCallPage.id: (context) =>  const AudioCallPage(),
           UserInformation.id: (context) => UserInformation(),
           BirthDatePage.id: (context) => const BirthDatePage(),
           AudioCallAnswer.id: (context) => const AudioCallAnswer(),

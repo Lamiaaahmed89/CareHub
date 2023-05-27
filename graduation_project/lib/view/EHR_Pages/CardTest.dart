@@ -32,7 +32,6 @@ Widget Loading(widtth, heightt) {
               height: heightt * .08,
               child: SvgPicture.asset("assets/images/Medical Tests.svg"),
             ),
-
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -54,14 +53,6 @@ Widget Loading(widtth, heightt) {
                     decoration: BoxDecoration(
                       color: HexColor("#f0f0f0"),
                       borderRadius: const BorderRadius.all(Radius.circular(7)),
-                      // boxShadow: [
-                      //   BoxShadow(
-                      //     color: HexColor("#000000").withAlpha(35),
-                      //     // spreadRadius: 5,
-                      //     blurRadius: 6,
-                      //     offset: Offset(0, 3), // changes position of shadow
-                      //   ),
-                      // ],
                     ),
                     child: Padding(
                       padding: EdgeInsets.only(bottom: heightt * .002),
@@ -74,24 +65,6 @@ Widget Loading(widtth, heightt) {
                 ),
               ],
             ),
-            // Stack(
-            //   children: [
-            //     Container(
-            //       // color: Colors.amber,
-            //       width: widtth * .4,
-            //       // height: 50,
-            //       child: Lottie.asset('assets/line loading.json'),
-            //     ),
-            //     Positioned(
-            //       top: heightt * .03,
-            //       left: widtth * .097,
-            // child: Text(
-            //   "Uploading...",
-            //   style: TextStyle(color: HexColor("#285FFA"), fontSize: 12),
-            // ),
-            //     ),
-            //   ],
-            // ),
             Padding(
                 padding:
                     EdgeInsets.only(left: widtth * .12, bottom: heightt * .05),

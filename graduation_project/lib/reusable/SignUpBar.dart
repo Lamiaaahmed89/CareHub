@@ -55,7 +55,7 @@ PreferredSizeWidget SignUpBar(String action, GoWhere,context) {
               Get.to(() => const BirthDatePage());
             }
             if (GoWhere == "ToGender") {
-              Get.to(() => ChooseGender());
+              Get.to(() => const ChooseGender());
             }
           },
           child: Text(

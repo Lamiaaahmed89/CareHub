@@ -4,9 +4,10 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/EHRCard.dart';
-import 'package:graduation_project/view/EHR_QR/EHRqr.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../Controllers/EhrTests.dart';
 
 class EHRfiles extends StatelessWidget {
   const EHRfiles({super.key});
@@ -14,6 +15,8 @@ class EHRfiles extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    EhrTests ehrtestscontroller = Get.put(EhrTests());
+
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -40,7 +43,8 @@ class EHRfiles extends StatelessWidget {
         actions: [
           IconButton(
               onPressed: (() {
-                Get.to(const EHR_QR());
+                ehrtestscontroller.GetQR(context);
+                // Get.to(const EHR_QR());
               }),
               icon: const Icon(
                 Iconsax.scan_barcode,
@@ -91,9 +95,9 @@ class EHRfiles extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 EHRCard(widtth, heightt, "Prescriptions",
-                    "assets/images/Medical prescription.svg", 1),
+                    "assets/images/Medical prescription.svg", 1, context),
                 EHRCard(widtth, heightt, "Medical Diagnosis",
-                    "assets/images/Medical Diagnosis.svg", 2),
+                    "assets/images/Medical Diagnosis.svg", 2, context),
               ],
             ),
             SizedBox(
@@ -102,7 +106,7 @@ class EHRfiles extends StatelessWidget {
             Padding(
               padding: EdgeInsets.only(right: (widtth * .48)),
               child: EHRCard(widtth, heightt, "Medical Tests",
-                  "assets/images/Medical Tests.svg", 3),
+                  "assets/images/Medical Tests.svg", 3, context),
             ),
           ],
         ),

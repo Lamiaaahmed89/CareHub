@@ -3,23 +3,28 @@
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:flutter/material.dart';
-import 'package:graduation_project/view/EHR_Pages/MedicalDiagnosis.dart';
-import 'package:graduation_project/view/EHR_Pages/MedicalTests.dart';
-import 'package:graduation_project/view/EHR_Pages/Prescriptions.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-Widget EHRCard(
-    widtth, heightt, String descroiption, String imgPath, int GoWhere) {
+import '../Controllers/EhrDiagonsis.dart';
+import '../Controllers/EhrPrescription.dart';
+import '../Controllers/EhrTests.dart';
+
+Widget EHRCard(widtth, heightt, String descroiption, String imgPath,
+    int GoWhere, context) {
+  EhrDiagonsis ehrdiagonsiscontroller = Get.put(EhrDiagonsis());
+  EhrPrescription ehrprescriptioncontroller = Get.put(EhrPrescription());
+  EhrTests ehrtestscontroller = Get.put(EhrTests());
+
   return GestureDetector(
     onTap: (() {
       if (GoWhere == 1) {
-        Get.to(const Prescriptions());
+        ehrprescriptioncontroller.GetAllDoctorsPrescription(context);
       }
       if (GoWhere == 2) {
-        Get.to(const MedicalDiagnosis());
+        ehrdiagonsiscontroller.GetAllDoctorsDiagonsis(context);
       }
       if (GoWhere == 3) {
-        Get.to(const MedicalTests());
+        ehrtestscontroller.GetAllDoctorsTests(context);
       }
     }),
     child: Container(

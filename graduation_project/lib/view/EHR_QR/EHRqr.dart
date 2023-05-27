@@ -1,8 +1,11 @@
 // ignore_for_file: file_names, camel_case_types
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:hexcolor/hexcolor.dart';
+
+import '../../Controllers/EhrTests.dart';
 
 class EHR_QR extends StatelessWidget {
   const EHR_QR({super.key});
@@ -10,6 +13,7 @@ class EHR_QR extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    EhrTests ehrtestscontroller = Get.put(EhrTests());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -31,14 +35,14 @@ class EHR_QR extends StatelessWidget {
             ),
             Padding(
               padding:
-                  EdgeInsets.only(top: heightt * .15, bottom: heightt * .02),
+                  EdgeInsets.only(top: heightt * 0.07, bottom: heightt * .07),
               child: Container(
                 width: widtth * .6,
                 height: heightt * .4,
                 decoration: BoxDecoration(
-                  image: const DecorationImage(
+                  image:  DecorationImage(
                       fit: BoxFit.cover,
-                      image: AssetImage("assets/images/QR.png")),
+                      image: NetworkImage("${ehrtestscontroller.qrurl}")),
                   borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   color: Colors.white,
                   boxShadow: [
