@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Poppins',
         ),
-        initialRoute: BottomNavBar.id,
+        initialRoute: LoginPage.id,
         routes: {
           VerificationPage.id: (context) => VerificationPage(),
           Doctors.id: (context) => const Doctors(),
