@@ -38,8 +38,8 @@ Widget CompletedCarrd(widtth, heightt) {
               Row(
                 children: [
                   Container(
-                    width: 70.0,
-                    height: 70.0,
+                    width: widtth * .17,
+                    height: heightt * .085,
                     decoration: BoxDecoration(
                       image: const DecorationImage(
                           fit: BoxFit.cover,
@@ -52,7 +52,7 @@ Widget CompletedCarrd(widtth, heightt) {
                   //   height: 15,
                   // ),
                   Padding(
-                    padding: const EdgeInsets.only(left: 10, top: 12),
+                    padding: EdgeInsets.only(left: widtth * .025, top: 12),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

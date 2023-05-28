@@ -159,7 +159,7 @@ Widget cus_onbording(context,index) {
               onPressed: () {
                 Navigator.push(context,
                         MaterialPageRoute(builder: (BuildContext context) {
-                      return LoginPage();
+                      return const LoginPage();
                     }));
               },
               child: Text(

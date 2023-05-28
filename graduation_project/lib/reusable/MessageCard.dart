@@ -36,8 +36,8 @@ Widget MessCard(double Widtth, double heightt) {
               child: Row(
                 children: [
                   Container(
-                    width: 60,
-                    height: 60,
+                    width: Widtth * .17,
+                    height: heightt * .08,
                     decoration: BoxDecoration(
                       image: const DecorationImage(
                           fit: BoxFit.cover,
@@ -58,7 +58,11 @@ Widget MessCard(double Widtth, double heightt) {
                         SizedBox(
                           height: 5,
                         ),
-                        Text("hi what is your name")
+                        Text(
+                          "hi what is your name",
+                          overflow: TextOverflow.clip,
+                          style: TextStyle(fontSize: 12),
+                        )
                       ],
                     ),
                   ),

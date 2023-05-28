@@ -15,13 +15,18 @@ import 'package:iconsax/iconsax.dart';
 
 import '../../../Controllers/SignUpController.dart';
 
-class SignupPage extends StatelessWidget {
+class SignupPage extends StatefulWidget {
+   const SignupPage({super.key});
 
   static String id = 'SignupPage';
-  SignUpController signupcontroller = Get.put(SignUpController());
+  @override
+  State<SignupPage> createState() => _SignupPageState();
+}
 
-  SignupPage({super.key});
+class _SignupPageState extends State<SignupPage> {
+    SignUpController signupcontroller = Get.put(SignUpController());
 
+  bool passwardObsecure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(

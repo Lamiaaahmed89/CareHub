@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
+import 'package:graduation_project/view/Appointment_pages/choose_appointment.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'package:iconsax/iconsax.dart';
@@ -9,10 +10,10 @@ import 'package:readmore/readmore.dart';
 
 import '../../component/register_button.dart';
 import '../../constants/colors.dart';
-import '../Appointment_pages/choose_appointment.dart';
 
 class AboutDoctor extends StatelessWidget {
   const AboutDoctor({super.key});
+  static String id = 'AboutDoctor';
 
   @override
   Widget build(BuildContext context) {

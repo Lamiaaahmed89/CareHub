@@ -30,7 +30,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     const SpecialistsListView(),
     UpComming(),
     Messages(),
-    LoginPage(),
+    const LoginPage(),
   ];
 
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();

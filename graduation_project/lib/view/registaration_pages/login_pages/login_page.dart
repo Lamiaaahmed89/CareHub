@@ -15,14 +15,18 @@ import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_
 
 import 'package:iconsax/iconsax.dart';
 
-
-class LoginPage extends StatelessWidget {
-  LoginController loginController = Get.put(LoginController());
-
+class LoginPage extends StatefulWidget {
   static String id = 'LoginPage';
 
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
+  LoginController loginController = Get.put(LoginController());
+  bool passwordObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -86,19 +90,27 @@ class LoginPage extends StatelessWidget {
                       spreadRadius: BorderSide.strokeAlignOutside),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
+                    obscureText: passwordObscure,
                     controller: loginController.Passwordcontroller,
                     decoration: InputDecoration(
                       fillColor: white_color,
                       filled: true,
-                      hintText: 'Enter your password',
+                      hintText: 'Enter Your Password',
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              passwordObscure = !passwordObscure;
+                            });
+                          },
+                          icon: Icon(passwordObscure
+                              ? Iconsax.eye_slash
+                              : Iconsax.eye),
+                              color: Main_color,),
                       prefixIcon: Icon(
                         Iconsax.key,
                         color: Main_color,
                       ),
-                      suffixIcon: Icon(
-                        Iconsax.eye,
-                        color: Main_color,
-                      ),
+                      
                       border: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(50),
                           borderSide: BorderSide(color: white_color)),

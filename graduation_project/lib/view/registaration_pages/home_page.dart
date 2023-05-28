@@ -1,13 +1,18 @@
+import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/component/home_container.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
-import 'package:graduation_project/view/body_model/click_body.dart';
+import 'package:graduation_project/view/EHR_Pages/EHRfiles.dart';
+import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
+import 'package:graduation_project/view/registaration_pages/personal_info.dart';
 import 'package:iconsax/iconsax.dart';
-import '../EHR_Pages/EHRfiles.dart';
 import '../EmergencyCard_Pages/EnterCardData.dart';
 import '../Notifictaions_Pages/AllNotifications.dart';
+import '../body_model/click_body.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -23,11 +28,16 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: white_color,
       appBar: AppBar(
-          leading: const Padding(
-            padding: EdgeInsetsDirectional.only(start: 8.0, top: 8.0),
-            child: CircleAvatar(
-              backgroundImage: AssetImage(
-                'assets/images/patient.jpg',
+          leading: Padding(
+            padding: const EdgeInsetsDirectional.only(start: 8.0, top: 8.0),
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushNamed(context, PesronalInformation.id);
+              },
+              child: const CircleAvatar(
+                backgroundImage: AssetImage(
+                  'assets/images/patient.jpg',
+                ),
               ),
             ),
           ),
@@ -48,35 +58,31 @@ class _HomePageState extends State<HomePage> {
                   color: Second_color,
                 ))
           ]),
-      
-      // CurvedNavigationBar(
-      //   animationCurve: Curves.easeInOut,
-      //   animationDuration: Duration(milliseconds: 600),
-      //   backgroundColor: Main_color,
-      //   color: white_color,
-      //   height: 60,
-      //   items: <Widget>[
-      //     const Icon(Iconsax.home_2),
-      //     const Icon(Iconsax.search_normal),
-      //     const Icon(Iconsax.calendar_1),
-      //     const Icon(Iconsax.message),
-      //     SvgPicture.asset('assets/images/home images/logout.svg'),
-      //   ],
-      //   onTap: (index) {
-      //     if (index == 0) {
-      //       Navigator.pushNamed(context, HomePage.id);
-      //     } else if (index == 1) {
-      //       Navigator.pushNamed(context, SpecialistsListView.id);
-      //     } else if (index == 2) {
-      //       Navigator.pushNamed(context, UpComming.id);
-      //     } else if (index == 3) {
-      //       Navigator.pushNamed(context, Messages.id);
-      //     } else if (index == 4) {
-      //       Navigator.pushNamed(context, LoginPage.id);
-      //     }
-      //     // print(index);
-      //   },
-      // ),
+      bottomNavigationBar: CurvedNavigationBar(
+        backgroundColor: Main_color,
+        color: white_color,
+        height: 60,
+        items: <Widget>[
+          const Icon(Iconsax.home_2),
+          const Icon(Iconsax.search_normal),
+          const Icon(Iconsax.calendar_1),
+          const Icon(Iconsax.message),
+          SvgPicture.asset('assets/images/home images/logout.svg'),
+        ],
+        onTap: (index) {
+          if (index == 0) {
+            Navigator.pushNamed(context, HomePage.id);
+          } else if (index == 1) {
+          } else if (index == 2) {
+            Navigator.pushNamed(context, UpComming.id);
+          } else if (index == 3) {
+            Navigator.pushNamed(context, Messages.id);
+          } else if (index == 4) {
+            Navigator.pushNamed(context, LoginPage.id);
+          }
+          // print(index);
+        },
+      ),
       body: Padding(
         padding: const EdgeInsetsDirectional.only(top: 32, start: 16, end: 16),
         child: ListView(

@@ -52,7 +52,7 @@ class PasswordUpdated extends StatelessWidget {
               color_button: Main_color,
               text_color: white_color,
               navigate: () {
-                Get.off(() => LoginPage());
+                Get.off(() => const LoginPage());
               },
               register_txt: 'Log In'),
         ]),

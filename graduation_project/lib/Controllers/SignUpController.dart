@@ -42,7 +42,7 @@ class SignUpController extends GetxController {
       print(response.statusCode);
       if (response.statusCode == 200) {
         showDialog(
-            routeSettings: RouteSettings(arguments: Get.off(() => LoginPage())),
+            routeSettings: RouteSettings(arguments: Get.off(() => const LoginPage())),
             context: Get.context!,
             builder: (context) {
               return const SimpleDialog(

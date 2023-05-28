@@ -9,8 +9,8 @@ import 'package:graduation_project/reusable/SignUpBar.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 class ChooseBlood extends StatelessWidget {
-  const ChooseBlood({super.key});
   static String id = 'ChooseBlood';
+  const ChooseBlood({super.key});
 
   @override
   Widget build(BuildContext context) {

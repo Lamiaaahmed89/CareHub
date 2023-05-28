@@ -49,7 +49,7 @@ PreferredSizeWidget SignUpBar(String action, GoWhere,context) {
             }
             if (GoWhere == "Tologin") {
               addpatientinfo.addPatientinfo(LoginController.value,context);
-              Get.to(() => LoginPage());
+              Get.to(() => const LoginPage());
             }
             if (GoWhere == "Tobirthdate") {
               Get.to(() => const BirthDatePage());

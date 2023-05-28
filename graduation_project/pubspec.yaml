@@ -48,7 +48,6 @@ dependencies:
   animated_text_kit: ^4.2.2
   flutter_holo_date_picker: ^1.1.0
   simple_shadow: ^0.3.1
-  touchable: ^1.0.2
   shared_preferences: ^2.0.17
   fluttertoast: ^8.2.1
   unique_list: ^1.0.1
@@ -58,9 +57,11 @@ dependencies:
   dotted_border: ^2.0.0+3
   syncfusion_flutter_sliders: ^20.4.53
   readmore: ^2.2.0
-  image_picker: ^0.8.4+4
   path_provider: ^2.0.14
   file_picker: ^4.1.4
+  image_picker: ^0.8.7+1
+  path: ^1.8.2
+  touchable: ^1.0.2
 
 dev_dependencies:
   flutter_test:

@@ -83,7 +83,7 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
           ),
         ),
         Positioned(
-          right: 20,
+          right: widtth * .035,
           top: 20,
           child: SizedBox(
             width: widtth * .07,
