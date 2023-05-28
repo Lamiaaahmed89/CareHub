@@ -13,7 +13,7 @@ class HaveAccount extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Text(
-          '$txt1',
+          txt1,
           style: TextStyle(
             color: Text2_color,
             fontSize: 14.0,
@@ -22,7 +22,7 @@ class HaveAccount extends StatelessWidget {
         ),
         TextButton(
             onPressed: register,
-            child: Text('$txt2',
+            child: Text(txt2,
                 style: TextStyle(
                   fontSize: 14,
                   fontFamily: 'Poppins',

@@ -15,7 +15,7 @@ class GoogleButton extends StatelessWidget {
         border: Border.all(color: white_color),
         borderRadius: BorderRadius.circular(50.0),
         color: white_color,
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Color.fromARGB(16, 0, 0, 0),
             offset: Offset(0,3),
@@ -29,7 +29,7 @@ class GoogleButton extends StatelessWidget {
           SvgPicture.asset('assets/icons/google.svg',
           width: 24.14,
           height: 24.14,),
-          SizedBox(width: 16.0,),
+          const SizedBox(width: 16.0,),
           Text('Login With Google',
           style: TextStyle(
             fontSize: 16.0,
