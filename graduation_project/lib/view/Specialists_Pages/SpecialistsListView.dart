@@ -9,14 +9,18 @@ import 'package:graduation_project/view/Specialists_Pages/SpecialistsClass.dart'
 
 import 'package:iconsax/iconsax.dart';
 
+import '../../Controllers/SpesilizationController.dart';
 import '../../constants/colors.dart';
 
 class SpecialistsListView extends StatelessWidget {
   const SpecialistsListView({super.key});
   static String id = 'SpecialistsListView';
+  
 
   @override
   Widget build(BuildContext context) {
+    DoctorsSpecilization DoctorsSpecilizationcon =
+      Get.put(DoctorsSpecilization());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
 
@@ -71,8 +75,9 @@ class SpecialistsListView extends StatelessWidget {
                       widtth,
                       heightt,
                       specialistt.specialist,
-                      specialistt.DoctorsNum,
+                      DoctorsSpecilizationcon.ALLDocSpecilization[index]["totalDoctors"],
                       specialistt.SpecialistsSVG,
+                     DoctorsSpecilizationcon.ALLDocSpecilization[index]["id"],context
                     );
                   }),
             )

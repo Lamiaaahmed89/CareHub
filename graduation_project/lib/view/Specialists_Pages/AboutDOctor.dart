@@ -1,12 +1,14 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import 'package:iconsax/iconsax.dart';
 import 'package:readmore/readmore.dart';
 
+import '../../Controllers/SpesilizationController.dart';
 import '../../component/register_button.dart';
 import '../../constants/colors.dart';
 import '../Appointment_pages/choose_appointment.dart';
@@ -16,6 +18,8 @@ class AboutDoctor extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DoctorsSpecilization DoctorsSpecilizationcon =
+        Get.put(DoctorsSpecilization());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -34,9 +38,10 @@ class AboutDoctor extends StatelessWidget {
                     width: widtth * .39,
                     height: heightt * .28,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
+                      image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/images/abdo.jpg")),
+                          image: NetworkImage(
+                              DoctorsSpecilizationcon.DocInfo['photo'])),
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
                       color: HexColor("#f0f0f0"),
                       boxShadow: [
@@ -44,7 +49,8 @@ class AboutDoctor extends StatelessWidget {
                           color: HexColor("#000000").withAlpha(35),
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: const Offset(0, 3), // changes position of shadow
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -55,12 +61,12 @@ class AboutDoctor extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text("Dr. Abdo Mohamed"),
+                      Text("${DoctorsSpecilizationcon.DocInfo['fullName']}"),
                       SizedBox(
                         height: heightt * .003,
                       ),
                       Text(
-                        "Heart Surgeon",
+                       "${DoctorsSpecilizationcon.DocInfo['specialization']}",
                         style:
                             TextStyle(fontSize: 12, color: HexColor("#AEB2BB")),
                       ),
@@ -106,9 +112,9 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                              const Text(
-                                "5",
-                                style: TextStyle(
+                               Text(
+                               "${DoctorsSpecilizationcon.DocInfo['rating']}",
+                                style: const TextStyle(
                                   fontSize: 12,
                                 ),
                               ),
@@ -158,9 +164,9 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                              const Text(
-                                "1000+",
-                                style: TextStyle(
+                               Text(
+                                "${DoctorsSpecilizationcon.DocInfo['totalPatients']}+",
+                                style: const TextStyle(
                                   fontSize: 12,
                                 ),
                               ),
@@ -210,9 +216,9 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                              const Text(
-                                "10 Years",
-                                style: TextStyle(
+                               Text(
+                               "${DoctorsSpecilizationcon.DocInfo['experience']} Years",
+                                style: const TextStyle(
                                   fontSize: 12,
                                 ),
                               ),
@@ -235,7 +241,8 @@ class AboutDoctor extends StatelessWidget {
                 child: Container(
                   width: double.infinity,
                   // height: heightt * .25,
-                  padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                  padding:
+                      const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: const BorderRadius.all(Radius.circular(15)),
@@ -244,14 +251,16 @@ class AboutDoctor extends StatelessWidget {
                         color: HexColor("#000000").withAlpha(35),
                         // spreadRadius: 5,
                         blurRadius: 6,
-                        offset: const Offset(0, 3), // changes position of shadow
+                        offset:
+                            const Offset(0, 3), // changes position of shadow
                       ),
                     ],
                   ),
                   child: ReadMoreText(
-                    "Dr. Abdo Mohamed his MD from the University of Cairo, where he also completeda PhD in cardiac physiology and a General Surgery residency.PhD in cardiac physiology and a General Surgery residency.Dr. Abdo Mohamed his MD from the University of Cairo, where he also completedaDr. Abdo Mohamed his MD from the University of Cairo, where he also completeda",
+                    "${DoctorsSpecilizationcon.DocInfo['about']}",
                     trimLines: 5,
-                    preDataTextStyle: const TextStyle(fontWeight: FontWeight.w500),
+                    preDataTextStyle:
+                        const TextStyle(fontWeight: FontWeight.w500),
                     style: const TextStyle(color: Colors.black),
                     colorClickableText: HexColor("#285FFA"),
                     trimMode: TrimMode.Line,
@@ -269,7 +278,8 @@ class AboutDoctor extends StatelessWidget {
                   Container(
                     width: double.infinity,
                     // height: heightt * .25,
-                    padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 20, horizontal: 20),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: const BorderRadius.all(Radius.circular(15)),
@@ -278,7 +288,8 @@ class AboutDoctor extends StatelessWidget {
                           color: HexColor("#000000").withAlpha(35),
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: const Offset(0, 3), // changes position of shadow
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -291,7 +302,7 @@ class AboutDoctor extends StatelessWidget {
                         SizedBox(
                           width: widtth * .03,
                         ),
-                        const Text("Damietta Road, New Damietta City")
+                         Text("${DoctorsSpecilizationcon.DocInfo['location']}")
                       ],
                     ),
                   ),

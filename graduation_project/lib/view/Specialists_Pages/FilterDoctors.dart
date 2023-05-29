@@ -13,8 +13,9 @@ class FilerDoctors extends StatelessWidget {
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
-    SfRangeValues values = const SfRangeValues(3, 5);
-    SfRangeValues values1 = const SfRangeValues(10, 20);
+   
+    SfRangeValues values = const SfRangeValues(3.0, 5.0);
+    SfRangeValues values1 = const SfRangeValues(10.0, 20.0);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: appBar("Filters"),
@@ -71,7 +72,8 @@ class FilerDoctors extends StatelessWidget {
 
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: const Offset(0, 3), // changes position of shadow
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -103,7 +105,8 @@ class FilerDoctors extends StatelessWidget {
 
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: const Offset(0, 3), // changes position of shadow
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),

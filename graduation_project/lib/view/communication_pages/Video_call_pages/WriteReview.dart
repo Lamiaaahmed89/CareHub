@@ -29,7 +29,7 @@ class Review extends StatelessWidget {
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
                 image: const DecorationImage(
-                    image: AssetImage("assets/abdo.jpg"), fit: BoxFit.cover),
+                    image: AssetImage("assets/images/abdo.jpg"), fit: BoxFit.cover),
                 border: Border.all(color: HexColor("#285FFA"), width: 2)),
           ),
           // SizedBox(
@@ -52,6 +52,7 @@ class Review extends StatelessWidget {
           Container(
               padding: EdgeInsets.symmetric(horizontal: widtth * .17),
               child: GetBuilder<VideoCallController>(
+                init:VideoCallController(),
                 builder: (controller) => Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -66,12 +67,12 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/star fill.svg"))
+                                child: SvgPicture.asset("assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
-                                    "assets/star stroke.svg"))),
+                                    "assets/images/star stroke.svg"))),
                     GestureDetector(
                         onTap: (() {
                           controller.Rating(2);
@@ -83,12 +84,12 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/star fill.svg"))
+                                child: SvgPicture.asset("assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
-                                    "assets/star stroke.svg"))),
+                                    "assets/images/star stroke.svg"))),
                     GestureDetector(
                         onTap: (() {
                           controller.Rating(3);
@@ -100,12 +101,12 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/star fill.svg"))
+                                child: SvgPicture.asset("assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
-                                    "assets/star stroke.svg"))),
+                                    "assets/images/star stroke.svg"))),
                     GestureDetector(
                         onTap: (() {
                           controller.Rating(4);
@@ -117,12 +118,12 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/star fill.svg"))
+                                child: SvgPicture.asset("assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
-                                    "assets/star stroke.svg"))),
+                                    "assets/images/star stroke.svg"))),
                     GestureDetector(
                         onTap: (() {
                           controller.Rating(5);
@@ -134,12 +135,12 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/star fill.svg"))
+                                child: SvgPicture.asset("assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
                                 child: SvgPicture.asset(
-                                    "assets/star stroke.svg"))),
+                                    "assets/images/star stroke.svg"))),
                   ],
                 ),
               )),

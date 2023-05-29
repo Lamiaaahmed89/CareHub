@@ -48,35 +48,7 @@ class _HomePageState extends State<HomePage> {
                   color: Second_color,
                 ))
           ]),
-      
-      // CurvedNavigationBar(
-      //   animationCurve: Curves.easeInOut,
-      //   animationDuration: Duration(milliseconds: 600),
-      //   backgroundColor: Main_color,
-      //   color: white_color,
-      //   height: 60,
-      //   items: <Widget>[
-      //     const Icon(Iconsax.home_2),
-      //     const Icon(Iconsax.search_normal),
-      //     const Icon(Iconsax.calendar_1),
-      //     const Icon(Iconsax.message),
-      //     SvgPicture.asset('assets/images/home images/logout.svg'),
-      //   ],
-      //   onTap: (index) {
-      //     if (index == 0) {
-      //       Navigator.pushNamed(context, HomePage.id);
-      //     } else if (index == 1) {
-      //       Navigator.pushNamed(context, SpecialistsListView.id);
-      //     } else if (index == 2) {
-      //       Navigator.pushNamed(context, UpComming.id);
-      //     } else if (index == 3) {
-      //       Navigator.pushNamed(context, Messages.id);
-      //     } else if (index == 4) {
-      //       Navigator.pushNamed(context, LoginPage.id);
-      //     }
-      //     // print(index);
-      //   },
-      // ),
+     
       body: Padding(
         padding: const EdgeInsetsDirectional.only(top: 32, start: 16, end: 16),
         child: ListView(

@@ -7,9 +7,13 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:iconsax/iconsax.dart';
 
+import '../Controllers/SpesilizationController.dart';
 import '../view/Specialists_Pages/Doctors.dart';
 
-Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
+Widget SpecialistsCard(
+    widtth, heightt, specialist, doctorsNum, svgPath, id, context) {
+  DoctorsSpecilization DoctorsSpecilizationcon =
+      Get.put(DoctorsSpecilization());
   return Padding(
     //  vertical: heightt * .01,
     padding: EdgeInsets.only(
@@ -19,7 +23,7 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
         right: widtth * .009),
     child: GestureDetector(
       onTap: (() {
-        Get.to(() => const Doctors());
+        DoctorsSpecilizationcon.GetAllDoctorsOneSpesilization(id, context);
       }),
       child: Stack(children: [
         Container(
@@ -72,7 +76,7 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
                       height: 10,
                     ),
                     Text(
-                      "$doctorsNum",
+                      "$doctorsNum Doctors",
                       style:
                           TextStyle(color: HexColor("#AEB2BB"), fontSize: 12),
                     )
@@ -89,7 +93,7 @@ Widget SpecialistsCard(widtth, heightt, specialist, doctorsNum, svgPath) {
             width: widtth * .07,
             child: IconButton(
                 onPressed: () {
-                  Get.to(() => const Doctors());
+                  DoctorsSpecilizationcon.GetAllDoctorsOneSpesilization(id, context);
                 },
                 icon: Icon(
                   Iconsax.arrow_right_3,
