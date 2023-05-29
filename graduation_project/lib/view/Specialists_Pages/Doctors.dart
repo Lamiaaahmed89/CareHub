@@ -10,12 +10,17 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:iconsax/iconsax.dart';
 
+import '../../Controllers/SpesilizationController.dart';
+import '../../Controllers/VideoCallController.dart';
+
 class Doctors extends StatelessWidget {
   const Doctors({super.key});
   static String id = 'Doctors';
 
   @override
   Widget build(BuildContext context) {
+    DoctorsSpecilization DoctorsSpecilizationcon =
+        Get.put(DoctorsSpecilization());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -35,9 +40,10 @@ class Doctors extends StatelessWidget {
                       right: widtth * .005),
                   // padding: EdgeInsets.symmetric(vertical: heightt * .03, horizontal: 5),
                   child: Container(
-                    width: widtth * .73,
-                    height: heightt * .065,
-                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 3),
+                    width: widtth * .72,
+                    height: heightt * .09,
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 16, vertical: 3),
                     decoration: BoxDecoration(
                       color: Colors.white,
                       borderRadius: const BorderRadius.all(Radius.circular(9)),
@@ -46,7 +52,8 @@ class Doctors extends StatelessWidget {
                           color: HexColor("#000000").withAlpha(35),
                           // spreadRadius: 5,
                           blurRadius: 6,
-                          offset: const Offset(0, 3), // changes position of shadow
+                          offset:
+                              const Offset(0, 3), // changes position of shadow
                         ),
                       ],
                     ),
@@ -57,7 +64,6 @@ class Doctors extends StatelessWidget {
                           suffixIcon: Icon(
                             Iconsax.search_normal,
                             color: HexColor("#285FFA"),
-                            size: widtth * .07,
                           ),
                           border: InputBorder.none,
                           fillColor: HexColor("#FFFFFF")),
@@ -65,42 +71,60 @@ class Doctors extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  width: widtth * .03,
+                  width: widtth * .01,
                 ),
-                Container(
-                    height: heightt * .065,
-                    width: widtth * .15,
-                    padding: const EdgeInsets.symmetric(horizontal: 0, vertical: 3),
-                    decoration: BoxDecoration(
-                      color: HexColor("#285FFA"),
-                      borderRadius: const BorderRadius.all(Radius.circular(9)),
-                      boxShadow: [
-                        BoxShadow(
-                          color: HexColor("#000000").withAlpha(35),
-                          // spreadRadius: 5,
-                          blurRadius: 6,
-                          offset: const Offset(0, 3), // changes position of shadow
-                        ),
-                      ],
-                    ),
-                    child: IconButton(
-                        onPressed: (() {
-                          Get.to(const FilerDoctors());
-                        }),
-                        icon: const Icon(
-                          Iconsax.setting_5,
-                          color: Colors.white,
-                        )))
+                Expanded(
+                  child: Container(
+                      height: heightt * .09,
+                      width: widtth * .15,
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 0, vertical: 3),
+                      decoration: BoxDecoration(
+                        color: HexColor("#285FFA"),
+                        borderRadius:
+                            const BorderRadius.all(Radius.circular(9)),
+                        boxShadow: [
+                          BoxShadow(
+                            color: HexColor("#000000").withAlpha(35),
+                            // spreadRadius: 5,
+                            blurRadius: 6,
+                            offset: const Offset(
+                                0, 3), // changes position of shadow
+                          ),
+                        ],
+                      ),
+                      child: IconButton(
+                          onPressed: (() {
+                            Get.to(const FilerDoctors());
+                          }),
+                          icon: const Icon(
+                            Iconsax.setting_5,
+                            color: Colors.white,
+                          ))),
+                )
               ],
             ),
             Expanded(
               child: ListView.builder(
-                  itemCount: 9,
+                  itemCount:
+                      DoctorsSpecilizationcon.ALLDocOneSpecilization.length,
                   itemBuilder: (BuildContext context, index) {
                     return DoctorCard(
-                      widtth,
-                      heightt,
-                    );
+                        widtth,
+                        heightt,
+                        DoctorsSpecilizationcon.ALLDocOneSpecilization[index]
+                            ['fullName'],
+                        DoctorsSpecilizationcon.ALLDocOneSpecilization[index]
+                            ['specialization'],
+                        DoctorsSpecilizationcon.ALLDocOneSpecilization[index]
+                            ['photo'],
+                        DoctorsSpecilizationcon.ALLDocOneSpecilization[index]
+                            ['clinicName'],
+                        DoctorsSpecilizationcon.ALLDocOneSpecilization[index]
+                            ['rating'],
+                        DoctorsSpecilizationcon.ALLDocOneSpecilization[index]
+                            ['id'],
+                        context);
                   }),
             ),
           ],
@@ -110,7 +134,10 @@ class Doctors extends StatelessWidget {
   }
 }
 
-Widget DoctorCard(widtth, heightt) {
+Widget DoctorCard(widtth, heightt, docname, spelization, photo, clinicnmae,
+    rating, docid, context) {
+  DoctorsSpecilization DoctorsSpecilizationcon =
+      Get.put(DoctorsSpecilization());
   return Padding(
     padding: EdgeInsets.only(
         left: widtth * .009,
@@ -119,10 +146,10 @@ Widget DoctorCard(widtth, heightt) {
         right: widtth * .009),
     child: GestureDetector(
         onTap: () {
-          Get.to(const AboutDoctor());
+          DoctorsSpecilizationcon.GetDoctorInfo(docid, context);
         },
         child: Container(
-          height: 120,
+          height: 150,
           padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 12),
           decoration: BoxDecoration(
             color: Colors.white,
@@ -140,12 +167,11 @@ Widget DoctorCard(widtth, heightt) {
           child: Row(
             children: [
               Container(
-                width: 85,
-                height: 90,
+                width: 87,
+                height: 95,
                 decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      fit: BoxFit.cover,
-                      image: AssetImage("assets/images/abdo.jpg")),
+                  image: DecorationImage(
+                      fit: BoxFit.cover, image: NetworkImage(photo)),
                   borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   color: HexColor("#f0f0f0"),
                 )
@@ -164,16 +190,19 @@ Widget DoctorCard(widtth, heightt) {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 15, left: 20),
+                padding: const EdgeInsets.only(top: 15, left: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const Text("Dr. Abdo Mohamed"),
+                    Text(
+                      '$docname',
+                      style: const TextStyle(fontWeight: FontWeight.w500),
+                    ),
                     const SizedBox(
                       height: 5,
                     ),
                     Text(
-                      "Heart Surgeon ",
+                      "$spelization",
                       style:
                           TextStyle(color: HexColor("#AEB2BB"), fontSize: 12),
                     ),
@@ -181,9 +210,46 @@ Widget DoctorCard(widtth, heightt) {
                       height: 5,
                     ),
                     Text(
-                      "Smart medical center",
+                      "$clinicnmae",
                       style:
                           TextStyle(color: HexColor("#AEB2BB"), fontSize: 12),
+                    ),
+                    Expanded(
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          1 <= rating
+                              ? SvgPicture.asset("assets/images/star fill.svg")
+                              : SvgPicture.asset(
+                                  "assets/images/star stroke.svg"),
+                          2 <= rating
+                              ? SizedBox(
+                                  width: widtth * .095,
+                                  child: SvgPicture.asset(
+                                      "assets/images/star fill.svg"))
+                              : SizedBox(
+                                  width: widtth * .095,
+                                  child: SvgPicture.asset(
+                                      "assets/images/star stroke.svg")),
+                          3 <= rating
+                              ? SvgPicture.asset("assets/images/star fill.svg")
+                              : SvgPicture.asset(
+                                  "assets/images/star stroke.svg"),
+                          4 <= rating
+                              ? SizedBox(
+                                  width: widtth * .095,
+                                  child: SvgPicture.asset(
+                                      "assets/images/star fill.svg"))
+                              : SizedBox(
+                                  width: widtth * .095,
+                                  child: SvgPicture.asset(
+                                      "assets/images/star stroke.svg")),
+                          5 <= rating
+                              ? SvgPicture.asset("assets/images/star fill.svg")
+                              : SvgPicture.asset(
+                                  "assets/images/star stroke.svg"),
+                        ],
+                      ),
                     ),
                   ],
                 ),

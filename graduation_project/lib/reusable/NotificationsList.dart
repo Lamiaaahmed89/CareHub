@@ -10,6 +10,7 @@ import 'package:graduation_project/reusable/NotificationCard.dart';
 Widget NotificationsList(Widtth, heightt) {
   return Expanded(
       child: GetBuilder<NotificationController>(
+        init:NotificationController(),
           builder: ((controller) => ListView.builder(
               itemCount: controller.notificationList.length,
               itemBuilder: (BuildContext context, index) {

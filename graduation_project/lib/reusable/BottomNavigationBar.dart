@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, must_be_immutable, library_private_types_in_public_api
+// ignore_for_file: file_names, must_be_immutable, library_private_types_in_public_api, non_constant_identifier_names
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
@@ -6,6 +6,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../Controllers/SpesilizationController.dart';
 import '../Controllers/logincontroller.dart';
 import '../constants/colors.dart';
 import '../view/Appointment_pages/upcomming.dart';
@@ -16,6 +17,7 @@ import '../view/registaration_pages/login_pages/login_page.dart';
 
 class BottomNavBar extends StatefulWidget {
   static String id = 'BottomNavBar';
+  static int navindex = 0;
   LoginController loginController = Get.put(LoginController());
 
   BottomNavBar({super.key});
@@ -24,6 +26,8 @@ class BottomNavBar extends StatefulWidget {
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
+  DoctorsSpecilization DoctorsSpecilizationcon =
+      Get.put(DoctorsSpecilization());
   int selectedIndex = 0;
   final List<Widget> _pages = [
     const HomePage(),
@@ -40,7 +44,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
-        index: 0,
+        index: BottomNavBar.navindex,
         height: 60.0,
         items: <Widget>[
           Icon(Iconsax.home_2,
@@ -65,6 +69,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
           if (index == 4) {
             Navigator.pushNamedAndRemoveUntil(
                 context, 'LoginPage', (route) => false);
+          } else if (index == 1) {
+            DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
+            setState(() {
+              selectedIndex = index;
+            });
           } else {
             setState(() {
               selectedIndex = index;

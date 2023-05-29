@@ -1,13 +1,9 @@
-import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/component/home_container.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:graduation_project/view/EHR_Pages/EHRfiles.dart';
-import 'package:graduation_project/view/Messages_Pages/AllMessages.dart';
-import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 import 'package:graduation_project/view/registaration_pages/personal_info.dart';
 import 'package:iconsax/iconsax.dart';
 import '../EmergencyCard_Pages/EnterCardData.dart';
@@ -58,31 +54,7 @@ class _HomePageState extends State<HomePage> {
                   color: Second_color,
                 ))
           ]),
-      bottomNavigationBar: CurvedNavigationBar(
-        backgroundColor: Main_color,
-        color: white_color,
-        height: 60,
-        items: <Widget>[
-          const Icon(Iconsax.home_2),
-          const Icon(Iconsax.search_normal),
-          const Icon(Iconsax.calendar_1),
-          const Icon(Iconsax.message),
-          SvgPicture.asset('assets/images/home images/logout.svg'),
-        ],
-        onTap: (index) {
-          if (index == 0) {
-            Navigator.pushNamed(context, HomePage.id);
-          } else if (index == 1) {
-          } else if (index == 2) {
-            Navigator.pushNamed(context, UpComming.id);
-          } else if (index == 3) {
-            Navigator.pushNamed(context, Messages.id);
-          } else if (index == 4) {
-            Navigator.pushNamed(context, LoginPage.id);
-          }
-          // print(index);
-        },
-      ),
+     
       body: Padding(
         padding: const EdgeInsetsDirectional.only(top: 32, start: 16, end: 16),
         child: ListView(
