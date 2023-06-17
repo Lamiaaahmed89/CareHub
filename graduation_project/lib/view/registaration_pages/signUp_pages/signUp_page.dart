@@ -25,8 +25,7 @@ class SignupPage extends StatefulWidget {
 
 class _SignupPageState extends State<SignupPage> {
     SignUpController signupcontroller = Get.put(SignUpController());
-
-  bool passwardObsecure = true;
+    bool passwordObscure = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -90,17 +89,24 @@ class _SignupPageState extends State<SignupPage> {
                       spreadRadius: BorderSide.strokeAlignOutside),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
+                  obscureText: passwordObscure,
                     controller: signupcontroller.Passwordcontroller,
                     decoration: InputDecoration(
                       fillColor: white_color,
                       filled: true,
                       hintText: 'Enter Your Password',
+                      suffixIcon: IconButton(
+                          onPressed: () {
+                            setState(() {
+                              passwordObscure = !passwordObscure;
+                            });
+                          },
+                          icon: Icon(passwordObscure
+                              ? Iconsax.eye_slash
+                              : Iconsax.eye),
+                              color: Main_color,),
                       prefixIcon: Icon(
-                        Iconsax.sms,
-                        color: Main_color,
-                      ),
-                      suffixIcon: Icon(
-                        Iconsax.eye,
+                        Iconsax.key,
                         color: Main_color,
                       ),
                       border: OutlineInputBorder(
