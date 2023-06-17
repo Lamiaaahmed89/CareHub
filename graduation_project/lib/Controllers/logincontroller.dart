@@ -3,6 +3,7 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:graduation_project/Controllers/SpesilizationController.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -12,6 +13,9 @@ import '../reusable/BottomNavigationBar.dart';
 import '../view/registaration_pages/signUp_pages/user_information.dart';
 
 class LoginController extends GetxController {
+  DoctorsSpecilization DoctorsSpecilizationcon =
+      Get.put(DoctorsSpecilization());
+
   static String? value;
   TextEditingController emailcontroller = TextEditingController();
   TextEditingController Passwordcontroller = TextEditingController();
@@ -29,7 +33,6 @@ class LoginController extends GetxController {
             return Center(
               child: CircularProgressIndicator(
                 color: Main_color,
-                
               ),
             );
           });
@@ -51,7 +54,7 @@ class LoginController extends GetxController {
         await prefs.setString('token', token);
 
         value = prefs.getString("token");
-        await Checkpatientsinfo(value);
+        await Checkpatientsinfo(value, context);
         print("token: $value");
       } else if (response.statusCode == 400) {
         var error = jsonDecode(response.body)["errors"]['Email'][0];
@@ -64,8 +67,7 @@ class LoginController extends GetxController {
                 children: [Text(error.toString())],
               );
             });
-      }
-      else if (response.statusCode == 401) {
+      } else if (response.statusCode == 401) {
         showDialog(
             context: Get.context!,
             builder: (context) {
@@ -76,7 +78,6 @@ class LoginController extends GetxController {
               );
             });
       }
-
     } catch (error) {
       Get.back();
       showDialog(
@@ -91,7 +92,7 @@ class LoginController extends GetxController {
     }
   }
 
-  Future<void> Checkpatientsinfo(token) async {
+  Future<void> Checkpatientsinfo(token, context) async {
     var header = {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token'
@@ -102,7 +103,8 @@ class LoginController extends GetxController {
       http.Response response = await http.get(url, headers: header);
       print(response.statusCode);
       if (response.statusCode == 200) {
-        // final json = jsonDecode(response.body);
+        await DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
+
         emailcontroller.clear();
         Passwordcontroller.clear();
         Get.off(() => BottomNavBar());

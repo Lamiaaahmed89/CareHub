@@ -63,17 +63,14 @@ class _BottomNavBarState extends State<BottomNavBar> {
         color: Colors.white,
         buttonBackgroundColor: Main_color,
         backgroundColor: Colors.transparent,
+        
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 600),
         onTap: (index) {
           if (index == 4) {
             Navigator.pushNamedAndRemoveUntil(
                 context, 'LoginPage', (route) => false);
-          } else if (index == 1) {
-            DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
-            setState(() {
-              selectedIndex = index;
-            });
+         
           } else {
             setState(() {
               selectedIndex = index;

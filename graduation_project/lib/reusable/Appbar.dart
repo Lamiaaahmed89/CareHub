@@ -4,13 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
+
+import 'BottomNavigationBar.dart';
+
 PreferredSizeWidget appBar(String Title) {
   return AppBar(
     backgroundColor: Colors.white,
     elevation: 0,
     leading: IconButton(
         onPressed: () {
-          Get.back();
+          Get.off(() => BottomNavBar());
         },
         icon: Icon(
           Iconsax.arrow_left_2,
@@ -22,7 +25,6 @@ PreferredSizeWidget appBar(String Title) {
           color: HexColor("#252632"),
           fontSize: 16,
           fontWeight: FontWeight.w500),
-  
     ),
     centerTitle: true,
   );

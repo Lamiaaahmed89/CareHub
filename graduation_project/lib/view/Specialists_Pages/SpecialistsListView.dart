@@ -15,12 +15,11 @@ import '../../constants/colors.dart';
 class SpecialistsListView extends StatelessWidget {
   const SpecialistsListView({super.key});
   static String id = 'SpecialistsListView';
-  
 
   @override
   Widget build(BuildContext context) {
     DoctorsSpecilization DoctorsSpecilizationcon =
-      Get.put(DoctorsSpecilization());
+        Get.put(DoctorsSpecilization());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
 
@@ -72,13 +71,15 @@ class SpecialistsListView extends StatelessWidget {
                   itemBuilder: (BuildContext context, index) {
                     final specialistt = allSpecialists[index];
                     return SpecialistsCard(
-                      widtth,
-                      heightt,
-                      specialistt.specialist,
-                      DoctorsSpecilizationcon.ALLDocSpecilization[index]["totalDoctors"],
-                      specialistt.SpecialistsSVG,
-                     DoctorsSpecilizationcon.ALLDocSpecilization[index]["id"],context
-                    );
+                        widtth,
+                        heightt,
+                        specialistt.specialist,
+                        DoctorsSpecilizationcon.ALLDocSpecilization[index]
+                            ["totalDoctors"],
+                        specialistt.SpecialistsSVG,
+                        DoctorsSpecilizationcon.ALLDocSpecilization[index]
+                            ["id"],
+                        context);
                   }),
             )
           ],

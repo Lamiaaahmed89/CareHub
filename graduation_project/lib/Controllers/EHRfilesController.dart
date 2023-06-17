@@ -12,11 +12,11 @@ class EHRfilesController extends GetxController {
       Medical_Tests = true;
       Get.to(()=>const EachDoctorTests());
     }
-    if (option == "results") {
+   if (option == "results") {
       Medical_Tests = false;
       
     }
     
     update();
-  }
+  } 
 }

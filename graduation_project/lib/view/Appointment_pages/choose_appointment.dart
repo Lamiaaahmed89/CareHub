@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/Appointment_pages/appointment_date.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
+
+import '../../Controllers/Appoinment.dart';
 
 class ChooseAppointment extends StatelessWidget {
   const ChooseAppointment({super.key});
@@ -12,6 +15,7 @@ class ChooseAppointment extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
     return Scaffold(
       backgroundColor: white_color,
       appBar: appBar('Book an Appointment'),
@@ -23,6 +27,8 @@ class ChooseAppointment extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, AppointmentDate.id);
+                docappoin.constype = "online";
+                docappoin.OneDocOfflineAppoinments = null;
               },
               child: Container(
                 width: double.infinity,
@@ -69,6 +75,8 @@ class ChooseAppointment extends StatelessWidget {
             GestureDetector(
               onTap: () {
                 Navigator.pushNamed(context, AppointmentDate.id);
+                docappoin.constype = "offline";
+                docappoin.OneDocOfflineAppoinments = null;
               },
               child: Container(
                 width: double.infinity,

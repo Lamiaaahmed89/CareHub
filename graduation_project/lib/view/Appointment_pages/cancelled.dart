@@ -9,7 +9,6 @@ import 'package:graduation_project/reusable/HomeBar.dart';
 class Cancelled extends StatelessWidget {
   static String id = 'Cancelled';
   Cancelled({super.key});
-  List TryNumm = [1, 2, 3, 4, 1, 1, 1, 1];
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
@@ -20,7 +19,7 @@ class Cancelled extends StatelessWidget {
       body: Column(
         children: [
           HomeBar(widtth, heightt),
-          AppListView(TryNumm, CancelledCard(widtth, heightt)),
+          AppListView( CancelledCard(widtth, heightt)),
         ],
       ),
     );

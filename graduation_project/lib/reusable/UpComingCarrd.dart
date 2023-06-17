@@ -1,15 +1,30 @@
 // ignore_for_file: non_constant_identifier_names, file_names
 
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
 
+import '../Controllers/Appoinment.dart';
 
 // Iconsax.video,
 // Iconsax.call,
 // Iconsax.map_1,
 
-Widget UpComingCarrd(widtth, heightt) {
+Widget UpComingCarrd(widtth, heightt, index) {
+  DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
+  Map<dynamic, dynamic> ICON = {
+    'Video Call': Icon(
+      Iconsax.video,
+      color: HexColor("#285FFA"),
+      size: widtth * .05,
+    ),
+    'Offline': Icon(
+      Iconsax.location,
+      color: HexColor("#285FFA"),
+      size: widtth * .05,
+    )
+  };
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: widtth * .038, vertical: 10),
     child: Container(
@@ -35,13 +50,15 @@ Widget UpComingCarrd(widtth, heightt) {
               Row(
                 children: [
                   Container(
-                    width: widtth * .17,
-                    height: heightt * .085,
+                    width: 87,
+                    height: 90,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
+                      image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                          image: NetworkImage(
+                              "${docappoin.UpcomingAppoinments[index]['doctorPhoto']}")),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),
                   ),
@@ -51,7 +68,7 @@ Widget UpComingCarrd(widtth, heightt) {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Dr. Abdo Mohamed",
+                          "${docappoin.UpcomingAppoinments[index]['doctorName']}",
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -102,11 +119,7 @@ Widget UpComingCarrd(widtth, heightt) {
                     color: HexColor("#f0f0f0"),
                     shape: BoxShape.circle,
                   ),
-                  child: Icon(
-                    Iconsax.video,
-                    color: HexColor("#285FFA"),
-                    size: widtth * .05,
-                  )),
+                  child: ICON["Offline"]),
             ],
           ),
           const SizedBox(

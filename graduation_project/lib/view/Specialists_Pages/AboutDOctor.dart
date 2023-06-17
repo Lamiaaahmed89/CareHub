@@ -1,6 +1,7 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/view/Appointment_pages/choose_appointment.dart';
@@ -12,6 +13,7 @@ import 'package:readmore/readmore.dart';
 import '../../Controllers/SpesilizationController.dart';
 import '../../component/register_button.dart';
 import '../../constants/colors.dart';
+import 'allreveiw.dart';
 
 class AboutDoctor extends StatelessWidget {
   const AboutDoctor({super.key});
@@ -67,7 +69,7 @@ class AboutDoctor extends StatelessWidget {
                         height: heightt * .003,
                       ),
                       Text(
-                       "${DoctorsSpecilizationcon.DocInfo['specialization']}",
+                        "${DoctorsSpecilizationcon.DocInfo['specialization']}",
                         style:
                             TextStyle(fontSize: 12, color: HexColor("#AEB2BB")),
                       ),
@@ -113,8 +115,8 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                               Text(
-                               "${DoctorsSpecilizationcon.DocInfo['rating']}",
+                              Text(
+                                "${DoctorsSpecilizationcon.DocInfo['rating']}",
                                 style: const TextStyle(
                                   fontSize: 12,
                                 ),
@@ -165,7 +167,7 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                               Text(
+                              Text(
                                 "${DoctorsSpecilizationcon.DocInfo['totalPatients']}+",
                                 style: const TextStyle(
                                   fontSize: 12,
@@ -217,8 +219,8 @@ class AboutDoctor extends StatelessWidget {
                               SizedBox(
                                 height: heightt * .003,
                               ),
-                               Text(
-                               "${DoctorsSpecilizationcon.DocInfo['experience']} Years",
+                              Text(
+                                "${DoctorsSpecilizationcon.DocInfo['experience']} Years",
                                 style: const TextStyle(
                                   fontSize: 12,
                                 ),
@@ -246,11 +248,10 @@ class AboutDoctor extends StatelessWidget {
                       const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
                   decoration: BoxDecoration(
                     color: Colors.white,
-                    borderRadius: const BorderRadius.all(Radius.circular(15)),
+                    borderRadius: BorderRadius.circular(15),
                     boxShadow: [
                       BoxShadow(
                         color: HexColor("#000000").withAlpha(35),
-                        // spreadRadius: 5,
                         blurRadius: 6,
                         offset:
                             const Offset(0, 3), // changes position of shadow
@@ -303,10 +304,141 @@ class AboutDoctor extends StatelessWidget {
                         SizedBox(
                           width: widtth * .03,
                         ),
-                         Text("${DoctorsSpecilizationcon.DocInfo['location']}")
+                        Text("${DoctorsSpecilizationcon.DocInfo['location']}"),
                       ],
                     ),
                   ),
+                  SizedBox(
+                    height: heightt * .03,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      const Text("Reviews"),
+                      TextButton(
+                        onPressed: () {
+                          Get.to(() => const AllReveiw());
+                        },
+                        child: Text(
+                          "See All",
+                          style: TextStyle(color: Main_color),
+                        ),
+                      )
+                    ],
+                  ),
+                  SizedBox(
+                    height: heightt * .03,
+                  ),
+                  ListView.separated(
+                      separatorBuilder: (context, index) => const SizedBox(
+                            height: 10,
+                          ),
+                      shrinkWrap: true,
+                      itemCount: 3,
+                      itemBuilder: (BuildContext context, index) {
+                        return GestureDetector(
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (BuildContext context) {
+                                  return AlertDialog(
+                                    scrollable: true,
+                                    content: Text(
+                                        "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['comment']}"),
+                                  );
+                                },
+                              );
+                            },
+                            child: Container(
+                                height: 150,
+                                padding: const EdgeInsets.symmetric(
+                                    vertical: 12, horizontal: 12),
+                                decoration: BoxDecoration(
+                                  color: Colors.white,
+                                  borderRadius: const BorderRadius.all(
+                                      Radius.circular(7)),
+                                  boxShadow: [
+                                    BoxShadow(
+                                      color: HexColor("#000000").withAlpha(35),
+                                      // spreadRadius: 5,
+                                      blurRadius: 6,
+                                      offset: const Offset(0, 3),
+                                      // changes position of shadow
+                                    ),
+                                  ],
+                                ),
+                                child: Row(
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Container(
+                                          width: 87,
+                                          height: 120,
+                                          decoration: BoxDecoration(
+                                            image: DecorationImage(
+                                                fit: BoxFit.cover,
+                                                image: NetworkImage(
+                                                    "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['patientPhoto']}")),
+                                            borderRadius:
+                                                const BorderRadius.all(
+                                                    Radius.circular(8.0)),
+                                            color: HexColor("#f0f0f0"),
+                                          )),
+                                      Container(
+                                        width: 188,
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  left: 10),
+                                              child: Text(
+                                                "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['fullName']}",
+                                                style: const TextStyle(
+                                                    fontSize: 13,
+                                                    fontWeight:
+                                                        FontWeight.w600),
+                                              ),
+                                            ),
+                                            Padding(
+                                              padding: const EdgeInsets.only(
+                                                  top: 10, left: 10),
+                                              child: Text(
+                                                "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['comment']}",
+                                                maxLines: 3,
+                                                style: TextStyle(
+                                                  fontSize: 12,
+                                                  color: HexColor("#AEB2BB"),
+                                                ),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Expanded(
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            SvgPicture.asset(
+                                              "assets/images/star fill.svg",
+                                              height: 20,
+                                            ),
+                                            const SizedBox(
+                                              width: 2,
+                                            ),
+                                            Text(
+                                              "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['rate']}",
+                                              style: TextStyle(
+                                                  fontSize: 13,
+                                                  color: Main_color),
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ])));
+                      }),
                   SizedBox(
                     height: heightt * .03,
                   ),
@@ -331,3 +463,91 @@ class AboutDoctor extends StatelessWidget {
     );
   }
 }
+
+// Row(children: [
+//                           Container(
+//                             width: widtth * .90,
+//                             decoration: BoxDecoration(
+//                               color: Colors.white,
+//                               borderRadius:
+//                                   const BorderRadius.all(Radius.circular(7)),
+//                               boxShadow: [
+//                                 BoxShadow(
+//                                   color: HexColor("#000000").withAlpha(35),
+//                                   blurRadius: 6,
+//                                   offset: const Offset(0, 3),
+//                                 ),
+//                               ],
+//                             ),
+//                             child: Padding(
+//                               padding: EdgeInsets.only(top: heightt * .01),
+//                               child: SizedBox(
+//                                 height: 120,
+//                                 child: ListTile(
+                                  
+//                                   trailing: Wrap(
+//                                     spacing: 5,
+//                                     children: [
+//                                       SvgPicture.asset(
+//                                         "assets/images/star fill.svg",
+//                                         height: 20,
+//                                       ),
+//                                       Text(
+//                                         "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['rate']}",
+//                                         style: TextStyle(
+//                                             fontSize: 13, color: Main_color),
+//                                       ),
+//                                     ],
+//                                   ),
+//                                   onTap: () {
+//                                     showDialog(
+//                                       context: context,
+//                                       builder: (BuildContext context) {
+//                                         return AlertDialog(
+//                                           scrollable: true,
+//                                           content: Text(
+//                                               "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['comment']}"),
+//                                           actions: [
+//                                             TextButton(
+//                                               onPressed: () =>
+//                                                   Navigator.of(context).pop(),
+//                                               child: const Text('OK'),
+//                                             ),
+//                                           ],
+//                                         );
+//                                       },
+//                                     );
+//                                   },
+//                                   leading: Container(
+//                                       width: 87,
+//                                       height: 120,
+//                                       decoration: BoxDecoration(
+//                                         image: DecorationImage(
+//                                             fit: BoxFit.cover,
+//                                             image: NetworkImage(
+//                                                 "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['patientPhoto']}")),
+//                                         borderRadius: const BorderRadius.all(
+//                                             Radius.circular(8.0)),
+//                                         color: HexColor("#f0f0f0"),
+//                                       )),
+//                                   title: Padding(
+//                                     padding:
+//                                         EdgeInsets.only(bottom: heightt * .01),
+//                                     child: Text(
+//                                       "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['fullName']}",
+//                                       style: const TextStyle(
+//                                           fontSize: 13,
+//                                           fontWeight: FontWeight.bold),
+//                                     ),
+//                                   ),
+//                                   subtitle: Text(
+//                                     "${DoctorsSpecilizationcon.DocInfo['reviewsData'][index]['comment']}",
+//                                     maxLines: 3,
+//                                     overflow: TextOverflow.ellipsis,
+//                                     style: const TextStyle(fontSize: 12),
+//                                   ),
+//                                 ),
+//                               ),
+//                             ),
+//                           ),
+//                         ]);

@@ -15,6 +15,8 @@ import 'package:graduation_project/view/registaration_pages/signUp_pages/signUp_
 
 import 'package:iconsax/iconsax.dart';
 
+import '../../../Controllers/SpesilizationController.dart';
+
 class LoginPage extends StatefulWidget {
   static String id = 'LoginPage';
 
@@ -26,6 +28,7 @@ class LoginPage extends StatefulWidget {
 
 class _LoginPageState extends State<LoginPage> {
   LoginController loginController = Get.put(LoginController());
+   
   bool passwordObscure = true;
   @override
   Widget build(BuildContext context) {
@@ -147,9 +150,9 @@ class _LoginPageState extends State<LoginPage> {
                 color_button: Main_color,
                 text_color: white_color,
                 navigate: () {
+                  
                   loginController.loginwithemail(context);
-                  // Navigator.pushNamedAndRemoveUntil(
-                  //     context, 'BottomNavBar', (route) => false);
+                  
                 },
                 register_txt: 'Log In',
               ),

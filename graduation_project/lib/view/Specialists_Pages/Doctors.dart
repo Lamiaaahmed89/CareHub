@@ -10,6 +10,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 import 'package:iconsax/iconsax.dart';
 
+import '../../Controllers/Appoinment.dart';
 import '../../Controllers/SpesilizationController.dart';
 import '../../Controllers/VideoCallController.dart';
 
@@ -136,6 +137,7 @@ class Doctors extends StatelessWidget {
 
 Widget DoctorCard(widtth, heightt, docname, spelization, photo, clinicnmae,
     rating, docid, context) {
+  DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
   DoctorsSpecilization DoctorsSpecilizationcon =
       Get.put(DoctorsSpecilization());
   return Padding(
@@ -147,6 +149,7 @@ Widget DoctorCard(widtth, heightt, docname, spelization, photo, clinicnmae,
     child: GestureDetector(
         onTap: () {
           DoctorsSpecilizationcon.GetDoctorInfo(docid, context);
+          docappoin.DocId = docid;
         },
         child: Container(
           height: 150,
@@ -167,28 +170,14 @@ Widget DoctorCard(widtth, heightt, docname, spelization, photo, clinicnmae,
           child: Row(
             children: [
               Container(
-                width: 87,
-                height: 95,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                      fit: BoxFit.cover, image: NetworkImage(photo)),
-                  borderRadius: const BorderRadius.all(Radius.circular(8.0)),
-                  color: HexColor("#f0f0f0"),
-                )
-              ),
-              Expanded(
-                child: Container(
-                  // width: widtth * .25,
-                  // height: heightt * .05,
+                  width: 87,
+                  height: 95,
                   decoration: BoxDecoration(
-                    image: const DecorationImage(
-                        fit: BoxFit.cover,
-                        image: AssetImage("assets/abdo.jpg")),
+                    image: DecorationImage(
+                        fit: BoxFit.cover, image: NetworkImage(photo)),
                     borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                     color: HexColor("#f0f0f0"),
-                  ),
-                ),
-              ),
+                  )),
               Padding(
                 padding: const EdgeInsets.only(top: 15, left: 10),
                 child: Column(

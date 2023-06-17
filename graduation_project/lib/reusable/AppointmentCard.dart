@@ -119,13 +119,7 @@ Widget Carrd() {
                                           fontSize: 12,
                                           color: HexColor("#AEB2BB")),
                                     ),
-                                    Text(
-                                      "${controller.options[controller.selectedItem.value]}",
-                                      style: TextStyle(
-                                          fontSize: 12,
-                                          color: HexColor(
-                                              textColor(controller.selectedItem.value))),
-                                    )
+                                    
                                   ],
                                 ))),
                         const SizedBox(
@@ -162,9 +156,7 @@ Widget Carrd() {
           const SizedBox(
             height: 10,
           ),
-          GetX<AppointmentController>(
-              builder: ((controller) =>
-                  ShowButtons(controller.selectedItem.value)))
+         
         ],
       ),
     ),

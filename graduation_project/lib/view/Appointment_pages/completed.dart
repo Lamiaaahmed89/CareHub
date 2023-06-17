@@ -8,7 +8,6 @@ import 'package:graduation_project/reusable/HomeBar.dart';
 
 class Completed extends StatelessWidget {
   Completed({super.key});
-  List TryNuum = [1, 2, 1];
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
@@ -19,7 +18,7 @@ class Completed extends StatelessWidget {
       body: Column(
         children: [
           HomeBar(widtth, heightt),
-          AppListView(TryNuum, CompletedCarrd(widtth, heightt)),
+          AppListView(CompletedCarrd(widtth, heightt)),
         ],
       ),
     );
