@@ -1,4 +1,3 @@
-
 // ignore_for_file: file_names
 
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,12 +7,15 @@ import 'package:graduation_project/Controllers/VideoCallController.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import '../../../Controllers/Appoinment.dart';
 
 class Review extends StatelessWidget {
+  static var index;
   const Review({super.key});
 
   @override
   Widget build(BuildContext context) {
+    DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -28,8 +30,10 @@ class Review extends StatelessWidget {
             height: heightt * .2,
             decoration: BoxDecoration(
                 shape: BoxShape.circle,
-                image: const DecorationImage(
-                    image: AssetImage("assets/images/abdo.jpg"), fit: BoxFit.cover),
+                image: DecorationImage(
+                    image: NetworkImage(
+                        "${docappoin.CompleteApoo[index]['doctorPhoto']}"),
+                    fit: BoxFit.contain),
                 border: Border.all(color: HexColor("#285FFA"), width: 2)),
           ),
           // SizedBox(
@@ -42,7 +46,7 @@ class Review extends StatelessWidget {
           // ),
           const Spacer(),
           Text(
-            "Dr. Abdo Mohamed",
+            "DR.${docappoin.docname}",
             style: TextStyle(color: HexColor("#285FFA")),
           ),
           // SizedBox(
@@ -52,7 +56,7 @@ class Review extends StatelessWidget {
           Container(
               padding: EdgeInsets.symmetric(horizontal: widtth * .17),
               child: GetBuilder<VideoCallController>(
-                init:VideoCallController(),
+                init: VideoCallController(),
                 builder: (controller) => Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
@@ -67,7 +71,8 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/images/star fill.svg"))
+                                child: SvgPicture.asset(
+                                    "assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
@@ -84,7 +89,8 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/images/star fill.svg"))
+                                child: SvgPicture.asset(
+                                    "assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
@@ -101,7 +107,8 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/images/star fill.svg"))
+                                child: SvgPicture.asset(
+                                    "assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
@@ -118,7 +125,8 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/images/star fill.svg"))
+                                child: SvgPicture.asset(
+                                    "assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
@@ -135,7 +143,8 @@ class Review extends StatelessWidget {
                             ? SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
-                                child: SvgPicture.asset("assets/images/star fill.svg"))
+                                child: SvgPicture.asset(
+                                    "assets/images/star fill.svg"))
                             : SizedBox(
                                 width: widtth * .095,
                                 height: heightt * .035,
@@ -144,9 +153,7 @@ class Review extends StatelessWidget {
                   ],
                 ),
               )),
-          // SizedBox(
-          //   height: heightt * .035,
-          // ),
+
           const Spacer(),
           Container(
             padding: EdgeInsets.symmetric(
@@ -156,12 +163,14 @@ class Review extends StatelessWidget {
               borderRadius: const BorderRadius.all(Radius.circular(9)),
             ),
             child: TextFormField(
+              controller: docappoin.ReviewComment,
               minLines: null,
-              maxLines: 8,
+              maxLines: 5,
               keyboardType: TextInputType.multiline,
               decoration: InputDecoration(
                   hintText: "Your review here...",
-                  hintStyle: const TextStyle(fontSize: 12, color: Color(0x80252630)),
+                  hintStyle:
+                      const TextStyle(fontSize: 12, color: Color(0x80252630)),
                   border: InputBorder.none,
                   fillColor: HexColor("#FFFFFF")),
             ),
@@ -171,7 +180,9 @@ class Review extends StatelessWidget {
           // ),
           const Spacer(),
           ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                docappoin.AddReveiw(context);
+              },
               style: ButtonStyle(
                   elevation: MaterialStateProperty.all<double>(0),
                   foregroundColor:

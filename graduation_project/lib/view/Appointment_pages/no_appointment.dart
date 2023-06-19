@@ -1,4 +1,3 @@
-
 // ignore_for_file: must_be_immutable, prefer_typing_uninitialized_variables
 
 import 'package:flutter/material.dart';
@@ -17,10 +16,9 @@ class NOAppointment extends StatelessWidget {
     width = size.width;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appBar("My Appointment"),
       body: Column(
         children: [
-          HomeBar(width, height),
+          HomeBar(width, height,context),
           SizedBox(
             // color: Colors.amber,
             width: (width * 90.467) / 100,
@@ -36,9 +34,11 @@ class NOAppointment extends StatelessWidget {
                   SizedBox(
                     width: (width * 80.467) / 100,
                     child: Text(
-                      "You don't have docotors appointment scheduled at the moment",style: TextStyle(color: HexColor("#252632"),),
+                      "You don't have docotors appointment scheduled at the moment",
+                      style: TextStyle(
+                        color: HexColor("#252632"),
+                      ),
                       textAlign: TextAlign.center,
-                      
                     ),
                   ),
                   // Container(

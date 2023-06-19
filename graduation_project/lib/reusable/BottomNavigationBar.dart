@@ -4,8 +4,10 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:graduation_project/reusable/BloodGroups.dart';
 import 'package:iconsax/iconsax.dart';
 
+import '../Controllers/AppointmentController.dart';
 import '../Controllers/SpesilizationController.dart';
 import '../Controllers/logincontroller.dart';
 import '../constants/colors.dart';
@@ -23,6 +25,8 @@ class BottomNavBar extends StatefulWidget {
   BottomNavBar({super.key});
   @override
   _BottomNavBarState createState() => _BottomNavBarState();
+  
+  
 }
 
 class _BottomNavBarState extends State<BottomNavBar> {
@@ -38,9 +42,11 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
 
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
+ 
 
   @override
   Widget build(BuildContext context) {
+    AppointmentController controller = Get.put(AppointmentController());
     return Scaffold(
       bottomNavigationBar: CurvedNavigationBar(
         key: _bottomNavigationKey,
@@ -63,14 +69,20 @@ class _BottomNavBarState extends State<BottomNavBar> {
         color: Colors.white,
         buttonBackgroundColor: Main_color,
         backgroundColor: Colors.transparent,
-        
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 600),
         onTap: (index) {
           if (index == 4) {
             Navigator.pushNamedAndRemoveUntil(
                 context, 'LoginPage', (route) => false);
-         
+          }
+          if (index == 2) {
+            setState(() {
+              controller.upcoming = true;
+              controller.completed = false;
+              controller.cancelled = false;
+              selectedIndex = index;
+            });
           } else {
             setState(() {
               selectedIndex = index;

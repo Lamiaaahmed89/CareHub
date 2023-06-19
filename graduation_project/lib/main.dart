@@ -1,10 +1,12 @@
 // ignore_for_file: unused_import
 
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
-
+import 'Controllers/Appoinment.dart';
 import 'models/chatmodel.dart';
 import 'reusable/BottomNavigationBar.dart';
 import 'view/Appointment_pages/appointment_date.dart';
@@ -45,13 +47,15 @@ import 'view/registaration_pages/signUp_pages/signUp_page.dart';
 import 'view/registaration_pages/signUp_pages/user_information.dart';
 
 void main() {
-  runApp(const MyApp());
+
+  
+  runApp( const MyApp());
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.white));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+   const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -79,7 +83,7 @@ class MyApp extends StatelessWidget {
           ResetPassword.id: (context) => ResetPassword(),
           PasswordUpdated.id: (context) => const PasswordUpdated(),
           NoConnectionPage.id: (context) => const NoConnectionPage(),
-          AudioCallPage.id: (context) =>  const AudioCallPage(),
+          AudioCallPage.id: (context) => const AudioCallPage(),
           UserInformation.id: (context) => UserInformation(),
           BirthDatePage.id: (context) => const BirthDatePage(),
           AudioCallAnswer.id: (context) => const AudioCallAnswer(),

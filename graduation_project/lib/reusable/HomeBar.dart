@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/AppointmentController.dart';
 import 'package:hexcolor/hexcolor.dart';
 
-Widget HomeBar(Widtth, Hightt,) {
+Widget HomeBar(Widtth, Hightt,context) {
   
   return Padding(
     padding:
@@ -35,7 +35,8 @@ Widget HomeBar(Widtth, Hightt,) {
                   children: [
                     GestureDetector(
                       onTap: (() {
-                        controller.AppointmentType("Upcoming");
+                        controller.AppointmentType("Upcoming",context);
+
                       }),
                       child: Container(
                         width: Widtth * 0.3,
@@ -70,7 +71,7 @@ Widget HomeBar(Widtth, Hightt,) {
                     ),
                     GestureDetector(
                       onTap: (() {
-                        controller.AppointmentType("Completed");
+                        controller.AppointmentType("Completed",context);
                       }),
                       child: Container(
                         width: Widtth * 0.3,
@@ -105,7 +106,7 @@ Widget HomeBar(Widtth, Hightt,) {
                     ),
                      GestureDetector(
                       onTap: (() {
-                        controller.AppointmentType("Cancelled");
+                        controller.AppointmentType("Cancelled",context);
                       }),
                       child: Container(
                         width: Widtth * 0.3,

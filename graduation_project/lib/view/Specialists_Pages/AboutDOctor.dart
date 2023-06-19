@@ -116,7 +116,7 @@ class AboutDoctor extends StatelessWidget {
                                 height: heightt * .003,
                               ),
                               Text(
-                                "${DoctorsSpecilizationcon.DocInfo['rating']}",
+                                "${DoctorsSpecilizationcon.DocInfo['rating'].round()}",
                                 style: const TextStyle(
                                   fontSize: 12,
                                 ),

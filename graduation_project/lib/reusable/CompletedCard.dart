@@ -5,14 +5,30 @@ import 'package:graduation_project/view/communication_pages/Video_call_pages/Wri
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
-
+import '../Controllers/Appoinment.dart';
+import '../view/Appointment_pages/appointment_date.dart';
+import '../view/Appointment_pages/choose_appointment.dart';
 
 // Iconsax.video,
 // Iconsax.call,
 // Iconsax.map_1,
 
-Widget CompletedCarrd(widtth, heightt) {
+Widget CompletedCarrd(widtth, heightt, index, context) {
+  DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
+  Map<dynamic, dynamic> ICON = {
+    'Video Call': Icon(
+      Iconsax.video,
+      color: HexColor("#285FFA"),
+      size: widtth * .05,
+    ),
+    'Offline': Icon(
+      Iconsax.location,
+      color: HexColor("#285FFA"),
+      size: widtth * .05,
+    )
+  };
   return Padding(
     padding: EdgeInsets.symmetric(horizontal: widtth * .038, vertical: 10),
     child: Container(
@@ -38,13 +54,15 @@ Widget CompletedCarrd(widtth, heightt) {
               Row(
                 children: [
                   Container(
-                    width: widtth * .17,
-                    height: heightt * .085,
+                    width: 87,
+                    height: 90,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
+                      image: DecorationImage(
                           fit: BoxFit.cover,
-                          image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                          image: NetworkImage(
+                              "${docappoin.CompleteApoo[index]['doctorPhoto']}")),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),
                   ),
@@ -57,7 +75,7 @@ Widget CompletedCarrd(widtth, heightt) {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          "Dr. Abdo Mohamed",
+                          "${docappoin.CompleteApoo[index]['doctorName']}",
                           style: TextStyle(
                               fontSize: 16,
                               fontWeight: FontWeight.w500,
@@ -69,7 +87,11 @@ Widget CompletedCarrd(widtth, heightt) {
                         Row(
                           children: [
                             Text(
-                              "Video Call - ",
+                              docappoin.CompleteApoo[index]
+                                          ['appointmentType'] ==
+                                      'Online'
+                                  ? 'Video Call-'
+                                  : "Offline-",
                               style: TextStyle(
                                   fontSize: 12, color: HexColor("#AEB2BB")),
                             ),
@@ -84,7 +106,7 @@ Widget CompletedCarrd(widtth, heightt) {
                           height: 3,
                         ),
                         Text(
-                          "Nov 12, 2022",
+                          "${DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.CompleteApoo[index]['startDateTime']))}",
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),
@@ -92,7 +114,7 @@ Widget CompletedCarrd(widtth, heightt) {
                           height: 2,
                         ),
                         Text(
-                          "10:00 AM : 10:15 AM",
+                          "${AppointmentDateState.converttimeformat(docappoin.CompleteApoo[index]['startDateTime'])} - ${AppointmentDateState.converttimeformat(docappoin.CompleteApoo[index]["endDateTime"])} ",
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         )
@@ -102,17 +124,18 @@ Widget CompletedCarrd(widtth, heightt) {
                 ],
               ),
               Container(
-                  width: widtth * .1,
-                  height: heightt * .05,
-                  decoration: BoxDecoration(
-                    color: HexColor("#f0f0f0"),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Iconsax.video,
-                    color: HexColor("#285FFA"),
-                    size: widtth * .05,
-                  )),
+                width: widtth * .1,
+                height: heightt * .05,
+                decoration: BoxDecoration(
+                  color: HexColor("#f0f0f0"),
+                  shape: BoxShape.circle,
+                ),
+                child: docappoin.CompleteApoo[index]
+                            ['appointmentType'] ==
+                        'Online'
+                    ? ICON["Video Call"]
+                    : ICON['Offline'],
+              ),
             ],
           ),
           const SizedBox(
@@ -123,7 +146,11 @@ Widget CompletedCarrd(widtth, heightt) {
             children: [
               Expanded(
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      Get.to(() => const ChooseAppointment());
+                      docappoin.DocId =
+                          docappoin.CompleteApoo[index]['doctorId'];
+                    },
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all<double>(0),
                         foregroundColor:
@@ -131,8 +158,6 @@ Widget CompletedCarrd(widtth, heightt) {
                         backgroundColor: MaterialStateProperty.all(
                           HexColor("#f0f0f0"),
                         ),
-                        // padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                        //     vertical: heightt * .01, horizontal: widtth * .11)),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
@@ -150,6 +175,11 @@ Widget CompletedCarrd(widtth, heightt) {
               Expanded(
                 child: ElevatedButton(
                     onPressed: () {
+                       docappoin.DocId =
+                          docappoin.CompleteApoo[index]['doctorId'];
+                           docappoin.docname =
+                          docappoin.CompleteApoo[index]['doctorName'];
+                      Review.index = index;
                       Get.to(() => const Review());
                     },
                     style: ButtonStyle(
@@ -159,10 +189,6 @@ Widget CompletedCarrd(widtth, heightt) {
                         backgroundColor: MaterialStateProperty.all(
                           HexColor("#285FFA"),
                         ),
-                        // padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                        //   vertical: heightt * .01,
-                        //   horizontal: widtth * .06,
-                        // )),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(

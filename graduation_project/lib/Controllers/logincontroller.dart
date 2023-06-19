@@ -11,10 +11,12 @@ import 'package:http/http.dart' as http;
 import '../constants/url.dart';
 import '../reusable/BottomNavigationBar.dart';
 import '../view/registaration_pages/signUp_pages/user_information.dart';
+import 'Appoinment.dart';
 
 class LoginController extends GetxController {
   DoctorsSpecilization DoctorsSpecilizationcon =
       Get.put(DoctorsSpecilization());
+      DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
 
   static String? value;
   TextEditingController emailcontroller = TextEditingController();
@@ -104,7 +106,7 @@ class LoginController extends GetxController {
       print(response.statusCode);
       if (response.statusCode == 200) {
         await DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
-
+        await docappoin.GetUpcomingAppoinment(context);
         emailcontroller.clear();
         Passwordcontroller.clear();
         Get.off(() => BottomNavBar());

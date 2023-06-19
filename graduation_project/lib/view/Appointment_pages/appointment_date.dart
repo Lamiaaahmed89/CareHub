@@ -42,7 +42,7 @@ class AppointmentDateState extends State<AppointmentDate> {
     });
   }
 
-  int selectedIndex = -1;
+  int selectedIndex = 0;
 
   void onContainerClicked(int index) {
     setState(() {
@@ -164,7 +164,6 @@ class AppointmentDateState extends State<AppointmentDate> {
                 text_color: white_color,
                 register_txt: 'Done',
                 navigate: () {
-                  docappoin.GetUpcomingAppoinment(context);
                   docappoin.OneDocOfflineAppoinments == null ||
                           docappoin.OneDocOfflineAppoinments.length == 0
                       ? showDialog(
@@ -224,7 +223,7 @@ class AppointmentDateState extends State<AppointmentDate> {
                                               color: HexColor("#AEB2BB"),
                                               fontWeight: FontWeight.w400),
                                           textAlign: TextAlign.center,
-                                          "Hello Ali, you are about to make an\n appointment with Dr.Abdo Mohamed"),
+                                          "Hello Ali, you are about to make an\n appointment with ${docappoin.OneDocOfflineAppoinments[selectedIndex]["doctorName"]}"),
                                       const SizedBox(
                                         height: 21,
                                       ),
@@ -267,14 +266,22 @@ class AppointmentDateState extends State<AppointmentDate> {
                                               color_button: Main_color,
                                               text_color: white_color,
                                               register_txt: 'Confirm',
-                                              navigate: () {
-                                                docappoin.GetUpcomingAppoinment(
-                                                    context);
-                                                docappoin.ConfirmAppoinment(
-                                                    context,
-                                                    docappoin
-                                                            .OneDocOfflineAppoinments[
-                                                        selectedIndex]["id"]);
+                                              navigate: () async {
+                                                if (docappoin.rescudling) {
+                                                  await docappoin.RescudleAppoinment(
+                                                      context,
+                                                      docappoin
+                                                              .OneDocOfflineAppoinments[
+                                                          selectedIndex]["id"]);
+                                                } else {
+                                                  await docappoin.ConfirmAppoinment(
+                                                      context,
+                                                      docappoin
+                                                              .OneDocOfflineAppoinments[
+                                                          selectedIndex]["id"]);
+                                                }
+
+                                                // Get.to(() => UpComming());
                                               }),
                                           const SizedBox(
                                             height: 16,
@@ -301,7 +308,7 @@ class AppointmentDateState extends State<AppointmentDate> {
     );
   }
 
-  String converttimeformat(dynamic time) {
+  static String converttimeformat(dynamic time) {
     final format = DateFormat.jm();
     final datetime = DateFormat("HH:mm").format(DateTime.parse(time));
 

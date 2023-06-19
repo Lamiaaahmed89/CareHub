@@ -4,14 +4,17 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 
 import '../Controllers/Appoinment.dart';
+import '../view/Appointment_pages/appointment_date.dart';
+import '../view/Appointment_pages/choose_appointment.dart';
 
 // Iconsax.video,
 // Iconsax.call,
 // Iconsax.map_1,
 
-Widget UpComingCarrd(widtth, heightt, index) {
+Widget UpComingCarrd(widtth, heightt, index, context) {
   DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
   Map<dynamic, dynamic> ICON = {
     'Video Call': Icon(
@@ -80,12 +83,20 @@ Widget UpComingCarrd(widtth, heightt, index) {
                         Row(
                           children: [
                             Text(
-                              "Video Call - ",
+                              docappoin.UpcomingAppoinments[index]
+                                          ['appointmentType'] ==
+                                      'Online'
+                                  ? 'Video Call-'
+                                  : "Offline-",
                               style: TextStyle(
                                   fontSize: 12, color: HexColor("#AEB2BB")),
                             ),
                             Text(
-                              "Upcoming",
+                              docappoin.UpcomingAppoinments[index]
+                                          ['appointmentStatus'] ==
+                                      'Pending'
+                                  ? 'Pending'
+                                  : "Upcoming",
                               style: TextStyle(
                                   fontSize: 12, color: HexColor("#285FFA")),
                             )
@@ -95,7 +106,7 @@ Widget UpComingCarrd(widtth, heightt, index) {
                           height: 3,
                         ),
                         Text(
-                          "Nov 12, 2022",
+                          "${DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.UpcomingAppoinments[index]['startDateTime']))}",
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),
@@ -103,7 +114,7 @@ Widget UpComingCarrd(widtth, heightt, index) {
                           height: 2,
                         ),
                         Text(
-                          "10:00 AM : 10:15 AM",
+                          "${AppointmentDateState.converttimeformat(docappoin.UpcomingAppoinments[index]['startDateTime'])} - ${AppointmentDateState.converttimeformat(docappoin.UpcomingAppoinments[index]["endDateTime"])} ",
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         )
@@ -113,13 +124,18 @@ Widget UpComingCarrd(widtth, heightt, index) {
                 ],
               ),
               Container(
-                  width: widtth * .1,
-                  height: heightt * .05,
-                  decoration: BoxDecoration(
-                    color: HexColor("#f0f0f0"),
-                    shape: BoxShape.circle,
-                  ),
-                  child: ICON["Offline"]),
+                width: widtth * .1,
+                height: heightt * .05,
+                decoration: BoxDecoration(
+                  color: HexColor("#f0f0f0"),
+                  shape: BoxShape.circle,
+                ),
+                child: docappoin.UpcomingAppoinments[index]
+                            ['appointmentType'] ==
+                        'Online'
+                    ? ICON["Video Call"]
+                    : ICON['Offline'],
+              )
             ],
           ),
           const SizedBox(
@@ -130,7 +146,26 @@ Widget UpComingCarrd(widtth, heightt, index) {
             children: [
               Expanded(
                 child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (docappoin.UpcomingAppoinments[index]
+                              ['appointmentStatus'] ==
+                          "Upcoming") {
+                        showDialog(
+                            context: Get.context!,
+                            builder: (context) {
+                              return const SimpleDialog(
+                                contentPadding: EdgeInsets.all(20),
+                                children: [
+                                  Text(
+                                      "Sorry, doctor has accepted the appointment. you can't cancel it")
+                                ],
+                              );
+                            });
+                      } else {
+                        docappoin.CancelAppoinments(context,
+                            docappoin.UpcomingAppoinments[index]['id']);
+                      }
+                    },
                     style: ButtonStyle(
                         elevation: MaterialStateProperty.all<double>(0),
                         foregroundColor:
@@ -138,8 +173,6 @@ Widget UpComingCarrd(widtth, heightt, index) {
                         backgroundColor: MaterialStateProperty.all(
                           HexColor("#f0f0f0"),
                         ),
-                        // padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                        //     vertical: heightt * .01, horizontal: widtth * .045)),
                         shape:
                             MaterialStateProperty.all<RoundedRectangleBorder>(
                                 RoundedRectangleBorder(
@@ -155,7 +188,30 @@ Widget UpComingCarrd(widtth, heightt, index) {
                 width: widtth * .03,
               ),
               ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    if (docappoin.UpcomingAppoinments[index]
+                            ['appointmentStatus'] ==
+                        "Upcoming") {
+                      showDialog(
+                          context: Get.context!,
+                          builder: (context) {
+                            return const SimpleDialog(
+                              contentPadding: EdgeInsets.all(20),
+                              children: [
+                                Text(
+                                    "Appointment already has been accepted you can't reschedule")
+                              ],
+                            );
+                          });
+                    } else {
+                      Get.to(() => const ChooseAppointment());
+                      docappoin.DocId =
+                          docappoin.UpcomingAppoinments[index]['doctorId'];
+                      docappoin.oldappid =
+                          docappoin.UpcomingAppoinments[index]['id'];
+                      docappoin.rescudling = true;
+                    }
+                  },
                   style: ButtonStyle(
                       elevation: MaterialStateProperty.all<double>(0),
                       foregroundColor:
@@ -164,7 +220,6 @@ Widget UpComingCarrd(widtth, heightt, index) {
                         HexColor("#285FFA"),
                       ),
                       padding: MaterialStateProperty.all(EdgeInsets.symmetric(
-                        // vertical: heightt * .01,
                         horizontal: widtth * .09,
                       )),
                       shape: MaterialStateProperty.all<RoundedRectangleBorder>(

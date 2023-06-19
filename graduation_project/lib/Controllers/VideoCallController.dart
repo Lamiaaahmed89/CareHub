@@ -9,8 +9,9 @@ class VideoCallController extends GetxController {
     StarNum = num;
     update();
   }
-    void ChangeRating() {
-    StarNum = 0;
+
+  void ChangeRating() {
+    StarNum -= 1;
     update();
   }
 }

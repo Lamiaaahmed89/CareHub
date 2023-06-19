@@ -8,6 +8,7 @@ import 'package:graduation_project/reusable/HomeBar.dart';
 import 'package:graduation_project/reusable/UpComingCarrd.dart';
 
 import '../../Controllers/Appoinment.dart';
+import 'no_appointment.dart';
 
 class UpComming extends StatelessWidget {
   static String id = 'UpComming';
@@ -22,17 +23,19 @@ class UpComming extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: appBar("My Appointment"),
-      body: Column(
+      body:  docappoin.UpcomingAppoinments.length==0?NOAppointment():Column(
         children: [
-          HomeBar(widtth, heightt),
+          HomeBar(widtth, heightt,context),
           Expanded(
-    child: ListView.builder(
+    child:  GetBuilder<DoctorsAppoinments>(
+              init: DoctorsAppoinments(),
+              builder: (controller) => ListView.builder(
         shrinkWrap: true,
-        itemCount:docappoin.UpcomingAppoinments.length,
+        itemCount:docappoin.UpcomingAppoinments==null?0:docappoin.UpcomingAppoinments.length,
         itemBuilder: (BuildContext context, index) {
-          return UpComingCarrd(widtth, heightt,index) ;
+          return UpComingCarrd(widtth, heightt,index,context) ;
         }),
-  )
+  ))
         ],
       ),
     );
