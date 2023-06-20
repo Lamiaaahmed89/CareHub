@@ -13,6 +13,7 @@ import 'package:iconsax/iconsax.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
 import '../../../Controllers/Addpatientinfo.dart';
+import '../../Controllers/EditProfile.dart';
 import '../../component/personal_gender_container.dart';
 
 class PesronalInformation extends StatefulWidget {
@@ -25,7 +26,7 @@ class PesronalInformation extends StatefulWidget {
 }
 
 class _PesronalInformationState extends State<PesronalInformation> {
-  Addpatientinfo addpatientinfo = Get.put(Addpatientinfo());
+  PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
@@ -35,23 +36,30 @@ class _PesronalInformationState extends State<PesronalInformation> {
         body: SingleChildScrollView(
           child: Column(
             children: [
-              CircleAvatar(
-                  radius: 60,
-                  backgroundColor: const Color(0x33AEB2BB),
-                  backgroundImage: addpatientinfo.imagefile != null
-                      ? FileImage(addpatientinfo.imagefile!)
-                      : null,
-                  child: IconButton(
-                      onPressed: () {
-                        pickimage();
-                      },
-                      icon: Icon(
-                        Iconsax.gallery_add,
-                        size: widtth * .065,
-                        color: addpatientinfo.imagefile != null
-                            ? Colors.transparent
-                            : HexColor("#252632"),
-                      ))),
+              GetBuilder<PersonalProfile>(
+                  init: PersonalProfile(),
+                  builder: ((controller) => CircleAvatar(
+                      radius: 60,
+                      backgroundColor: const Color(0x33AEB2BB),
+                      backgroundImage: personalprofilecontroller
+                                  .personalinfo['photo'] !=
+                              null
+                          ? NetworkImage(
+                              "${personalprofilecontroller.personalinfo['photo']}")
+                          : null,
+                      child: IconButton(
+                          onPressed: () {
+                            pickimage();
+                          },
+                          icon: Icon(
+                            Iconsax.gallery_add,
+                            size: widtth * .065,
+                            color: personalprofilecontroller
+                                        .personalinfo['photo'] !=
+                                    null
+                                ? Colors.transparent
+                                : HexColor("#252632"),
+                          ))))),
               Padding(
                 padding: const EdgeInsetsDirectional.only(start: 8.0, end: 8.0),
                 child: Row(
@@ -95,7 +103,7 @@ class _PesronalInformationState extends State<PesronalInformation> {
                     ),
                   ],
                 ),
-              ),
+              )
             ],
           ),
         ));
@@ -108,16 +116,9 @@ class _PesronalInformationState extends State<PesronalInformation> {
     if (image == null) return;
     final tempimage = File(image.path);
 
-    setState(() => addpatientinfo.imagefile = tempimage);
-  }
-
-  Future getImageFileFromAssets(String path) async {
-    final byteData = await rootBundle.load('assets/$path');
-
-    final file = File('${(await getTemporaryDirectory()).path}/$path');
-    await file.create(recursive: true);
-    await file.writeAsBytes(byteData.buffer
-        .asUint8List(byteData.offsetInBytes, byteData.lengthInBytes));
-    addpatientinfo.imagefile = file;
+    setState(() {
+      personalprofilecontroller.imagefile = tempimage;
+      personalprofilecontroller.UpdatePhoto(context);
+    });
   }
 }

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
+import 'package:intl/intl.dart';
+import '../Controllers/EditProfile.dart';
 import '../constants/colors.dart';
 
 // Birthday Container
 class PersonalBirthdayContainer extends StatefulWidget {
   const PersonalBirthdayContainer({super.key});
-
+  static PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   @override
   State<PersonalBirthdayContainer> createState() =>
       _PersonalBirthdayContainerState();
@@ -15,7 +18,10 @@ class PersonalBirthdayContainer extends StatefulWidget {
 
 class _PersonalBirthdayContainerState extends State<PersonalBirthdayContainer> {
   final TextEditingController _textEditingController = TextEditingController();
-  String birthDay = 'March 18,2001';
+
+  var birthDay = DateFormat('MMMM dd, yyyy').format(DateTime.parse(
+      PersonalBirthdayContainer
+          .personalprofilecontroller.personalinfo['birthDay']));
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -116,7 +122,8 @@ class _PersonalBirthdayContainerState extends State<PersonalBirthdayContainer> {
                         height: 100,
                         child: Material(
                           child: TextFormField(
-                            controller: _textEditingController,
+                            controller: PersonalBirthdayContainer
+                                .personalprofilecontroller.Birthday,
                           ),
                         ),
                       ),
@@ -147,8 +154,11 @@ class _PersonalBirthdayContainerState extends State<PersonalBirthdayContainer> {
                 child: MaterialButton(
                   onPressed: () {
                     setState(() {
-                      birthDay = _textEditingController.text;
+                      birthDay = PersonalBirthdayContainer
+                          .personalprofilecontroller.Birthday.text;
                     });
+                    PersonalBirthdayContainer.personalprofilecontroller
+                        .UpdateBirthday(context);
                     Navigator.pop(context);
                   },
                   child: Text(
@@ -168,11 +178,11 @@ class _PersonalBirthdayContainerState extends State<PersonalBirthdayContainer> {
   }
 }
 
-
 // Weight Container
 class PersonalWeightContainer extends StatefulWidget {
   const PersonalWeightContainer({super.key});
 
+  static PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   @override
   State<PersonalWeightContainer> createState() =>
       _PersonalWeightContainerState();
@@ -180,7 +190,11 @@ class PersonalWeightContainer extends StatefulWidget {
 
 class _PersonalWeightContainerState extends State<PersonalWeightContainer> {
   final TextEditingController _textEditingController = TextEditingController();
-  String weight = '55 kg';
+  String weight = PersonalWeightContainer
+      .personalprofilecontroller.personalinfo['weight']
+      .toString();
+  // PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
+
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -281,7 +295,8 @@ class _PersonalWeightContainerState extends State<PersonalWeightContainer> {
                         height: 100,
                         child: Material(
                           child: TextFormField(
-                            controller: _textEditingController,
+                            controller: PersonalWeightContainer
+                                .personalprofilecontroller.weight,
                           ),
                         ),
                       ),
@@ -312,8 +327,11 @@ class _PersonalWeightContainerState extends State<PersonalWeightContainer> {
                 child: MaterialButton(
                   onPressed: () {
                     setState(() {
-                      weight = _textEditingController.text;
+                      weight = PersonalWeightContainer
+                          .personalprofilecontroller.weight.text;
                     });
+                    PersonalWeightContainer.personalprofilecontroller
+                        .UpdateWeight(context);
                     Navigator.pop(context);
                   },
                   child: Text(
@@ -333,11 +351,10 @@ class _PersonalWeightContainerState extends State<PersonalWeightContainer> {
   }
 }
 
-
 // Height Container
 class PersonalHeightContainer extends StatefulWidget {
   const PersonalHeightContainer({super.key});
-
+  static PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   @override
   State<PersonalHeightContainer> createState() =>
       _PersonalHeightContainerState();
@@ -345,7 +362,10 @@ class PersonalHeightContainer extends StatefulWidget {
 
 class _PersonalHeightContainerState extends State<PersonalHeightContainer> {
   final TextEditingController _textEditingController = TextEditingController();
-  String personalHeight = '155cm';
+
+  String personalHeight = PersonalHeightContainer
+      .personalprofilecontroller.personalinfo['height']
+      .toString();
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -375,7 +395,7 @@ class _PersonalHeightContainerState extends State<PersonalHeightContainer> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SvgPicture.asset(
-                  'assets/images/personal_info/icons light/ruler.svg',
+                  "assets/images/ruler.svg",
                   color: Main_color,
                 ),
                 const Text(
@@ -435,7 +455,7 @@ class _PersonalHeightContainerState extends State<PersonalHeightContainer> {
                   child: Row(
                     children: [
                       SvgPicture.asset(
-                        'assets/images/personal_info/icons light/ruler.svg',
+                        "assets/images/ruler.svg",
                         color: Main_color,
                       ),
                       const SizedBox(
@@ -446,7 +466,8 @@ class _PersonalHeightContainerState extends State<PersonalHeightContainer> {
                         height: 100,
                         child: Material(
                           child: TextFormField(
-                            controller: _textEditingController,
+                            controller: PersonalHeightContainer
+                                .personalprofilecontroller.height,
                           ),
                         ),
                       ),
@@ -477,8 +498,11 @@ class _PersonalHeightContainerState extends State<PersonalHeightContainer> {
                 child: MaterialButton(
                   onPressed: () {
                     setState(() {
-                      personalHeight = _textEditingController.text;
+                      personalHeight = PersonalHeightContainer
+                          .personalprofilecontroller.height.text;
                     });
+                    PersonalHeightContainer.personalprofilecontroller
+                        .UpdateHeight(context);
                     Navigator.pop(context);
                   },
                   child: Text(
@@ -498,18 +522,19 @@ class _PersonalHeightContainerState extends State<PersonalHeightContainer> {
   }
 }
 
-
 // Blood Container
 class PersonalBloodContainer extends StatefulWidget {
   const PersonalBloodContainer({super.key});
-
+  static PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   @override
   State<PersonalBloodContainer> createState() => _PersonalBloodContainerState();
 }
 
 class _PersonalBloodContainerState extends State<PersonalBloodContainer> {
   final TextEditingController _textEditingController = TextEditingController();
-  String blood = 'A+';
+
+  String blood =
+      PersonalBloodContainer.personalprofilecontroller.personalinfo['blood'];
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -539,7 +564,7 @@ class _PersonalBloodContainerState extends State<PersonalBloodContainer> {
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
                 SvgPicture.asset(
-                  'assets/images/personal_info/icons light/blood.svg',
+                  'assets/images/blood.svg',
                   color: Main_color,
                 ),
                 const Text(
@@ -599,7 +624,7 @@ class _PersonalBloodContainerState extends State<PersonalBloodContainer> {
                   child: Row(
                     children: [
                       SvgPicture.asset(
-                        'assets/images/personal_info/icons light/blood.svg',
+                        'assets/images/blood.svg',
                         color: Main_color,
                       ),
                       const SizedBox(
@@ -610,7 +635,8 @@ class _PersonalBloodContainerState extends State<PersonalBloodContainer> {
                         height: 100,
                         child: Material(
                           child: TextFormField(
-                            controller: _textEditingController,
+                            controller: PersonalBloodContainer
+                                .personalprofilecontroller.bloodtype,
                           ),
                         ),
                       ),
@@ -641,8 +667,11 @@ class _PersonalBloodContainerState extends State<PersonalBloodContainer> {
                 child: MaterialButton(
                   onPressed: () {
                     setState(() {
-                      blood = _textEditingController.text;
+                      blood = PersonalBloodContainer
+                          .personalprofilecontroller.bloodtype.text;
                     });
+                    PersonalBloodContainer.personalprofilecontroller
+                        .UpdateBloodType(context);
                     Navigator.pop(context);
                   },
                   child: Text(

@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import '../Controllers/EditProfile.dart';
 import '../constants/colors.dart';
 
 // Gender Container
 class PersonalGenderContainer extends StatefulWidget {
   const PersonalGenderContainer({super.key});
-
+   static PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
+  
   @override
   State<PersonalGenderContainer> createState() =>
       _PersonalGenderContainerState();
@@ -15,9 +18,12 @@ class PersonalGenderContainer extends StatefulWidget {
 
 class _PersonalGenderContainerState extends State<PersonalGenderContainer> {
   final TextEditingController _textEditingController = TextEditingController();
-  String gender = 'Male';
+   String gender =
+        PersonalGenderContainer.personalprofilecontroller.personalinfo['gender'];
+
   @override
   Widget build(BuildContext context) {
+   
     var size = MediaQuery.of(context).size;
     double height = size.height;
     double width = size.width;
@@ -48,14 +54,16 @@ class _PersonalGenderContainerState extends State<PersonalGenderContainer> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   SvgPicture.asset(
-                    'assets/images/personal_info/icons light/gender.svg',
+                    'assets/images/gender.svg',
                     color: Main_color,
                   ),
                   const Text('Gender')
                 ],
               ),
               SvgPicture.asset(
-                'assets/images/man.svg',
+                PersonalGenderContainer.personalprofilecontroller.personalinfo['gender'] == 'female'
+                    ? 'assets/images/woman.svg'
+                    : 'assets/images/man.svg',
                 height: height / 3.9,
                 color: Text2_color,
               ),
@@ -109,7 +117,7 @@ class _PersonalGenderContainerState extends State<PersonalGenderContainer> {
                   child: Row(
                     children: [
                       SvgPicture.asset(
-                        'assets/images/personal_info/icons light/gender.svg',
+                        'assets/images/gender.svg',
                         color: Main_color,
                       ),
                       const SizedBox(
@@ -120,7 +128,7 @@ class _PersonalGenderContainerState extends State<PersonalGenderContainer> {
                         height: 100,
                         child: Material(
                           child: TextFormField(
-                            controller: _textEditingController,
+                            controller: PersonalGenderContainer.personalprofilecontroller.gender,
                           ),
                         ),
                       ),
@@ -150,9 +158,13 @@ class _PersonalGenderContainerState extends State<PersonalGenderContainer> {
                 ),
                 child: MaterialButton(
                   onPressed: () {
+                 
                     setState(() {
-                      gender = _textEditingController.text;
+                    gender =
+                          PersonalGenderContainer.personalprofilecontroller.gender.text;
                     });
+                    PersonalGenderContainer.personalprofilecontroller.UpdatePersonalProfile(context);
+
                     Navigator.pop(context);
                   },
                   child: Text(

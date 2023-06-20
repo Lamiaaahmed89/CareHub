@@ -6,6 +6,7 @@ import 'package:graduation_project/view/Appointment_pages/upcomming.dart';
 import 'package:graduation_project/view/EHR_Pages/EHRfiles.dart';
 import 'package:graduation_project/view/registaration_pages/personal_info.dart';
 import 'package:iconsax/iconsax.dart';
+import '../../Controllers/EditProfile.dart';
 import '../EmergencyCard_Pages/EnterCardData.dart';
 import '../Notifictaions_Pages/AllNotifications.dart';
 import '../body_model/click_body.dart';
@@ -19,6 +20,7 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -28,7 +30,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsetsDirectional.only(start: 8.0, top: 8.0),
             child: GestureDetector(
               onTap: () {
-                Navigator.pushNamed(context, PesronalInformation.id);
+                personalprofilecontroller.GEtPersonalInfo(context);
               },
               child: const CircleAvatar(
                 backgroundImage: AssetImage(
@@ -54,7 +56,6 @@ class _HomePageState extends State<HomePage> {
                   color: Second_color,
                 ))
           ]),
-     
       body: Padding(
         padding: const EdgeInsetsDirectional.only(top: 32, start: 16, end: 16),
         child: ListView(
