@@ -3,10 +3,12 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:graduation_project/Controllers/EditProfile.dart';
 import 'package:graduation_project/Controllers/SpesilizationController.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
+import 'package:signalr_netcore/signalr_client.dart';
 
 import '../constants/url.dart';
 import '../reusable/BottomNavigationBar.dart';
@@ -16,7 +18,8 @@ import 'Appoinment.dart';
 class LoginController extends GetxController {
   DoctorsSpecilization DoctorsSpecilizationcon =
       Get.put(DoctorsSpecilization());
-      DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
+  DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
+  PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
 
   static String? value;
   TextEditingController emailcontroller = TextEditingController();
@@ -105,8 +108,11 @@ class LoginController extends GetxController {
       http.Response response = await http.get(url, headers: header);
       print(response.statusCode);
       if (response.statusCode == 200) {
+       
+        await personalprofilecontroller.GEtPersonalInfo(context);
         await DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
         await docappoin.GetUpcomingAppoinment(context);
+
         emailcontroller.clear();
         Passwordcontroller.clear();
         Get.off(() => BottomNavBar());
@@ -126,4 +132,24 @@ class LoginController extends GetxController {
           });
     }
   }
+
+  // Future<void> RealTimeNotificatio() async {
+  //   String? token = LoginController.value;
+
+  //   final hubConnection = HubConnectionBuilder()
+  //       .withUrl(
+  //         'http://www.CareHub.somee.com/chat',
+  //       )
+  //       .withAutomaticReconnect()
+  //       .build();
+
+  //   try {
+  //     await hubConnection.start();
+  //     print('Connection started');
+
+  //     // Add event handlers and invoke methods here
+  //   } catch (e) {
+  //     print('Error: $e');
+  //   }
+  // }
 }

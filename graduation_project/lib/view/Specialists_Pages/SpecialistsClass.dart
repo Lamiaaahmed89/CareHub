@@ -18,7 +18,7 @@ List<Specialists> allSpecialists = [
       SpecialistsSVG: "${path}Allergology.svg",
       DoctorsNum: 2),
   Specialists(
-      specialist: "Cardiologist",
+      specialist: " Cardiologist",
       SpecialistsSVG: "${path}Cardiology.svg",
       DoctorsNum: 9),
   Specialists(
@@ -46,7 +46,7 @@ List<Specialists> allSpecialists = [
       SpecialistsSVG: "${path}Paediatrics.svg",
       DoctorsNum: 4),
   Specialists(
-      specialist: "Rheumatologist",
+      specialist: "Rheumatologists",
       SpecialistsSVG: "${path}Rheumatology.svg",
       DoctorsNum: 4),
   Specialists(

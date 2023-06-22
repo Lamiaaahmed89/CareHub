@@ -1,4 +1,3 @@
-
 // ignore_for_file: file_names, non_constant_identifier_names
 
 import 'package:flutter_svg/flutter_svg.dart';
@@ -8,21 +7,20 @@ import 'package:graduation_project/Controllers/NotificationController.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
-Widget NotificationCard(Widtth, heightt, data, idx, status) {
+Widget NotificationCard(Widtth, heightt,String data, index) {
+  NotificationController controller = Get.put(NotificationController());
   return Row(
     children: [
-      if (status == "accepted") ...[
+      if (data.contains("accepted")) ...[
         SvgPicture.asset(
           "assets/images/corner green.svg",
         ),
       ],
-      if (status == "canceled") ...[
+      if (data.contains("cancelled ")) ...[
         SvgPicture.asset(
           "assets/images/corner red.svg",
         ),
       ],
-    
-      
       Container(
         width: Widtth * .91,
         height: 92,
@@ -46,8 +44,10 @@ Widget NotificationCard(Widtth, heightt, data, idx, status) {
               width: 60,
               height: 60,
               decoration: BoxDecoration(
-                image: const DecorationImage(
-                    fit: BoxFit.cover, image: AssetImage("assets/images/abdo.jpg")),
+                image:  DecorationImage(
+                    fit: BoxFit.cover,
+                    image: NetworkImage(
+                              "${controller.NotificationList[index]["photo"]}")),
                 borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                 color: HexColor("#f0f0f0"),
               ),
@@ -58,7 +58,7 @@ Widget NotificationCard(Widtth, heightt, data, idx, status) {
             SizedBox(
               width: Widtth * .63,
               child: Text(
-                "$data",
+                "${controller.NotificationList[index]["message"]}",
                 style: const TextStyle(fontSize: 12),
               ),
             )
@@ -90,9 +90,7 @@ Widget NotificationCard(Widtth, heightt, data, idx, status) {
             ),
             child: GetBuilder<NotificationController>(
               builder: (controller) => IconButton(
-                  onPressed: () {
-                    controller.remove(idx);
-                  },
+                  onPressed: () {},
                   icon: Icon(
                     Iconsax.trash,
                     size: 27,

@@ -154,12 +154,14 @@ class _PersonalNameContainerState extends State<PersonalNameContainer> {
                 ),
                 child: MaterialButton(
                   onPressed: () {
+                    PersonalNameContainer.personalprofilecontroller
+                        .UpdateName(context);
+                    PersonalNameContainer.personalprofilecontroller
+                        .GEtPersonalInfo(context);
                     setState(() {
                       fullName = PersonalNameContainer
                           .personalprofilecontroller.firstname.text;
                     });
-                    PersonalNameContainer.personalprofilecontroller
-                        .UpdateName(context);
                     Navigator.pop(context);
                   },
                   child: Text(

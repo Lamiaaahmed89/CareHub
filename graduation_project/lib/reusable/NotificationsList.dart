@@ -1,4 +1,3 @@
-
 // ignore_for_file: file_names, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
@@ -10,9 +9,9 @@ import 'package:graduation_project/reusable/NotificationCard.dart';
 Widget NotificationsList(Widtth, heightt) {
   return Expanded(
       child: GetBuilder<NotificationController>(
-        init:NotificationController(),
+          init: NotificationController(),
           builder: ((controller) => ListView.builder(
-              itemCount: controller.notificationList.length,
+              itemCount: controller.NotificationList.length,
               itemBuilder: (BuildContext context, index) {
                 return SizedBox(
                   height: 110,
@@ -20,8 +19,12 @@ Widget NotificationsList(Widtth, heightt) {
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
                     itemCount: 1,
-                    itemBuilder: (_, indexx) => NotificationCard(Widtth,
-                        heightt, controller.notificationList[index]["content"],index,controller.notificationList[index]["status"]),
+                    itemBuilder: (_, indexx) => NotificationCard(
+                        Widtth,
+                        heightt,
+                        controller.NotificationList[index]["message"],
+                        index
+                       ),
                   ),
                 );
               }))));

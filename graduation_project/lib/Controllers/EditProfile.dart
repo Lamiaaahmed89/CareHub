@@ -44,6 +44,7 @@ class PersonalProfile extends GetxController {
       Navigator.of(context).pop();
       print(response.statusCode);
       if (response.statusCode == 200) {
+        print("Getttttttttttt");
         personalinfo = jsonDecode(response.body);
         Get.to(() => const PesronalInformation());
       }
@@ -117,7 +118,6 @@ class PersonalProfile extends GetxController {
       final response = await request.send();
 
       print(response.statusCode);
-      print(await response.stream.bytesToString());
     } catch (error) {
       Get.back();
       showDialog(

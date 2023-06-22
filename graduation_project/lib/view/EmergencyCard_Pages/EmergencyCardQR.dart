@@ -1,10 +1,12 @@
-
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/EmergencyCardBar.dart';
 import 'package:hexcolor/hexcolor.dart';
+
+import '../../Controllers/EmergencyCardController.dart';
 
 class EmergencyCardQR extends StatelessWidget {
   const EmergencyCardQR({super.key});
@@ -12,6 +14,8 @@ class EmergencyCardQR extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    EmergencyCardController emergencyCardController =
+        Get.put(EmergencyCardController());
     double widtth = MediaQuery.of(context).size.width;
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -25,11 +29,13 @@ class EmergencyCardQR extends StatelessWidget {
               padding:
                   EdgeInsets.only(top: heightt * .15, bottom: heightt * .02),
               child: Container(
-                width: widtth * .6,
+                width: widtth * .65,
                 height: heightt * .4,
                 decoration: BoxDecoration(
-                  image: const DecorationImage(
-                      fit: BoxFit.cover, image: AssetImage("assets/images/QR.png")),
+                  image: DecorationImage(
+                      fit: BoxFit.cover,
+                      image: NetworkImage(
+                          "${emergencyCardController.EmrgencyCardQR["url"]}")),
                   borderRadius: const BorderRadius.all(Radius.circular(8.0)),
                   color: Colors.white,
                   boxShadow: [

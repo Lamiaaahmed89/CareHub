@@ -12,7 +12,6 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:path_provider/path_provider.dart';
-import '../../../Controllers/Addpatientinfo.dart';
 import '../../Controllers/EditProfile.dart';
 import '../../component/personal_gender_container.dart';
 
