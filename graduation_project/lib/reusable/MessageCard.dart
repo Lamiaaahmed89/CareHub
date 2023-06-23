@@ -1,7 +1,10 @@
 // ignore_for_file: file_names, non_constant_identifier_names
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
+
+import '../view/Messages_Pages/chat.dart';
 import 'package:iconsax/iconsax.dart';
 
 Widget MessCard(double Widtth, double heightt) {
@@ -9,7 +12,7 @@ Widget MessCard(double Widtth, double heightt) {
     padding: const EdgeInsets.only(bottom: 10),
     child: GestureDetector(
       onTap: () {
-        // Get.to(page)
+        Get.to(() => IndividualPage());
       },
       child: Row(
         children: [
@@ -42,7 +45,8 @@ Widget MessCard(double Widtth, double heightt) {
                       image: const DecorationImage(
                           fit: BoxFit.cover,
                           image: AssetImage("assets/images/abdo.jpg")),
-                      borderRadius: const BorderRadius.all(Radius.circular(8.0)),
+                      borderRadius:
+                          const BorderRadius.all(Radius.circular(8.0)),
                       color: HexColor("#f0f0f0"),
                     ),
                   ),

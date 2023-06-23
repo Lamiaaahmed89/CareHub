@@ -5,6 +5,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:get/get.dart';
 
+import '../view/registaration_pages/home_page.dart';
 import 'BottomNavigationBar.dart';
 
 PreferredSizeWidget appBar(String Title) {
@@ -14,6 +15,7 @@ PreferredSizeWidget appBar(String Title) {
     leading: IconButton(
         onPressed: () {
           Get.off(() => BottomNavBar());
+          HomePage.isNotifcationOpened = false;
         },
         icon: Icon(
           Iconsax.arrow_left_2,

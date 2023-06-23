@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/EditProfile.dart';
 import 'package:graduation_project/Controllers/SpesilizationController.dart';
+import 'package:graduation_project/Controllers/realtime.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -55,7 +56,7 @@ class LoginController extends GetxController {
         var token = json['token'];
         final SharedPreferences prefs = await pref;
         await prefs.setString('token', token);
-
+        BottomNavBarState.ClearToken = prefs;
         value = prefs.getString("token");
         await Checkpatientsinfo(value, context);
         print("token: $value");
@@ -106,8 +107,8 @@ class LoginController extends GetxController {
       http.Response response = await http.get(url, headers: header);
       print(response.statusCode);
       if (response.statusCode == 200) {
-       
         await personalprofilecontroller.GEtPersonalInfo(context);
+        SignalRHelper notification = SignalRHelper(token);
         await DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
         await docappoin.GetUpcomingAppoinment(context);
 

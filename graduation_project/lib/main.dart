@@ -50,7 +50,7 @@ import 'view/registaration_pages/signUp_pages/signUp_page.dart';
 import 'view/registaration_pages/signUp_pages/user_information.dart';
 
 void main() {
-
+  // SignalRHelper Notification = SignalRHelper(LoginController.value);
   runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.white));

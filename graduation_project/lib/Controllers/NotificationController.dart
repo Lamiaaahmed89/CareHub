@@ -11,9 +11,9 @@ import '../constants/colors.dart';
 import '../constants/url.dart';
 import 'logincontroller.dart';
 
-
 class NotificationController extends GetxController {
   var NotificationList;
+  int count = 0;
   Future<void> GetNotificationList(context) async {
     String? token = LoginController.value;
     var header = {
@@ -52,11 +52,10 @@ class NotificationController extends GetxController {
           });
     }
   }
+
+  void increadecount(count) {
+    count += 1;
+    print(count);
+    update();
+  }
 }
-
-
-
-
-
-
-// Configer the logging

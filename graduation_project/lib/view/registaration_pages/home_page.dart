@@ -12,6 +12,7 @@ import 'package:intl/intl.dart';
 import '../../Controllers/Appoinment.dart';
 import '../../Controllers/EditProfile.dart';
 import '../../Controllers/NotificationController.dart';
+import '../../Controllers/realtime.dart';
 import '../Appointment_pages/appointment_date.dart';
 import '../EmergencyCard_Pages/EnterCardData.dart';
 import '../body_model/click_body.dart';
@@ -22,12 +23,13 @@ import '../body_model/click_body.dart';
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
   static String id = 'HomePage';
-
+  static bool isNotifcationOpened = false;
   @override
-  State<HomePage> createState() => _HomePageState();
+  State<HomePage> createState() => HomePageState();
 }
 
-class _HomePageState extends State<HomePage> {
+class HomePageState extends State<HomePage> {
+  int count = 0;
   PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
   NotificationController controller = Get.put(NotificationController());
@@ -45,7 +47,6 @@ class _HomePageState extends State<HomePage> {
   };
   @override
   Widget build(BuildContext context) {
-    
     return Scaffold(
       backgroundColor: white_color,
       appBar: AppBar(
@@ -54,7 +55,6 @@ class _HomePageState extends State<HomePage> {
             child: GestureDetector(
               onTap: () {
                 personalprofilecontroller.GEtPersonalInfo(context);
-                
               },
               child: CircleAvatar(
                 backgroundImage: personalprofilecontroller
@@ -74,14 +74,55 @@ class _HomePageState extends State<HomePage> {
           backgroundColor: white_color,
           elevation: 0.0,
           actions: [
-            IconButton(
-                onPressed: () {
-                  controller.GetNotificationList(context);
-                },
-                icon: Icon(
-                  Iconsax.notification,
-                  color: Second_color,
-                ))
+            GetBuilder<NotificationController>(
+                init: NotificationController(),
+                builder: ((controller) => IconButton(
+                    onPressed: () {
+                      controller.GetNotificationList(context);
+                      setState(() {
+                        HomePage.isNotifcationOpened = true;
+                      });
+
+                      print(HomePage.isNotifcationOpened);
+                      print(SignalRHelper.notify_count);
+                    },
+                    icon: SignalRHelper.notify_count == 0
+                        ? Icon(
+                            Iconsax.notification,
+                            color: Main_color,
+                          )
+                        : Stack(
+                            children: <Widget>[
+                              Icon(
+                                Iconsax.notification,
+                                color: Main_color,
+                              ),
+                              Positioned(
+                                top: 0.0,
+                                right: 0.0,
+                                left: 5,
+                                bottom: 10,
+                                child: Stack(
+                                  children: <Widget>[
+                                    Icon(Icons.brightness_1,
+                                        size: 18.0, color: Failed_color),
+                                    Positioned(
+                                      top: 1.0,
+                                      right: 0.0,
+                                      left: 6,
+                                      bottom: 0,
+                                      child: Text(
+                                          "${SignalRHelper.notify_count}",
+                                          style: const TextStyle(
+                                              color: Colors.white,
+                                              fontSize: 10.0,
+                                              fontWeight: FontWeight.w500)),
+                                    )
+                                  ],
+                                ),
+                              )
+                            ],
+                          ))))
           ]),
       body: Padding(
         padding: const EdgeInsetsDirectional.only(top: 32, start: 16, end: 16),
@@ -291,6 +332,4 @@ class _HomePageState extends State<HomePage> {
       ),
     );
   }
-
-
 }

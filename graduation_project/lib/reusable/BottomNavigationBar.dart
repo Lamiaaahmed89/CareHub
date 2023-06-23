@@ -23,12 +23,11 @@ class BottomNavBar extends StatefulWidget {
 
   BottomNavBar({super.key});
   @override
-  _BottomNavBarState createState() => _BottomNavBarState();
-  
-  
+  BottomNavBarState createState() => BottomNavBarState();
 }
 
-class _BottomNavBarState extends State<BottomNavBar> {
+class BottomNavBarState extends State<BottomNavBar> {
+  static var ClearToken;
   DoctorsSpecilization DoctorsSpecilizationcon =
       Get.put(DoctorsSpecilization());
   int selectedIndex = 0;
@@ -41,7 +40,6 @@ class _BottomNavBarState extends State<BottomNavBar> {
   ];
 
   final GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
- 
 
   @override
   Widget build(BuildContext context) {
@@ -70,10 +68,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
         backgroundColor: Colors.transparent,
         animationCurve: Curves.easeInOut,
         animationDuration: const Duration(milliseconds: 600),
-        onTap: (index) {
+        onTap: (index) async {
           if (index == 4) {
-            Navigator.pushNamedAndRemoveUntil(
-                context, 'LoginPage', (route) => false);
+            await ClearToken.clear();
+            Get.offAll(() => const LoginPage());
           }
           if (index == 2) {
             setState(() {
