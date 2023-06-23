@@ -384,7 +384,7 @@ class AboutDoctor extends StatelessWidget {
                                                     Radius.circular(8.0)),
                                             color: HexColor("#f0f0f0"),
                                           )),
-                                      Container(
+                                      SizedBox(
                                         width: 188,
                                         child: Column(
                                           crossAxisAlignment:

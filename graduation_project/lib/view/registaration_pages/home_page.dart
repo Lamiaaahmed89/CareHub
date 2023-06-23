@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/component/home_container.dart';
@@ -10,13 +12,10 @@ import 'package:intl/intl.dart';
 import '../../Controllers/Appoinment.dart';
 import '../../Controllers/EditProfile.dart';
 import '../../Controllers/NotificationController.dart';
-import '../../Controllers/logincontroller.dart';
-import '../../Controllers/realtime.dart';
 import '../Appointment_pages/appointment_date.dart';
 import '../EmergencyCard_Pages/EnterCardData.dart';
 import '../body_model/click_body.dart';
 // import 'package:signalr_netcore/signalr_client.dart';
-import 'package:signalr_core/signalr_core.dart';
 
 // import 'package:logging/logging.dart';
 
@@ -46,7 +45,7 @@ class _HomePageState extends State<HomePage> {
   };
   @override
   Widget build(BuildContext context) {
-    SignalRHelper s = SignalRHelper();
+    
     return Scaffold(
       backgroundColor: white_color,
       appBar: AppBar(
@@ -54,8 +53,7 @@ class _HomePageState extends State<HomePage> {
             padding: const EdgeInsetsDirectional.only(start: 8.0, top: 8.0),
             child: GestureDetector(
               onTap: () {
-                // personalprofilecontroller.GEtPersonalInfo(context);
-                // RealTimeNotificatio();
+                personalprofilecontroller.GEtPersonalInfo(context);
                 
               },
               child: CircleAvatar(
@@ -238,7 +236,7 @@ class _HomePageState extends State<HomePage> {
                     ),
                   )
                 : Container(),
-            SizedBox(
+            const SizedBox(
               height: 10,
             ),
             SingleChildScrollView(
@@ -294,26 +292,5 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Future<void> RealTimeNotificatio() async {
-//     // String? token = LoginController.value;
 
-    HubConnection connection;
-
-    connection = HubConnectionBuilder()
-        .withUrl(
-            'http://www.CareHub.somee.com/chat',
-            HttpConnectionOptions(
-              logging: (level, message) => print(message),
-            ))
-        .build();
-    try {
-      await connection.start();
-      print('bbbb');
-
-      connection.on("ReceiveMessage", (arguments) {
-        print(arguments);
-        //Do what needs to be done
-      });
-    } catch (e) {}
-  }
 }

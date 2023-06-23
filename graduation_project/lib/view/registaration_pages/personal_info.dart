@@ -2,7 +2,6 @@
 
 import 'dart:io';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:graduation_project/component/personal_birthday_container.dart';
 import 'package:graduation_project/component/personal_email_container.dart';
 import 'package:graduation_project/constants/colors.dart';
@@ -11,7 +10,6 @@ import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:image_picker/image_picker.dart';
-import 'package:path_provider/path_provider.dart';
 import '../../Controllers/EditProfile.dart';
 import '../../component/personal_gender_container.dart';
 

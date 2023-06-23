@@ -106,7 +106,7 @@ Widget CompletedCarrd(widtth, heightt, index, context) {
                           height: 3,
                         ),
                         Text(
-                          "${DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.CompleteApoo[index]['startDateTime']))}",
+                          DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.CompleteApoo[index]['startDateTime'])),
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),

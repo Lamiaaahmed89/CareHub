@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: file_names, non_constant_identifier_names, prefer_typing_uninitialized_variables
 
 import 'dart:convert';
 import 'dart:io';
@@ -62,7 +62,6 @@ class EmergencyCardController extends GetxController {
 
       final response = await request.send();
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         relativephone.clear();
         allegries.clear();
@@ -70,7 +69,6 @@ class EmergencyCardController extends GetxController {
         NationalID = null;
       }
 
-      print(response.statusCode);
       if (response.statusCode == 200) {}
     } catch (error) {
       Get.back();
@@ -97,7 +95,6 @@ class EmergencyCardController extends GetxController {
 
       http.Response response = await http.get(url, headers: header);
 
-      print(response.statusCode);
       if (response.statusCode == 200) {
         EmrgencyCardQR = jsonDecode(response.body);
         Get.off(() => const EmergencyCardQR());

@@ -4,7 +4,6 @@ import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:graduation_project/reusable/BloodGroups.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../Controllers/AppointmentController.dart';
@@ -36,7 +35,7 @@ class _BottomNavBarState extends State<BottomNavBar> {
   final List<Widget> _pages = [
     const HomePage(),
     const SpecialistsListView(),
-    UpComming(),
+    const UpComming(),
     Messages(),
     const LoginPage(),
   ];

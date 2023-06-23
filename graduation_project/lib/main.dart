@@ -9,6 +9,7 @@ import 'package:signalr_netcore/signalr_client.dart';
 
 import 'Controllers/Appoinment.dart';
 import 'Controllers/logincontroller.dart';
+import 'Controllers/realtime.dart';
 import 'models/chatmodel.dart';
 import 'reusable/BottomNavigationBar.dart';
 import 'view/Appointment_pages/appointment_date.dart';
@@ -48,10 +49,7 @@ import 'view/registaration_pages/signUp_pages/birthdate.dart';
 import 'view/registaration_pages/signUp_pages/signUp_page.dart';
 import 'view/registaration_pages/signUp_pages/user_information.dart';
 
-void main()  {
-    
-
- SignalRHelper s = SignalRHelper();
+void main() {
 
   runApp(const MyApp());
   SystemChrome.setSystemUIOverlayStyle(
@@ -77,7 +75,7 @@ class MyApp extends StatelessWidget {
           HomePage.id: (context) => const HomePage(),
           NumPad.id: (context) => const NumPad(),
           SignupPage.id: (context) => const SignupPage(),
-          UpComming.id: (context) => UpComming(),
+          UpComming.id: (context) => const UpComming(),
           SpecialistsListView.id: (context) => const SpecialistsListView(),
           EHRfiles.id: (context) => const EHRfiles(),
           EHR_QR.id: (context) => const EHR_QR(),

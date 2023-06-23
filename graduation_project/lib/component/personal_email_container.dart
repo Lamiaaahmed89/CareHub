@@ -1,3 +1,5 @@
+// ignore_for_file: avoid_types_as_parameter_names, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -15,7 +17,6 @@ class PersonalNameContainer extends StatefulWidget {
 }
 
 class _PersonalNameContainerState extends State<PersonalNameContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
 
   String fullName =
       PersonalNameContainer.personalprofilecontroller.personalinfo['fullName'];
@@ -189,7 +190,6 @@ class PersonalEmailContainer extends StatefulWidget {
 }
 
 class _PersonalEmailContainerState extends State<PersonalEmailContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
   PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   String personalEmail = 'Ali Ahmed@gmail.com';
   @override
@@ -348,8 +348,6 @@ class PersonalPhoneContainer extends StatefulWidget {
 }
 
 class _PersonalPhoneContainerState extends State<PersonalPhoneContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
-
   String phone =
       PersonalPhoneContainer.personalprofilecontroller.personalinfo['phone'];
   @override

@@ -185,7 +185,7 @@ class _Enter_Card_InfoState extends State<Enter_Card_Info> {
                     alignment: Alignment.bottomCenter,
                     child: Padding(
                         padding: const EdgeInsets.only(bottom: 5),
-                        child: Container(
+                        child: SizedBox(
                           width: widtth,
                           height: 55,
                           child: ElevatedButton(

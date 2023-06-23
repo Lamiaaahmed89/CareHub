@@ -106,7 +106,7 @@ Widget UpComingCarrd(widtth, heightt, index, context) {
                           height: 3,
                         ),
                         Text(
-                          "${DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.UpcomingAppoinments[index]['startDateTime']))}",
+                          DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.UpcomingAppoinments[index]['startDateTime'])),
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),

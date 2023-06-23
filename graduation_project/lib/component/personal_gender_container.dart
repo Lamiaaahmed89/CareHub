@@ -17,7 +17,6 @@ class PersonalGenderContainer extends StatefulWidget {
 }
 
 class _PersonalGenderContainerState extends State<PersonalGenderContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
    String gender =
         PersonalGenderContainer.personalprofilecontroller.personalinfo['gender'];
 

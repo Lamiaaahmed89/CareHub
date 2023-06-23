@@ -1,4 +1,4 @@
-// ignore_for_file: file_names
+// ignore_for_file: file_names, non_constant_identifier_names, prefer_typing_uninitialized_variables, avoid_print
 
 import 'dart:convert';
 
@@ -10,8 +10,6 @@ import 'package:http/http.dart' as http;
 import '../constants/colors.dart';
 import '../constants/url.dart';
 import 'logincontroller.dart';
-import 'package:signalr_netcore/signalr_client.dart';
-import 'package:logging/logging.dart';
 
 
 class NotificationController extends GetxController {

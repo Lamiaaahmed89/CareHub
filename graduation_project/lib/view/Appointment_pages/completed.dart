@@ -3,14 +3,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/reusable/Appbar.dart';
-import 'package:graduation_project/reusable/AppointmentListView.dart';
 import 'package:graduation_project/reusable/CompletedCard.dart';
 import 'package:graduation_project/reusable/HomeBar.dart';
 
 import '../../Controllers/Appoinment.dart';
 
 class Completed extends StatelessWidget {
-  Completed({super.key});
+  const Completed({super.key});
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;

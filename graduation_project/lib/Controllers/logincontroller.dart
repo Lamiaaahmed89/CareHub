@@ -8,8 +8,6 @@ import 'package:graduation_project/Controllers/SpesilizationController.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
-import 'package:signalr_netcore/signalr_client.dart';
-
 import '../constants/url.dart';
 import '../reusable/BottomNavigationBar.dart';
 import '../view/registaration_pages/signUp_pages/user_information.dart';

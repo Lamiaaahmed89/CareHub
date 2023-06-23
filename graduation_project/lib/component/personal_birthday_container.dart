@@ -17,7 +17,6 @@ class PersonalBirthdayContainer extends StatefulWidget {
 }
 
 class _PersonalBirthdayContainerState extends State<PersonalBirthdayContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
 
   var birthDay = DateFormat('MMMM dd, yyyy').format(DateTime.parse(
       PersonalBirthdayContainer
@@ -189,7 +188,6 @@ class PersonalWeightContainer extends StatefulWidget {
 }
 
 class _PersonalWeightContainerState extends State<PersonalWeightContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
   String weight = PersonalWeightContainer
       .personalprofilecontroller.personalinfo['weight']
       .toString();
@@ -361,7 +359,6 @@ class PersonalHeightContainer extends StatefulWidget {
 }
 
 class _PersonalHeightContainerState extends State<PersonalHeightContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
 
   String personalHeight = PersonalHeightContainer
       .personalprofilecontroller.personalinfo['height']
@@ -531,7 +528,6 @@ class PersonalBloodContainer extends StatefulWidget {
 }
 
 class _PersonalBloodContainerState extends State<PersonalBloodContainer> {
-  final TextEditingController _textEditingController = TextEditingController();
 
   String blood =
       PersonalBloodContainer.personalprofilecontroller.personalinfo['blood'];

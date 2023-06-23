@@ -1,4 +1,4 @@
-// ignore_for_file: non_constant_identifier_names
+// ignore_for_file: non_constant_identifier_names, file_names, prefer_typing_uninitialized_variables
 
 import 'dart:convert';
 
@@ -48,10 +48,8 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.get(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         OneDocOfflineAppoinments = jsonDecode(response.body);
-        print(OneDocOfflineAppoinments);
       }
     } catch (error) {
       Get.back();
@@ -89,10 +87,8 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.get(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         OneDocOfflineAppoinments = jsonDecode(response.body);
-        print(OneDocOfflineAppoinments);
       }
     } catch (error) {
       Get.back();
@@ -130,7 +126,6 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.post(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         await GetUpcomingAppoinment(context);
       }
@@ -169,12 +164,10 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.get(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         UpcomingAppoinments = jsonDecode(response.body);
-        Get.off(() => UpComming());
+        Get.off(() => const UpComming());
 
-        print(UpcomingAppoinments);
       }
     } catch (error) {
       Get.back();
@@ -212,7 +205,6 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.post(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         // controller.upcoming = true;
         GetUpcomingAppoinment(context);
@@ -253,7 +245,6 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.post(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         rescudling = false;
         await GetUpcomingAppoinment(context);
@@ -293,11 +284,9 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.get(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         CancelledAppo = jsonDecode(response.body);
-        Get.off(() => Cancelled());
-        print(CancelledAppo);
+        Get.off(() => const Cancelled());
       }
     } catch (error) {
       Get.back();
@@ -334,10 +323,9 @@ class DoctorsAppoinments extends GetxController {
 
       http.Response response = await http.get(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
         CompleteApoo = jsonDecode(response.body);
-        Get.off(() => Completed());
+        Get.off(() => const Completed());
       }
     } catch (error) {
       Get.back();
@@ -355,16 +343,8 @@ class DoctorsAppoinments extends GetxController {
   }
 
   Future<void> CheckCompletedAppoinments() async {
-    String? token = LoginController.value;
-    var header = {
-      'Content-Type': 'application/json',
-      'Authorization': 'Bearer $token'
-    };
     try {
-      var url = Uri.parse("$baseURL/Appointment/check-isCompleted");
 
-      http.Response response = await http.get(url, headers: header);
-      print(response.statusCode);
     } catch (error) {
       Get.back();
       showDialog(
@@ -406,9 +386,8 @@ class DoctorsAppoinments extends GetxController {
       http.Response response =
           await http.post(url, body: jsonEncode(body), headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
-        Get.off(Completed());
+        Get.off(const Completed());
       }
     } catch (error) {
       Get.back();

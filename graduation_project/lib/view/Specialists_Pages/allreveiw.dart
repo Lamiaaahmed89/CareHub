@@ -17,8 +17,6 @@ class AllReveiw extends StatelessWidget {
   Widget build(BuildContext context) {
     DoctorsSpecilization DoctorsSpecilizationcon =
         Get.put(DoctorsSpecilization());
-    double widtth = MediaQuery.of(context).size.width;
-    double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: appBar("Reviews "),
@@ -74,7 +72,7 @@ class AllReveiw extends StatelessWidget {
                                     Radius.circular(8.0)),
                                 color: HexColor("#f0f0f0"),
                               )),
-                          Container(
+                          SizedBox(
                             width: 188,
                             child: Column(
                               crossAxisAlignment: CrossAxisAlignment.start,
@@ -111,7 +109,7 @@ class AllReveiw extends StatelessWidget {
                                   "assets/images/star fill.svg",
                                   height: 20,
                                 ),
-                                SizedBox(
+                                const SizedBox(
                                   width: 2,
                                 ),
                                 Text(

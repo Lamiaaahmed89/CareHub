@@ -1,3 +1,5 @@
+// ignore_for_file: file_names, prefer_typing_uninitialized_variables, non_constant_identifier_names
+
 import 'dart:convert';
 import 'dart:io';
 
@@ -42,9 +44,7 @@ class PersonalProfile extends GetxController {
 
       http.Response response = await http.get(url, headers: header);
       Navigator.of(context).pop();
-      print(response.statusCode);
       if (response.statusCode == 200) {
-        print("Getttttttttttt");
         personalinfo = jsonDecode(response.body);
         Get.to(() => const PesronalInformation());
       }
@@ -80,9 +80,6 @@ class PersonalProfile extends GetxController {
       request.headers['Authorization'] = 'Bearer $token';
       Navigator.of(context).pop();
       request.fields['Gender'] = gender.text;
-      final response = await request.send();
-      print(response.statusCode);
-      print(await response.stream.bytesToString());
     } catch (error) {
       Get.back();
       showDialog(
@@ -115,9 +112,7 @@ class PersonalProfile extends GetxController {
       Navigator.of(context).pop();
       request.fields['FirstName'] = PersonalNameContainer.splittext[0];
       request.fields['LastName'] = PersonalNameContainer.splittext[1];
-      final response = await request.send();
 
-      print(response.statusCode);
     } catch (error) {
       Get.back();
       showDialog(
@@ -151,10 +146,7 @@ class PersonalProfile extends GetxController {
 
       request.fields['Phone'] = phonenumber.text;
 
-      final response = await request.send();
 
-      print(response.statusCode);
-      print(await response.stream.bytesToString());
     } catch (error) {
       Get.back();
       showDialog(
@@ -188,10 +180,7 @@ class PersonalProfile extends GetxController {
 
       request.fields['Birthday'] = Birthday.text;
 
-      final response = await request.send();
 
-      print(response.statusCode);
-      print(await response.stream.bytesToString());
     } catch (error) {
       Get.back();
       showDialog(
@@ -225,10 +214,7 @@ class PersonalProfile extends GetxController {
 
       request.fields['Weight'] = weight.text;
 
-      final response = await request.send();
 
-      print(response.statusCode);
-      print(await response.stream.bytesToString());
     } catch (error) {
       Get.back();
       showDialog(
@@ -263,10 +249,7 @@ class PersonalProfile extends GetxController {
 
       request.fields['Height'] = height.text;
 
-      final response = await request.send();
 
-      print(response.statusCode);
-      print(await response.stream.bytesToString());
     } catch (error) {
       Get.back();
       showDialog(
@@ -300,9 +283,6 @@ class PersonalProfile extends GetxController {
 
       request.fields['Blood'] = bloodtype.text;
 
-      final response = await request.send();
-      print(response.statusCode);
-      print(await response.stream.bytesToString());
     } catch (error) {
       Get.back();
       showDialog(
@@ -338,7 +318,6 @@ class PersonalProfile extends GetxController {
       Navigator.of(context).pop();
       final response = await request.send();
 
-      print(response.statusCode);
       if (response.statusCode == 200) {
         GEtPersonalInfo(context);
       }

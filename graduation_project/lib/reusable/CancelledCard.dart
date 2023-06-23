@@ -104,7 +104,7 @@ Widget CancelledCard(widtth, heightt, index, context) {
                           height: 3,
                         ),
                         Text(
-                          "${DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.CancelledAppo[index]['startDateTime']))}",
+                          DateFormat('MMM dd, yyyy').format(DateTime.parse(docappoin.CancelledAppo[index]['startDateTime'])),
                           style: TextStyle(
                               fontSize: 12, color: HexColor("#AEB2BB")),
                         ),
