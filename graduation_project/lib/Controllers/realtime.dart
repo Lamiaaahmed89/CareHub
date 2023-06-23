@@ -1,7 +1,5 @@
-// ignore_for_file: unnecessary_new, prefer_const_declarations
+// ignore_for_file: unnecessary_new, prefer_const_declarations, depend_on_referenced_packages, non_constant_identifier_names, avoid_print
 
-import 'package:flutter/src/widgets/placeholder.dart';
-import 'package:flutter/src/widgets/framework.dart';
 import 'package:get/get.dart';
 import 'package:logging/logging.dart';
 import 'package:signalr_netcore/signalr_client.dart';
@@ -14,7 +12,7 @@ class SignalRHelper {
   static int notify_count = 0;
 
   SignalRHelper(token) {
-    final Logger _logger = Logger("SignalR - hub");
+    final Logger logger = Logger("SignalR - hub");
 
     Future<void> connect() async {
       Logger.root.level = Level.ALL;
@@ -42,7 +40,7 @@ class SignalRHelper {
       }
 
       final result = await hubConnection.invoke("SendMessage");
-      _logger.log(Level.INFO, "Result: '$result");
+      logger.log(Level.INFO, "Result: '$result");
       hubConnection.on("RecieveMessage", (message) {
         print("message is: $message");
       });

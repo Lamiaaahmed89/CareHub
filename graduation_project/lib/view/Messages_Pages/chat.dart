@@ -53,37 +53,34 @@ class _IndividualPageState extends State<IndividualPage> {
                     Iconsax.arrow_left_2,
                     color: HexColor("#252632"),
                   )),
-              title: Container(
-                // margin: EdgeInsets.only(left: 30),
-                child: Row(
-                  children: [
-                    const CircleAvatar(
-                      radius: 20,
-                      backgroundColor: Colors.blueGrey,
-                      backgroundImage: AssetImage(
-                        "assets/images/abdo.jpg",
+              title: Row(
+                children: [
+                  const CircleAvatar(
+                    radius: 20,
+                    backgroundColor: Colors.blueGrey,
+                    backgroundImage: AssetImage(
+                      "assets/images/abdo.jpg",
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'DR.Abdo Mohamed',
+                        style: TextStyle(fontSize: 14, color: Colors.black),
                       ),
-                    ),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Column(
-                      mainAxisAlignment: MainAxisAlignment.start,
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const Text(
-                          'DR.Abdo Mohamed',
-                          style: TextStyle(fontSize: 14, color: Colors.black),
-                        ),
-                        Text(
-                          "Heart surgeon",
-                          style: TextStyle(
-                              fontSize: 12, color: HexColor("#AEB2BB")),
-                        )
-                      ],
-                    ),
-                  ],
-                ),
+                      Text(
+                        "Heart surgeon",
+                        style: TextStyle(
+                            fontSize: 12, color: HexColor("#AEB2BB")),
+                      )
+                    ],
+                  ),
+                ],
               ),
               actions: [
                 Container(
@@ -99,7 +96,7 @@ class _IndividualPageState extends State<IndividualPage> {
                     size: 20,
                   ),
                 ),
-                SizedBox(
+                const SizedBox(
                   width: 10,
                 ),
                 Padding(
@@ -211,7 +208,7 @@ class _IndividualPageState extends State<IndividualPage> {
                                               ),
                                         onPressed: () {
                                           messages.add(MessageModel(
-                                              message: "${_controller.text}",
+                                              message: _controller.text,
                                               type: "source",
                                               time: "10:02AM"));
                                         },

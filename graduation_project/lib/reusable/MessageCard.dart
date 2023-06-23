@@ -12,7 +12,7 @@ Widget MessCard(double Widtth, double heightt) {
     padding: const EdgeInsets.only(bottom: 10),
     child: GestureDetector(
       onTap: () {
-        Get.to(() => IndividualPage());
+        Get.to(() => const IndividualPage());
       },
       child: Row(
         children: [

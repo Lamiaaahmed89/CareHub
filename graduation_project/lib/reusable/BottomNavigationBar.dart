@@ -1,4 +1,4 @@
-// ignore_for_file: file_names, must_be_immutable, library_private_types_in_public_api, non_constant_identifier_names
+// ignore_for_file: file_names, must_be_immutable, library_private_types_in_public_api, non_constant_identifier_names, prefer_typing_uninitialized_variables
 
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
 import 'package:flutter/material.dart';
