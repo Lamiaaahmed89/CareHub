@@ -6,11 +6,9 @@ import 'package:graduation_project/reusable/MessageCard.dart';
 import 'package:graduation_project/reusable/MsgListView.dart';
 import 'package:graduation_project/reusable/SearchBar.dart';
 
-
 class Messages extends StatelessWidget {
   static String id = 'Messages';
   Messages({super.key});
-  List v = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
   @override
   Widget build(BuildContext context) {
     double widtth = MediaQuery.of(context).size.width;
@@ -23,8 +21,20 @@ class Messages extends StatelessWidget {
         child: Column(
           children: [
             SearchBar(widtth, heightt, "Search Message..."),
-            MessageList(MessCard(widtth, heightt)),
-            // NoMessages(widtth, heightt),
+            Expanded(
+              child: ListView.builder(
+                  itemCount: 7,
+                  itemBuilder: (BuildContext context, index) {
+                    return SizedBox(
+                      height: 110,
+                      // color: Colors.amber,
+                      child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                          itemCount: 1,
+                          itemBuilder: (_, __) => MessCard(widtth, heightt)),
+                    );
+                  }),
+            )
           ],
         ),
       ),

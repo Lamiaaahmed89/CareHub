@@ -4,15 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:hexcolor/hexcolor.dart';
 
+import '../Controllers/ChatController.dart';
 import '../view/Messages_Pages/chat.dart';
 import 'package:iconsax/iconsax.dart';
 
 Widget MessCard(double Widtth, double heightt) {
+  ChatController chatcontroller = ChatController();
+
   return Padding(
     padding: const EdgeInsets.only(bottom: 10),
     child: GestureDetector(
       onTap: () {
-        Get.to(() => const IndividualPage());
+        // Get.to(() => const IndividualPage());
+        print(chatcontroller.AllDoctorsChat);
       },
       child: Row(
         children: [
@@ -78,6 +82,7 @@ Widget MessCard(double Widtth, double heightt) {
                     padding: const EdgeInsets.only(top: 7),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
                           "10:21 PM",
@@ -87,21 +92,21 @@ Widget MessCard(double Widtth, double heightt) {
                         const SizedBox(
                           height: 5,
                         ),
-                        Container(
-                          width: Widtth * .04,
-                          height: heightt * .03,
-                          alignment: Alignment.center,
-                          decoration: BoxDecoration(
-                            shape: BoxShape.circle,
-                            color: HexColor("#285FFA"),
-                            // borderRadius: BorderRadius.all(Radius.circular(9)),
-                          ),
-                          child: Text(
-                            "1",
-                            style: TextStyle(
-                                color: Colors.white, fontSize: Widtth * .023),
-                          ),
-                        )
+                        // Container(
+                        //   width: Widtth * .04,
+                        //   height: heightt * .03,
+                        //   alignment: Alignment.center,
+                        //   decoration: BoxDecoration(
+                        //     shape: BoxShape.circle,
+                        //     color: HexColor("#285FFA"),
+                        //     // borderRadius: BorderRadius.all(Radius.circular(9)),
+                        //   ),
+                        //   child: Text(
+                        //     "1",
+                        //     style: TextStyle(
+                        //         color: Colors.white, fontSize: Widtth * .023),
+                        //   ),
+                        // )
                       ],
                     ),
                   )

@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/Controllers/EditProfile.dart';
 import 'package:graduation_project/Controllers/SpesilizationController.dart';
+import 'package:graduation_project/Controllers/realtime.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
@@ -14,6 +15,8 @@ import '../view/registaration_pages/signUp_pages/user_information.dart';
 import 'Appoinment.dart';
 
 class LoginController extends GetxController {
+  SignalRHelper s = SignalRHelper();
+
   DoctorsSpecilization DoctorsSpecilizationcon =
       Get.put(DoctorsSpecilization());
   DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
@@ -106,6 +109,7 @@ class LoginController extends GetxController {
       http.Response response = await http.get(url, headers: header);
       print(response.statusCode);
       if (response.statusCode == 200) {
+        await s.connect(token);
         await personalprofilecontroller.GEtPersonalInfo(context);
         await DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
         await docappoin.GetUpcomingAppoinment(context);
