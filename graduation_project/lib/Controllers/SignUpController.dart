@@ -43,10 +43,6 @@ class SignUpController extends GetxController {
       Navigator.of(context).pop();
       print(response.statusCode);
       if (response.statusCode == 200) {
-        final SharedPreferences prefs = await pref;
-        await prefs.setString('token', "im signed up");
-        value = prefs.getString("token");
-        SignedUp = true;
         showDialog(
             routeSettings:
                 RouteSettings(arguments: Get.off(() => const LoginPage())),
