@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
           fontFamily: 'Poppins',
         ),
         initialRoute:
-            SignUpController.value == null ? OnBoarding.id : SplashScreen.id,
+            OnBoarding.id ,
         routes: {
           VerificationPage.id: (context) => VerificationPage(),
           SplashScreen.id: (context) => const SplashScreen(),

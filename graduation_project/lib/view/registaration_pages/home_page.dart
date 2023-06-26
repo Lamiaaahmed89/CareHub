@@ -43,7 +43,7 @@ class HomePageState extends State<HomePage> {
       size: 25,
     ),
     'Offline': Icon(
-      Iconsax.location,
+      Iconsax.map_1,
       color: HexColor("#285FFA"),
       size: 25,
     )
@@ -210,13 +210,7 @@ class HomePageState extends State<HomePage> {
                                       color: white_color,
                                     ),
                                   ),
-                                  Text(
-                                    'Heart Surgeon',
-                                    style: TextStyle(
-                                      fontSize: 12,
-                                      color: white_color.withOpacity(0.8),
-                                    ),
-                                  )
+                                
                                 ],
                               ),
                               const SizedBox(

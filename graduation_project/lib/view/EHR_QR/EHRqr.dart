@@ -37,10 +37,10 @@ class EHR_QR extends StatelessWidget {
               padding:
                   EdgeInsets.only(top: heightt * 0.07, bottom: heightt * .07),
               child: Container(
-                width: widtth * .6,
+                width: null,
                 height: heightt * .4,
                 decoration: BoxDecoration(
-                  image:  DecorationImage(
+                  image: DecorationImage(
                       fit: BoxFit.cover,
                       image: NetworkImage("${ehrtestscontroller.qrurl}")),
                   borderRadius: const BorderRadius.all(Radius.circular(8.0)),
