@@ -45,7 +45,7 @@ class suggestionServices extends StatelessWidget {
                 ], borderRadius: BorderRadius.circular(10)),
                 child: InkWell(
                   onTap: () {
-                    Get.off(() => const SpecialistsListView());
+                    // Get.off(() => const SpecialistsListView());
                   },
                   child: Card(
                     child: SizedBox(
@@ -89,11 +89,11 @@ class suggestionServices extends StatelessWidget {
                                 const SizedBox(
                                   height: 10,
                                 ),
-                                Text(
-                                  "${allSpecialists[index].DoctorsNum} Doctors",
-                                  style: TextStyle(
-                                      color: HexColor("#AEB2BB"), fontSize: 12),
-                                )
+                                // Text(
+                                //   "${allSpecialists[index].DoctorsNum} Doctors",
+                                //   style: TextStyle(
+                                //       color: HexColor("#AEB2BB"), fontSize: 12),
+                                // )
                               ],
                             ),
                           ),
