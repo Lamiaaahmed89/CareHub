@@ -10,6 +10,7 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 import 'package:intl/intl.dart';
 import '../../Controllers/Appoinment.dart';
+import '../../Controllers/ChatController.dart';
 import '../../Controllers/EditProfile.dart';
 import '../../Controllers/NotificationController.dart';
 import '../../Controllers/realtime.dart';
@@ -29,6 +30,8 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  ChatController chatcontroller = Get.put(ChatController());
+
   int count = 0;
   PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
   DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
@@ -55,6 +58,7 @@ class HomePageState extends State<HomePage> {
             child: GestureDetector(
               onTap: () {
                 personalprofilecontroller.GEtPersonalInfo(context);
+               
               },
               child: CircleAvatar(
                 backgroundImage: personalprofilecontroller
@@ -84,7 +88,7 @@ class HomePageState extends State<HomePage> {
                       });
 
                       print(HomePage.isNotifcationOpened);
-                      print(SignalRHelper.notify_count);
+                      // print(SignalRHelper.notify_count);
                     },
                     icon: SignalRHelper.notify_count == 0
                         ? Icon(
@@ -106,14 +110,13 @@ class HomePageState extends State<HomePage> {
                                   children: <Widget>[
                                     Icon(Icons.brightness_1,
                                         size: 18.0, color: Failed_color),
-                                    Positioned(
+                                    const Positioned(
                                       top: 1.0,
                                       right: 0.0,
                                       left: 6,
                                       bottom: 0,
-                                      child: Text(
-                                          "${SignalRHelper.notify_count}",
-                                          style: const TextStyle(
+                                      child: Text("",
+                                          style: TextStyle(
                                               color: Colors.white,
                                               fontSize: 10.0,
                                               fontWeight: FontWeight.w500)),

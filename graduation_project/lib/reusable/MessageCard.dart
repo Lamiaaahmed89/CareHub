@@ -1,22 +1,22 @@
-// ignore_for_file: file_names, non_constant_identifier_names
+// ignore_for_file: file_names, non_constant_identifier_names, avoid_print
 
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:graduation_project/constants/colors.dart';
 import 'package:hexcolor/hexcolor.dart';
 
 import '../Controllers/ChatController.dart';
-import '../view/Messages_Pages/chat.dart';
 import 'package:iconsax/iconsax.dart';
 
-Widget MessCard(double Widtth, double heightt) {
+Widget MessCard(double Widtth, double heightt, index, allcaht, context) {
   ChatController chatcontroller = ChatController();
 
   return Padding(
     padding: const EdgeInsets.only(bottom: 10),
     child: GestureDetector(
       onTap: () {
-        // Get.to(() => const IndividualPage());
-        print(chatcontroller.AllDoctorsChat);
+        print(allcaht[index]);
+        chatcontroller.GetspecifdocChat(context, allcaht[index]["id"]);
+        // chatcontroller.Chatid = allcaht[index]["id"];
       },
       child: Row(
         children: [
@@ -43,15 +43,17 @@ Widget MessCard(double Widtth, double heightt) {
               child: Row(
                 children: [
                   Container(
-                    width: Widtth * .17,
-                    height: heightt * .08,
+                    width: Widtth * .18,
+                    height: heightt * .09,
                     decoration: BoxDecoration(
-                      image: const DecorationImage(
-                          fit: BoxFit.cover,
-                          image: AssetImage("assets/images/abdo.jpg")),
+                      image: DecorationImage(
+                          fit: BoxFit.contain,
+                          image: NetworkImage(
+                            "${allcaht[index]["photo"]}",
+                          )),
                       borderRadius:
                           const BorderRadius.all(Radius.circular(8.0)),
-                      color: HexColor("#f0f0f0"),
+                      color: white_color,
                     ),
                   ),
                   SizedBox(
@@ -61,15 +63,18 @@ Widget MessCard(double Widtth, double heightt) {
                     padding: const EdgeInsets.only(top: 7),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
-                      children: const [
-                        Text("Dr Mohamed"),
-                        SizedBox(
+                      children: [
+                        Text("${allcaht[index]["fullName"]}"),
+                        const SizedBox(
                           height: 5,
                         ),
                         Text(
-                          "hi what is your name",
+                          allcaht[index]["lastMessage"] == null
+                              ? ""
+                              : "${allcaht[index]["lastMessage"]}",
+                          maxLines: 1,
                           overflow: TextOverflow.clip,
-                          style: TextStyle(fontSize: 12),
+                          style: const TextStyle(fontSize: 12),
                         )
                       ],
                     ),
@@ -85,7 +90,9 @@ Widget MessCard(double Widtth, double heightt) {
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
                         Text(
-                          "10:21 PM",
+                          allcaht[index]["date"] == null
+                              ? ""
+                              : "${allcaht[index]["date"]}",
                           style: TextStyle(
                               color: HexColor("#AEB2BB"), fontSize: 12),
                         ),

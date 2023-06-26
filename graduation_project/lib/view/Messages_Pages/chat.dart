@@ -1,12 +1,12 @@
-// ignore_for_file: library_private_types_in_public_api, avoid_print
-
+// ignore_for_file: library_private_types_in_public_api, avoid_print, depend_on_referenced_packages, non_constant_identifier_names, prefer_typing_uninitialized_variables
+// import 'package:zego_uikit_prebuilt_call/zego_uikit_prebuilt_call.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
-import '../../models/messagemodel.dart';
+import '../../Controllers/ChatController.dart';
 import 'AllMessages.dart';
 import 'component/ownmessagecard.dart';
 import 'component/replaycard.dart';
@@ -17,19 +17,21 @@ class IndividualPage extends StatefulWidget {
   static String id = 'IndividualPage';
 
   @override
-  _IndividualPageState createState() => _IndividualPageState();
+  IndividualPageState createState() => IndividualPageState();
 }
 
-class _IndividualPageState extends State<IndividualPage> {
+class IndividualPageState extends State<IndividualPage> {
+  static var DocChat;
+  static var ImeditaleyDocMessage;
+  ChatController chatcontroller = ChatController();
+
   bool show = false;
   FocusNode focusNode = FocusNode();
   bool sendButton = false;
-  List<MessageModel> messages = [
-    MessageModel(message: "HI Dr.Abdo", type: "source", time: '10:00AM'),
-    MessageModel(message: "How Are You", type: "Destination", time: '10:01AM'),
-  ];
+  List sendmessages = [];
   final TextEditingController _controller = TextEditingController();
   final ScrollController _scrollController = ScrollController();
+
   // late final ChatModel chatModel;
   //  late final ChatModel sourchat;
 
@@ -55,13 +57,11 @@ class _IndividualPageState extends State<IndividualPage> {
                   )),
               title: Row(
                 children: [
-                  const CircleAvatar(
-                    radius: 20,
-                    backgroundColor: Colors.blueGrey,
-                    backgroundImage: AssetImage(
-                      "assets/images/abdo.jpg",
-                    ),
-                  ),
+                  CircleAvatar(
+                      radius: 20,
+                      backgroundColor: Colors.blueGrey,
+                      backgroundImage:
+                          NetworkImage("${DocChat["toUser"]["photo"]}")),
                   const SizedBox(
                     width: 5,
                   ),
@@ -69,57 +69,63 @@ class _IndividualPageState extends State<IndividualPage> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      const Text(
-                        'DR.Abdo Mohamed',
-                        style: TextStyle(fontSize: 14, color: Colors.black),
-                      ),
                       Text(
-                        "Heart surgeon",
-                        style: TextStyle(
-                            fontSize: 12, color: HexColor("#AEB2BB")),
-                      )
+                        "DR.${DocChat["toUser"]["fullName"]}",
+                        style: const TextStyle(fontSize: 14, color: Colors.black),
+                      ),
+                      // Text(
+                      //   "Heart surgeon",
+                      //   style:
+                      //       TextStyle(fontSize: 12, color: HexColor("#AEB2BB")),
+                      // )
                     ],
                   ),
                 ],
               ),
               actions: [
                 Container(
-                  width: 35,
-                  height: 35,
-                  decoration: BoxDecoration(
-                    color: HexColor("#f0f0f0"),
-                    shape: BoxShape.circle,
-                  ),
-                  child: Icon(
-                    Iconsax.video,
-                    color: HexColor("#285FFA"),
-                    size: 20,
-                  ),
-                ),
-                const SizedBox(
-                  width: 10,
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(right: 16),
-                  child: Container(
                     width: 35,
                     height: 35,
                     decoration: BoxDecoration(
                       color: HexColor("#f0f0f0"),
                       shape: BoxShape.circle,
                     ),
-                    child: Icon(
-                      Iconsax.call,
-                      color: HexColor("#285FFA"),
-                      size: 20,
-                    ),
-                  ),
+                    child: IconButton(
+                      onPressed: () {
+                        print(DocChat["messages"]);
+                      },
+                      icon: Icon(
+                        Iconsax.video,
+                        color: HexColor("#285FFA"),
+                        size: 20,
+                      ),
+                    )),
+                const SizedBox(
+                  width: 10,
+                ),
+                Padding(
+                  padding: const EdgeInsets.only(right: 16),
+                  child: Container(
+                      width: 35,
+                      height: 35,
+                      decoration: BoxDecoration(
+                        color: HexColor("#f0f0f0"),
+                        shape: BoxShape.circle,
+                      ),
+                      child: IconButton(
+                        onPressed: () {},
+                        icon: Icon(
+                          Iconsax.call,
+                          color: HexColor("#285FFA"),
+                          size: 20,
+                        ),
+                      )),
                 ),
               ],
             ),
           ),
           body: SizedBox(
-            height: MediaQuery.of(context).size.height,
+            height: null,
             width: MediaQuery.of(context).size.width,
             child: WillPopScope(
               child: Column(
@@ -128,22 +134,22 @@ class _IndividualPageState extends State<IndividualPage> {
                     child: ListView.builder(
                       shrinkWrap: true,
                       controller: _scrollController,
-                      itemCount: messages.length + 1,
+                      itemCount: DocChat["messages"].length + 1,
                       itemBuilder: (context, index) {
-                        if (index == messages.length) {
+                        if (index == DocChat["messages"].length) {
                           return Container(
                             height: 70,
                           );
                         }
-                        if (messages[index].type == "source") {
-                          return OwnMessageCard(
-                            message: messages[index].message,
-                            time: messages[index].time,
+                        if (DocChat["messages"][index]["class"] == "received") {
+                          return ReplyCard(
+                            message: "${DocChat["messages"][index]["message"]}",
+                            time: "10:00AM",
                           );
                         } else {
-                          return ReplyCard(
-                            message: messages[index].message,
-                            time: messages[index].time,
+                          return OwnMessageCard(
+                            message: "${DocChat["messages"][index]["message"]}",
+                            time: "10:00AM",
                           );
                         }
                       },
@@ -152,7 +158,7 @@ class _IndividualPageState extends State<IndividualPage> {
                   Align(
                     alignment: Alignment.bottomCenter,
                     child: SizedBox(
-                      height: 70,
+                      height: null,
                       child: Column(
                         mainAxisAlignment: MainAxisAlignment.end,
                         children: [
@@ -206,11 +212,21 @@ class _IndividualPageState extends State<IndividualPage> {
                                                 Iconsax.microphone_24,
                                                 color: Main_color,
                                               ),
-                                        onPressed: () {
-                                          messages.add(MessageModel(
-                                              message: _controller.text,
-                                              type: "source",
-                                              time: "10:02AM"));
+                                        onPressed: () async {
+                                          await chatcontroller.SendMeesage(
+                                              DocChat["toUser"]["id"],
+                                              _controller.text);
+                                          if (chatcontroller.IsSend) {
+                                            Map<String, dynamic> newmesage = {
+                                              "message": _controller.text,
+                                              "class": "sent"
+                                            };
+                                            setState(() {
+                                              DocChat["messages"]
+                                                  .add(newmesage);
+                                            });
+                                            _controller.clear();
+                                          }
                                         },
                                       ),
                                       contentPadding: const EdgeInsets.all(5),
@@ -243,84 +259,5 @@ class _IndividualPageState extends State<IndividualPage> {
     );
   }
 
-//   Widget bottomSheet() {
-//     return SizedBox(
-//       height: 278,
-//       width: MediaQuery.of(context).size.width,
-//       child: Card(
-//         margin: const EdgeInsets.all(18.0),
-//         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
-//         child: Padding(
-//           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-//           child: Column(
-//             children: [
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-//                   iconCreation(
-//                       Icons.insert_drive_file, Colors.indigo, "Document"),
-//                   const SizedBox(
-//                     width: 40,
-//                   ),
-//                   iconCreation(Icons.camera_alt, Colors.pink, "Camera"),
-//                   const SizedBox(
-//                     width: 40,
-//                   ),
-//                   iconCreation(Icons.insert_photo, Colors.purple, "Gallery"),
-//                 ],
-//               ),
-//               const SizedBox(
-//                 height: 30,
-//               ),
-//               Row(
-//                 mainAxisAlignment: MainAxisAlignment.center,
-//                 children: [
-//                   iconCreation(Icons.headset, Colors.orange, "Audio"),
-//                   const SizedBox(
-//                     width: 40,
-//                   ),
-//                   iconCreation(Icons.location_pin, Colors.teal, "Location"),
-//                   const SizedBox(
-//                     width: 40,
-//                   ),
-//                   iconCreation(Icons.person, Colors.blue, "Contact"),
-//                 ],
-//               ),
-//             ],
-//           ),
-//         ),
-//       ),
-//     );
-//   }
 
-//   Widget iconCreation(IconData icons, Color color, String text) {
-//     return InkWell(
-//       onTap: () {},
-//       child: Column(
-//         children: [
-//           CircleAvatar(
-//             radius: 30,
-//             backgroundColor: color,
-//             child: Icon(
-//               icons,
-//               // semanticLabel: "Help",
-//               size: 29,
-//               color: Colors.white,
-//             ),
-//           ),
-//           const SizedBox(
-//             height: 5,
-//           ),
-//           Text(
-//             text,
-//             style: const TextStyle(
-//               fontSize: 12,
-//               // fontWeight: FontWeight.w100,
-//             ),
-//           )
-//         ],
-//       ),
-//     );
-//   }
-// }
 }

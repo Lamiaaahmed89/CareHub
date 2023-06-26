@@ -14,7 +14,7 @@ PreferredSizeWidget appBar(String Title) {
     elevation: 0,
     leading: IconButton(
         onPressed: () {
-          Get.off(() => BottomNavBar());
+          Get.off(() => const BottomNavBar());
           HomePage.isNotifcationOpened = false;
         },
         icon: Icon(

@@ -1,10 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/view/registaration_pages/onboardin.dart';
+import 'package:graduation_project/reusable/BottomNavigationBar.dart';
+import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
+
+import '../../Controllers/logincontroller.dart';
 
 class SplashScreen extends StatefulWidget {
-  const SplashScreen({super.key});
+    
 
+   const SplashScreen({super.key});
+    static String id = 'SplashScreen';
   @override
   State<SplashScreen> createState() => _SplashScreenState();
 }
@@ -15,9 +20,9 @@ class _SplashScreenState extends State<SplashScreen> {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((value) {
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => const OnBoarding()));
+          context, MaterialPageRoute(builder: (context) =>LoginController.value!=null?const BottomNavBar():const LoginPage() ));
       context;
-      MaterialPageRoute(builder: (context) => const OnBoarding());
+      MaterialPageRoute(builder: (context) => LoginController.value!=null?const BottomNavBar():const LoginPage());
     });
   }
 
@@ -35,7 +40,7 @@ Widget build(BuildContext context) {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
-            "LOGO",
+            "CareHub",
             style: TextStyle(color: Main_color, fontSize: 30),
           ),
         ],

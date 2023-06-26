@@ -11,11 +11,9 @@ Widget NoMessages(wiidth, heiight) {
       padding: EdgeInsets.only(top: heiight / 300),
       child: Column(
         children: [
-          SvgPicture.asset(
-            "assets/images/Mobile inbox.svg",
-            // width: 300,
-            height: (heiight * 50.714) / 100,
-          ),
+          SvgPicture.asset("assets/images/Mobile inbox.svg",
+              // width: 300,
+              height: 300),
           SizedBox(
             width: (wiidth * .55),
             child: const Text(

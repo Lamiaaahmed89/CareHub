@@ -5,7 +5,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/component/register_button.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/reusable/Appbar.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 import 'package:iconsax/iconsax.dart';
 
@@ -24,7 +24,27 @@ class ResetPassword extends StatelessWidget {
     double w = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: white_color,
-      appBar: appBar('Reset Password'),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(
+              Iconsax.arrow_left_2,
+              color: HexColor("#252632"),
+            )),
+        title: Text(
+          "Reset Password",
+          style: TextStyle(
+              color: HexColor("#252632"),
+              fontSize: 16,
+              fontWeight: FontWeight.w500),
+        ),
+        centerTitle: true,
+      ),
+      
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 16.0),
         child: ListView(

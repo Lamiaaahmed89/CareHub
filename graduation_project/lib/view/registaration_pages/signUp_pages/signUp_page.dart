@@ -57,6 +57,7 @@ class _SignupPageState extends State<SignupPage> {
                       spreadRadius: BorderSide.strokeAlignOutside),
                 ], borderRadius: BorderRadius.circular(50)),
                 child: TextFormField(
+                  
                     controller: signupcontroller.emailcontroller,
                     decoration: InputDecoration(
                       fillColor: white_color,

@@ -1,16 +1,17 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, must_be_immutable
 
 import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
+import 'package:graduation_project/view/registaration_pages/splachscreen.dart';
 import 'package:signalr_netcore/signalr_client.dart';
 
 import 'Controllers/Appoinment.dart';
+import 'Controllers/SignUpController.dart';
 import 'Controllers/logincontroller.dart';
 import 'Controllers/realtime.dart';
-import 'models/chatmodel.dart';
 import 'reusable/BottomNavigationBar.dart';
 import 'view/Appointment_pages/appointment_date.dart';
 import 'view/Appointment_pages/appointment_no_dates.dart';
@@ -49,15 +50,16 @@ import 'view/registaration_pages/signUp_pages/birthdate.dart';
 import 'view/registaration_pages/signUp_pages/signUp_page.dart';
 import 'view/registaration_pages/signUp_pages/user_information.dart';
 
-void main() {
-  // SignalRHelper Notification = SignalRHelper(LoginController.value);
-  runApp(const MyApp());
+Future<void> main()  async {
+  WidgetsFlutterBinding.ensureInitialized();
+  runApp(MyApp());
   SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(statusBarColor: Colors.white));
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  SignUpController signUpController = Get.put(SignUpController());
+  MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
@@ -65,13 +67,14 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           fontFamily: 'Poppins',
         ),
-        initialRoute: LoginPage.id,
+        initialRoute:
+            SignUpController.value == null ? OnBoarding.id : SplashScreen.id,
         routes: {
           VerificationPage.id: (context) => VerificationPage(),
+          SplashScreen.id: (context) => const SplashScreen(),
           Doctors.id: (context) => const Doctors(),
-          IndividualPage.id: (context) => const IndividualPage(),
           suggestionServices.id: (context) => const suggestionServices(),
-          BottomNavBar.id: (context) => BottomNavBar(),
+          BottomNavBar.id: (context) => const BottomNavBar(),
           HomePage.id: (context) => const HomePage(),
           NumPad.id: (context) => const NumPad(),
           SignupPage.id: (context) => const SignupPage(),
@@ -110,6 +113,8 @@ class MyApp extends StatelessWidget {
 
           // ChooseGender.id : (context) => ChooseGender(),
           // ConsultaionEnd.id : (context) => ConsultaionEnd(),
+
+          // if signup token==null got to onboarding else if login token==null goto login else bottomnavbar
         });
   }
 }

@@ -25,7 +25,7 @@ class MedicalTests extends StatelessWidget {
     elevation: 0,
     leading: IconButton(
         onPressed: () {
-          Get.offAll(()=> BottomNavBar());
+          Get.offAll(()=> const BottomNavBar());
         },
         icon: Icon(
           Iconsax.arrow_left_2,

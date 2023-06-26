@@ -9,7 +9,6 @@ import 'package:iconsax/iconsax.dart';
 import '../Controllers/AppointmentController.dart';
 import '../Controllers/SpesilizationController.dart';
 import '../Controllers/logincontroller.dart';
-import '../Controllers/realtime.dart';
 import '../constants/colors.dart';
 import '../view/Appointment_pages/upcomming.dart';
 import '../view/Messages_Pages/AllMessages.dart';
@@ -20,15 +19,14 @@ import '../view/registaration_pages/login_pages/login_page.dart';
 class BottomNavBar extends StatefulWidget {
   static String id = 'BottomNavBar';
   static int navindex = 0;
-  LoginController loginController = Get.put(LoginController());
 
-  BottomNavBar({super.key});
+  const  BottomNavBar({super.key});
   @override
   BottomNavBarState createState() => BottomNavBarState();
 }
 
 class BottomNavBarState extends State<BottomNavBar> {
-  static var ClearToken;
+  LoginController loginController = Get.put(LoginController());
   DoctorsSpecilization DoctorsSpecilizationcon =
       Get.put(DoctorsSpecilization());
   int selectedIndex = 0;
@@ -71,8 +69,7 @@ class BottomNavBarState extends State<BottomNavBar> {
         animationDuration: const Duration(milliseconds: 600),
         onTap: (index) async {
           if (index == 4) {
-            await ClearToken.clear();
-            Get.offAll(() => const LoginPage());
+            loginController.logout();
           }
           if (index == 2) {
             setState(() {

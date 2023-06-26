@@ -7,7 +7,6 @@
 // ignore_for_file: file_names
 
 import 'package:flutter/material.dart';
-import 'package:graduation_project/reusable/Appbar.dart';
 import 'package:graduation_project/reusable/NoMessages.dart';
 import 'package:graduation_project/reusable/SearchBar.dart';
 
@@ -19,16 +18,13 @@ class NoMessage extends StatelessWidget {
     double heightt = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
-      appBar: appBar("Messages"),
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: widtth * .04),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SearchBar(widtth, heightt, "Search Message..."),
-              NoMessages(widtth, heightt),
-            ],
-          ),
+        child: Column(
+          children: [
+            SearchBar(widtth, heightt, "Search Message..."),
+            NoMessages(widtth, heightt),
+          ],
         ),
       ),
     );

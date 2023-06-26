@@ -3,13 +3,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:flutter_svg_provider/flutter_svg_provider.dart' as svg;
-import 'package:graduation_project/view/registaration_pages/login_pages/login_page.dart';
 
 import '../../constants/colors.dart';
+import 'signUp_pages/signUp_page.dart';
 
-
-int currentindex=0;
- List<OnboardingContent> content = [
+int currentindex = 0;
+List<OnboardingContent> content = [
   OnboardingContent(
       image: "assets/images/Medical prescription.svg",
       text1: 'Consultation with a doctor',
@@ -28,7 +27,7 @@ int currentindex=0;
 ];
 
 class OnBoarding extends StatefulWidget {
-    static String id = 'OnBoarding';
+  static String id = 'OnBoarding';
 
   const OnBoarding({super.key});
 
@@ -42,20 +41,21 @@ class _OnBoardingState extends State<OnBoarding> {
     return SafeArea(
       child: Scaffold(
         body: PageView.builder(
-          onPageChanged:(int index){
-            setState(() {
-              currentindex=index;
-            });
-          },
-          itemCount:content.length,
-            itemBuilder: ((context, index) => cus_onbording(context,currentindex))),
+            onPageChanged: (int index) {
+              setState(() {
+                currentindex = index;
+              });
+            },
+            itemCount: content.length,
+            itemBuilder: ((context, index) =>
+                cus_onbording(context, currentindex))),
         backgroundColor: Second_color,
       ),
     );
   }
 }
 
-Widget curved2(context,index) {
+Widget curved2(context, index) {
   return Stack(
     children: <Widget>[
       Padding(
@@ -96,19 +96,17 @@ Widget curved2(context,index) {
         fit: BoxFit.fill,
       )),
       Positioned(
-        right:0,
-        left:0,
-        top:0,
+        right: 0,
+        left: 0,
+        top: 0,
         bottom: 30,
         child: Center(
           child: Container(
-            width:MediaQuery.of(context).size.width,
+            width: MediaQuery.of(context).size.width,
             // height:280,
-            
+
             decoration: BoxDecoration(
-                image: DecorationImage(
-                  // fit:BoxFit.fill,
-                    image: svg.Svg(content[index].image))),
+                image: DecorationImage(image: svg.Svg(content[index].image))),
           ),
         ),
       ),
@@ -116,13 +114,13 @@ Widget curved2(context,index) {
   );
 }
 
-Widget cus_onbording(context,index) {
+Widget cus_onbording(context, index) {
   return Column(
     crossAxisAlignment: CrossAxisAlignment.start,
     children: [
       SizedBox(
           height: MediaQuery.of(context).size.height - 257,
-          child: curved2(context,currentindex)),
+          child: curved2(context, currentindex)),
       Padding(
         padding: const EdgeInsets.fromLTRB(16, 50, 0, 0),
         child: Text(
@@ -133,7 +131,8 @@ Widget cus_onbording(context,index) {
       ),
       Padding(
         padding: const EdgeInsets.fromLTRB(16, 10, 0, 0),
-        child: Text(content[index].text2,
+        child: Text(
+          content[index].text2,
           style: TextStyle(
               fontWeight: FontWeight.w500, color: Text2_color, fontSize: 12),
         ),
@@ -152,18 +151,20 @@ Widget cus_onbording(context,index) {
                             width: 6,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(20),
-                                color:index==currentindex?Main_color:Text2_color),
+                                color: index == currentindex
+                                    ? Main_color
+                                    : Text2_color),
                           ),
                         ))),
             TextButton(
               onPressed: () {
                 Navigator.push(context,
-                        MaterialPageRoute(builder: (BuildContext context) {
-                      return const LoginPage();
-                    }));
+                    MaterialPageRoute(builder: (BuildContext context) {
+                  return const SignupPage();
+                }));
               },
               child: Text(
-                currentindex==content.length-1?'Start':'Skip',
+                currentindex == content.length - 1 ? 'Start' : 'Skip',
                 style: TextStyle(
                     fontSize: 12,
                     fontWeight: FontWeight.w500,
@@ -184,4 +185,3 @@ class OnboardingContent {
   OnboardingContent(
       {required this.image, required this.text1, required this.text2});
 }
-

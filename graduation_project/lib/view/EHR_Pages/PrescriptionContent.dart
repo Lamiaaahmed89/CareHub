@@ -26,7 +26,7 @@ class PrescriptionContent extends StatelessWidget {
           child: Row(children: [
             Padding(
               padding: EdgeInsets.only(left: widtth * .009),
-              child:Container(
+              child: Container(
                 width: widtth * .90,
                 decoration: BoxDecoration(
                   color: Colors.white,
@@ -35,7 +35,7 @@ class PrescriptionContent extends StatelessWidget {
                     BoxShadow(
                       color: HexColor("#000000").withAlpha(35),
                       blurRadius: 6,
-                      offset: const Offset(0, 3), 
+                      offset: const Offset(0, 3),
                     ),
                   ],
                 ),
@@ -59,7 +59,7 @@ class PrescriptionContent extends StatelessWidget {
                         ),
                       ),
                       subtitle: Text(
-                        "${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['frequency']} ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['numOfUnit']} ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['duration']} ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['timeOfDay']} ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['toBeTaken']}",
+                        "${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['frequency']} ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['numOfUnit']} Units for ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['duration']} ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['timeOfDay']} ${EhrPrescriptioncontroller.DocPrescription['prescriptions'][index]['toBeTaken']}",
                         style: const TextStyle(fontSize: 13),
                       ),
                     ),

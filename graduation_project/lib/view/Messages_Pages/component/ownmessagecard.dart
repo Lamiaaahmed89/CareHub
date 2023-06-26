@@ -57,11 +57,11 @@ class OwnMessageCard extends StatelessWidget {
                   const SizedBox(
                     width: 5,
                   ),
-                  Icon(
-                    Icons.done_all,
-                    size: 20,
-                    color: Main_color,
-                  ),
+                  // Icon(
+                  //   Icons.done_all,
+                  //   size: 20,
+                  //   color: Main_color,
+                  // ),
                 ],
               ),
             ),

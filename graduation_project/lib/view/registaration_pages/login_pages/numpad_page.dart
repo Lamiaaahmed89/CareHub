@@ -3,7 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:graduation_project/constants/colors.dart';
-import 'package:graduation_project/reusable/Appbar.dart';
+import 'package:hexcolor/hexcolor.dart';
 import 'package:iconsax/iconsax.dart';
 
 import '../../../Controllers/forgetpassword.dart';
@@ -22,7 +22,26 @@ class _NumPadState extends State<NumPad> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: white_color,
-      appBar: appBar('Verification'),
+      appBar: AppBar(
+        backgroundColor: Colors.white,
+        elevation: 0,
+        leading: IconButton(
+            onPressed: () {
+              Get.back();
+            },
+            icon: Icon(
+              Iconsax.arrow_left_2,
+              color: HexColor("#252632"),
+            )),
+        title: Text(
+          "Verification",
+          style: TextStyle(
+              color: HexColor("#252632"),
+              fontSize: 16,
+              fontWeight: FontWeight.w500),
+        ),
+        centerTitle: true,
+      ),
       body: Container(
         decoration: BoxDecoration(
           color: white_color,
@@ -267,7 +286,7 @@ class _OtpScreenState extends State<OtpScreen> {
       strPin += e;
     }
     if (pinIndex == 6) {
-      await forgetpassword.ResetCode(strPin,context);
+      await forgetpassword.ResetCode(strPin, context);
       print(strPin);
     }
   }

@@ -11,16 +11,17 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 import '../constants/url.dart';
 import '../reusable/BottomNavigationBar.dart';
+import '../view/registaration_pages/login_pages/login_page.dart';
 import '../view/registaration_pages/signUp_pages/user_information.dart';
 import 'Appoinment.dart';
+import 'ChatController.dart';
 
 class LoginController extends GetxController {
-  SignalRHelper s = SignalRHelper();
-
   DoctorsSpecilization DoctorsSpecilizationcon =
       Get.put(DoctorsSpecilization());
   DoctorsAppoinments docappoin = Get.put(DoctorsAppoinments());
   PersonalProfile personalprofilecontroller = Get.put(PersonalProfile());
+  ChatController chatcontroller = Get.put(ChatController());
 
   static String? value;
   TextEditingController emailcontroller = TextEditingController();
@@ -58,7 +59,6 @@ class LoginController extends GetxController {
         var token = json['token'];
         final SharedPreferences prefs = await pref;
         await prefs.setString('token', token);
-        BottomNavBarState.ClearToken = prefs;
         value = prefs.getString("token");
         await Checkpatientsinfo(value, context);
         print("token: $value");
@@ -109,14 +109,16 @@ class LoginController extends GetxController {
       http.Response response = await http.get(url, headers: header);
       print(response.statusCode);
       if (response.statusCode == 200) {
-        await s.connect(token);
+        SignalRHelper s = SignalRHelper(token);
+        s.connect(token);
+
         await personalprofilecontroller.GEtPersonalInfo(context);
         await DoctorsSpecilizationcon.GetAllDoctorsSpesilization(context);
         await docappoin.GetUpcomingAppoinment(context);
 
         emailcontroller.clear();
         Passwordcontroller.clear();
-        Get.off(() => BottomNavBar());
+        Get.off(() => const BottomNavBar());
       } else if (response.statusCode == 400) {
         Get.off(() => UserInformation());
       }
@@ -134,23 +136,12 @@ class LoginController extends GetxController {
     }
   }
 
-  // Future<void> RealTimeNotificatio() async {
-  //   String? token = LoginController.value;
+  Future<void> logout() async {
+    final SharedPreferences prefs = await pref;
+    await prefs.clear(); // clear the SharedPreferences
+    SignalRHelper s = SignalRHelper(LoginController.value);
+    await s.closeConnection();
 
-  //   final hubConnection = HubConnectionBuilder()
-  //       .withUrl(
-  //         'http://www.CareHub.somee.com/chat',
-  //       )
-  //       .withAutomaticReconnect()
-  //       .build();
-
-  //   try {
-  //     await hubConnection.start();
-  //     print('Connection started');
-
-  //     // Add event handlers and invoke methods here
-  //   } catch (e) {
-  //     print('Error: $e');
-  //   }
-  // }
+    Get.offAll(() => const LoginPage());
+  }
 }
